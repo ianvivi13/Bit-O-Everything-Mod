@@ -18,6 +18,8 @@ public class ClientRegistryEvents {
         regSpellColor(event, ModItems.TORCH_SPELL.get());
         regSpellColor(event, ModItems.FIREBALL_SPELL.get());
         regSpellColor(event, ModItems.WEATHER_SPELL.get());
+        regSpellColor(event, ModItems.HASTE_SPELL.get());
+        regSpellColor(event, ModItems.DAMAGE_SPELL.get());
     }
 
     public static void regSpellColor(RegisterColorHandlersEvent.Item event, Item item) {

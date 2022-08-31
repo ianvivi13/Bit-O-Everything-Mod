@@ -229,6 +229,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         Chestboat(pFinishedRecipeConsumer, chestBoat, boat);
     }
 
+    protected void horseArmor(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike out, ItemLike material) {
+        ShapedRecipeBuilder.shaped(out)
+                .define('L', Items.LEATHER)
+                .define('M', material)
+                .pattern("M M")
+                .pattern("MLM")
+                .pattern("M M")
+                .unlockedBy("has_" + material.asItem(), inventoryTrigger(ItemPredicate.Builder.item().of(material).build()))
+                .save(pFinishedRecipeConsumer, "bit_o_everything:" + out.asItem() + "_from_" + material.asItem());
+    }
 
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer) {
@@ -437,5 +447,50 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         Stair(pFinishedRecipeConsumer, ModBlocks.GREEN_TERRACOTTA_STAIRS.get(), Blocks.GREEN_TERRACOTTA);
         Stair(pFinishedRecipeConsumer, ModBlocks.RED_TERRACOTTA_STAIRS.get(), Blocks.RED_TERRACOTTA);
         Stair(pFinishedRecipeConsumer, ModBlocks.BLACK_TERRACOTTA_STAIRS.get(), Blocks.BLACK_TERRACOTTA);
+
+
+        ShapedRecipeBuilder.shaped(Blocks.COBWEB)
+                .define('s', Items.STRING)
+                .pattern("s s")
+                .pattern(" s ")
+                .pattern("s s")
+                .unlockedBy("has_string", inventoryTrigger(ItemPredicate.Builder.item().of(Items.STRING).build()))
+                .save(pFinishedRecipeConsumer);
+
+        /*
+        ShapedRecipeBuilder.shaped(Items.BUNDLE.asItem()) //TODO fix bundle
+                .define('s', Items.STRING)
+                .define('h', Items.RABBIT_HIDE)
+                .pattern("shs")
+                .pattern("h h")
+                .pattern("hhh")
+                .unlockedBy("has_rabbit_hide", inventoryTrigger(ItemPredicate.Builder.item().of(Items.RABBIT_HIDE).build()))
+                .save(pFinishedRecipeConsumer);
+         */
+
+        horseArmor(pFinishedRecipeConsumer, Items.IRON_HORSE_ARMOR, Items.IRON_INGOT);
+        horseArmor(pFinishedRecipeConsumer, Items.GOLDEN_HORSE_ARMOR, Items.GOLD_INGOT);
+        horseArmor(pFinishedRecipeConsumer, Items.DIAMOND_HORSE_ARMOR, Items.DIAMOND);
+
+        ShapedRecipeBuilder.shaped(Items.SADDLE)
+                .define('S', Items.STRING)
+                .define('I', Items.IRON_INGOT)
+                .define('L', Items.LEATHER)
+                .pattern("LLL")
+                .pattern("S S")
+                .pattern("I I")
+                .unlockedBy("has_leather", inventoryTrigger(ItemPredicate.Builder.item().of(Items.LEATHER).build()))
+                .save(pFinishedRecipeConsumer);
+
+        ShapedRecipeBuilder.shaped(Items.NAME_TAG)
+                .define('S', Items.STRING)
+                .define('I', Items.IRON_INGOT)
+                .define('L', Items.LEATHER)
+                .define('B', Items.SLIME_BALL)
+                .pattern("SBS")
+                .pattern("SLS")
+                .pattern("IS ")
+                .unlockedBy("has_leather", inventoryTrigger(ItemPredicate.Builder.item().of(Items.LEATHER).build()))
+                .save(pFinishedRecipeConsumer);
     }
 }
