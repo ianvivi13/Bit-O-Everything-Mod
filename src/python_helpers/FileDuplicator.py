@@ -106,20 +106,20 @@ test = (
 )
 
 bricks = (
-    "rainbow_brick",
-    "white_brick",
-    "black_brick"
+    "white",
+    "black"
 )
 
 f = (
-    Blockstates + "white_concrete_stairs.json",
-    BlockModels + "white_concrete_stairs.json",
-    BlockModels + "white_concrete_stairs_inner.json",
-    BlockModels + "white_concrete_stairs_outer.json",
-    ItemModels + "white_concrete_stairs.json",
+    Blockstates + "rainbow_brick_wall.json",
+    BlockModels + "rainbow_brick_wall_side.json",
+    BlockModels + "rainbow_brick_wall_side_tall.json",
+    BlockModels + "rainbow_brick_wall_inventory.json",
+    BlockModels + "rainbow_brick_wall_post.json",
+    ItemModels + "rainbow_brick_wall.json"
 )
 
-dup.DuplicateFile(f, "white_concrete", bricks)
+dup.DuplicateFile(f, "rainbow", bricks)
 
 #dup.DuplicateFile(files, "white", colors)
 #dup.Undo()

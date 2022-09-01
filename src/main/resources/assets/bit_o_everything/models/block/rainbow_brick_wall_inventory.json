@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "bit_o_everything:block/rainbow_bricks"
+  }
+}

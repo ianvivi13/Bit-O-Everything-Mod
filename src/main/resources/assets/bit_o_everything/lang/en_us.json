@@ -117,6 +117,9 @@
   "block.bit_o_everything.rainbow_brick_stairs": "Rainbow Brick Stairs",
   "block.bit_o_everything.white_brick_stairs": "White Brick Stairs",
   "block.bit_o_everything.black_brick_stairs": "Black Brick Stairs",
+  "block.bit_o_everything.rainbow_brick_wall": "Rainbow Brick Wall",
+  "block.bit_o_everything.white_brick_wall": "White Brick Wall",
+  "block.bit_o_everything.black_brick_wall": "Black Brick Wall",
   "block.bit_o_everything.indicator_lever": "Indicator Lever",
 
   "block.bit_o_everything.terracotta_stairs": "Terracotta Stairs",

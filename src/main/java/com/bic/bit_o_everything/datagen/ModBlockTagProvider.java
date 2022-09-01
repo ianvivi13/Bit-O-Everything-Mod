@@ -116,6 +116,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.WHITE_BRICK_STAIRS.get())
                 .add(ModBlocks.BLACK_BRICK_STAIRS.get())
                 .add(ModBlocks.TERRACOTTA_STAIRS.get())
+                .add(ModBlocks.RAINBOW_BRICK_WALL.get())
+                .add(ModBlocks.WHITE_BRICK_WALL.get())
+                .add(ModBlocks.BLACK_BRICK_WALL.get())
                 .add(ModBlocks.WHITE_TERRACOTTA_STAIRS.get())
                 .add(ModBlocks.ORANGE_TERRACOTTA_STAIRS.get())
                 .add(ModBlocks.MAGENTA_TERRACOTTA_STAIRS.get())
@@ -311,6 +314,12 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.RAINBOW_BRICK_STAIRS.get())
                 .add(ModBlocks.WHITE_BRICK_STAIRS.get())
                 .add(ModBlocks.BLACK_BRICK_STAIRS.get())
+        ;
+
+        this.tag(BlockTags.WALLS)
+                .add(ModBlocks.RAINBOW_BRICK_WALL.get())
+                .add(ModBlocks.WHITE_BRICK_WALL.get())
+                .add(ModBlocks.BLACK_BRICK_WALL.get())
         ;
     }
 }

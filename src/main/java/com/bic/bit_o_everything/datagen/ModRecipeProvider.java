@@ -176,6 +176,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pFinishedRecipeConsumer, "bit_o_everything:" + out.asItem() + "_from_" + in.asItem());
     }
 
+    protected void Wall(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike out, ItemLike in) {
+        ShapedRecipeBuilder.shaped(out, 6)
+                .define('#', in)
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_" + in.asItem(), inventoryTrigger(ItemPredicate.Builder.item().of(in).build()))
+                .save(pFinishedRecipeConsumer, "bit_o_everything:" + out.asItem() + "_from_" + in.asItem());
+    }
+
     protected void Stair(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike out, ItemLike in) {
         ShapedRecipeBuilder.shaped(out, 4)
                 .define('#', in)
@@ -353,6 +362,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         Stair(pFinishedRecipeConsumer, ModBlocks.RAINBOW_BRICK_STAIRS.get(), ModBlocks.RAINBOW_BRICKS.get());
         Stair(pFinishedRecipeConsumer, ModBlocks.WHITE_BRICK_STAIRS.get(), ModBlocks.WHITE_BRICKS.get());
         Stair(pFinishedRecipeConsumer, ModBlocks.BLACK_BRICK_STAIRS.get(), ModBlocks.BLACK_BRICKS.get());
+        Wall(pFinishedRecipeConsumer, ModBlocks.RAINBOW_BRICK_WALL.get(), ModBlocks.RAINBOW_BRICKS.get());
+        Wall(pFinishedRecipeConsumer, ModBlocks.WHITE_BRICK_WALL.get(), ModBlocks.WHITE_BRICKS.get());
+        Wall(pFinishedRecipeConsumer, ModBlocks.BLACK_BRICK_WALL.get(), ModBlocks.BLACK_BRICKS.get());
 
         ShapelessRecipeBuilder.shapeless(ModItems.RAINBOW_DYE.get(), 6)
                 .requires(Items.RED_DYE)

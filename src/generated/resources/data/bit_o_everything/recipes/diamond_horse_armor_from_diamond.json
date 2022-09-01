@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "L": {
+      "item": "minecraft:leather"
+    },
+    "M": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "M M",
+    "MLM",
+    "M M"
+  ],
+  "result": {
+    "item": "minecraft:diamond_horse_armor"
+  }
+}
