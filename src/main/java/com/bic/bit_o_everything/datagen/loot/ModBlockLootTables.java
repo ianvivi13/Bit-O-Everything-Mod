@@ -152,6 +152,40 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.RED_TERRACOTTA_STAIRS.get());
         this.dropSelf(ModBlocks.BLACK_TERRACOTTA_STAIRS.get());
 
+        this.dropSelf(ModBlocks.TERRACOTTA_WALL.get());
+        this.dropSelf(ModBlocks.WHITE_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.WHITE_TERRACOTTA_WALL.get());
+        this.dropSelf(ModBlocks.ORANGE_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.ORANGE_TERRACOTTA_WALL.get());
+        this.dropSelf(ModBlocks.MAGENTA_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.MAGENTA_TERRACOTTA_WALL.get());
+        this.dropSelf(ModBlocks.LIGHT_BLUE_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.LIGHT_BLUE_TERRACOTTA_WALL.get());
+        this.dropSelf(ModBlocks.YELLOW_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.YELLOW_TERRACOTTA_WALL.get());
+        this.dropSelf(ModBlocks.LIME_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.LIME_TERRACOTTA_WALL.get());
+        this.dropSelf(ModBlocks.PINK_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.PINK_TERRACOTTA_WALL.get());
+        this.dropSelf(ModBlocks.GRAY_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.GRAY_TERRACOTTA_WALL.get());
+        this.dropSelf(ModBlocks.LIGHT_GRAY_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.LIGHT_GRAY_TERRACOTTA_WALL.get());
+        this.dropSelf(ModBlocks.CYAN_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.CYAN_TERRACOTTA_WALL.get());
+        this.dropSelf(ModBlocks.PURPLE_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.PURPLE_TERRACOTTA_WALL.get());
+        this.dropSelf(ModBlocks.BLUE_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.BLUE_TERRACOTTA_WALL.get());
+        this.dropSelf(ModBlocks.BROWN_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.BROWN_TERRACOTTA_WALL.get());
+        this.dropSelf(ModBlocks.GREEN_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.GREEN_TERRACOTTA_WALL.get());
+        this.dropSelf(ModBlocks.RED_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.RED_TERRACOTTA_WALL.get());
+        this.dropSelf(ModBlocks.BLACK_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.BLACK_TERRACOTTA_WALL.get());
+
         this.dropPottedContents(ModBlocks.POTTED_CHERRY_SAPLING.get());
     }
 

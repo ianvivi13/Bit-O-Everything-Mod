@@ -85,9 +85,24 @@ colors = (
     "brown_terracotta",
     "green_terracotta",
     "red_terracotta",
-    "black_terracotta"
+    "black_terracotta",
+    "white_concrete",
+    "orange_concrete",
+    "magenta_concrete",
+    "light_blue_concrete",
+    "yellow_concrete",
+    "lime_concrete",
+    "pink_concrete",
+    "gray_concrete",
+    "light_gray_concrete",
+    "cyan_concrete",
+    "purple_concrete",
+    "blue_concrete",
+    "brown_concrete",
+    "green_concrete",
+    "red_concrete",
+    "black_concrete"
 )
-
 
 Dir = "../main/resources/assets/bit_o_everything/"
 Blockstates = Dir + "blockstates/"
@@ -99,27 +114,16 @@ files = (
     "duplicate/lol/other_white.txt"
 )
 
-
-test = (
-    "newphalt",
-    "oldphalt"
-)
-
-bricks = (
-    "white",
-    "black"
-)
-
 f = (
-    Blockstates + "rainbow_brick_wall.json",
-    BlockModels + "rainbow_brick_wall_side.json",
-    BlockModels + "rainbow_brick_wall_side_tall.json",
-    BlockModels + "rainbow_brick_wall_inventory.json",
-    BlockModels + "rainbow_brick_wall_post.json",
-    ItemModels + "rainbow_brick_wall.json"
+    Blockstates + "terracotta_wall.json",
+    BlockModels + "terracotta_wall_side.json",
+    BlockModels + "terracotta_wall_side_tall.json",
+    BlockModels + "terracotta_wall_inventory.json",
+    BlockModels + "terracotta_wall_post.json",
+    ItemModels + "terracotta_wall.json"
 )
 
-dup.DuplicateFile(f, "rainbow", bricks)
+dup.DuplicateFile(f, "terracotta", colors)
 
 #dup.DuplicateFile(files, "white", colors)
 #dup.Undo()

@@ -28,6 +28,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private static final int FurnaceTime = 200;
     private static final int SmokerTime = 100;
 
+    //region Helper Functions
     protected void Compact(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike in, ItemLike out) {
         ShapedRecipeBuilder.shaped(out)
                 .define('#', in)
@@ -249,6 +250,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_" + material.asItem(), inventoryTrigger(ItemPredicate.Builder.item().of(material).build()))
                 .save(pFinishedRecipeConsumer, "bit_o_everything:" + out.asItem() + "_from_" + material.asItem());
     }
+    //endregion
 
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer) {
@@ -261,6 +263,114 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             FurnaceCampSmoke: creates furnace & campfire & smoking recipes
             Both of these can take an extension of parameters of inputs to make multiple for the same output - good for ores
         */
+
+        //region Terracotta
+        slab(pFinishedRecipeConsumer, ModBlocks.TERRACOTTA_SLAB.get(), Blocks.TERRACOTTA);
+        slab(pFinishedRecipeConsumer, ModBlocks.WHITE_TERRACOTTA_SLAB.get(), Blocks.WHITE_TERRACOTTA);
+        slab(pFinishedRecipeConsumer, ModBlocks.ORANGE_TERRACOTTA_SLAB.get(), Blocks.ORANGE_TERRACOTTA);
+        slab(pFinishedRecipeConsumer, ModBlocks.MAGENTA_TERRACOTTA_SLAB.get(), Blocks.MAGENTA_TERRACOTTA);
+        slab(pFinishedRecipeConsumer, ModBlocks.LIGHT_BLUE_TERRACOTTA_SLAB.get(), Blocks.LIGHT_BLUE_TERRACOTTA);
+        slab(pFinishedRecipeConsumer, ModBlocks.YELLOW_TERRACOTTA_SLAB.get(), Blocks.YELLOW_TERRACOTTA);
+        slab(pFinishedRecipeConsumer, ModBlocks.LIME_TERRACOTTA_SLAB.get(), Blocks.LIME_TERRACOTTA);
+        slab(pFinishedRecipeConsumer, ModBlocks.PINK_TERRACOTTA_SLAB.get(), Blocks.PINK_TERRACOTTA);
+        slab(pFinishedRecipeConsumer, ModBlocks.GRAY_TERRACOTTA_SLAB.get(), Blocks.GRAY_TERRACOTTA);
+        slab(pFinishedRecipeConsumer, ModBlocks.LIGHT_GRAY_TERRACOTTA_SLAB.get(), Blocks.LIGHT_GRAY_TERRACOTTA);
+        slab(pFinishedRecipeConsumer, ModBlocks.CYAN_TERRACOTTA_SLAB.get(), Blocks.CYAN_TERRACOTTA);
+        slab(pFinishedRecipeConsumer, ModBlocks.PURPLE_TERRACOTTA_SLAB.get(), Blocks.PURPLE_TERRACOTTA);
+        slab(pFinishedRecipeConsumer, ModBlocks.BLUE_TERRACOTTA_SLAB.get(), Blocks.BLUE_TERRACOTTA);
+        slab(pFinishedRecipeConsumer, ModBlocks.BROWN_TERRACOTTA_SLAB.get(), Blocks.BROWN_TERRACOTTA);
+        slab(pFinishedRecipeConsumer, ModBlocks.GREEN_TERRACOTTA_SLAB.get(), Blocks.GREEN_TERRACOTTA);
+        slab(pFinishedRecipeConsumer, ModBlocks.RED_TERRACOTTA_SLAB.get(), Blocks.RED_TERRACOTTA);
+        slab(pFinishedRecipeConsumer, ModBlocks.BLACK_TERRACOTTA_SLAB.get(), Blocks.BLACK_TERRACOTTA);
+
+        Stair(pFinishedRecipeConsumer, ModBlocks.TERRACOTTA_STAIRS.get(), Blocks.TERRACOTTA);
+        Stair(pFinishedRecipeConsumer, ModBlocks.WHITE_TERRACOTTA_STAIRS.get(), Blocks.WHITE_TERRACOTTA);
+        Stair(pFinishedRecipeConsumer, ModBlocks.ORANGE_TERRACOTTA_STAIRS.get(), Blocks.ORANGE_TERRACOTTA);
+        Stair(pFinishedRecipeConsumer, ModBlocks.MAGENTA_TERRACOTTA_STAIRS.get(), Blocks.MAGENTA_TERRACOTTA);
+        Stair(pFinishedRecipeConsumer, ModBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS.get(), Blocks.LIGHT_BLUE_TERRACOTTA);
+        Stair(pFinishedRecipeConsumer, ModBlocks.YELLOW_TERRACOTTA_STAIRS.get(), Blocks.YELLOW_TERRACOTTA);
+        Stair(pFinishedRecipeConsumer, ModBlocks.LIME_TERRACOTTA_STAIRS.get(), Blocks.LIME_TERRACOTTA);
+        Stair(pFinishedRecipeConsumer, ModBlocks.PINK_TERRACOTTA_STAIRS.get(), Blocks.PINK_TERRACOTTA);
+        Stair(pFinishedRecipeConsumer, ModBlocks.GRAY_TERRACOTTA_STAIRS.get(), Blocks.GRAY_TERRACOTTA);
+        Stair(pFinishedRecipeConsumer, ModBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS.get(), Blocks.LIGHT_GRAY_TERRACOTTA);
+        Stair(pFinishedRecipeConsumer, ModBlocks.CYAN_TERRACOTTA_STAIRS.get(), Blocks.CYAN_TERRACOTTA);
+        Stair(pFinishedRecipeConsumer, ModBlocks.PURPLE_TERRACOTTA_STAIRS.get(), Blocks.PURPLE_TERRACOTTA);
+        Stair(pFinishedRecipeConsumer, ModBlocks.BLUE_TERRACOTTA_STAIRS.get(), Blocks.BLUE_TERRACOTTA);
+        Stair(pFinishedRecipeConsumer, ModBlocks.BROWN_TERRACOTTA_STAIRS.get(), Blocks.BROWN_TERRACOTTA);
+        Stair(pFinishedRecipeConsumer, ModBlocks.GREEN_TERRACOTTA_STAIRS.get(), Blocks.GREEN_TERRACOTTA);
+        Stair(pFinishedRecipeConsumer, ModBlocks.RED_TERRACOTTA_STAIRS.get(), Blocks.RED_TERRACOTTA);
+        Stair(pFinishedRecipeConsumer, ModBlocks.BLACK_TERRACOTTA_STAIRS.get(), Blocks.BLACK_TERRACOTTA);
+
+        Wall(pFinishedRecipeConsumer, ModBlocks.TERRACOTTA_WALL.get(), Blocks.TERRACOTTA);
+        Wall(pFinishedRecipeConsumer, ModBlocks.WHITE_TERRACOTTA_WALL.get(), Blocks.WHITE_TERRACOTTA);
+        Wall(pFinishedRecipeConsumer, ModBlocks.ORANGE_TERRACOTTA_WALL.get(), Blocks.ORANGE_TERRACOTTA);
+        Wall(pFinishedRecipeConsumer, ModBlocks.MAGENTA_TERRACOTTA_WALL.get(), Blocks.MAGENTA_TERRACOTTA);
+        Wall(pFinishedRecipeConsumer, ModBlocks.LIGHT_BLUE_TERRACOTTA_WALL.get(), Blocks.LIGHT_BLUE_TERRACOTTA);
+        Wall(pFinishedRecipeConsumer, ModBlocks.YELLOW_TERRACOTTA_WALL.get(), Blocks.YELLOW_TERRACOTTA);
+        Wall(pFinishedRecipeConsumer, ModBlocks.LIME_TERRACOTTA_WALL.get(), Blocks.LIME_TERRACOTTA);
+        Wall(pFinishedRecipeConsumer, ModBlocks.PINK_TERRACOTTA_WALL.get(), Blocks.PINK_TERRACOTTA);
+        Wall(pFinishedRecipeConsumer, ModBlocks.GRAY_TERRACOTTA_WALL.get(), Blocks.GRAY_TERRACOTTA);
+        Wall(pFinishedRecipeConsumer, ModBlocks.LIGHT_GRAY_TERRACOTTA_WALL.get(), Blocks.LIGHT_GRAY_TERRACOTTA);
+        Wall(pFinishedRecipeConsumer, ModBlocks.CYAN_TERRACOTTA_WALL.get(), Blocks.CYAN_TERRACOTTA);
+        Wall(pFinishedRecipeConsumer, ModBlocks.PURPLE_TERRACOTTA_WALL.get(), Blocks.PURPLE_TERRACOTTA);
+        Wall(pFinishedRecipeConsumer, ModBlocks.BLUE_TERRACOTTA_WALL.get(), Blocks.BLUE_TERRACOTTA);
+        Wall(pFinishedRecipeConsumer, ModBlocks.BROWN_TERRACOTTA_WALL.get(), Blocks.BROWN_TERRACOTTA);
+        Wall(pFinishedRecipeConsumer, ModBlocks.GREEN_TERRACOTTA_WALL.get(), Blocks.GREEN_TERRACOTTA);
+        Wall(pFinishedRecipeConsumer, ModBlocks.RED_TERRACOTTA_WALL.get(), Blocks.RED_TERRACOTTA);
+        Wall(pFinishedRecipeConsumer, ModBlocks.BLACK_TERRACOTTA_WALL.get(), Blocks.BLACK_TERRACOTTA);
+        //endregion
+        //region Concrete
+        slab(pFinishedRecipeConsumer, ModBlocks.WHITE_CONCRETE_SLAB.get(), Blocks.WHITE_CONCRETE);
+        slab(pFinishedRecipeConsumer, ModBlocks.ORANGE_CONCRETE_SLAB.get(), Blocks.ORANGE_CONCRETE);
+        slab(pFinishedRecipeConsumer, ModBlocks.MAGENTA_CONCRETE_SLAB.get(), Blocks.MAGENTA_CONCRETE);
+        slab(pFinishedRecipeConsumer, ModBlocks.LIGHT_BLUE_CONCRETE_SLAB.get(), Blocks.LIGHT_BLUE_CONCRETE);
+        slab(pFinishedRecipeConsumer, ModBlocks.YELLOW_CONCRETE_SLAB.get(), Blocks.YELLOW_CONCRETE);
+        slab(pFinishedRecipeConsumer, ModBlocks.LIME_CONCRETE_SLAB.get(), Blocks.LIME_CONCRETE);
+        slab(pFinishedRecipeConsumer, ModBlocks.PINK_CONCRETE_SLAB.get(), Blocks.PINK_CONCRETE);
+        slab(pFinishedRecipeConsumer, ModBlocks.GRAY_CONCRETE_SLAB.get(), Blocks.GRAY_CONCRETE);
+        slab(pFinishedRecipeConsumer, ModBlocks.LIGHT_GRAY_CONCRETE_SLAB.get(), Blocks.LIGHT_GRAY_CONCRETE);
+        slab(pFinishedRecipeConsumer, ModBlocks.CYAN_CONCRETE_SLAB.get(), Blocks.CYAN_CONCRETE);
+        slab(pFinishedRecipeConsumer, ModBlocks.PURPLE_CONCRETE_SLAB.get(), Blocks.PURPLE_CONCRETE);
+        slab(pFinishedRecipeConsumer, ModBlocks.BLUE_CONCRETE_SLAB.get(), Blocks.BLUE_CONCRETE);
+        slab(pFinishedRecipeConsumer, ModBlocks.BROWN_CONCRETE_SLAB.get(), Blocks.BROWN_CONCRETE);
+        slab(pFinishedRecipeConsumer, ModBlocks.GREEN_CONCRETE_SLAB.get(), Blocks.GREEN_CONCRETE);
+        slab(pFinishedRecipeConsumer, ModBlocks.RED_CONCRETE_SLAB.get(), Blocks.RED_CONCRETE);
+        slab(pFinishedRecipeConsumer, ModBlocks.BLACK_CONCRETE_SLAB.get(), Blocks.BLACK_CONCRETE);
+
+        Stair(pFinishedRecipeConsumer, ModBlocks.WHITE_CONCRETE_STAIRS.get(), Blocks.WHITE_CONCRETE);
+        Stair(pFinishedRecipeConsumer, ModBlocks.ORANGE_CONCRETE_STAIRS.get(), Blocks.ORANGE_CONCRETE);
+        Stair(pFinishedRecipeConsumer, ModBlocks.MAGENTA_CONCRETE_STAIRS.get(), Blocks.MAGENTA_CONCRETE);
+        Stair(pFinishedRecipeConsumer, ModBlocks.LIGHT_BLUE_CONCRETE_STAIRS.get(), Blocks.LIGHT_BLUE_CONCRETE);
+        Stair(pFinishedRecipeConsumer, ModBlocks.YELLOW_CONCRETE_STAIRS.get(), Blocks.YELLOW_CONCRETE);
+        Stair(pFinishedRecipeConsumer, ModBlocks.LIME_CONCRETE_STAIRS.get(), Blocks.LIME_CONCRETE);
+        Stair(pFinishedRecipeConsumer, ModBlocks.PINK_CONCRETE_STAIRS.get(), Blocks.PINK_CONCRETE);
+        Stair(pFinishedRecipeConsumer, ModBlocks.GRAY_CONCRETE_STAIRS.get(), Blocks.GRAY_CONCRETE);
+        Stair(pFinishedRecipeConsumer, ModBlocks.LIGHT_GRAY_CONCRETE_STAIRS.get(), Blocks.LIGHT_GRAY_CONCRETE);
+        Stair(pFinishedRecipeConsumer, ModBlocks.CYAN_CONCRETE_STAIRS.get(), Blocks.CYAN_CONCRETE);
+        Stair(pFinishedRecipeConsumer, ModBlocks.PURPLE_CONCRETE_STAIRS.get(), Blocks.PURPLE_CONCRETE);
+        Stair(pFinishedRecipeConsumer, ModBlocks.BLUE_CONCRETE_STAIRS.get(), Blocks.BLUE_CONCRETE);
+        Stair(pFinishedRecipeConsumer, ModBlocks.BROWN_CONCRETE_STAIRS.get(), Blocks.BROWN_CONCRETE);
+        Stair(pFinishedRecipeConsumer, ModBlocks.GREEN_CONCRETE_STAIRS.get(), Blocks.GREEN_CONCRETE);
+        Stair(pFinishedRecipeConsumer, ModBlocks.RED_CONCRETE_STAIRS.get(), Blocks.RED_CONCRETE);
+        Stair(pFinishedRecipeConsumer, ModBlocks.BLACK_CONCRETE_STAIRS.get(), Blocks.BLACK_CONCRETE);
+
+        Wall(pFinishedRecipeConsumer, ModBlocks.WHITE_CONCRETE_WALL.get(), Blocks.WHITE_CONCRETE);
+        Wall(pFinishedRecipeConsumer, ModBlocks.ORANGE_CONCRETE_WALL.get(), Blocks.ORANGE_CONCRETE);
+        Wall(pFinishedRecipeConsumer, ModBlocks.MAGENTA_CONCRETE_WALL.get(), Blocks.MAGENTA_CONCRETE);
+        Wall(pFinishedRecipeConsumer, ModBlocks.LIGHT_BLUE_CONCRETE_WALL.get(), Blocks.LIGHT_BLUE_CONCRETE);
+        Wall(pFinishedRecipeConsumer, ModBlocks.YELLOW_CONCRETE_WALL.get(), Blocks.YELLOW_CONCRETE);
+        Wall(pFinishedRecipeConsumer, ModBlocks.LIME_CONCRETE_WALL.get(), Blocks.LIME_CONCRETE);
+        Wall(pFinishedRecipeConsumer, ModBlocks.PINK_CONCRETE_WALL.get(), Blocks.PINK_CONCRETE);
+        Wall(pFinishedRecipeConsumer, ModBlocks.GRAY_CONCRETE_WALL.get(), Blocks.GRAY_CONCRETE);
+        Wall(pFinishedRecipeConsumer, ModBlocks.LIGHT_GRAY_CONCRETE_WALL.get(), Blocks.LIGHT_GRAY_CONCRETE);
+        Wall(pFinishedRecipeConsumer, ModBlocks.CYAN_CONCRETE_WALL.get(), Blocks.CYAN_CONCRETE);
+        Wall(pFinishedRecipeConsumer, ModBlocks.PURPLE_CONCRETE_WALL.get(), Blocks.PURPLE_CONCRETE);
+        Wall(pFinishedRecipeConsumer, ModBlocks.BLUE_CONCRETE_WALL.get(), Blocks.BLUE_CONCRETE);
+        Wall(pFinishedRecipeConsumer, ModBlocks.BROWN_CONCRETE_WALL.get(), Blocks.BROWN_CONCRETE);
+        Wall(pFinishedRecipeConsumer, ModBlocks.GREEN_CONCRETE_WALL.get(), Blocks.GREEN_CONCRETE);
+        Wall(pFinishedRecipeConsumer, ModBlocks.RED_CONCRETE_WALL.get(), Blocks.RED_CONCRETE);
+        Wall(pFinishedRecipeConsumer, ModBlocks.BLACK_CONCRETE_WALL.get(), Blocks.BLACK_CONCRETE);
+        //endregion
 
         ShapedRecipeBuilder.shaped(ModBlocks.ASPHALT.get(), 4)
                 .define('S', Blocks.STONE)
@@ -311,41 +421,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModItems.CHERRY_SIGN.get(), ModBlocks.CHERRY_BUTTON.get(), ModBlocks.CHERRY_PRESSURE_PLATE.get(),
                 ModItems.CHERRY_BOAT.get(), ModItems.CHERRY_CHEST_BOAT.get());
 
-        // Concrete Slab recipes
-        slab(pFinishedRecipeConsumer, ModBlocks.WHITE_CONCRETE_SLAB.get(), Blocks.WHITE_CONCRETE);
-        slab(pFinishedRecipeConsumer, ModBlocks.ORANGE_CONCRETE_SLAB.get(), Blocks.ORANGE_CONCRETE);
-        slab(pFinishedRecipeConsumer, ModBlocks.MAGENTA_CONCRETE_SLAB.get(), Blocks.MAGENTA_CONCRETE);
-        slab(pFinishedRecipeConsumer, ModBlocks.LIGHT_BLUE_CONCRETE_SLAB.get(), Blocks.LIGHT_BLUE_CONCRETE);
-        slab(pFinishedRecipeConsumer, ModBlocks.YELLOW_CONCRETE_SLAB.get(), Blocks.YELLOW_CONCRETE);
-        slab(pFinishedRecipeConsumer, ModBlocks.LIME_CONCRETE_SLAB.get(), Blocks.LIME_CONCRETE);
-        slab(pFinishedRecipeConsumer, ModBlocks.PINK_CONCRETE_SLAB.get(), Blocks.PINK_CONCRETE);
-        slab(pFinishedRecipeConsumer, ModBlocks.GRAY_CONCRETE_SLAB.get(), Blocks.GRAY_CONCRETE);
-        slab(pFinishedRecipeConsumer, ModBlocks.LIGHT_GRAY_CONCRETE_SLAB.get(), Blocks.LIGHT_GRAY_CONCRETE);
-        slab(pFinishedRecipeConsumer, ModBlocks.CYAN_CONCRETE_SLAB.get(), Blocks.CYAN_CONCRETE);
-        slab(pFinishedRecipeConsumer, ModBlocks.PURPLE_CONCRETE_SLAB.get(), Blocks.PURPLE_CONCRETE);
-        slab(pFinishedRecipeConsumer, ModBlocks.BLUE_CONCRETE_SLAB.get(), Blocks.BLUE_CONCRETE);
-        slab(pFinishedRecipeConsumer, ModBlocks.BROWN_CONCRETE_SLAB.get(), Blocks.BROWN_CONCRETE);
-        slab(pFinishedRecipeConsumer, ModBlocks.GREEN_CONCRETE_SLAB.get(), Blocks.GREEN_CONCRETE);
-        slab(pFinishedRecipeConsumer, ModBlocks.RED_CONCRETE_SLAB.get(), Blocks.RED_CONCRETE);
-        slab(pFinishedRecipeConsumer, ModBlocks.BLACK_CONCRETE_SLAB.get(), Blocks.BLACK_CONCRETE);
 
-        // Concrete Stairs recipes
-        Stair(pFinishedRecipeConsumer, ModBlocks.WHITE_CONCRETE_STAIRS.get(), Blocks.WHITE_CONCRETE);
-        Stair(pFinishedRecipeConsumer, ModBlocks.ORANGE_CONCRETE_STAIRS.get(), Blocks.ORANGE_CONCRETE);
-        Stair(pFinishedRecipeConsumer, ModBlocks.MAGENTA_CONCRETE_STAIRS.get(), Blocks.MAGENTA_CONCRETE);
-        Stair(pFinishedRecipeConsumer, ModBlocks.LIGHT_BLUE_CONCRETE_STAIRS.get(), Blocks.LIGHT_BLUE_CONCRETE);
-        Stair(pFinishedRecipeConsumer, ModBlocks.YELLOW_CONCRETE_STAIRS.get(), Blocks.YELLOW_CONCRETE);
-        Stair(pFinishedRecipeConsumer, ModBlocks.LIME_CONCRETE_STAIRS.get(), Blocks.LIME_CONCRETE);
-        Stair(pFinishedRecipeConsumer, ModBlocks.PINK_CONCRETE_STAIRS.get(), Blocks.PINK_CONCRETE);
-        Stair(pFinishedRecipeConsumer, ModBlocks.GRAY_CONCRETE_STAIRS.get(), Blocks.GRAY_CONCRETE);
-        Stair(pFinishedRecipeConsumer, ModBlocks.LIGHT_GRAY_CONCRETE_STAIRS.get(), Blocks.LIGHT_GRAY_CONCRETE);
-        Stair(pFinishedRecipeConsumer, ModBlocks.CYAN_CONCRETE_STAIRS.get(), Blocks.CYAN_CONCRETE);
-        Stair(pFinishedRecipeConsumer, ModBlocks.PURPLE_CONCRETE_STAIRS.get(), Blocks.PURPLE_CONCRETE);
-        Stair(pFinishedRecipeConsumer, ModBlocks.BLUE_CONCRETE_STAIRS.get(), Blocks.BLUE_CONCRETE);
-        Stair(pFinishedRecipeConsumer, ModBlocks.BROWN_CONCRETE_STAIRS.get(), Blocks.BROWN_CONCRETE);
-        Stair(pFinishedRecipeConsumer, ModBlocks.GREEN_CONCRETE_STAIRS.get(), Blocks.GREEN_CONCRETE);
-        Stair(pFinishedRecipeConsumer, ModBlocks.RED_CONCRETE_STAIRS.get(), Blocks.RED_CONCRETE);
-        Stair(pFinishedRecipeConsumer, ModBlocks.BLACK_CONCRETE_STAIRS.get(), Blocks.BLACK_CONCRETE);
 
         Surround(pFinishedRecipeConsumer, ModItems.EXPLOSIVE_ARROW.get(), Blocks.TNT, Items.ARROW, 8);
         Surround(pFinishedRecipeConsumer, ModItems.TIMED_ARROW_ONE.get(), Items.STRING, ModItems.EXPLOSIVE_ARROW.get(), 8);
@@ -434,41 +510,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_concrete", inventoryTrigger(ItemPredicate.Builder.item().of(ModTags.Items.CONCRETES).build()))
                 .save(pFinishedRecipeConsumer);
 
-        slab(pFinishedRecipeConsumer, ModBlocks.TERRACOTTA_SLAB.get(), Blocks.TERRACOTTA);
-        slab(pFinishedRecipeConsumer, ModBlocks.WHITE_TERRACOTTA_SLAB.get(), Blocks.WHITE_TERRACOTTA);
-        slab(pFinishedRecipeConsumer, ModBlocks.ORANGE_TERRACOTTA_SLAB.get(), Blocks.ORANGE_TERRACOTTA);
-        slab(pFinishedRecipeConsumer, ModBlocks.MAGENTA_TERRACOTTA_SLAB.get(), Blocks.MAGENTA_TERRACOTTA);
-        slab(pFinishedRecipeConsumer, ModBlocks.LIGHT_BLUE_TERRACOTTA_SLAB.get(), Blocks.LIGHT_BLUE_TERRACOTTA);
-        slab(pFinishedRecipeConsumer, ModBlocks.YELLOW_TERRACOTTA_SLAB.get(), Blocks.YELLOW_TERRACOTTA);
-        slab(pFinishedRecipeConsumer, ModBlocks.LIME_TERRACOTTA_SLAB.get(), Blocks.LIME_TERRACOTTA);
-        slab(pFinishedRecipeConsumer, ModBlocks.PINK_TERRACOTTA_SLAB.get(), Blocks.PINK_TERRACOTTA);
-        slab(pFinishedRecipeConsumer, ModBlocks.GRAY_TERRACOTTA_SLAB.get(), Blocks.GRAY_TERRACOTTA);
-        slab(pFinishedRecipeConsumer, ModBlocks.LIGHT_GRAY_TERRACOTTA_SLAB.get(), Blocks.LIGHT_GRAY_TERRACOTTA);
-        slab(pFinishedRecipeConsumer, ModBlocks.CYAN_TERRACOTTA_SLAB.get(), Blocks.CYAN_TERRACOTTA);
-        slab(pFinishedRecipeConsumer, ModBlocks.PURPLE_TERRACOTTA_SLAB.get(), Blocks.PURPLE_TERRACOTTA);
-        slab(pFinishedRecipeConsumer, ModBlocks.BLUE_TERRACOTTA_SLAB.get(), Blocks.BLUE_TERRACOTTA);
-        slab(pFinishedRecipeConsumer, ModBlocks.BROWN_TERRACOTTA_SLAB.get(), Blocks.BROWN_TERRACOTTA);
-        slab(pFinishedRecipeConsumer, ModBlocks.GREEN_TERRACOTTA_SLAB.get(), Blocks.GREEN_TERRACOTTA);
-        slab(pFinishedRecipeConsumer, ModBlocks.RED_TERRACOTTA_SLAB.get(), Blocks.RED_TERRACOTTA);
-        slab(pFinishedRecipeConsumer, ModBlocks.BLACK_TERRACOTTA_SLAB.get(), Blocks.BLACK_TERRACOTTA);
 
-        Stair(pFinishedRecipeConsumer, ModBlocks.TERRACOTTA_STAIRS.get(), Blocks.TERRACOTTA);
-        Stair(pFinishedRecipeConsumer, ModBlocks.WHITE_TERRACOTTA_STAIRS.get(), Blocks.WHITE_TERRACOTTA);
-        Stair(pFinishedRecipeConsumer, ModBlocks.ORANGE_TERRACOTTA_STAIRS.get(), Blocks.ORANGE_TERRACOTTA);
-        Stair(pFinishedRecipeConsumer, ModBlocks.MAGENTA_TERRACOTTA_STAIRS.get(), Blocks.MAGENTA_TERRACOTTA);
-        Stair(pFinishedRecipeConsumer, ModBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS.get(), Blocks.LIGHT_BLUE_TERRACOTTA);
-        Stair(pFinishedRecipeConsumer, ModBlocks.YELLOW_TERRACOTTA_STAIRS.get(), Blocks.YELLOW_TERRACOTTA);
-        Stair(pFinishedRecipeConsumer, ModBlocks.LIME_TERRACOTTA_STAIRS.get(), Blocks.LIME_TERRACOTTA);
-        Stair(pFinishedRecipeConsumer, ModBlocks.PINK_TERRACOTTA_STAIRS.get(), Blocks.PINK_TERRACOTTA);
-        Stair(pFinishedRecipeConsumer, ModBlocks.GRAY_TERRACOTTA_STAIRS.get(), Blocks.GRAY_TERRACOTTA);
-        Stair(pFinishedRecipeConsumer, ModBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS.get(), Blocks.LIGHT_GRAY_TERRACOTTA);
-        Stair(pFinishedRecipeConsumer, ModBlocks.CYAN_TERRACOTTA_STAIRS.get(), Blocks.CYAN_TERRACOTTA);
-        Stair(pFinishedRecipeConsumer, ModBlocks.PURPLE_TERRACOTTA_STAIRS.get(), Blocks.PURPLE_TERRACOTTA);
-        Stair(pFinishedRecipeConsumer, ModBlocks.BLUE_TERRACOTTA_STAIRS.get(), Blocks.BLUE_TERRACOTTA);
-        Stair(pFinishedRecipeConsumer, ModBlocks.BROWN_TERRACOTTA_STAIRS.get(), Blocks.BROWN_TERRACOTTA);
-        Stair(pFinishedRecipeConsumer, ModBlocks.GREEN_TERRACOTTA_STAIRS.get(), Blocks.GREEN_TERRACOTTA);
-        Stair(pFinishedRecipeConsumer, ModBlocks.RED_TERRACOTTA_STAIRS.get(), Blocks.RED_TERRACOTTA);
-        Stair(pFinishedRecipeConsumer, ModBlocks.BLACK_TERRACOTTA_STAIRS.get(), Blocks.BLACK_TERRACOTTA);
 
 
         ShapedRecipeBuilder.shaped(Blocks.COBWEB)
