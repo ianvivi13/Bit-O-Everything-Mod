@@ -8,6 +8,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.StonecutterRecipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
@@ -342,8 +343,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         Surround(pFinishedRecipeConsumer, ModItems.TIMED_ARROW_TWO.get(), Items.STRING, ModItems.TIMED_ARROW_ONE.get(), 8);
         Surround(pFinishedRecipeConsumer, ModItems.TIMED_ARROW_THREE.get(), Items.STRING, ModItems.TIMED_ARROW_TWO.get(), 8);
         Surround(pFinishedRecipeConsumer, ModItems.SILVER_ARROW.get(), ModItems.SILVER_INGOT.get(), Items.ARROW, 8);
+
         Surround(pFinishedRecipeConsumer, ModBlocks.RAINBOW_BRICKS.get(), ModItems.RAINBOW_DYE.get(), Blocks.BRICKS, 8);
         Surround(pFinishedRecipeConsumer, ModBlocks.WHITE_BRICKS.get(), Items.WHITE_DYE, Blocks.BRICKS, 8);
+        Surround(pFinishedRecipeConsumer, ModBlocks.BLACK_BRICKS.get(), Items.BLACK_DYE, Blocks.BRICKS, 8);
+        Slab(pFinishedRecipeConsumer, ModBlocks.RAINBOW_BRICK_SLAB.get(), ModBlocks.RAINBOW_BRICKS.get());
+        Slab(pFinishedRecipeConsumer, ModBlocks.WHITE_BRICK_SLAB.get(), ModBlocks.WHITE_BRICKS.get());
+        Slab(pFinishedRecipeConsumer, ModBlocks.BLACK_BRICK_SLAB.get(), ModBlocks.BLACK_BRICKS.get());
 
         ShapelessRecipeBuilder.shapeless(ModItems.RAINBOW_DYE.get(), 6)
                 .requires(Items.RED_DYE)

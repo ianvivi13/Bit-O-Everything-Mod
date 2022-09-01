@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "bit_o_everything:block/white_brick_slab"
+    },
+    "type=double": {
+      "model": "bit_o_everything:block/white_bricks"
+    },
+    "type=top": {
+      "model": "bit_o_everything:block/white_brick_slab_top"
+    }
+  }
+}

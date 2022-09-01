@@ -30,6 +30,7 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.JUMP_BLOCK.get());
         this.dropSelf(ModBlocks.RAINBOW_BRICKS.get());
         this.dropSelf(ModBlocks.WHITE_BRICKS.get());
+        this.dropSelf(ModBlocks.BLACK_BRICKS.get());
 
         this.dropSelf(ModBlocks.CHERRY_PLANKS.get());
         this.dropSelf(ModBlocks.STRIPPED_CHERRY_LOG.get());
@@ -79,6 +80,10 @@ public class ModBlockLootTables extends BlockLoot {
         this.add(ModBlocks.GREEN_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
         this.add(ModBlocks.RED_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
         this.add(ModBlocks.BLACK_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
+
+        this.add(ModBlocks.RAINBOW_BRICK_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.WHITE_BRICK_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.BLACK_BRICK_SLAB.get(), BlockLoot::createSlabItemTable);
 
         this.add(ModBlocks.CHERRY_DOOR.get(), BlockLoot::createDoorTable);
         this.add(ModBlocks.CHERRY_SLAB.get(), BlockLoot::createSlabItemTable);

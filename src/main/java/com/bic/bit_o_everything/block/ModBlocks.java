@@ -165,15 +165,28 @@ public class ModBlocks {
     public static final RegistryObject<Block> JUMP_BLOCK = registerBlock("jump_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.CACTUS).sound(SoundType.WOOL)
                     .strength(0.4f).jumpFactor(2.0F)), ModCreativeModeTab.MODDED);
-
+    //region Bricks
     public static final RegistryObject<Block> RAINBOW_BRICKS = registerBlock("rainbow_bricks",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE_BRICKS)
                     .strength(2f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> RAINBOW_BRICK_SLAB = registerBlock("rainbow_brick_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.BRICK_SLAB)), ModCreativeModeTab.MODDED);
 
     public static final RegistryObject<Block> WHITE_BRICKS = registerBlock("white_bricks",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE_BRICKS)
                     .strength(2f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
 
+    public static final RegistryObject<Block> WHITE_BRICK_SLAB = registerBlock("white_brick_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.BRICK_SLAB)), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> BLACK_BRICKS = registerBlock("black_bricks",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(2f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> BLACK_BRICK_SLAB = registerBlock("black_brick_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.BRICK_SLAB)), ModCreativeModeTab.MODDED);
+    //endregion
     //region Cherry Woods
     public static final RegistryObject<Block> CHERRY_LOG = registerBlock("cherry_log",
             () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.MODDED);

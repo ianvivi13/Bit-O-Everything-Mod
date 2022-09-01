@@ -105,19 +105,20 @@ test = (
     "oldphalt"
 )
 
-f = (
-    Blockstates + "terracotta_slab.json",
-    BlockModels + "terracotta_slab.json",
-    BlockModels + "terracotta_slab_top.json",
-    ItemModels + "terracotta_slab.json",
-    Blockstates + "terracotta_stairs.json",
-    BlockModels + "terracotta_stairs.json",
-    BlockModels + "terracotta_stairs_inner.json",
-    BlockModels + "terracotta_stairs_outer.json",
-    ItemModels + "terracotta_stairs.json"
+bricks = (
+    "rainbow_bricks",
+    "white_bricks",
+    "black_bricks"
 )
 
-dup.DuplicateFile(f, "terracotta", colors)
+f = (
+    Blockstates + "cyan_terracotta_slab.json",
+    BlockModels + "cyan_terracotta_slab.json",
+    BlockModels + "cyan_terracotta_slab_top.json",
+    ItemModels + "cyan_terracotta_slab.json",
+)
+
+dup.DuplicateFile(f, "cyan_terracotta", bricks)
 
 #dup.DuplicateFile(files, "white", colors)
 #dup.Undo()
