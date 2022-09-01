@@ -1,4 +1,4 @@
-// 1.19	2022-06-28T12:15:54.9281303	LootTables
+// 1.19	2022-09-01T02:31:03.2241179	LootTables
 84599ebe44ca2eadfeb83d5157fd7db6366a5c7f data/bit_o_everything/loot_tables/blocks/asphalt.json
 8d3618b0c4a893a9c17a5bc09f20b82a9443edd2 data/bit_o_everything/loot_tables/blocks/black_concrete_slab.json
 ef7cd5dfbd8407287b54703c127cd3d3cf849602 data/bit_o_everything/loot_tables/blocks/black_concrete_stairs.json
@@ -109,6 +109,7 @@ d985506e284867e2d4a541dffe736398c56a8b63 data/bit_o_everything/loot_tables/block
 8d736a2d5015474bd50ad3821910fc814049bb67 data/bit_o_everything/loot_tables/blocks/tin_ore.json
 c6a1eaaf1d9baa01b5730b6b4135a316e8c93eff data/bit_o_everything/loot_tables/blocks/titanium_block.json
 dee9ac72e1aa92b76d657079c465be72c78983c7 data/bit_o_everything/loot_tables/blocks/titanium_ore.json
+eba56232b3755b19ef7c7d645939809eaf23a94a data/bit_o_everything/loot_tables/blocks/white_bricks.json
 8be2e2ce15cd21277b519588b4330d0635e0590c data/bit_o_everything/loot_tables/blocks/white_concrete_slab.json
 b31a1ca3b7d9efa0124d5f901bf5066c6c664dbf data/bit_o_everything/loot_tables/blocks/white_concrete_stairs.json
 1c55ba1b4ce7ab1fb974f1b20bc9cebd1e827e88 data/bit_o_everything/loot_tables/blocks/white_terracotta_slab.json

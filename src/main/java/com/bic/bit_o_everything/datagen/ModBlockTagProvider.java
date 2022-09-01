@@ -107,6 +107,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.RED_CONCRETE_STAIRS.get())
                 .add(ModBlocks.BLACK_CONCRETE_STAIRS.get())
                 .add(ModBlocks.RAINBOW_BRICKS.get())
+                .add(ModBlocks.WHITE_BRICKS.get())
                 .add(ModBlocks.TERRACOTTA_STAIRS.get())
                 .add(ModBlocks.WHITE_TERRACOTTA_STAIRS.get())
                 .add(ModBlocks.ORANGE_TERRACOTTA_STAIRS.get())

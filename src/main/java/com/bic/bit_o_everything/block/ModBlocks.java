@@ -170,6 +170,10 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE_BRICKS)
                     .strength(2f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
 
+    public static final RegistryObject<Block> WHITE_BRICKS = registerBlock("white_bricks",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(2f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
     //region Cherry Woods
     public static final RegistryObject<Block> CHERRY_LOG = registerBlock("cherry_log",
             () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.MODDED);

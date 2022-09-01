@@ -343,6 +343,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         Surround(pFinishedRecipeConsumer, ModItems.TIMED_ARROW_THREE.get(), Items.STRING, ModItems.TIMED_ARROW_TWO.get(), 8);
         Surround(pFinishedRecipeConsumer, ModItems.SILVER_ARROW.get(), ModItems.SILVER_INGOT.get(), Items.ARROW, 8);
         Surround(pFinishedRecipeConsumer, ModBlocks.RAINBOW_BRICKS.get(), ModItems.RAINBOW_DYE.get(), Blocks.BRICKS, 8);
+        Surround(pFinishedRecipeConsumer, ModBlocks.WHITE_BRICKS.get(), Items.WHITE_DYE, Blocks.BRICKS, 8);
 
         ShapelessRecipeBuilder.shapeless(ModItems.RAINBOW_DYE.get(), 6)
                 .requires(Items.RED_DYE)

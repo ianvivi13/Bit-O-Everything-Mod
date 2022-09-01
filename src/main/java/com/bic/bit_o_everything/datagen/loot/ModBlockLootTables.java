@@ -29,6 +29,7 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.ASPHALT.get());
         this.dropSelf(ModBlocks.JUMP_BLOCK.get());
         this.dropSelf(ModBlocks.RAINBOW_BRICKS.get());
+        this.dropSelf(ModBlocks.WHITE_BRICKS.get());
 
         this.dropSelf(ModBlocks.CHERRY_PLANKS.get());
         this.dropSelf(ModBlocks.STRIPPED_CHERRY_LOG.get());
