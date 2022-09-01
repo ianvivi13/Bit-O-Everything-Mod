@@ -112,6 +112,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.RAINBOW_BRICK_SLAB.get())
                 .add(ModBlocks.WHITE_BRICK_SLAB.get())
                 .add(ModBlocks.BLACK_BRICK_SLAB.get())
+                .add(ModBlocks.RAINBOW_BRICK_STAIRS.get())
+                .add(ModBlocks.WHITE_BRICK_STAIRS.get())
+                .add(ModBlocks.BLACK_BRICK_STAIRS.get())
                 .add(ModBlocks.TERRACOTTA_STAIRS.get())
                 .add(ModBlocks.WHITE_TERRACOTTA_STAIRS.get())
                 .add(ModBlocks.ORANGE_TERRACOTTA_STAIRS.get())
@@ -279,6 +282,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.GREEN_CONCRETE_SLAB.get())
                 .add(ModBlocks.RED_CONCRETE_SLAB.get())
                 .add(ModBlocks.BLACK_CONCRETE_SLAB.get())
+                .add(ModBlocks.RAINBOW_BRICK_SLAB.get())
+                .add(ModBlocks.WHITE_BRICK_SLAB.get())
+                .add(ModBlocks.BLACK_BRICK_SLAB.get())
         ;
 
         this.tag(BlockTags.FLOWER_POTS)
@@ -302,6 +308,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.GREEN_CONCRETE_STAIRS.get())
                 .add(ModBlocks.RED_CONCRETE_STAIRS.get())
                 .add(ModBlocks.BLACK_CONCRETE_STAIRS.get())
+                .add(ModBlocks.RAINBOW_BRICK_STAIRS.get())
+                .add(ModBlocks.WHITE_BRICK_STAIRS.get())
+                .add(ModBlocks.BLACK_BRICK_STAIRS.get())
         ;
     }
 }

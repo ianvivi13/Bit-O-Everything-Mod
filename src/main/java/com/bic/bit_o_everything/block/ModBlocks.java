@@ -173,6 +173,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> RAINBOW_BRICK_SLAB = registerBlock("rainbow_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.BRICK_SLAB)), ModCreativeModeTab.MODDED);
 
+    public static final RegistryObject<Block> RAINBOW_BRICK_STAIRS = registerBlock("rainbow_brick_stairs",
+            () -> new StairBlock(Blocks.BRICK_STAIRS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.BRICK_STAIRS)), ModCreativeModeTab.MODDED);
+
     public static final RegistryObject<Block> WHITE_BRICKS = registerBlock("white_bricks",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE_BRICKS)
                     .strength(2f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
@@ -180,12 +183,18 @@ public class ModBlocks {
     public static final RegistryObject<Block> WHITE_BRICK_SLAB = registerBlock("white_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.BRICK_SLAB)), ModCreativeModeTab.MODDED);
 
+    public static final RegistryObject<Block> WHITE_BRICK_STAIRS = registerBlock("white_brick_stairs",
+            () -> new StairBlock(Blocks.BRICK_STAIRS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.BRICK_STAIRS)), ModCreativeModeTab.MODDED);
+
     public static final RegistryObject<Block> BLACK_BRICKS = registerBlock("black_bricks",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE_BRICKS)
                     .strength(2f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
 
     public static final RegistryObject<Block> BLACK_BRICK_SLAB = registerBlock("black_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.BRICK_SLAB)), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> BLACK_BRICK_STAIRS = registerBlock("black_brick_stairs",
+            () -> new StairBlock(Blocks.BRICK_STAIRS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.BRICK_STAIRS)), ModCreativeModeTab.MODDED);
     //endregion
     //region Cherry Woods
     public static final RegistryObject<Block> CHERRY_LOG = registerBlock("cherry_log",

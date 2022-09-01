@@ -15,6 +15,9 @@
     "bit_o_everything:brown_concrete_stairs",
     "bit_o_everything:green_concrete_stairs",
     "bit_o_everything:red_concrete_stairs",
-    "bit_o_everything:black_concrete_stairs"
+    "bit_o_everything:black_concrete_stairs",
+    "bit_o_everything:rainbow_brick_stairs",
+    "bit_o_everything:white_brick_stairs",
+    "bit_o_everything:black_brick_stairs"
   ]
 }

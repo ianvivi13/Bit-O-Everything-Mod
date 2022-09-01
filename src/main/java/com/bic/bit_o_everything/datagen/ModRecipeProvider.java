@@ -350,6 +350,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         Slab(pFinishedRecipeConsumer, ModBlocks.RAINBOW_BRICK_SLAB.get(), ModBlocks.RAINBOW_BRICKS.get());
         Slab(pFinishedRecipeConsumer, ModBlocks.WHITE_BRICK_SLAB.get(), ModBlocks.WHITE_BRICKS.get());
         Slab(pFinishedRecipeConsumer, ModBlocks.BLACK_BRICK_SLAB.get(), ModBlocks.BLACK_BRICKS.get());
+        Stair(pFinishedRecipeConsumer, ModBlocks.RAINBOW_BRICK_STAIRS.get(), ModBlocks.RAINBOW_BRICKS.get());
+        Stair(pFinishedRecipeConsumer, ModBlocks.WHITE_BRICK_STAIRS.get(), ModBlocks.WHITE_BRICKS.get());
+        Stair(pFinishedRecipeConsumer, ModBlocks.BLACK_BRICK_STAIRS.get(), ModBlocks.BLACK_BRICKS.get());
 
         ShapelessRecipeBuilder.shapeless(ModItems.RAINBOW_DYE.get(), 6)
                 .requires(Items.RED_DYE)
