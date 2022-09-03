@@ -129,6 +129,25 @@ public class ModItems {
     public static final RegistryObject<Item> HASTE_SPELL = registerSpell("haste_spell", HasteSpell.HASTE);
     public static final RegistryObject<Item> DAMAGE_SPELL = registerSpell("damage_spell", AOEDamageSpell.DAMAGE);
 
+    //region Crystal Shards
+    public static final RegistryObject<Item> TANZANITE_SHARD = ITEMS.register("tanzanite_shard",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+
+    public static final RegistryObject<Item> RHODOCHROSITE_SHARD = ITEMS.register("rhodochrosite_shard",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+
+    public static final RegistryObject<Item> MOLDAVITE_SHARD = ITEMS.register("moldavite_shard",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+
+    public static final RegistryObject<Item> CITRINE_SHARD = ITEMS.register("citrine_shard",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+
+    public static final RegistryObject<Item> CELESTITE_SHARD = ITEMS.register("celestite_shard",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+
+    public static final RegistryObject<Item> AQUAMARINE_SHARD = ITEMS.register("aquamarine_shard",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+    //endregion
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

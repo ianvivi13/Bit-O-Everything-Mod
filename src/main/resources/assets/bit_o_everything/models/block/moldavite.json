@@ -1,0 +1,207 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "bit_o_everything:block/moldavite",
+		"particle": "bit_o_everything:block/moldavite"
+	},
+	"elements": [
+		{
+			"name": "N. Spike",
+			"from": [7, 0, 5],
+			"to": [9, 10, 7],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 0, 6]},
+			"faces": {
+				"north": {"uv": [2, 1, 4, 11], "rotation": 180, "texture": "#0"},
+				"east": {"uv": [3, 4, 5, 14], "rotation": 180, "texture": "#0"},
+				"south": {"uv": [5, 5, 7, 15], "rotation": 180, "texture": "#0"},
+				"west": {"uv": [4, 3, 6, 13], "rotation": 180, "texture": "#0"},
+				"up": {"uv": [6, 11, 8, 13], "texture": "#0"},
+				"down": {"uv": [3, 4, 5, 6], "texture": "#0"}
+			}
+		},
+		{
+			"name": "S. Spike",
+			"from": [7, 0, 9],
+			"to": [9, 7, 11],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 0, 10]},
+			"faces": {
+				"north": {"uv": [6, 5, 8, 12], "rotation": 180, "texture": "#0"},
+				"east": {"uv": [8, 5, 10, 12], "rotation": 180, "texture": "#0"},
+				"south": {"uv": [5, 4, 7, 11], "rotation": 180, "texture": "#0"},
+				"west": {"uv": [5, 6, 7, 13], "rotation": 180, "texture": "#0"},
+				"up": {"uv": [9, 11, 11, 13], "texture": "#0"},
+				"down": {"uv": [6, 4, 8, 6], "texture": "#0"}
+			}
+		},
+		{
+			"name": "E. Spike",
+			"from": [9, 0, 7],
+			"to": [11, 13, 9],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [10, 0, 8]},
+			"faces": {
+				"north": {"uv": [3, 0, 5, 13], "rotation": 180, "texture": "#0"},
+				"east": {"uv": [3, 0, 5, 13], "rotation": 180, "texture": "#0"},
+				"south": {"uv": [3, 0, 5, 13], "rotation": 180, "texture": "#0"},
+				"west": {"uv": [3, 0, 5, 13], "rotation": 180, "texture": "#0"},
+				"up": {"uv": [4, 11, 6, 13], "texture": "#0"},
+				"down": {"uv": [3, 0, 5, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "W. Spike",
+			"from": [5, 0, 7],
+			"to": [7, 11, 9],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [6, 0, 8]},
+			"faces": {
+				"north": {"uv": [3, 2, 5, 13], "rotation": 180, "texture": "#0"},
+				"east": {"uv": [4, 4, 6, 15], "rotation": 180, "texture": "#0"},
+				"south": {"uv": [5, 3, 7, 14], "rotation": 180, "texture": "#0"},
+				"west": {"uv": [5, 2, 7, 13], "rotation": 180, "texture": "#0"},
+				"up": {"uv": [8, 14, 6, 12], "texture": "#0"},
+				"down": {"uv": [7, 3, 5, 5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [5, 0, 5],
+			"to": [11, 3, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 6, 3], "texture": "#0"},
+				"east": {"uv": [0, 0, 6, 3], "texture": "#0"},
+				"south": {"uv": [0, 0, 6, 3], "texture": "#0"},
+				"west": {"uv": [0, 0, 6, 3], "texture": "#0"},
+				"up": {"uv": [1, 1, 7, 7], "texture": "#0"},
+				"down": {"uv": [0, 0, 6, 6], "texture": "#0"}
+			}
+		},
+		{
+			"from": [6, 3, 6],
+			"to": [10, 6, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 3, 9]},
+			"faces": {
+				"north": {"uv": [3, 6, 7, 9], "texture": "#0"},
+				"east": {"uv": [4, 7, 8, 10], "texture": "#0"},
+				"south": {"uv": [3, 9, 7, 12], "texture": "#0"},
+				"west": {"uv": [6, 7, 10, 10], "texture": "#0"},
+				"up": {"uv": [7, 9, 11, 13], "texture": "#0"}
+			}
+		},
+		{
+			"from": [7, 6, 7],
+			"to": [9, 12, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6, 8, 10]},
+			"faces": {
+				"north": {"uv": [7, 9, 9, 15], "texture": "#0"},
+				"east": {"uv": [10, 8, 12, 14], "texture": "#0"},
+				"south": {"uv": [12, 6, 14, 12], "texture": "#0"},
+				"west": {"uv": [13, 2, 15, 8], "texture": "#0"},
+				"up": {"uv": [13, 12, 15, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "N. Spike",
+			"from": [5.5, 6, 7.5],
+			"to": [6.5, 11, 8.5],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [8, 0, 6]},
+			"faces": {
+				"north": {"uv": [11, 2, 12, 7], "rotation": 180, "texture": "#0"},
+				"east": {"uv": [10, 5, 11, 10], "rotation": 180, "texture": "#0"},
+				"south": {"uv": [9, 8, 10, 13], "rotation": 180, "texture": "#0"},
+				"west": {"uv": [11, 10, 12, 15], "rotation": 180, "texture": "#0"},
+				"up": {"uv": [13, 11, 14, 12], "texture": "#0"}
+			}
+		},
+		{
+			"name": "N. Spike",
+			"from": [7.5, 6, 6.5],
+			"to": [8.5, 12, 7.5],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 0, 6]},
+			"faces": {
+				"north": {"uv": [2, 5, 3, 11], "rotation": 180, "texture": "#0"},
+				"east": {"uv": [2, 0, 3, 6], "rotation": 180, "texture": "#0"},
+				"south": {"uv": [1, 2, 2, 8], "rotation": 180, "texture": "#0"},
+				"west": {"uv": [0, 5, 1, 11], "rotation": 180, "texture": "#0"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "N. Spike",
+			"from": [7.5, 3, 7.5],
+			"to": [8.5, 7, 8.5],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 0, 6]},
+			"faces": {
+				"north": {"uv": [11, 8, 12, 12], "rotation": 180, "texture": "#0"},
+				"east": {"uv": [12, 11, 13, 15], "rotation": 180, "texture": "#0"},
+				"south": {"uv": [12, 8, 13, 12], "rotation": 180, "texture": "#0"},
+				"west": {"uv": [11, 10, 12, 14], "rotation": 180, "texture": "#0"},
+				"up": {"uv": [14, 14, 15, 15], "texture": "#0"}
+			}
+		},
+		{
+			"name": "N. Spike",
+			"from": [8.5, 5, 7.5],
+			"to": [9.5, 9, 8.5],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [8, 0, 6]},
+			"faces": {
+				"north": {"uv": [8, 0, 9, 4], "rotation": 180, "texture": "#0"},
+				"east": {"uv": [5, 2, 6, 6], "rotation": 180, "texture": "#0"},
+				"south": {"uv": [3, 6, 4, 10], "rotation": 180, "texture": "#0"},
+				"west": {"uv": [1, 11, 2, 15], "rotation": 180, "texture": "#0"},
+				"up": {"uv": [2, 4, 3, 5], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-7, 0, 0],
+			"translation": [0, 3, 0.25],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-7, 0, 0],
+			"translation": [0, 3, 0.25],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [-7, 0, 0],
+			"translation": [0, 3, 0.25],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-7, 0, 0],
+			"translation": [0, 3, 0.25],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"ground": {
+			"translation": [0, 0.75, 0],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"gui": {
+			"translation": [-0.5, 1, 0]
+		},
+		"head": {
+			"translation": [0, 14.5, 0]
+		},
+		"fixed": {
+			"translation": [0, 1.25, 0]
+		}
+	},
+	"groups": [
+		0,
+		1,
+		2,
+		3,
+		{
+			"name": "Center Spike",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [4, 5, 6]
+		},
+		{
+			"name": "Small Spikes",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [7, 8, 9, 10]
+		}
+	]
+}

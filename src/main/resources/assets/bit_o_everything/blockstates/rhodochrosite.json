@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "bit_o_everything:block/rhodochrosite",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "bit_o_everything:block/rhodochrosite",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "bit_o_everything:block/rhodochrosite",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "bit_o_everything:block/rhodochrosite",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "bit_o_everything:block/rhodochrosite"
+    },
+    "facing=west": {
+      "model": "bit_o_everything:block/rhodochrosite",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

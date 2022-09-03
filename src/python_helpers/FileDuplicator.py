@@ -104,6 +104,14 @@ colors = (
     "black_concrete"
 )
 
+crystals = (
+    "rhodochrosite",
+    "aquamarine",
+    "moldavite",
+    "citrine",
+    "tanzanite"
+)
+
 Dir = "../main/resources/assets/bit_o_everything/"
 Blockstates = Dir + "blockstates/"
 BlockModels = Dir + "models/block/"
@@ -115,15 +123,10 @@ files = (
 )
 
 f = (
-    Blockstates + "terracotta_wall.json",
-    BlockModels + "terracotta_wall_side.json",
-    BlockModels + "terracotta_wall_side_tall.json",
-    BlockModels + "terracotta_wall_inventory.json",
-    BlockModels + "terracotta_wall_post.json",
-    ItemModels + "terracotta_wall.json"
+    ItemModels + "celestite_shard.json"
 )
 
-dup.DuplicateFile(f, "terracotta", colors)
+dup.DuplicateFile(f, "celestite", crystals)
 
 #dup.DuplicateFile(files, "white", colors)
 #dup.Undo()

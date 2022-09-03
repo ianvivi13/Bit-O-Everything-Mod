@@ -95,6 +95,13 @@ public class ModBlockLootTables extends BlockLoot {
         this.add(ModBlocks.CHERRY_SLAB.get(), BlockLoot::createSlabItemTable);
         this.add(ModBlocks.CHERRY_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.CHERRY_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
+        this.add(ModBlocks.CELESTITE.get(), (block) -> createOreDrop(ModBlocks.CELESTITE.get(), ModItems.CELESTITE_SHARD.get()));
+        this.add(ModBlocks.CITRINE.get(), (block) -> createOreDrop(ModBlocks.CITRINE.get(), ModItems.CITRINE_SHARD.get()));
+        this.add(ModBlocks.AQUAMARINE.get(), (block) -> createOreDrop(ModBlocks.AQUAMARINE.get(), ModItems.AQUAMARINE_SHARD.get()));
+        this.add(ModBlocks.RHODOCHROSITE.get(), (block) -> createOreDrop(ModBlocks.RHODOCHROSITE.get(), ModItems.RHODOCHROSITE_SHARD.get()));
+        this.add(ModBlocks.MOLDAVITE.get(), (block) -> createOreDrop(ModBlocks.MOLDAVITE.get(), ModItems.MOLDAVITE_SHARD.get()));
+        this.add(ModBlocks.TANZANITE.get(), (block) -> createOreDrop(ModBlocks.TANZANITE.get(), ModItems.TANZANITE_SHARD.get()));
+
         this.add(ModBlocks.DEEPSLATE_PYRITE_ORE.get(), (block) -> createOreDrop(ModBlocks.DEEPSLATE_PYRITE_ORE.get(), ModItems.RAW_PYRITE.get()));
         this.add(ModBlocks.PYRITE_ORE.get(), (block) -> createOreDrop(ModBlocks.PYRITE_ORE.get(), ModItems.RAW_PYRITE.get()));
         this.add(ModBlocks.DEEPSLATE_ZINC_ORE.get(), (block) -> createOreDrop(ModBlocks.DEEPSLATE_ZINC_ORE.get(), ModItems.RAW_ZINC.get()));

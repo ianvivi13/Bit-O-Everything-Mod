@@ -482,6 +482,31 @@ public class ModBlocks {
     public static final RegistryObject<Block> POTTED_CHERRY_SAPLING = registerBlockWithoutBlockItem("potted_cherry_sapling",
             () -> new FlowerPotBlock(ModBlocks.CHERRY_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
 
+    //region Crystals
+    public static final RegistryObject<CrystalBlock> CELESTITE = registerBlock("celestite",
+            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST).instabreak()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<CrystalBlock> TANZANITE = registerBlock("tanzanite",
+            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST).instabreak()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<CrystalBlock> MOLDAVITE = registerBlock("moldavite",
+            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST).instabreak()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<CrystalBlock> CITRINE = registerBlock("citrine",
+            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST).instabreak()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<CrystalBlock> RHODOCHROSITE = registerBlock("rhodochrosite",
+            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST).instabreak()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<CrystalBlock> AQUAMARINE = registerBlock("aquamarine",
+            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST).instabreak()), ModCreativeModeTab.MODDED);
+
+
+    //endregion
+
+
+
+
     private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {
         return BLOCKS.register(name, block);
     }
