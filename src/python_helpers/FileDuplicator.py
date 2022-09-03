@@ -104,8 +104,18 @@ colors = (
     "black_concrete"
 )
 
-alloys = (
-    "draconium",
+nuggets = (
+    "titanium_nugget",
+    "tin_nugget",
+    "silver_nugget",
+    "sapphire_shard",
+    "ruby_shard",
+    "pyrite_nugget",
+    "magnesium_nugget",
+    "lead_nugget",
+    "emerald_shard",
+    "diamond_shard",
+    "copper_nugget"
 )
 
 Dir = "../main/resources/assets/bit_o_everything/"
@@ -119,12 +129,10 @@ files = (
 )
 
 f = (
-    Blockstates + "aluminum_block.json",
-    ItemModels + "aluminum_block.json",
-    BlockModels + "aluminum_block.json"
+    ItemModels + "zinc_nugget.json"
 )
 
-dup.DuplicateFile(f, "aluminum", alloys)
+dup.DuplicateFile(f, "zinc_nugget", nuggets)
 
 #dup.DuplicateFile(files, "white", colors)
 #dup.Undo()

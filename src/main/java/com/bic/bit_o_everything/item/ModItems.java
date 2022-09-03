@@ -191,7 +191,32 @@ public class ModItems {
     public static final RegistryObject<Item> CRYSTALLINE_SHARD = ITEMS.register("crystalline_shard",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
     //endregion
-
+    //region Nuggets & Shards
+    public static final RegistryObject<Item> ZINC_NUGGET = ITEMS.register("zinc_nugget",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+    public static final RegistryObject<Item> TITANIUM_NUGGET = ITEMS.register("titanium_nugget",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+    public static final RegistryObject<Item> TIN_NUGGET = ITEMS.register("tin_nugget",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+    public static final RegistryObject<Item> SILVER_NUGGET = ITEMS.register("silver_nugget",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+    public static final RegistryObject<Item> SAPPHIRE_SHARD = ITEMS.register("sapphire_shard",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+    public static final RegistryObject<Item> RUBY_SHARD = ITEMS.register("ruby_shard",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+    public static final RegistryObject<Item> PYRITE_NUGGET = ITEMS.register("pyrite_nugget",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+    public static final RegistryObject<Item> MAGNESIUM_NUGGET = ITEMS.register("magnesium_nugget",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+    public static final RegistryObject<Item> LEAD_NUGGET = ITEMS.register("lead_nugget",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+    public static final RegistryObject<Item> EMERALD_SHARD = ITEMS.register("emerald_shard",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+    public static final RegistryObject<Item> DIAMOND_SHARD = ITEMS.register("diamond_shard",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+    public static final RegistryObject<Item> COPPER_NUGGET = ITEMS.register("copper_nugget",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+    //endregion
 
 
     public static void register(IEventBus eventBus) {

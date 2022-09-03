@@ -53,28 +53,27 @@ colors2 = (
 )
 
 seperator = "\n"
-search = 'aluminum'
+search = 'zinc_nugget'
 
-corals = {
-    "brain",
-    "fire",
-    "tube",
-    "horn"
-}
-
-alloys = (
-    "brass",
-    "bronze",
-    "electrum",
-    "steel",
-    "crystalline"
+nuggets = (
+    "titanium_nugget",
+    "tin_nugget",
+    "silver_nugget",
+    "sapphire_shard",
+    "ruby_shard",
+    "pyrite_nugget",
+    "magnesium_nugget",
+    "lead_nugget",
+    "emerald_shard",
+    "diamond_shard",
+    "copper_nugget"
 )
 
 with open('duplicate.txt','r') as file:
     data = file.read()
 
 with open('duplicate.txt','a') as file:
-    for single in alloys:
+    for single in nuggets:
         newdata = data.replace(search, single)
         newdata = newdata.replace(search.upper(), single.upper())
         newdata = newdata.replace(search.capitalize(), single.capitalize())

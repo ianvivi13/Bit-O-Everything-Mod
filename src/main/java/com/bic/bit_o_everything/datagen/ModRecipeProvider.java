@@ -432,6 +432,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         Compact(pFinishedRecipeConsumer, ModItems.DRACONIUM_INGOT.get(), ModBlocks.DRACONIUM_BLOCK.get());
         Compact(pFinishedRecipeConsumer, ModItems.CRYSTALLINE_INGOT.get(), ModBlocks.CRYSTALLINE_BLOCK.get());
 
+        Compact(pFinishedRecipeConsumer, ModItems.COPPER_NUGGET.get(), Items.COPPER_INGOT);
+        //Compact(pFinishedRecipeConsumer, ModItems.LEAD_NUGGET.get(), ModItems.LEAD_INGOT.get()); //TODO fix when get ingot
+        Compact(pFinishedRecipeConsumer, ModItems.MAGNESIUM_NUGGET.get(), ModItems.MAGNESIUM_INGOT.get());
+        Compact(pFinishedRecipeConsumer, ModItems.PYRITE_NUGGET.get(), ModItems.PYRITE.get());
+        Compact(pFinishedRecipeConsumer, ModItems.SILVER_NUGGET.get(), ModItems.SILVER_INGOT.get());
+        Compact(pFinishedRecipeConsumer, ModItems.TIN_NUGGET.get(), ModItems.TIN_INGOT.get());
+        Compact(pFinishedRecipeConsumer, ModItems.TITANIUM_NUGGET.get(), ModItems.TITANIUM_INGOT.get());
+        Compact(pFinishedRecipeConsumer, ModItems.ZINC_NUGGET.get(), ModItems.ZINC_INGOT.get());
+        SmallCompact(pFinishedRecipeConsumer, ModItems.DIAMOND_SHARD.get(), Items.DIAMOND);
+        SmallCompact(pFinishedRecipeConsumer, ModItems.EMERALD_SHARD.get(), Items.EMERALD);
+        SmallCompact(pFinishedRecipeConsumer, ModItems.RUBY_SHARD.get(), ModItems.RUBY.get());
+        SmallCompact(pFinishedRecipeConsumer, ModItems.SAPPHIRE_SHARD.get(), ModItems.SAPPHIRE.get());
+
         // smelting recipes (pFinishedRecipeConsumer, output, xp, input(s))
         FurnaceCampSmoke(pFinishedRecipeConsumer, ModItems.FRIED_EGG.get(), 0.35f, Items.EGG);
         FurnaceBlast(pFinishedRecipeConsumer, ModItems.PYRITE.get(),1.0f, ModBlocks.DEEPSLATE_PYRITE_ORE.get(), ModBlocks.PYRITE_ORE.get(), ModItems.RAW_PYRITE.get());
