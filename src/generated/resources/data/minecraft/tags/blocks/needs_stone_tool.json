@@ -4,6 +4,7 @@
     "bit_o_everything:tin_ore",
     "bit_o_everything:deepslate_tin_ore",
     "bit_o_everything:raw_tin_block",
-    "bit_o_everything:tin_block"
+    "bit_o_everything:tin_block",
+    "bit_o_everything:aluminum_block"
   ]
 }

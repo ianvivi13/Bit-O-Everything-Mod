@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "bit_o_everything:block/aluminum_block"
+  }
+}

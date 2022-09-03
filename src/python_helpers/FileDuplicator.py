@@ -104,12 +104,8 @@ colors = (
     "black_concrete"
 )
 
-crystals = (
-    "rhodochrosite",
-    "aquamarine",
-    "moldavite",
-    "citrine",
-    "tanzanite"
+alloys = (
+    "draconium",
 )
 
 Dir = "../main/resources/assets/bit_o_everything/"
@@ -123,10 +119,12 @@ files = (
 )
 
 f = (
-    ItemModels + "celestite_shard.json"
+    Blockstates + "aluminum_block.json",
+    ItemModels + "aluminum_block.json",
+    BlockModels + "aluminum_block.json"
 )
 
-dup.DuplicateFile(f, "celestite", crystals)
+dup.DuplicateFile(f, "aluminum", alloys)
 
 #dup.DuplicateFile(files, "white", colors)
 #dup.Undo()

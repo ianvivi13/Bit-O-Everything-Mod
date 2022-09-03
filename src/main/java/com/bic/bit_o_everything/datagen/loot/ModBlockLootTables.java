@@ -70,6 +70,14 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.RED_CONCRETE_STAIRS.get());
         this.dropSelf(ModBlocks.BLACK_CONCRETE_STAIRS.get());
 
+        this.dropSelf(ModBlocks.ALUMINUM_BLOCK.get());
+        this.dropSelf(ModBlocks.BRASS_BLOCK.get());
+        this.dropSelf(ModBlocks.BRONZE_BLOCK.get());
+        this.dropSelf(ModBlocks.ELECTRUM_BLOCK.get());
+        this.dropSelf(ModBlocks.STEEL_BLOCK.get());
+        this.dropSelf(ModBlocks.CRYSTALLINE_BLOCK.get());
+        this.dropSelf(ModBlocks.DRACONIUM_BLOCK.get());
+
         this.add(ModBlocks.WHITE_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
         this.add(ModBlocks.ORANGE_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
         this.add(ModBlocks.MAGENTA_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);

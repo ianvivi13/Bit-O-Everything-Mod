@@ -44,6 +44,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pFinishedRecipeConsumer, "bit_o_everything:" + in.asItem() + "_from_" + out.asItem());
     }
 
+    protected void SmallCompact(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike in, ItemLike out) {
+        ShapedRecipeBuilder.shaped(out)
+                .define('#', in)
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy("has_" + in.asItem(), inventoryTrigger(ItemPredicate.Builder.item().of(in).build()))
+                .save(pFinishedRecipeConsumer, "bit_o_everything:" + out.asItem() + "_from_" + in.asItem());
+
+        ShapelessRecipeBuilder.shapeless(in, 4)
+                .requires(out)
+                .unlockedBy("has_" + out.asItem(), inventoryTrigger(ItemPredicate.Builder.item().of(out).build()))
+                .save(pFinishedRecipeConsumer, "bit_o_everything:" + in.asItem() + "_from_" + out.asItem());
+    }
+
     protected void FurnaceCampSmoke(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike out, float xp, ItemLike ... inList) {
         for (ItemLike in: inList) {
             FurnaceCampSmoke(pFinishedRecipeConsumer, out, xp, in);
@@ -401,6 +415,22 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         Compact(pFinishedRecipeConsumer, ModItems.TITANIUM_INGOT.get(), ModBlocks.TITANIUM_BLOCK.get());
         Compact(pFinishedRecipeConsumer, ModItems.RUBY.get(), ModBlocks.RUBY_BLOCK.get());
         Compact(pFinishedRecipeConsumer, ModItems.SAPPHIRE.get(), ModBlocks.SAPPHIRE_BLOCK.get());
+
+        SmallCompact(pFinishedRecipeConsumer, ModItems.CRYSTALLINE_SHARD.get(), ModItems.CRYSTALLINE_INGOT.get());
+        Compact(pFinishedRecipeConsumer, ModItems.ALUMINUM_NUGGET.get(), ModItems.ALUMINUM_INGOT.get());
+        Compact(pFinishedRecipeConsumer, ModItems.STEEL_NUGGET.get(), ModItems.STEEL_INGOT.get());
+        Compact(pFinishedRecipeConsumer, ModItems.BRASS_NUGGET.get(), ModItems.BRASS_INGOT.get());
+        Compact(pFinishedRecipeConsumer, ModItems.BRONZE_NUGGET.get(), ModItems.BRONZE_INGOT.get());
+        Compact(pFinishedRecipeConsumer, ModItems.ELECTRUM_NUGGET.get(), ModItems.ELECTRUM_INGOT.get());
+        Compact(pFinishedRecipeConsumer, ModItems.DRACONIUM_NUGGET.get(), ModItems.DRACONIUM_INGOT.get());
+
+        Compact(pFinishedRecipeConsumer, ModItems.ALUMINUM_INGOT.get(), ModBlocks.ALUMINUM_BLOCK.get());
+        Compact(pFinishedRecipeConsumer, ModItems.STEEL_INGOT.get(), ModBlocks.STEEL_BLOCK.get());
+        Compact(pFinishedRecipeConsumer, ModItems.BRASS_INGOT.get(), ModBlocks.BRASS_BLOCK.get());
+        Compact(pFinishedRecipeConsumer, ModItems.BRONZE_INGOT.get(), ModBlocks.BRONZE_BLOCK.get());
+        Compact(pFinishedRecipeConsumer, ModItems.ELECTRUM_INGOT.get(), ModBlocks.ELECTRUM_BLOCK.get());
+        Compact(pFinishedRecipeConsumer, ModItems.DRACONIUM_INGOT.get(), ModBlocks.DRACONIUM_BLOCK.get());
+        Compact(pFinishedRecipeConsumer, ModItems.CRYSTALLINE_INGOT.get(), ModBlocks.CRYSTALLINE_BLOCK.get());
 
         // smelting recipes (pFinishedRecipeConsumer, output, xp, input(s))
         FurnaceCampSmoke(pFinishedRecipeConsumer, ModItems.FRIED_EGG.get(), 0.35f, Items.EGG);

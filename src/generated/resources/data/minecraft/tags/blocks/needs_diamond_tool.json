@@ -3,6 +3,9 @@
     "bit_o_everything:titanium_ore",
     "bit_o_everything:deepslate_titanium_ore",
     "bit_o_everything:raw_titanium_block",
-    "bit_o_everything:titanium_block"
+    "bit_o_everything:titanium_block",
+    "bit_o_everything:steel_block",
+    "bit_o_everything:crystalline_block",
+    "bit_o_everything:draconium_block"
   ]
 }

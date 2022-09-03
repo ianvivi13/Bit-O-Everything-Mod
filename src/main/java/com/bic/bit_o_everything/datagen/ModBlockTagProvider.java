@@ -185,6 +185,13 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.RED_CONCRETE_WALL.get())
                 .add(ModBlocks.BLACK_TERRACOTTA_WALL.get())
                 .add(ModBlocks.BLACK_CONCRETE_WALL.get())
+                .add(ModBlocks.ALUMINUM_BLOCK.get())
+                .add(ModBlocks.BRASS_BLOCK.get())
+                .add(ModBlocks.BRONZE_BLOCK.get())
+                .add(ModBlocks.ELECTRUM_BLOCK.get())
+                .add(ModBlocks.STEEL_BLOCK.get())
+                .add(ModBlocks.CRYSTALLINE_BLOCK.get())
+                .add(ModBlocks.DRACONIUM_BLOCK.get())
         ;
         //endregion
         //region Needs <Level>
@@ -194,6 +201,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.DEEPSLATE_TIN_ORE.get())
                 .add(ModBlocks.RAW_TIN_BLOCK.get())
                 .add(ModBlocks.TIN_BLOCK.get())
+                .add(ModBlocks.ALUMINUM_BLOCK.get())
         ;
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
@@ -219,6 +227,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.RUBY_ORE.get())
                 .add(ModBlocks.DEEPSLATE_RUBY_ORE.get())
                 .add(ModBlocks.RUBY_BLOCK.get())
+                .add(ModBlocks.BRASS_BLOCK.get())
+                .add(ModBlocks.BRONZE_BLOCK.get())
+                .add(ModBlocks.ELECTRUM_BLOCK.get())
         ;
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
@@ -226,6 +237,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.DEEPSLATE_TITANIUM_ORE.get())
                 .add(ModBlocks.RAW_TITANIUM_BLOCK.get())
                 .add(ModBlocks.TITANIUM_BLOCK.get())
+                .add(ModBlocks.STEEL_BLOCK.get())
+                .add(ModBlocks.CRYSTALLINE_BLOCK.get())
+                .add(ModBlocks.DRACONIUM_BLOCK.get())
         ;
         //endregion
         //region Beacon

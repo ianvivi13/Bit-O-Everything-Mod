@@ -53,7 +53,7 @@ colors2 = (
 )
 
 seperator = "\n"
-search = 'terracotta'
+search = 'aluminum'
 
 corals = {
     "brain",
@@ -62,11 +62,19 @@ corals = {
     "horn"
 }
 
+alloys = (
+    "brass",
+    "bronze",
+    "electrum",
+    "steel",
+    "crystalline"
+)
+
 with open('duplicate.txt','r') as file:
     data = file.read()
 
 with open('duplicate.txt','a') as file:
-    for single in colors2:
+    for single in alloys:
         newdata = data.replace(search, single)
         newdata = newdata.replace(search.upper(), single.upper())
         newdata = newdata.replace(search.capitalize(), single.capitalize())

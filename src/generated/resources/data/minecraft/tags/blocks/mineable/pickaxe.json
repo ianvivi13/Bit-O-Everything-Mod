@@ -141,6 +141,13 @@
     "bit_o_everything:red_terracotta_wall",
     "bit_o_everything:red_concrete_wall",
     "bit_o_everything:black_terracotta_wall",
-    "bit_o_everything:black_concrete_wall"
+    "bit_o_everything:black_concrete_wall",
+    "bit_o_everything:aluminum_block",
+    "bit_o_everything:brass_block",
+    "bit_o_everything:bronze_block",
+    "bit_o_everything:electrum_block",
+    "bit_o_everything:steel_block",
+    "bit_o_everything:crystalline_block",
+    "bit_o_everything:draconium_block"
   ]
 }

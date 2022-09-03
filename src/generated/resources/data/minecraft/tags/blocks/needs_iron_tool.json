@@ -21,6 +21,9 @@
     "bit_o_everything:sapphire_block",
     "bit_o_everything:ruby_ore",
     "bit_o_everything:deepslate_ruby_ore",
-    "bit_o_everything:ruby_block"
+    "bit_o_everything:ruby_block",
+    "bit_o_everything:brass_block",
+    "bit_o_everything:bronze_block",
+    "bit_o_everything:electrum_block"
   ]
 }

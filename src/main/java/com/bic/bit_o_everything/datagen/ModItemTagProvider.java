@@ -8,6 +8,7 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -82,5 +83,6 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(Items.RED_CONCRETE)
                 .add(Items.BLACK_CONCRETE)
         ;
+
     }
 }
