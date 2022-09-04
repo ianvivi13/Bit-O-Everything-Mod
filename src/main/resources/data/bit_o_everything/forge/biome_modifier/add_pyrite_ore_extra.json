@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_badlands",
+  "features": "bit_o_everything:pyrite_ore_extra_placed",
+  "step": "underground_ores"
+}
