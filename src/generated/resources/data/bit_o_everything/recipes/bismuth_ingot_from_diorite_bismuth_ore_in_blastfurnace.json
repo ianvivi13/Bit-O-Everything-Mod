@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "bit_o_everything:diorite_bismuth_ore"
+  },
+  "result": "bit_o_everything:bismuth_ingot"
+}

@@ -524,8 +524,44 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
                     .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
     //endregion
+    //region Rosalite
+    public static final RegistryObject<Block> ROSALITE_BLOCK = registerBlock("rosalite_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
 
+    public static final RegistryObject<Block> BASALT_ROSALITE_ORE = registerBlock("basalt_rosalite_ore",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+    //endregion
+    //region Bismuth
+    public static final RegistryObject<Block> BISMUTH_BLOCK = registerBlock("bismuth_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
 
+    public static final RegistryObject<Block> BISMUTH_ORE= registerBlock("bismuth_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> DEEPSLATE_BISMUTH_ORE= registerBlock("deepslate_bismuth_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> TUFF_BISMUTH_ORE= registerBlock("tuff_bismuth_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> ANDESITE_BISMUTH_ORE= registerBlock("andesite_bismuth_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> GRANITE_BISMUTH_ORE= registerBlock("granite_bismuth_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> DIORITE_BISMUTH_ORE= registerBlock("diorite_bismuth_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+    //endregion
 
     private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {
         return BLOCKS.register(name, block);

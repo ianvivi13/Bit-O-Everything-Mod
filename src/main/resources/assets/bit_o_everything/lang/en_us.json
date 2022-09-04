@@ -198,6 +198,22 @@
   "item.bit_o_everything.diamond_shard": "Diamond Nugget",
   "item.bit_o_everything.copper_nugget": "Copper Nugget",
 
+  "item.bit_o_everything.rosalite": "Rosalite",
+  "item.bit_o_everything.rosalite_shard": "Rosalite Shard",
+  "block.bit_o_everything.basalt_rosalite_ore": "Basalt Rosalite Ore",
+  "block.bit_o_everything.rosalite_block": "Rosalite Block",
+
+  "item.bit_o_everything.bismuth": "Bismuth",
+  "item.bit_o_everything.bismuth_ingot": "Bismuth Ingot",
+  "item.bit_o_everything.bismuth_nugget": "Bismuth Nugget",
+  "block.bit_o_everything.bismuth_block": "Bismuth Block",
+  "block.bit_o_everything.bismuth_ore": "Bismuth Ore",
+  "block.bit_o_everything.deepslate_bismuth_ore": "Deepslate Bismuth Ore",
+  "block.bit_o_everything.tuff_bismuth_ore": "Tuff Bismuth Ore",
+  "block.bit_o_everything.andesite_bismuth_ore": "Andesite Bismuth Ore",
+  "block.bit_o_everything.granite_bismuth_ore": "Granite Bismuth Ore",
+  "block.bit_o_everything.diorite_bismuth_ore": "Diorite Bismuth Ore",
+
   "block.bit_o_everything.crystalline_block": "Crystalline Block",
   "block.bit_o_everything.aluminum_block": "Aluminum Block",
   "block.bit_o_everything.brass_block": "Brass Block",

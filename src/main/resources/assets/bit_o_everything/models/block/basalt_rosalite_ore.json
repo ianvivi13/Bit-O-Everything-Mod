@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "bit_o_everything:block/basalt_rosalite_ore_top",
+    "side": "bit_o_everything:block/basalt_rosalite_ore_side"
+  }
+}

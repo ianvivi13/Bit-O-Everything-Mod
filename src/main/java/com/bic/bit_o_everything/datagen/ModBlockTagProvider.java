@@ -192,6 +192,15 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.STEEL_BLOCK.get())
                 .add(ModBlocks.CRYSTALLINE_BLOCK.get())
                 .add(ModBlocks.DRACONIUM_BLOCK.get())
+                .add(ModBlocks.ROSALITE_BLOCK.get())
+                .add(ModBlocks.BASALT_ROSALITE_ORE.get())
+                .add(ModBlocks.BISMUTH_BLOCK.get())
+                .add(ModBlocks.BISMUTH_ORE.get())
+                .add(ModBlocks.TUFF_BISMUTH_ORE.get())
+                .add(ModBlocks.DEEPSLATE_BISMUTH_ORE.get())
+                .add(ModBlocks.GRANITE_BISMUTH_ORE.get())
+                .add(ModBlocks.ANDESITE_BISMUTH_ORE.get())
+                .add(ModBlocks.DIORITE_BISMUTH_ORE.get())
         ;
         //endregion
         //region Needs <Level>
@@ -230,6 +239,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.BRASS_BLOCK.get())
                 .add(ModBlocks.BRONZE_BLOCK.get())
                 .add(ModBlocks.ELECTRUM_BLOCK.get())
+                .add(ModBlocks.ROSALITE_BLOCK.get())
+                .add(ModBlocks.BASALT_ROSALITE_ORE.get())
         ;
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
@@ -240,6 +251,13 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.STEEL_BLOCK.get())
                 .add(ModBlocks.CRYSTALLINE_BLOCK.get())
                 .add(ModBlocks.DRACONIUM_BLOCK.get())
+                .add(ModBlocks.BISMUTH_BLOCK.get())
+                .add(ModBlocks.BISMUTH_ORE.get())
+                .add(ModBlocks.TUFF_BISMUTH_ORE.get())
+                .add(ModBlocks.DEEPSLATE_BISMUTH_ORE.get())
+                .add(ModBlocks.GRANITE_BISMUTH_ORE.get())
+                .add(ModBlocks.ANDESITE_BISMUTH_ORE.get())
+                .add(ModBlocks.DIORITE_BISMUTH_ORE.get())
         ;
         //endregion
         //region Beacon

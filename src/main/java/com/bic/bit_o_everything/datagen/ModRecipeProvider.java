@@ -445,6 +445,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         SmallCompact(pFinishedRecipeConsumer, ModItems.RUBY_SHARD.get(), ModItems.RUBY.get());
         SmallCompact(pFinishedRecipeConsumer, ModItems.SAPPHIRE_SHARD.get(), ModItems.SAPPHIRE.get());
 
+        Compact(pFinishedRecipeConsumer, ModItems.BISMUTH_INGOT.get(), ModBlocks.BISMUTH_BLOCK.get());
+        Compact(pFinishedRecipeConsumer, ModItems.BISMUTH_NUGGET.get(), ModItems.BISMUTH_INGOT.get());
+        FurnaceBlast(pFinishedRecipeConsumer, ModItems.BISMUTH_INGOT.get(),1.0f, ModItems.BISMUTH.get(), ModBlocks.BISMUTH_ORE.get(), ModBlocks.TUFF_BISMUTH_ORE.get(), ModBlocks.DEEPSLATE_BISMUTH_ORE.get(), ModBlocks.GRANITE_BISMUTH_ORE.get(), ModBlocks.ANDESITE_BISMUTH_ORE.get(), ModBlocks.DIORITE_BISMUTH_ORE.get());
+
+        Compact(pFinishedRecipeConsumer, ModItems.ROSALITE.get(), ModBlocks.ROSALITE_BLOCK.get());
+        SmallCompact(pFinishedRecipeConsumer, ModItems.ROSALITE_SHARD.get(), ModItems.ROSALITE.get());
+        FurnaceBlast(pFinishedRecipeConsumer, ModItems.ROSALITE.get(),1.0f, ModBlocks.BASALT_ROSALITE_ORE.get());
+
         // smelting recipes (pFinishedRecipeConsumer, output, xp, input(s))
         FurnaceCampSmoke(pFinishedRecipeConsumer, ModItems.FRIED_EGG.get(), 0.35f, Items.EGG);
         FurnaceBlast(pFinishedRecipeConsumer, ModItems.PYRITE.get(),1.0f, ModBlocks.DEEPSLATE_PYRITE_ORE.get(), ModBlocks.PYRITE_ORE.get(), ModItems.RAW_PYRITE.get());

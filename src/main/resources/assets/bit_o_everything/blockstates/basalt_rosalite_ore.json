@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "bit_o_everything:block/basalt_rosalite_ore",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "bit_o_everything:block/basalt_rosalite_ore"
+    },
+    "axis=z": {
+      "model": "bit_o_everything:block/basalt_rosalite_ore",
+      "x": 90
+    }
+  }
+}

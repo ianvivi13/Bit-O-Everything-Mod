@@ -78,6 +78,9 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.CRYSTALLINE_BLOCK.get());
         this.dropSelf(ModBlocks.DRACONIUM_BLOCK.get());
 
+        this.dropSelf(ModBlocks.ROSALITE_BLOCK.get());
+        this.add(ModBlocks.BASALT_ROSALITE_ORE.get(), (block) -> createOreDrop(ModBlocks.BASALT_ROSALITE_ORE.get(), ModItems.ROSALITE.get()));
+
         this.add(ModBlocks.WHITE_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
         this.add(ModBlocks.ORANGE_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
         this.add(ModBlocks.MAGENTA_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
@@ -109,6 +112,14 @@ public class ModBlockLootTables extends BlockLoot {
         this.add(ModBlocks.RHODOCHROSITE.get(), (block) -> createOreDrop(ModBlocks.RHODOCHROSITE.get(), ModItems.RHODOCHROSITE_SHARD.get()));
         this.add(ModBlocks.MOLDAVITE.get(), (block) -> createOreDrop(ModBlocks.MOLDAVITE.get(), ModItems.MOLDAVITE_SHARD.get()));
         this.add(ModBlocks.TANZANITE.get(), (block) -> createOreDrop(ModBlocks.TANZANITE.get(), ModItems.TANZANITE_SHARD.get()));
+
+        this.dropSelf(ModBlocks.BISMUTH_BLOCK.get());
+        this.add(ModBlocks.BISMUTH_ORE.get(), (block) -> createOreDrop(ModBlocks.BISMUTH_ORE.get(), ModItems.BISMUTH.get()));
+        this.add(ModBlocks.DEEPSLATE_BISMUTH_ORE.get(), (block) -> createOreDrop(ModBlocks.DEEPSLATE_BISMUTH_ORE.get(), ModItems.BISMUTH.get()));
+        this.add(ModBlocks.GRANITE_BISMUTH_ORE.get(), (block) -> createOreDrop(ModBlocks.GRANITE_BISMUTH_ORE.get(), ModItems.BISMUTH.get()));
+        this.add(ModBlocks.TUFF_BISMUTH_ORE.get(), (block) -> createOreDrop(ModBlocks.TUFF_BISMUTH_ORE.get(), ModItems.BISMUTH.get()));
+        this.add(ModBlocks.ANDESITE_BISMUTH_ORE.get(), (block) -> createOreDrop(ModBlocks.ANDESITE_BISMUTH_ORE.get(), ModItems.BISMUTH.get()));
+        this.add(ModBlocks.DIORITE_BISMUTH_ORE.get(), (block) -> createOreDrop(ModBlocks.DIORITE_BISMUTH_ORE.get(), ModItems.BISMUTH.get()));
 
         this.add(ModBlocks.DEEPSLATE_PYRITE_ORE.get(), (block) -> createOreDrop(ModBlocks.DEEPSLATE_PYRITE_ORE.get(), ModItems.RAW_PYRITE.get()));
         this.add(ModBlocks.PYRITE_ORE.get(), (block) -> createOreDrop(ModBlocks.PYRITE_ORE.get(), ModItems.RAW_PYRITE.get()));

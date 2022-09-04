@@ -7,6 +7,7 @@ import com.bic.bit_o_everything.entity.custom.ModChestBoatEntity;
 import com.bic.bit_o_everything.item.custom.*;
 import com.bic.bit_o_everything.spells.*;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -217,9 +218,22 @@ public class ModItems {
     public static final RegistryObject<Item> COPPER_NUGGET = ITEMS.register("copper_nugget",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
     //endregion
-
-
+    //region Rosalite
+    public static final RegistryObject<Item> ROSALITE = ITEMS.register("rosalite",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+    public static final RegistryObject<Item> ROSALITE_SHARD = ITEMS.register("rosalite_shard",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+    //endregion
+    //region Bismuth
+    public static final RegistryObject<Item> BISMUTH = ITEMS.register("bismuth",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+    public static final RegistryObject<Item> BISMUTH_NUGGET = ITEMS.register("bismuth_nugget",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+    public static final RegistryObject<Item> BISMUTH_INGOT = ITEMS.register("bismuth_ingot",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+    //endregion
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
+
     }
 }

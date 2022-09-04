@@ -24,6 +24,8 @@
     "bit_o_everything:ruby_block",
     "bit_o_everything:brass_block",
     "bit_o_everything:bronze_block",
-    "bit_o_everything:electrum_block"
+    "bit_o_everything:electrum_block",
+    "bit_o_everything:rosalite_block",
+    "bit_o_everything:basalt_rosalite_ore"
   ]
 }

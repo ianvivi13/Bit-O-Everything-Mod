@@ -148,6 +148,15 @@
     "bit_o_everything:electrum_block",
     "bit_o_everything:steel_block",
     "bit_o_everything:crystalline_block",
-    "bit_o_everything:draconium_block"
+    "bit_o_everything:draconium_block",
+    "bit_o_everything:rosalite_block",
+    "bit_o_everything:basalt_rosalite_ore",
+    "bit_o_everything:bismuth_block",
+    "bit_o_everything:bismuth_ore",
+    "bit_o_everything:tuff_bismuth_ore",
+    "bit_o_everything:deepslate_bismuth_ore",
+    "bit_o_everything:granite_bismuth_ore",
+    "bit_o_everything:andesite_bismuth_ore",
+    "bit_o_everything:diorite_bismuth_ore"
   ]
 }
