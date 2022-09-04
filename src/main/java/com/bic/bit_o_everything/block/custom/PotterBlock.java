@@ -99,7 +99,7 @@ public class PotterBlock extends BaseEntityBlock{
         add(new Pair<>(() -> Blocks.MEDIUM_AMETHYST_BUD, () -> Blocks.MEDIUM_AMETHYST_BUD.asItem()));
         add(new Pair<>(() -> Blocks.LARGE_AMETHYST_BUD, () -> Blocks.LARGE_AMETHYST_BUD.asItem()));
         add(new Pair<>(() -> Blocks.AMETHYST_CLUSTER, () -> Blocks.AMETHYST_CLUSTER.asItem()));
-        add(new Pair<>(() -> ModBlocks.CHERRY_SAPLING.get(), () -> ModBlocks.CHERRY_SAPLING.get().asItem()));
+        //add(new Pair<>(() -> ModBlocks.CHERRY_SAPLING.get(), () -> ModBlocks.CHERRY_SAPLING.get().asItem()));
         add(new Pair<>(() -> Blocks.LILY_PAD, () -> Blocks.LILY_PAD.asItem()));
         add(new Pair<>(() -> Blocks.FIRE, () -> Items.TORCH));
         add(new Pair<>(() -> Blocks.SOUL_FIRE, () -> Items.SOUL_TORCH));

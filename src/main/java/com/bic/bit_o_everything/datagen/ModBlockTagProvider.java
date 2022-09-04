@@ -5,6 +5,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
 
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -21,6 +22,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         ;
 
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .add(ModBlocks.SILICON_ORE.get())
+                .add(ModBlocks.RED_SILICON_ORE.get())
 
         ;
 
@@ -62,8 +65,11 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.SILVER_BLOCK.get())
                 .add(ModBlocks.TIN_ORE.get())
                 .add(ModBlocks.DEEPSLATE_TIN_ORE.get())
+                .add(ModBlocks.LEAD_ORE.get())
+                .add(ModBlocks.DEEPSLATE_LEAD_ORE.get())
                 .add(ModBlocks.RAW_TIN_BLOCK.get())
                 .add(ModBlocks.TIN_BLOCK.get())
+                .add(ModBlocks.SILICON_BLOCK.get())
                 .add(ModBlocks.TITANIUM_ORE.get())
                 .add(ModBlocks.DEEPSLATE_TITANIUM_ORE.get())
                 .add(ModBlocks.RAW_TITANIUM_BLOCK.get())
@@ -150,6 +156,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.DEEPSLATE_TIN_ORE.get())
                 .add(ModBlocks.RAW_TIN_BLOCK.get())
                 .add(ModBlocks.TIN_BLOCK.get())
+                .add(ModBlocks.LEAD_ORE.get())
+                .add(ModBlocks.DEEPSLATE_LEAD_ORE.get())
+                .add(ModBlocks.RAW_LEAD_BLOCK.get())
+                .add(ModBlocks.LEAD_BLOCK.get())
         ;
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
@@ -197,6 +207,30 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.CHERRY_PLANKS.get())
         ;
 
+        this.tag(ModTags.Blocks.SAND_ORE_REPLACEABLES)
+                .add(Blocks.SAND)
+        ;
+
+        this.tag(ModTags.Blocks.RED_SAND_ORE_REPLACEABLES)
+                .add(Blocks.RED_SAND)
+        ;
+
+        this.tag(ModTags.Blocks.ANDESITE_ORE_REPLACEABLES)
+                .add(Blocks.ANDESITE)
+        ;
+
+        this.tag(ModTags.Blocks.GRANITE_ORE_REPLACEABLES)
+                .add(Blocks.GRANITE)
+        ;
+
+        this.tag(ModTags.Blocks.DIORITE_ORE_REPLACEABLES)
+                .add(Blocks.DIORITE)
+        ;
+
+        this.tag(ModTags.Blocks.TUFF_ORE_REPLACEABLES)
+                .add(Blocks.TUFF)
+        ;
+
         this.tag(ModTags.Blocks.CHERRY_LOGS)
                 .add(ModBlocks.CHERRY_LOG.get())
                 .add(ModBlocks.STRIPPED_CHERRY_LOG.get())
@@ -213,8 +247,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.CHERRY_LEAVES.get())
         ;
 
-        this.tag(BlockTags.SAPLINGS)
-                .add(ModBlocks.CHERRY_SAPLING.get())
+        /*this.tag(BlockTags.SAPLINGS)
+                .add(ModBlocks.CHERRY_SAPLING.get())*/
         ;
 
         this.tag(BlockTags.WOODEN_STAIRS)
@@ -275,9 +309,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.RED_CONCRETE_SLAB.get())
                 .add(ModBlocks.BLACK_CONCRETE_SLAB.get())
         ;
-
-        this.tag(BlockTags.FLOWER_POTS)
-                .add(ModBlocks.POTTED_CHERRY_SAPLING.get())
+        /*this.tag(BlockTags.FLOWER_POTS)
+                .add(ModBlocks.POTTED_CHERRY_SAPLING.get())*/
         ;
 
         this.tag(BlockTags.STAIRS)

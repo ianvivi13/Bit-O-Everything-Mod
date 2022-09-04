@@ -3,12 +3,23 @@ package com.bic.bit_o_everything.datagen.loot;
 import com.bic.bit_o_everything.block.ModBlocks;
 import com.bic.bit_o_everything.item.ModItems;
 import net.minecraft.data.loot.BlockLoot;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModBlockLootTables extends BlockLoot {
     private static final float[] NORMAL_LEAVES_SAPLING_CHANCES = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
+    protected static LootTable.Builder createModifiedOreDrops(Block p_176051_, Item pItem, float min, float max) {
+        return createSilkTouchDispatchTable(p_176051_, applyExplosionDecay(p_176051_, LootItem.lootTableItem(pItem).apply(SetItemCountFunction.setCount(UniformGenerator.between(min, max))).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE))));
+    }
 
     @Override
     protected void addTables() {
@@ -22,6 +33,9 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.RAW_SILVER_BLOCK.get());
         this.dropSelf(ModBlocks.TIN_BLOCK.get());
         this.dropSelf(ModBlocks.RAW_TIN_BLOCK.get());
+        this.dropSelf(ModBlocks.SILICON_BLOCK.get());
+        this.dropSelf(ModBlocks.LEAD_BLOCK.get());
+        this.dropSelf(ModBlocks.RAW_LEAD_BLOCK.get());
         this.dropSelf(ModBlocks.TITANIUM_BLOCK.get());
         this.dropSelf(ModBlocks.RAW_TITANIUM_BLOCK.get());
         this.dropSelf(ModBlocks.RUBY_BLOCK.get());
@@ -43,7 +57,7 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.CHERRY_PRESSURE_PLATE.get());
         this.dropSelf(ModBlocks.CHERRY_SIGN.get());
         this.dropSelf(ModBlocks.CHERRY_WALL_SIGN.get());
-        this.dropSelf(ModBlocks.CHERRY_SAPLING.get());
+        //this.dropSelf(ModBlocks.CHERRY_SAPLING.get());
 
         this.dropSelf(ModBlocks.WHITE_CONCRETE_STAIRS.get());
         this.dropSelf(ModBlocks.ORANGE_CONCRETE_STAIRS.get());
@@ -81,8 +95,11 @@ public class ModBlockLootTables extends BlockLoot {
 
         this.add(ModBlocks.CHERRY_DOOR.get(), BlockLoot::createDoorTable);
         this.add(ModBlocks.CHERRY_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.CHERRY_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.CHERRY_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        //this.add(ModBlocks.CHERRY_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.CHERRY_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(ModBlocks.CHERRY_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.CHERRY_LEAVES.get())); //TEMPORARY
 
+        this.add(ModBlocks.SILICON_ORE.get(), (block) -> createModifiedOreDrops(ModBlocks.SILICON_ORE.get(), ModItems.UNREFINED_SILICON.get(), 1.0F, 3.0F));
+        this.add(ModBlocks.RED_SILICON_ORE.get(), (block) -> createModifiedOreDrops(ModBlocks.RED_SILICON_ORE.get(), ModItems.RED_UNREFINED_SILICON.get(), 1.0F, 3.0F));
         this.add(ModBlocks.DEEPSLATE_PYRITE_ORE.get(), (block) -> createOreDrop(ModBlocks.DEEPSLATE_PYRITE_ORE.get(), ModItems.RAW_PYRITE.get()));
         this.add(ModBlocks.PYRITE_ORE.get(), (block) -> createOreDrop(ModBlocks.PYRITE_ORE.get(), ModItems.RAW_PYRITE.get()));
         this.add(ModBlocks.DEEPSLATE_ZINC_ORE.get(), (block) -> createOreDrop(ModBlocks.DEEPSLATE_ZINC_ORE.get(), ModItems.RAW_ZINC.get()));
@@ -93,6 +110,8 @@ public class ModBlockLootTables extends BlockLoot {
         this.add(ModBlocks.SILVER_ORE.get(), (block) -> createOreDrop(ModBlocks.SILVER_ORE.get(), ModItems.RAW_SILVER.get()));
         this.add(ModBlocks.DEEPSLATE_TIN_ORE.get(), (block) -> createOreDrop(ModBlocks.DEEPSLATE_TIN_ORE.get(), ModItems.RAW_TIN.get()));
         this.add(ModBlocks.TIN_ORE.get(), (block) -> createOreDrop(ModBlocks.TIN_ORE.get(), ModItems.RAW_TIN.get()));
+        this.add(ModBlocks.DEEPSLATE_LEAD_ORE.get(), (block) -> createOreDrop(ModBlocks.DEEPSLATE_LEAD_ORE.get(), ModItems.RAW_LEAD.get()));
+        this.add(ModBlocks.LEAD_ORE.get(), (block) -> createModifiedOreDrops(ModBlocks.LEAD_ORE.get(), ModItems.RAW_LEAD.get(), 1.0F, 3.0F));
         this.add(ModBlocks.DEEPSLATE_TITANIUM_ORE.get(), (block) -> createOreDrop(ModBlocks.DEEPSLATE_TITANIUM_ORE.get(), ModItems.RAW_TITANIUM.get()));
         this.add(ModBlocks.TITANIUM_ORE.get(), (block) -> createOreDrop(ModBlocks.TITANIUM_ORE.get(), ModItems.RAW_TITANIUM.get()));
         this.add(ModBlocks.DEEPSLATE_RUBY_ORE.get(), (block) -> createOreDrop(ModBlocks.DEEPSLATE_RUBY_ORE.get(), ModItems.RUBY.get()));
@@ -140,7 +159,7 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.RED_TERRACOTTA_STAIRS.get());
         this.dropSelf(ModBlocks.BLACK_TERRACOTTA_STAIRS.get());
 
-        this.dropPottedContents(ModBlocks.POTTED_CHERRY_SAPLING.get());
+        //this.dropPottedContents(ModBlocks.POTTED_CHERRY_SAPLING.get());
     }
 
     @Override
