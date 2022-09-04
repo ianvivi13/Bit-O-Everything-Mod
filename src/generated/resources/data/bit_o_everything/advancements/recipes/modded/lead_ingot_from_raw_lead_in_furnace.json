@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "bit_o_everything:lead_ingot_from_raw_lead_in_furnace"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "hasraw_lead": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bit_o_everything:raw_lead"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "hasraw_lead",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bit_o_everything:lead_ingot_from_raw_lead_in_furnace"
+    ]
+  }
+}

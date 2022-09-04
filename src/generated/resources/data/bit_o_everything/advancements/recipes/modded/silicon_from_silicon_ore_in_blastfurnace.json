@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "hasBlock{bit_o_everything:silicon_ore}": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bit_o_everything:silicon_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "bit_o_everything:silicon_from_silicon_ore_in_blastfurnace"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "hasBlock{bit_o_everything:silicon_ore}",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bit_o_everything:silicon_from_silicon_ore_in_blastfurnace"
+    ]
+  }
+}
