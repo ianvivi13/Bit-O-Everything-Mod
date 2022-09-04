@@ -1,4 +1,4 @@
-// 1.19	2022-09-04T12:07:44.0985157	Tags for minecraft:block
+// 1.19	2022-09-04T14:43:20.1780218	Tags for minecraft:block
 411f6180b37eea00f0069105f932d6024ebc8cfd data/bit_o_everything/tags/blocks/andesite_ore_replaceables.json
 b7af7a48840696dd4f915f7204177d03be42fff2 data/bit_o_everything/tags/blocks/cherry_logs.json
 bb23c35771e96cc866b5387d5569746e64c23a4c data/bit_o_everything/tags/blocks/diorite_ore_replaceables.json
@@ -12,15 +12,16 @@ a89e0fdcaba781e611ac3eb2af9f1d51551f5966 data/minecraft/tags/blocks/fence_gates.
 773385419d9d4ec0f65c2970d6a1e7034cba3e2e data/minecraft/tags/blocks/logs_that_burn.json
 d09b3b461b0645d51c917368ce61d484ccb8a7a4 data/minecraft/tags/blocks/mineable/axe.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/mineable/hoe.json
-7503315e53ccca1f846183eaac8b4e1bd8fdd815 data/minecraft/tags/blocks/mineable/pickaxe.json
+6e5ad0cb3b94dd2396b472a9ba50c12655325a45 data/minecraft/tags/blocks/mineable/pickaxe.json
 e60a6928ac0f68ef9c5ff2e5ecd52790806f2f88 data/minecraft/tags/blocks/mineable/shovel.json
-18e8294c3c48344a1038fa6bbd5d67c33dff9550 data/minecraft/tags/blocks/needs_diamond_tool.json
-84dfaa2846c37c55488540ab56241846e49f1709 data/minecraft/tags/blocks/needs_iron_tool.json
-50e964852f7e7569e93bf1d7da2679aeb3211ba7 data/minecraft/tags/blocks/needs_stone_tool.json
+bfdf062e0f1a1e1c943dc3ba2f754ddf28fb147d data/minecraft/tags/blocks/needs_diamond_tool.json
+04a9cb31e687503f1fea5e2cb23730cd224fc0ed data/minecraft/tags/blocks/needs_iron_tool.json
+32100c1520f9ba36b1cda6324bcd39ab2097527b data/minecraft/tags/blocks/needs_stone_tool.json
 a1f1fafebe88c5aea44fa5a92ab5121ec897bc91 data/minecraft/tags/blocks/planks.json
-927b898866aead0dc293724b9cb93bf6f87feaa0 data/minecraft/tags/blocks/slabs.json
-e96a5499fd5813b001c825a4488792b264de5a61 data/minecraft/tags/blocks/stairs.json
+04787f3e30ea6a5a98eb3997289058bef03ea126 data/minecraft/tags/blocks/slabs.json
+1f716e3d06d7ec728a691d7f5fe4ac3d1bdff369 data/minecraft/tags/blocks/stairs.json
 a2b3c6ca8ca43a28d216179b76c81773853068d7 data/minecraft/tags/blocks/standing_signs.json
+44a5894a96b7ea0a1af7b67450e8865d62e60243 data/minecraft/tags/blocks/walls.json
 2948513a8b0937cf61f0f2502e94db3b24cd8b72 data/minecraft/tags/blocks/wall_signs.json
 3dc119173971169f006dbf8575fbd68049118c43 data/minecraft/tags/blocks/wooden_buttons.json
 b6e9f7b5161a987df6a807f823f07efc0f80d0dc data/minecraft/tags/blocks/wooden_doors.json

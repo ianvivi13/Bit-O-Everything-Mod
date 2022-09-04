@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "bit_o_everything:smoky_quartz_ore"
+  },
+  "result": "bit_o_everything:smoky_quartz"
+}

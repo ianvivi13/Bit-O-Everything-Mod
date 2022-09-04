@@ -8,6 +8,7 @@
     "bit_o_everything:lead_ore",
     "bit_o_everything:deepslate_lead_ore",
     "bit_o_everything:raw_lead_block",
-    "bit_o_everything:lead_block"
+    "bit_o_everything:lead_block",
+    "bit_o_everything:aluminum_block"
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "bit_o_everything:block_of_smoky_quartz"
+  },
+  "result": "bit_o_everything:smoky_quartz_stairs"
+}
