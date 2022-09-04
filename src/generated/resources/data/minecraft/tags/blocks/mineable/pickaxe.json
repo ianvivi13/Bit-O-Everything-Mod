@@ -157,6 +157,16 @@
     "bit_o_everything:deepslate_bismuth_ore",
     "bit_o_everything:granite_bismuth_ore",
     "bit_o_everything:andesite_bismuth_ore",
-    "bit_o_everything:diorite_bismuth_ore"
+    "bit_o_everything:diorite_bismuth_ore",
+    "bit_o_everything:smoky_quartz_ore",
+    "bit_o_everything:block_of_smoky_quartz",
+    "bit_o_everything:smoky_quartz_bricks",
+    "bit_o_everything:smooth_smoky_quartz_block",
+    "bit_o_everything:chiseled_smoky_quartz_block",
+    "bit_o_everything:smoky_quartz_pillar",
+    "bit_o_everything:smoky_quartz_stairs",
+    "bit_o_everything:smooth_smoky_quartz_stairs",
+    "bit_o_everything:smoky_quartz_slab",
+    "bit_o_everything:smooth_smoky_quartz_slab"
   ]
 }

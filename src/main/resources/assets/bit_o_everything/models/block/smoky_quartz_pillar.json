@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "bit_o_everything:block/smoky_quartz_pillar_top",
+    "side": "bit_o_everything:block/smoky_quartz_pillar_side"
+  }
+}

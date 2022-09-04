@@ -472,6 +472,23 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModItems.CHERRY_SIGN.get(), ModBlocks.CHERRY_BUTTON.get(), ModBlocks.CHERRY_PRESSURE_PLATE.get(),
                 ModItems.CHERRY_BOAT.get(), ModItems.CHERRY_CHEST_BOAT.get());
 
+        //Smoky Quartz
+        chiseledBuilder(ModBlocks.CHISELED_SMOKY_QUARTZ_BLOCK.get(), Ingredient.of(ModBlocks.SMOKY_QUARTZ_SLAB.get())).unlockedBy("has_chiseled_smoky_quartz_block", has(ModBlocks.CHISELED_SMOKY_QUARTZ_BLOCK.get())).unlockedBy("has_block_of_smoky_quartz", has(ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get())).unlockedBy("has_smoky_quartz_pillar", has(ModBlocks.SMOKY_QUARTZ_PILLAR.get())).save(pFinishedRecipeConsumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.SMOKY_QUARTZ_PILLAR.get(), 2).define('#', ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get()).pattern("#").pattern("#").unlockedBy("has_chiseled_smoky_quartz_block", has(ModBlocks.CHISELED_SMOKY_QUARTZ_BLOCK.get())).unlockedBy("has_block_of_smoky_quartz", has(ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get())).unlockedBy("has_smoky_quartz_pillar", has(ModBlocks.SMOKY_QUARTZ_PILLAR.get())).save(pFinishedRecipeConsumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get()).define('#', ModItems.SMOKY_QUARTZ.get()).pattern("##").pattern("##").unlockedBy("has_smoky_quartz", has(ModItems.SMOKY_QUARTZ.get())).save(pFinishedRecipeConsumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.SMOKY_QUARTZ_BRICKS.get(), 4).define('#', ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get()).pattern("##").pattern("##").unlockedBy("has_block_of_smoky_quartz", has(ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get())).save(pFinishedRecipeConsumer);
+        slabBuilder(ModBlocks.SMOKY_QUARTZ_SLAB.get(), Ingredient.of(ModBlocks.CHISELED_SMOKY_QUARTZ_BLOCK.get(), ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get(), ModBlocks.SMOKY_QUARTZ_PILLAR.get())).unlockedBy("has_chiseled_smoky_quartz_block", has(ModBlocks.CHISELED_SMOKY_QUARTZ_BLOCK.get())).unlockedBy("has_block_of_smoky_quartz", has(ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get())).unlockedBy("has_smoky_quartz_pillar", has(ModBlocks.SMOKY_QUARTZ_PILLAR.get())).save(pFinishedRecipeConsumer);
+        stairBuilder(ModBlocks.SMOKY_QUARTZ_STAIRS.get(), Ingredient.of(ModBlocks.CHISELED_SMOKY_QUARTZ_BLOCK.get(), ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get(), ModBlocks.SMOKY_QUARTZ_PILLAR.get())).unlockedBy("has_chiseled_smoky_quartz_block", has(ModBlocks.CHISELED_SMOKY_QUARTZ_BLOCK.get())).unlockedBy("has_block_of_smoky_quartz", has(ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get())).unlockedBy("has_smoky_quartz_pillar", has(ModBlocks.SMOKY_QUARTZ_PILLAR.get())).save(pFinishedRecipeConsumer);
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModBlocks.SMOKY_QUARTZ_ORE.get()), ModItems.SMOKY_QUARTZ.get(), 0.2F, 200).unlockedBy("has_smoky_quartz_ore", has(ModBlocks.SMOKY_QUARTZ_ORE.get())).save(pFinishedRecipeConsumer);
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get()), ModBlocks.SMOOTH_SMOKY_QUARTZ_BLOCK.get().asItem(), 0.1F, 200).unlockedBy("has_block_of_smoky_quartz", has(ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get())).save(pFinishedRecipeConsumer);
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get()), ModBlocks.SMOKY_QUARTZ_SLAB.get(), 2).unlockedBy("has_block_of_smoky_quartz", has(ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get())).save(pFinishedRecipeConsumer, "smoky_quartz_slab_from_stonecutting");
+        stonecutterResultFromBase(pFinishedRecipeConsumer, ModBlocks.SMOKY_QUARTZ_STAIRS.get(), ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get());
+        stonecutterResultFromBase(pFinishedRecipeConsumer, ModBlocks.SMOKY_QUARTZ_PILLAR.get(), ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get());
+        stonecutterResultFromBase(pFinishedRecipeConsumer, ModBlocks.CHISELED_SMOKY_QUARTZ_BLOCK.get(), ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get());
+        stonecutterResultFromBase(pFinishedRecipeConsumer, ModBlocks.SMOKY_QUARTZ_BRICKS.get(), ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get());
+        stonecutterResultFromBase(pFinishedRecipeConsumer, ModBlocks.SMOOTH_SMOKY_QUARTZ_SLAB.get(), ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get(), 2);
+        stonecutterResultFromBase(pFinishedRecipeConsumer, ModBlocks.SMOOTH_SMOKY_QUARTZ_STAIRS.get(), ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get());
+
 
 
         Surround(pFinishedRecipeConsumer, ModItems.EXPLOSIVE_ARROW.get(), Blocks.TNT, Items.ARROW, 8);

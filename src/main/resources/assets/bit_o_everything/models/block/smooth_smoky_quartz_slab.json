@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "bit_o_everything:block/smooth_smoky_quartz_block",
+    "side": "bit_o_everything:block/smooth_smoky_quartz_block",
+    "top": "bit_o_everything:block/smooth_smoky_quartz_block"
+  }
+}

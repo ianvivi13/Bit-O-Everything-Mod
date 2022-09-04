@@ -201,6 +201,16 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.GRANITE_BISMUTH_ORE.get())
                 .add(ModBlocks.ANDESITE_BISMUTH_ORE.get())
                 .add(ModBlocks.DIORITE_BISMUTH_ORE.get())
+                .add(ModBlocks.SMOKY_QUARTZ_ORE.get())
+                .add(ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get())
+                .add(ModBlocks.SMOKY_QUARTZ_BRICKS.get())
+                .add(ModBlocks.SMOOTH_SMOKY_QUARTZ_BLOCK.get())
+                .add(ModBlocks.CHISELED_SMOKY_QUARTZ_BLOCK.get())
+                .add(ModBlocks.SMOKY_QUARTZ_PILLAR.get())
+                .add(ModBlocks.SMOKY_QUARTZ_STAIRS.get())
+                .add(ModBlocks.SMOOTH_SMOKY_QUARTZ_STAIRS.get())
+                .add(ModBlocks.SMOKY_QUARTZ_SLAB.get())
+                .add(ModBlocks.SMOOTH_SMOKY_QUARTZ_SLAB.get())
         ;
         //endregion
         //region Needs <Level>

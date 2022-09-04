@@ -214,6 +214,18 @@
   "block.bit_o_everything.granite_bismuth_ore": "Granite Bismuth Ore",
   "block.bit_o_everything.diorite_bismuth_ore": "Diorite Bismuth Ore",
 
+  "item.bit_o_everything.smoky_quartz": "Smoky Quartz",
+  "block.bit_o_everything.smoky_quartz_ore": "Smoky Quartz Ore",
+  "block.bit_o_everything.block_of_smoky_quartz": "Block of Smoky Quartz",
+  "block.bit_o_everything.smoky_quartz_bricks": "Smoky Quartz Bricks",
+  "block.bit_o_everything.smooth_smoky_quartz_block": "Smooth Smoky Quartz Block",
+  "block.bit_o_everything.chiseled_smoky_quartz_block": "Chiseled Smoky Quartz Block",
+  "block.bit_o_everything.smoky_quartz_pillar": "Smoky Quartz Pillar",
+  "block.bit_o_everything.smoky_quartz_stairs": "Smoky Quartz Stairs",
+  "block.bit_o_everything.smooth_smoky_quartz_stairs": "Smooth Smoky Quartz Stairs",
+  "block.bit_o_everything.smoky_quartz_slab": "Smoky Quartz Slab",
+  "block.bit_o_everything.smooth_smoky_quartz_slab": "Smooth Smoky Quartz Slab",
+
   "block.bit_o_everything.crystalline_block": "Crystalline Block",
   "block.bit_o_everything.aluminum_block": "Aluminum Block",
   "block.bit_o_everything.brass_block": "Brass Block",
@@ -269,8 +281,8 @@
   "sounds.bit_o_everything.spell_fireball": "Spell casted: Fireball",
   "sounds.bit_o_everything.spell_slowfalling": "Spell casted: Slowfalling",
 
-
   "itemGroup.modded": "Modded",
-  "itemGroup.magic": "Magic"
+  "itemGroup.magic": "Magic",
+  "itemGroup.minerals": "Crystals, Ores, and Alloys"
 
 }

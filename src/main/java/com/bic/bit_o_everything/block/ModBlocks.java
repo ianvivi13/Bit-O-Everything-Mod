@@ -562,12 +562,56 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
                     .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
     //endregion
+    //region Smoky Quartz
+    //TODO: drops, recipes, tags
+    public static final RegistryObject<Block> SMOKY_QUARTZ_ORE = registerBlock("smoky_quartz_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> BLOCK_OF_SMOKY_QUARTZ = registerBlock("block_of_smoky_quartz",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> SMOKY_QUARTZ_BRICKS = registerBlock("smoky_quartz_bricks",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> SMOOTH_SMOKY_QUARTZ_BLOCK = registerBlock("smooth_smoky_quartz_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> CHISELED_SMOKY_QUARTZ_BLOCK = registerBlock("chiseled_smoky_quartz_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> SMOKY_QUARTZ_PILLAR = registerBlock("smoky_quartz_pillar",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> SMOKY_QUARTZ_STAIRS = registerBlock("smoky_quartz_stairs",
+            () -> new StairBlock(Blocks.QUARTZ_STAIRS::defaultBlockState, BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> SMOOTH_SMOKY_QUARTZ_STAIRS = registerBlock("smooth_smoky_quartz_stairs",
+            () -> new StairBlock(Blocks.SMOOTH_QUARTZ_STAIRS::defaultBlockState, BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> SMOKY_QUARTZ_SLAB = registerBlock("smoky_quartz_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> SMOOTH_SMOKY_QUARTZ_SLAB = registerBlock("smooth_smoky_quartz_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+    //endregion
+
 
     private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {
         return BLOCKS.register(name, block);
     }
 
     public static void register(IEventBus eventBus) {
+
         BLOCKS.register(eventBus);
     }
 }

@@ -3,6 +3,7 @@ package com.bic.bit_o_everything.datagen.loot;
 import com.bic.bit_o_everything.block.ModBlocks;
 import com.bic.bit_o_everything.item.ModItems;
 import net.minecraft.data.loot.BlockLoot;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.registries.RegistryObject;
@@ -112,6 +113,18 @@ public class ModBlockLootTables extends BlockLoot {
         this.add(ModBlocks.RHODOCHROSITE.get(), (block) -> createOreDrop(ModBlocks.RHODOCHROSITE.get(), ModItems.RHODOCHROSITE_SHARD.get()));
         this.add(ModBlocks.MOLDAVITE.get(), (block) -> createOreDrop(ModBlocks.MOLDAVITE.get(), ModItems.MOLDAVITE_SHARD.get()));
         this.add(ModBlocks.TANZANITE.get(), (block) -> createOreDrop(ModBlocks.TANZANITE.get(), ModItems.TANZANITE_SHARD.get()));
+
+        //Smoky Quartz
+        this.dropSelf(ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get());
+        this.dropSelf(ModBlocks.SMOKY_QUARTZ_BRICKS.get());
+        this.dropSelf(ModBlocks.SMOOTH_SMOKY_QUARTZ_BLOCK.get());
+        this.dropSelf(ModBlocks.CHISELED_SMOKY_QUARTZ_BLOCK.get());
+        this.dropSelf(ModBlocks.SMOKY_QUARTZ_PILLAR.get());
+        this.dropSelf(ModBlocks.SMOKY_QUARTZ_STAIRS.get());
+        this.dropSelf(ModBlocks.SMOOTH_SMOKY_QUARTZ_STAIRS.get());
+        this.add(ModBlocks.SMOKY_QUARTZ_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.SMOOTH_SMOKY_QUARTZ_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.SMOKY_QUARTZ_ORE.get(), (block) -> createOreDrop(ModBlocks.SMOKY_QUARTZ_ORE.get(), ModItems.SMOKY_QUARTZ.get()));
 
         this.dropSelf(ModBlocks.BISMUTH_BLOCK.get());
         this.add(ModBlocks.BISMUTH_ORE.get(), (block) -> createOreDrop(ModBlocks.BISMUTH_ORE.get(), ModItems.BISMUTH.get()));

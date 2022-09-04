@@ -232,6 +232,10 @@ public class ModItems {
     public static final RegistryObject<Item> BISMUTH_INGOT = ITEMS.register("bismuth_ingot",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
     //endregion
+    //region Smoky Quartz
+    public static final RegistryObject<Item> SMOKY_QUARTZ = ITEMS.register("smoky_quartz",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+    //endregion
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
 
