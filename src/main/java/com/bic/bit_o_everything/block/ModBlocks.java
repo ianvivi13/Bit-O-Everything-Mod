@@ -5,15 +5,13 @@ import com.bic.bit_o_everything.block.custom.*;
 import com.bic.bit_o_everything.block.entity.ModWoodTypes;
 import com.bic.bit_o_everything.item.ModCreativeModeTab;
 import com.bic.bit_o_everything.item.ModItems;
-import com.bic.bit_o_everything.world.feature.tree.CherryTreeGrower;
+//import com.bic.bit_o_everything.world.feature.tree.CherryTreeGrower;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -114,6 +112,34 @@ public class ModBlocks {
                     .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
 
     public static final RegistryObject<Block> RAW_TIN_BLOCK = registerBlock("raw_tin_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> LEAD_ORE = registerBlock("lead_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> DEEPSLATE_LEAD_ORE = registerBlock("deepslate_lead_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<FallingBlock> SILICON_ORE = registerBlock("silicon_ore",
+            () -> new FallingBlock(BlockBehaviour.Properties.of(Material.SAND).sound(SoundType.SAND)
+                    .strength(0.5f)), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<FallingBlock> RED_SILICON_ORE = registerBlock("red_silicon_ore",
+            () -> new FallingBlock(BlockBehaviour.Properties.of(Material.SAND).sound(SoundType.SAND)
+                    .strength(0.5f)), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> SILICON_BLOCK = registerBlock("silicon_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> LEAD_BLOCK = registerBlock("lead_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
+                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> RAW_LEAD_BLOCK = registerBlock("raw_lead_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
 
@@ -255,8 +281,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> CHERRY_LEAVES = registerBlock("cherry_leaves",
             () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.MODDED);
 
-    public static final RegistryObject<Block> CHERRY_SAPLING = registerBlock("cherry_sapling",
-            () -> new SaplingBlock(new CherryTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.MODDED);
+    /*public static final RegistryObject<Block> CHERRY_SAPLING = registerBlock("cherry_sapling",
+            () -> new SaplingBlock(new CherryTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.MODDED);*/
 
     //endregion
     //region Concrete Slabs
@@ -479,8 +505,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> CONCRETE_POTTER = registerBlock("concrete_potter",
             () -> new ConcretePotterBlock(BlockBehaviour.Properties.of(Material.STONE).noOcclusion().dynamicShape().instabreak()), ModCreativeModeTab.MODDED);
 
-    public static final RegistryObject<Block> POTTED_CHERRY_SAPLING = registerBlockWithoutBlockItem("potted_cherry_sapling",
-            () -> new FlowerPotBlock(ModBlocks.CHERRY_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
+    /*public static final RegistryObject<Block> POTTED_CHERRY_SAPLING = registerBlockWithoutBlockItem("potted_cherry_sapling",
+            () -> new FlowerPotBlock(ModBlocks.CHERRY_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));*/
 
     //region Crystals
     public static final RegistryObject<CrystalBlock> CELESTITE = registerBlock("celestite",

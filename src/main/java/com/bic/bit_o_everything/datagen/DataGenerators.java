@@ -4,10 +4,10 @@ import com.bic.bit_o_everything.BitOEverything;
 import com.bic.bit_o_everything.datagen.loot.ModBlockLootTables;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.data.event.GatherDataEvent;
 
 @Mod.EventBusSubscriber(modid = BitOEverything.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerators {

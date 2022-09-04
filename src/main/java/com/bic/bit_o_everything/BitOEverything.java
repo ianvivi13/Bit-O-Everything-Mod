@@ -12,6 +12,8 @@ import com.bic.bit_o_everything.sound.ModSounds;
 import com.bic.bit_o_everything.spells.AbstractSpell;
 import com.bic.bit_o_everything.spells.FireballSpell;
 import com.bic.bit_o_everything.util.BetterBrewingRecipe;
+import com.bic.bit_o_everything.world.feature.ModConfiguredFeatures;
+import com.bic.bit_o_everything.world.feature.ModPlacedFeatures;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
@@ -57,6 +59,9 @@ public class BitOEverything  {
 
         ModParticles.register(eventBus);
 
+        ModConfiguredFeatures.register(eventBus);
+        ModPlacedFeatures.register(eventBus);
+
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
 
@@ -76,8 +81,8 @@ public class BitOEverything  {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOLDAVITE.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CRYSTALLINE_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_LEAVES.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_SAPLING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_CHERRY_SAPLING.get(), RenderType.cutout());
+        //ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_SAPLING.get(), RenderType.cutout());
+        //ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_CHERRY_SAPLING.get(), RenderType.cutout());
         WoodType.register(ModWoodTypes.CHERRY);
         BlockEntityRenderers.register(ModBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
 

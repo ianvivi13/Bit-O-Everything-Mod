@@ -1,3 +1,6 @@
 {
-  "values": []
+  "values": [
+    "bit_o_everything:silicon_ore",
+    "bit_o_everything:red_silicon_ore"
+  ]
 }

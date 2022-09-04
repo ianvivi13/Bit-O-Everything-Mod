@@ -411,6 +411,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         Compact(pFinishedRecipeConsumer, ModItems.SILVER_INGOT.get(), ModBlocks.SILVER_BLOCK.get());
         Compact(pFinishedRecipeConsumer, ModItems.RAW_TIN.get(), ModBlocks.RAW_TIN_BLOCK.get());
         Compact(pFinishedRecipeConsumer, ModItems.TIN_INGOT.get(), ModBlocks.TIN_BLOCK.get());
+        Compact(pFinishedRecipeConsumer, ModItems.SILICON.get(), ModBlocks.SILICON_BLOCK.get());
+        Compact(pFinishedRecipeConsumer, ModItems.RAW_LEAD.get(), ModBlocks.RAW_LEAD_BLOCK.get());
+        Compact(pFinishedRecipeConsumer, ModItems.LEAD_INGOT.get(), ModBlocks.LEAD_BLOCK.get());
         Compact(pFinishedRecipeConsumer, ModItems.RAW_TITANIUM.get(), ModBlocks.RAW_TITANIUM_BLOCK.get());
         Compact(pFinishedRecipeConsumer, ModItems.TITANIUM_INGOT.get(), ModBlocks.TITANIUM_BLOCK.get());
         Compact(pFinishedRecipeConsumer, ModItems.RUBY.get(), ModBlocks.RUBY_BLOCK.get());
@@ -460,6 +463,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         FurnaceBlast(pFinishedRecipeConsumer, ModItems.MAGNESIUM_INGOT.get(),1.0f, ModBlocks.DEEPSLATE_MAGNESIUM_ORE.get(), ModBlocks.MAGNESIUM_ORE.get(), ModItems.RAW_MAGNESIUM.get());
         FurnaceBlast(pFinishedRecipeConsumer, ModItems.SILVER_INGOT.get(),1.0f, ModBlocks.DEEPSLATE_SILVER_ORE.get(), ModBlocks.SILVER_ORE.get(), ModItems.RAW_SILVER.get());
         FurnaceBlast(pFinishedRecipeConsumer, ModItems.TIN_INGOT.get(),1.0f, ModBlocks.DEEPSLATE_TIN_ORE.get(), ModBlocks.TIN_ORE.get(), ModItems.RAW_TIN.get());
+        FurnaceBlast(pFinishedRecipeConsumer, ModItems.LEAD_INGOT.get(),1.0f, ModBlocks.DEEPSLATE_LEAD_ORE.get(), ModBlocks.LEAD_ORE.get(), ModItems.RAW_LEAD.get());
+        FurnaceBlast(pFinishedRecipeConsumer, ModItems.SILICON.get(),1.0f, ModBlocks.SILICON_ORE.get(), ModBlocks.RED_SILICON_ORE.get(), ModItems.RED_UNREFINED_SILICON.get(), ModItems.UNREFINED_SILICON.get());
         FurnaceBlast(pFinishedRecipeConsumer, ModItems.TITANIUM_INGOT.get(),1.0f, ModBlocks.DEEPSLATE_TITANIUM_ORE.get(), ModBlocks.TITANIUM_ORE.get(), ModItems.RAW_TITANIUM.get());
         FurnaceBlast(pFinishedRecipeConsumer, ModItems.RUBY.get(),1.0f, ModBlocks.DEEPSLATE_RUBY_ORE.get(), ModBlocks.RUBY_ORE.get());
         FurnaceBlast(pFinishedRecipeConsumer, ModItems.SAPPHIRE.get(),1.0f, ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(), ModBlocks.SAPPHIRE_ORE.get());

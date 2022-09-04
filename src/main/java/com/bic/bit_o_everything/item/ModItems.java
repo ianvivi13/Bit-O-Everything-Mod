@@ -51,6 +51,14 @@ public class ModItems {
             () -> new ModChestBoatItem(ModChestBoatEntity.Type.CHERRY,
                     (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.MODDED)));
 
+    public static final RegistryObject<Item> UNREFINED_SILICON = ITEMS.register("unrefined_silicon",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+
+    public static final RegistryObject<Item> RED_UNREFINED_SILICON = ITEMS.register("red_unrefined_silicon",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+
+    public static final RegistryObject<Item> SILICON = ITEMS.register("silicon",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
     public static final RegistryObject<Item> RAW_ZINC = ITEMS.register("raw_zinc",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
 
@@ -73,6 +81,12 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
 
     public static final RegistryObject<Item> TIN_INGOT = ITEMS.register("tin_ingot",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+
+    public static final RegistryObject<Item> RAW_LEAD = ITEMS.register("raw_lead",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+
+    public static final RegistryObject<Item> LEAD_INGOT = ITEMS.register("lead_ingot",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
 
     public static final RegistryObject<Item> RAW_TITANIUM = ITEMS.register("raw_titanium",

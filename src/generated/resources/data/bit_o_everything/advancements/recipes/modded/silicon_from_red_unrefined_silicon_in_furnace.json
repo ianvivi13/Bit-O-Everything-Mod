@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "bit_o_everything:silicon_from_red_unrefined_silicon_in_furnace"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "hasred_unrefined_silicon": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bit_o_everything:red_unrefined_silicon"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "hasred_unrefined_silicon",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bit_o_everything:silicon_from_red_unrefined_silicon_in_furnace"
+    ]
+  }
+}

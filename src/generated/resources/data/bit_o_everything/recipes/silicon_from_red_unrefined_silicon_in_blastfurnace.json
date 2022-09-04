@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "bit_o_everything:red_unrefined_silicon"
+  },
+  "result": "bit_o_everything:silicon"
+}
