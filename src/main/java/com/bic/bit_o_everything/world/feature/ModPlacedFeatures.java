@@ -18,7 +18,7 @@ public class ModPlacedFeatures {
     public static final DeferredRegister<PlacedFeature> PLACED_FEATURES =
             DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, BitOEverything.MOD_ID);
 
-
+    //region overworld
     public static final RegistryObject<PlacedFeature> PYRITE_ORE_PLACED = PLACED_FEATURES.register("pyrite_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.PYRITE_ORE.getHolder().get(),
                     commonOrePlacement(2,
@@ -88,6 +88,23 @@ public class ModPlacedFeatures {
             () -> new PlacedFeature(ModConfiguredFeatures.RED_SILICON_ORE.getHolder().get(),
                     commonOrePlacement(10,
                             HeightRangePlacement.uniform(VerticalAnchor.absolute(48), VerticalAnchor.absolute(128)))));
+
+    public static final RegistryObject<PlacedFeature> BISMUTH_ORE_PLACED = PLACED_FEATURES.register("bismuth_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.BISMUTH_ORE.getHolder().get(),
+                    commonOrePlacement(7,
+                            HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(48)))));
+    //endregion
+    //region nether
+    public static final RegistryObject<PlacedFeature> ROSALITE_ORE_PLACED = PLACED_FEATURES.register("rosalite_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.ROSALITE_ORE.getHolder().get(),
+                    commonOrePlacement(6,
+                            PlacementUtils.RANGE_10_10)));
+
+    public static final RegistryObject<PlacedFeature> SMOKY_QUARTZ_ORE_PLACED = PLACED_FEATURES.register("smoky_quartz_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.SMOKY_QUARTZ_ORE.getHolder().get(),
+                    commonOrePlacement(16,
+                            PlacementUtils.RANGE_10_10)));
+    //endregion
 
 
 

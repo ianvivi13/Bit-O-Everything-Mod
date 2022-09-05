@@ -1,5 +1,6 @@
-// 1.19	2022-09-04T14:43:20.1780218	Tags for minecraft:block
+// 1.19	2022-09-04T18:37:41.3918023	Tags for minecraft:block
 411f6180b37eea00f0069105f932d6024ebc8cfd data/bit_o_everything/tags/blocks/andesite_ore_replaceables.json
+c5a8e9863f73bdad2a131270da9a2c9f09c840e0 data/bit_o_everything/tags/blocks/basalt_ore_replaceables.json
 b7af7a48840696dd4f915f7204177d03be42fff2 data/bit_o_everything/tags/blocks/cherry_logs.json
 bb23c35771e96cc866b5387d5569746e64c23a4c data/bit_o_everything/tags/blocks/diorite_ore_replaceables.json
 277febcb81e6cdedb2c430d51bcd1850d597779d data/bit_o_everything/tags/blocks/granite_ore_replaceables.json

@@ -23,6 +23,7 @@ public class ModTags {
         public static final TagKey<Block> GRANITE_ORE_REPLACEABLES = tag("granite_ore_replaceables");
         public static final TagKey<Block> DIORITE_ORE_REPLACEABLES = tag("diorite_ore_replaceables");
         public static final TagKey<Block> TUFF_ORE_REPLACEABLES = tag("tuff_ore_replaceables");
+        public static final TagKey<Block> BASALT_ORE_REPLACEABLES = tag("basalt_ore_replaceables");
 
 
         private static TagKey<Block> tag(String name) {

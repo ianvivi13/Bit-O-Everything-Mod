@@ -317,6 +317,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(Blocks.TUFF)
         ;
 
+        this.tag(ModTags.Blocks.BASALT_ORE_REPLACEABLES)
+                .add(Blocks.BASALT)
+        ;
+
         this.tag(ModTags.Blocks.CHERRY_LOGS)
                 .add(ModBlocks.CHERRY_LOG.get())
                 .add(ModBlocks.STRIPPED_CHERRY_LOG.get())

@@ -401,83 +401,106 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_book", inventoryTrigger(ItemPredicate.Builder.item().of(Items.BOOK).build()))
                 .save(pFinishedRecipeConsumer);
 
+        //region Pyrite
         Compact(pFinishedRecipeConsumer, ModItems.RAW_PYRITE.get(), ModBlocks.RAW_PYRITE_BLOCK.get());
         Compact(pFinishedRecipeConsumer, ModItems.PYRITE.get(), ModBlocks.PYRITE_BLOCK.get());
+        Compact(pFinishedRecipeConsumer, ModItems.PYRITE_NUGGET.get(), ModItems.PYRITE.get());
+        FurnaceBlast(pFinishedRecipeConsumer, ModItems.PYRITE.get(),1.0f, ModBlocks.DEEPSLATE_PYRITE_ORE.get(), ModBlocks.PYRITE_ORE.get(), ModItems.RAW_PYRITE.get());
+        //endregion
+        //region Zinc
         Compact(pFinishedRecipeConsumer, ModItems.RAW_ZINC.get(), ModBlocks.RAW_ZINC_BLOCK.get());
         Compact(pFinishedRecipeConsumer, ModItems.ZINC_INGOT.get(), ModBlocks.ZINC_BLOCK.get());
+        FurnaceBlast(pFinishedRecipeConsumer, ModItems.ZINC_INGOT.get(),0.7f, ModBlocks.DEEPSLATE_ZINC_ORE.get(), ModBlocks.ZINC_ORE.get(), ModItems.RAW_ZINC.get());
+        Compact(pFinishedRecipeConsumer, ModItems.ZINC_NUGGET.get(), ModItems.ZINC_INGOT.get());
+        //endregion
+        //region Magnesium
         Compact(pFinishedRecipeConsumer, ModItems.RAW_MAGNESIUM.get(), ModBlocks.RAW_MAGNESIUM_BLOCK.get());
         Compact(pFinishedRecipeConsumer, ModItems.MAGNESIUM_INGOT.get(), ModBlocks.MAGNESIUM_BLOCK.get());
+        FurnaceBlast(pFinishedRecipeConsumer, ModItems.MAGNESIUM_INGOT.get(),0.7f, ModBlocks.DEEPSLATE_MAGNESIUM_ORE.get(), ModBlocks.MAGNESIUM_ORE.get(), ModItems.RAW_MAGNESIUM.get());
+        Compact(pFinishedRecipeConsumer, ModItems.MAGNESIUM_NUGGET.get(), ModItems.MAGNESIUM_INGOT.get());
+        //endregion
+        //region Silver
         Compact(pFinishedRecipeConsumer, ModItems.RAW_SILVER.get(), ModBlocks.RAW_SILVER_BLOCK.get());
         Compact(pFinishedRecipeConsumer, ModItems.SILVER_INGOT.get(), ModBlocks.SILVER_BLOCK.get());
+        FurnaceBlast(pFinishedRecipeConsumer, ModItems.SILVER_INGOT.get(),1.0f, ModBlocks.DEEPSLATE_SILVER_ORE.get(), ModBlocks.SILVER_ORE.get(), ModItems.RAW_SILVER.get());
+        Compact(pFinishedRecipeConsumer, ModItems.SILVER_NUGGET.get(), ModItems.SILVER_INGOT.get());
+        //endregion
+        //region Tin
         Compact(pFinishedRecipeConsumer, ModItems.RAW_TIN.get(), ModBlocks.RAW_TIN_BLOCK.get());
         Compact(pFinishedRecipeConsumer, ModItems.TIN_INGOT.get(), ModBlocks.TIN_BLOCK.get());
+        FurnaceBlast(pFinishedRecipeConsumer, ModItems.TIN_INGOT.get(),0.7f, ModBlocks.DEEPSLATE_TIN_ORE.get(), ModBlocks.TIN_ORE.get(), ModItems.RAW_TIN.get());
+        Compact(pFinishedRecipeConsumer, ModItems.TIN_NUGGET.get(), ModItems.TIN_INGOT.get());
+        //endregion
+        //region Silicon
         Compact(pFinishedRecipeConsumer, ModItems.SILICON.get(), ModBlocks.SILICON_BLOCK.get());
+        FurnaceBlast(pFinishedRecipeConsumer, ModItems.SILICON.get(),0.2f, ModBlocks.SILICON_ORE.get(), ModBlocks.RED_SILICON_ORE.get(), ModItems.RED_UNREFINED_SILICON.get(), ModItems.UNREFINED_SILICON.get());
+        //endregion
+        //region Lead
         Compact(pFinishedRecipeConsumer, ModItems.RAW_LEAD.get(), ModBlocks.RAW_LEAD_BLOCK.get());
         Compact(pFinishedRecipeConsumer, ModItems.LEAD_INGOT.get(), ModBlocks.LEAD_BLOCK.get());
+        FurnaceBlast(pFinishedRecipeConsumer, ModItems.LEAD_INGOT.get(),0.7f, ModBlocks.DEEPSLATE_LEAD_ORE.get(), ModBlocks.LEAD_ORE.get(), ModItems.RAW_LEAD.get());
+        Compact(pFinishedRecipeConsumer, ModItems.LEAD_NUGGET.get(), ModItems.LEAD_INGOT.get());
+        //endregion
+        //region Titanium
         Compact(pFinishedRecipeConsumer, ModItems.RAW_TITANIUM.get(), ModBlocks.RAW_TITANIUM_BLOCK.get());
         Compact(pFinishedRecipeConsumer, ModItems.TITANIUM_INGOT.get(), ModBlocks.TITANIUM_BLOCK.get());
-        Compact(pFinishedRecipeConsumer, ModItems.RUBY.get(), ModBlocks.RUBY_BLOCK.get());
-        Compact(pFinishedRecipeConsumer, ModItems.SAPPHIRE.get(), ModBlocks.SAPPHIRE_BLOCK.get());
-
-        SmallCompact(pFinishedRecipeConsumer, ModItems.CRYSTALLINE_SHARD.get(), ModItems.CRYSTALLINE_INGOT.get());
-        Compact(pFinishedRecipeConsumer, ModItems.ALUMINUM_NUGGET.get(), ModItems.ALUMINUM_INGOT.get());
-        Compact(pFinishedRecipeConsumer, ModItems.STEEL_NUGGET.get(), ModItems.STEEL_INGOT.get());
-        Compact(pFinishedRecipeConsumer, ModItems.BRASS_NUGGET.get(), ModItems.BRASS_INGOT.get());
-        Compact(pFinishedRecipeConsumer, ModItems.BRONZE_NUGGET.get(), ModItems.BRONZE_INGOT.get());
-        Compact(pFinishedRecipeConsumer, ModItems.ELECTRUM_NUGGET.get(), ModItems.ELECTRUM_INGOT.get());
-        Compact(pFinishedRecipeConsumer, ModItems.DRACONIUM_NUGGET.get(), ModItems.DRACONIUM_INGOT.get());
-
-        Compact(pFinishedRecipeConsumer, ModItems.ALUMINUM_INGOT.get(), ModBlocks.ALUMINUM_BLOCK.get());
-        Compact(pFinishedRecipeConsumer, ModItems.STEEL_INGOT.get(), ModBlocks.STEEL_BLOCK.get());
-        Compact(pFinishedRecipeConsumer, ModItems.BRASS_INGOT.get(), ModBlocks.BRASS_BLOCK.get());
-        Compact(pFinishedRecipeConsumer, ModItems.BRONZE_INGOT.get(), ModBlocks.BRONZE_BLOCK.get());
-        Compact(pFinishedRecipeConsumer, ModItems.ELECTRUM_INGOT.get(), ModBlocks.ELECTRUM_BLOCK.get());
-        Compact(pFinishedRecipeConsumer, ModItems.DRACONIUM_INGOT.get(), ModBlocks.DRACONIUM_BLOCK.get());
-        Compact(pFinishedRecipeConsumer, ModItems.CRYSTALLINE_INGOT.get(), ModBlocks.CRYSTALLINE_BLOCK.get());
-
-        Compact(pFinishedRecipeConsumer, ModItems.COPPER_NUGGET.get(), Items.COPPER_INGOT);
-        //Compact(pFinishedRecipeConsumer, ModItems.LEAD_NUGGET.get(), ModItems.LEAD_INGOT.get()); //TODO fix when get ingot
-        Compact(pFinishedRecipeConsumer, ModItems.MAGNESIUM_NUGGET.get(), ModItems.MAGNESIUM_INGOT.get());
-        Compact(pFinishedRecipeConsumer, ModItems.PYRITE_NUGGET.get(), ModItems.PYRITE.get());
-        Compact(pFinishedRecipeConsumer, ModItems.SILVER_NUGGET.get(), ModItems.SILVER_INGOT.get());
-        Compact(pFinishedRecipeConsumer, ModItems.TIN_NUGGET.get(), ModItems.TIN_INGOT.get());
+        FurnaceBlast(pFinishedRecipeConsumer, ModItems.TITANIUM_INGOT.get(),1.2f, ModBlocks.DEEPSLATE_TITANIUM_ORE.get(), ModBlocks.TITANIUM_ORE.get(), ModItems.RAW_TITANIUM.get());
         Compact(pFinishedRecipeConsumer, ModItems.TITANIUM_NUGGET.get(), ModItems.TITANIUM_INGOT.get());
-        Compact(pFinishedRecipeConsumer, ModItems.ZINC_NUGGET.get(), ModItems.ZINC_INGOT.get());
+        //endregion
+        //region Ruby
+        Compact(pFinishedRecipeConsumer, ModItems.RUBY.get(), ModBlocks.RUBY_BLOCK.get());
+        FurnaceBlast(pFinishedRecipeConsumer, ModItems.RUBY.get(),1.0f, ModBlocks.DEEPSLATE_RUBY_ORE.get(), ModBlocks.RUBY_ORE.get());
+        SmallCompact(pFinishedRecipeConsumer, ModItems.RUBY_SHARD.get(), ModItems.RUBY.get());
+        //endregion
+        //region Sapphire
+        Compact(pFinishedRecipeConsumer, ModItems.SAPPHIRE.get(), ModBlocks.SAPPHIRE_BLOCK.get());
+        FurnaceBlast(pFinishedRecipeConsumer, ModItems.SAPPHIRE.get(),1.0f, ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(), ModBlocks.SAPPHIRE_ORE.get());
+        SmallCompact(pFinishedRecipeConsumer, ModItems.SAPPHIRE_SHARD.get(), ModItems.SAPPHIRE.get());
+        //endregion
+        //region Aluminum
+        Compact(pFinishedRecipeConsumer, ModItems.ALUMINUM_NUGGET.get(), ModItems.ALUMINUM_INGOT.get());
+        Compact(pFinishedRecipeConsumer, ModItems.ALUMINUM_INGOT.get(), ModBlocks.ALUMINUM_BLOCK.get());
+        //endregion
+        //region Steel
+        Compact(pFinishedRecipeConsumer, ModItems.STEEL_NUGGET.get(), ModItems.STEEL_INGOT.get());
+        Compact(pFinishedRecipeConsumer, ModItems.STEEL_INGOT.get(), ModBlocks.STEEL_BLOCK.get());
+        //endregion
+        //region Brass
+        Compact(pFinishedRecipeConsumer, ModItems.BRASS_NUGGET.get(), ModItems.BRASS_INGOT.get());
+        Compact(pFinishedRecipeConsumer, ModItems.BRASS_INGOT.get(), ModBlocks.BRASS_BLOCK.get());
+        //endregion
+        //region Crystalline
+        SmallCompact(pFinishedRecipeConsumer, ModItems.CRYSTALLINE_SHARD.get(), ModItems.CRYSTALLINE_INGOT.get());
+        Compact(pFinishedRecipeConsumer, ModItems.CRYSTALLINE_INGOT.get(), ModBlocks.CRYSTALLINE_BLOCK.get());
+        //endregion
+        //region Bronze
+        Compact(pFinishedRecipeConsumer, ModItems.BRONZE_NUGGET.get(), ModItems.BRONZE_INGOT.get());
+        Compact(pFinishedRecipeConsumer, ModItems.BRONZE_INGOT.get(), ModBlocks.BRONZE_BLOCK.get());
+        //endregion
+        //region Electrum
+        Compact(pFinishedRecipeConsumer, ModItems.ELECTRUM_NUGGET.get(), ModItems.ELECTRUM_INGOT.get());
+        Compact(pFinishedRecipeConsumer, ModItems.ELECTRUM_INGOT.get(), ModBlocks.ELECTRUM_BLOCK.get());
+        //endregion
+        //region Draconium
+        Compact(pFinishedRecipeConsumer, ModItems.DRACONIUM_NUGGET.get(), ModItems.DRACONIUM_INGOT.get());
+        Compact(pFinishedRecipeConsumer, ModItems.DRACONIUM_INGOT.get(), ModBlocks.DRACONIUM_BLOCK.get());
+        //endregion
+        //region Vanilla Shards & Nuggets
+        Compact(pFinishedRecipeConsumer, ModItems.COPPER_NUGGET.get(), Items.COPPER_INGOT);
         SmallCompact(pFinishedRecipeConsumer, ModItems.DIAMOND_SHARD.get(), Items.DIAMOND);
         SmallCompact(pFinishedRecipeConsumer, ModItems.EMERALD_SHARD.get(), Items.EMERALD);
-        SmallCompact(pFinishedRecipeConsumer, ModItems.RUBY_SHARD.get(), ModItems.RUBY.get());
-        SmallCompact(pFinishedRecipeConsumer, ModItems.SAPPHIRE_SHARD.get(), ModItems.SAPPHIRE.get());
-
+        //endregion
+        //region Bismuth
         Compact(pFinishedRecipeConsumer, ModItems.BISMUTH_INGOT.get(), ModBlocks.BISMUTH_BLOCK.get());
         Compact(pFinishedRecipeConsumer, ModItems.BISMUTH_NUGGET.get(), ModItems.BISMUTH_INGOT.get());
-        FurnaceBlast(pFinishedRecipeConsumer, ModItems.BISMUTH_INGOT.get(),1.0f, ModItems.BISMUTH.get(), ModBlocks.BISMUTH_ORE.get(), ModBlocks.TUFF_BISMUTH_ORE.get(), ModBlocks.DEEPSLATE_BISMUTH_ORE.get(), ModBlocks.GRANITE_BISMUTH_ORE.get(), ModBlocks.ANDESITE_BISMUTH_ORE.get(), ModBlocks.DIORITE_BISMUTH_ORE.get());
-
+        FurnaceBlast(pFinishedRecipeConsumer, ModItems.BISMUTH_INGOT.get(),0.7f, ModItems.BISMUTH.get(), ModBlocks.BISMUTH_ORE.get(), ModBlocks.TUFF_BISMUTH_ORE.get(), ModBlocks.DEEPSLATE_BISMUTH_ORE.get(), ModBlocks.GRANITE_BISMUTH_ORE.get(), ModBlocks.ANDESITE_BISMUTH_ORE.get(), ModBlocks.DIORITE_BISMUTH_ORE.get());
+        //endregion
+        //region Rosalite
         Compact(pFinishedRecipeConsumer, ModItems.ROSALITE.get(), ModBlocks.ROSALITE_BLOCK.get());
         SmallCompact(pFinishedRecipeConsumer, ModItems.ROSALITE_SHARD.get(), ModItems.ROSALITE.get());
         FurnaceBlast(pFinishedRecipeConsumer, ModItems.ROSALITE.get(),1.0f, ModBlocks.BASALT_ROSALITE_ORE.get());
-
-        // smelting recipes (pFinishedRecipeConsumer, output, xp, input(s))
-        FurnaceCampSmoke(pFinishedRecipeConsumer, ModItems.FRIED_EGG.get(), 0.35f, Items.EGG);
-        FurnaceBlast(pFinishedRecipeConsumer, ModItems.PYRITE.get(),1.0f, ModBlocks.DEEPSLATE_PYRITE_ORE.get(), ModBlocks.PYRITE_ORE.get(), ModItems.RAW_PYRITE.get());
-        FurnaceBlast(pFinishedRecipeConsumer, ModItems.ZINC_INGOT.get(),1.0f, ModBlocks.DEEPSLATE_ZINC_ORE.get(), ModBlocks.ZINC_ORE.get(), ModItems.RAW_ZINC.get());
-        FurnaceBlast(pFinishedRecipeConsumer, ModItems.MAGNESIUM_INGOT.get(),1.0f, ModBlocks.DEEPSLATE_MAGNESIUM_ORE.get(), ModBlocks.MAGNESIUM_ORE.get(), ModItems.RAW_MAGNESIUM.get());
-        FurnaceBlast(pFinishedRecipeConsumer, ModItems.SILVER_INGOT.get(),1.0f, ModBlocks.DEEPSLATE_SILVER_ORE.get(), ModBlocks.SILVER_ORE.get(), ModItems.RAW_SILVER.get());
-        FurnaceBlast(pFinishedRecipeConsumer, ModItems.TIN_INGOT.get(),1.0f, ModBlocks.DEEPSLATE_TIN_ORE.get(), ModBlocks.TIN_ORE.get(), ModItems.RAW_TIN.get());
-        FurnaceBlast(pFinishedRecipeConsumer, ModItems.LEAD_INGOT.get(),1.0f, ModBlocks.DEEPSLATE_LEAD_ORE.get(), ModBlocks.LEAD_ORE.get(), ModItems.RAW_LEAD.get());
-        FurnaceBlast(pFinishedRecipeConsumer, ModItems.SILICON.get(),1.0f, ModBlocks.SILICON_ORE.get(), ModBlocks.RED_SILICON_ORE.get(), ModItems.RED_UNREFINED_SILICON.get(), ModItems.UNREFINED_SILICON.get());
-        FurnaceBlast(pFinishedRecipeConsumer, ModItems.TITANIUM_INGOT.get(),1.0f, ModBlocks.DEEPSLATE_TITANIUM_ORE.get(), ModBlocks.TITANIUM_ORE.get(), ModItems.RAW_TITANIUM.get());
-        FurnaceBlast(pFinishedRecipeConsumer, ModItems.RUBY.get(),1.0f, ModBlocks.DEEPSLATE_RUBY_ORE.get(), ModBlocks.RUBY_ORE.get());
-        FurnaceBlast(pFinishedRecipeConsumer, ModItems.SAPPHIRE.get(),1.0f, ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(), ModBlocks.SAPPHIRE_ORE.get());
-
-        // cherry wood recipes
-        AllWoodRecipes(pFinishedRecipeConsumer, ModBlocks.CHERRY_LOG.get(), ModBlocks.STRIPPED_CHERRY_LOG.get(),
-                ModBlocks.CHERRY_WOOD.get(), ModBlocks.STRIPPED_CHERRY_WOOD.get(), ModBlocks.CHERRY_PLANKS.get(),
-                ModBlocks.CHERRY_STAIRS.get(), ModBlocks.CHERRY_SLAB.get(), ModBlocks.CHERRY_FENCE.get(),
-                ModBlocks.CHERRY_FENCE_GATE.get(), ModBlocks.CHERRY_DOOR.get(), ModBlocks.CHERRY_TRAPDOOR.get(),
-                ModItems.CHERRY_SIGN.get(), ModBlocks.CHERRY_BUTTON.get(), ModBlocks.CHERRY_PRESSURE_PLATE.get(),
-                ModItems.CHERRY_BOAT.get(), ModItems.CHERRY_CHEST_BOAT.get());
-
-        //Smoky Quartz
+        //endregion
+        //region Smoky Quartz
         chiseledBuilder(ModBlocks.CHISELED_SMOKY_QUARTZ_BLOCK.get(), Ingredient.of(ModBlocks.SMOKY_QUARTZ_SLAB.get())).unlockedBy("has_chiseled_smoky_quartz_block", has(ModBlocks.CHISELED_SMOKY_QUARTZ_BLOCK.get())).unlockedBy("has_block_of_smoky_quartz", has(ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get())).unlockedBy("has_smoky_quartz_pillar", has(ModBlocks.SMOKY_QUARTZ_PILLAR.get())).save(pFinishedRecipeConsumer);
         ShapedRecipeBuilder.shaped(ModBlocks.SMOKY_QUARTZ_PILLAR.get(), 2).define('#', ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get()).pattern("#").pattern("#").unlockedBy("has_chiseled_smoky_quartz_block", has(ModBlocks.CHISELED_SMOKY_QUARTZ_BLOCK.get())).unlockedBy("has_block_of_smoky_quartz", has(ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get())).unlockedBy("has_smoky_quartz_pillar", has(ModBlocks.SMOKY_QUARTZ_PILLAR.get())).save(pFinishedRecipeConsumer);
         ShapedRecipeBuilder.shaped(ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get()).define('#', ModItems.SMOKY_QUARTZ.get()).pattern("##").pattern("##").unlockedBy("has_smoky_quartz", has(ModItems.SMOKY_QUARTZ.get())).save(pFinishedRecipeConsumer);
@@ -493,6 +516,26 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         stonecutterResultFromBase(pFinishedRecipeConsumer, ModBlocks.SMOKY_QUARTZ_BRICKS.get(), ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get());
         stonecutterResultFromBase(pFinishedRecipeConsumer, ModBlocks.SMOOTH_SMOKY_QUARTZ_SLAB.get(), ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get(), 2);
         stonecutterResultFromBase(pFinishedRecipeConsumer, ModBlocks.SMOOTH_SMOKY_QUARTZ_STAIRS.get(), ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get());
+        //endregion
+
+        FurnaceCampSmoke(pFinishedRecipeConsumer, ModItems.FRIED_EGG.get(), 0.35f, Items.EGG);
+
+        // cherry wood recipes
+        AllWoodRecipes(pFinishedRecipeConsumer, ModBlocks.CHERRY_LOG.get(), ModBlocks.STRIPPED_CHERRY_LOG.get(),
+                ModBlocks.CHERRY_WOOD.get(), ModBlocks.STRIPPED_CHERRY_WOOD.get(), ModBlocks.CHERRY_PLANKS.get(),
+                ModBlocks.CHERRY_STAIRS.get(), ModBlocks.CHERRY_SLAB.get(), ModBlocks.CHERRY_FENCE.get(),
+                ModBlocks.CHERRY_FENCE_GATE.get(), ModBlocks.CHERRY_DOOR.get(), ModBlocks.CHERRY_TRAPDOOR.get(),
+                ModItems.CHERRY_SIGN.get(), ModBlocks.CHERRY_BUTTON.get(), ModBlocks.CHERRY_PRESSURE_PLATE.get(),
+                ModItems.CHERRY_BOAT.get(), ModItems.CHERRY_CHEST_BOAT.get());
+
+
+
+
+
+
+
+
+
 
 
 

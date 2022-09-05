@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:basalt_deltas",
+  "features": "bit_o_everything:rosalite_ore_placed",
+  "step": "underground_ores"
+}

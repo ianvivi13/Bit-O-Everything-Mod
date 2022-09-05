@@ -6,12 +6,14 @@ import com.bic.bit_o_everything.block.entity.ModWoodTypes;
 import com.bic.bit_o_everything.item.ModCreativeModeTab;
 import com.bic.bit_o_everything.item.ModItems;
 //import com.bic.bit_o_everything.world.feature.tree.CherryTreeGrower;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -34,163 +36,27 @@ public class ModBlocks {
     }
 
     // Create blocks here
-    //region Pyrite, Zinc, Magnesium, Titanium, Tin, Silver, Ruby, Sapphire
-    public static final RegistryObject<Block> PYRITE_ORE = registerBlock("pyrite_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> DEEPSLATE_PYRITE_ORE = registerBlock("deepslate_pyrite_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> RAW_PYRITE_BLOCK = registerBlock("raw_pyrite_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> PYRITE_BLOCK = registerBlock("pyrite_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> ZINC_ORE = registerBlock("zinc_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> DEEPSLATE_ZINC_ORE = registerBlock("deepslate_zinc_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> ZINC_BLOCK = registerBlock("zinc_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> RAW_ZINC_BLOCK = registerBlock("raw_zinc_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> MAGNESIUM_ORE = registerBlock("magnesium_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> DEEPSLATE_MAGNESIUM_ORE = registerBlock("deepslate_magnesium_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> MAGNESIUM_BLOCK = registerBlock("magnesium_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> RAW_MAGNESIUM_BLOCK = registerBlock("raw_magnesium_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> SILVER_ORE = registerBlock("silver_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> DEEPSLATE_SILVER_ORE = registerBlock("deepslate_silver_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> SILVER_BLOCK = registerBlock("silver_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> RAW_SILVER_BLOCK = registerBlock("raw_silver_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> TIN_ORE = registerBlock("tin_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> DEEPSLATE_TIN_ORE = registerBlock("deepslate_tin_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> TIN_BLOCK = registerBlock("tin_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> RAW_TIN_BLOCK = registerBlock("raw_tin_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> LEAD_ORE = registerBlock("lead_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> DEEPSLATE_LEAD_ORE = registerBlock("deepslate_lead_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<FallingBlock> SILICON_ORE = registerBlock("silicon_ore",
-            () -> new FallingBlock(BlockBehaviour.Properties.of(Material.SAND).sound(SoundType.SAND)
-                    .strength(0.5f)), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<FallingBlock> RED_SILICON_ORE = registerBlock("red_silicon_ore",
-            () -> new FallingBlock(BlockBehaviour.Properties.of(Material.SAND).sound(SoundType.SAND)
-                    .strength(0.5f)), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> SILICON_BLOCK = registerBlock("silicon_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> LEAD_BLOCK = registerBlock("lead_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> RAW_LEAD_BLOCK = registerBlock("raw_lead_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> TITANIUM_ORE = registerBlock("titanium_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> DEEPSLATE_TITANIUM_ORE = registerBlock("deepslate_titanium_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> TITANIUM_BLOCK = registerBlock("titanium_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> RAW_TITANIUM_BLOCK = registerBlock("raw_titanium_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> RUBY_ORE = registerBlock("ruby_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> DEEPSLATE_RUBY_ORE = registerBlock("deepslate_ruby_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> RUBY_BLOCK = registerBlock("ruby_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> SAPPHIRE_ORE = registerBlock("sapphire_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> DEEPSLATE_SAPPHIRE_ORE = registerBlock("deepslate_sapphire_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> SAPPHIRE_BLOCK = registerBlock("sapphire_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-    //endregion
 
     public static final RegistryObject<Block> ASPHALT = registerBlock("asphalt",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE)
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE)
                     .strength(1.5f).speedFactor(1.2F).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
 
     public static final RegistryObject<Block> JUMP_BLOCK = registerBlock("jump_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.CACTUS).sound(SoundType.WOOL)
                     .strength(0.4f).jumpFactor(2.0F)), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> INDICATOR_LEVER = registerBlock("indicator_lever",
+            () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> POTTER = registerBlock("potter",
+            () -> new PotterBlock(BlockBehaviour.Properties.of(Material.STONE).noOcclusion().dynamicShape().instabreak()), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> CONCRETE_POTTER = registerBlock("concrete_potter",
+            () -> new ConcretePotterBlock(BlockBehaviour.Properties.of(Material.STONE).noOcclusion().dynamicShape().instabreak()), ModCreativeModeTab.MODDED);
+
+    /*public static final RegistryObject<Block> POTTED_CHERRY_SAPLING = registerBlockWithoutBlockItem("potted_cherry_sapling",
+            () -> new FlowerPotBlock(ModBlocks.CHERRY_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));*/
+
     //region Bricks
     public static final RegistryObject<Block> RAINBOW_BRICKS = registerBlock("rainbow_bricks",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE_BRICKS)
@@ -232,6 +98,7 @@ public class ModBlocks {
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.BRICK_WALL)), ModCreativeModeTab.MODDED);
 
     //endregion
+    //region Wood
     //region Cherry Woods
     public static final RegistryObject<Block> CHERRY_LOG = registerBlock("cherry_log",
             () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.MODDED);
@@ -285,6 +152,8 @@ public class ModBlocks {
             () -> new SaplingBlock(new CherryTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.MODDED);*/
 
     //endregion
+    //endregion
+    //region Concrete
     //region Concrete Slabs
     public static final RegistryObject<Block> WHITE_CONCRETE_SLAB = registerBlock("white_concrete_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_CONCRETE)), ModCreativeModeTab.MODDED);
@@ -387,6 +256,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> BLACK_CONCRETE_WALL = registerBlock("black_concrete_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)), ModCreativeModeTab.MODDED);
     //endregion
+    //endregion
+    //region Terracotta
     //region Terracotta Slabs
     public static final RegistryObject<Block> TERRACOTTA_SLAB = registerBlock("terracotta_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.TERRACOTTA)), ModCreativeModeTab.MODDED);
@@ -495,149 +366,306 @@ public class ModBlocks {
     public static final RegistryObject<Block> BLACK_TERRACOTTA_WALL = registerBlock("black_terracotta_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)), ModCreativeModeTab.MODDED);
     //endregion
-
-    public static final RegistryObject<Block> INDICATOR_LEVER = registerBlock("indicator_lever",
-            () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> POTTER = registerBlock("potter",
-            () -> new PotterBlock(BlockBehaviour.Properties.of(Material.STONE).noOcclusion().dynamicShape().instabreak()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> CONCRETE_POTTER = registerBlock("concrete_potter",
-            () -> new ConcretePotterBlock(BlockBehaviour.Properties.of(Material.STONE).noOcclusion().dynamicShape().instabreak()), ModCreativeModeTab.MODDED);
-
-    /*public static final RegistryObject<Block> POTTED_CHERRY_SAPLING = registerBlockWithoutBlockItem("potted_cherry_sapling",
-            () -> new FlowerPotBlock(ModBlocks.CHERRY_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));*/
-
-    //region Crystals
-    public static final RegistryObject<CrystalBlock> CELESTITE = registerBlock("celestite",
-            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST).instabreak()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<CrystalBlock> TANZANITE = registerBlock("tanzanite",
-            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST).instabreak()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<CrystalBlock> MOLDAVITE = registerBlock("moldavite",
-            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST).instabreak()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<CrystalBlock> CITRINE = registerBlock("citrine",
-            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST).instabreak()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<CrystalBlock> RHODOCHROSITE = registerBlock("rhodochrosite",
-            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST).instabreak()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<CrystalBlock> AQUAMARINE = registerBlock("aquamarine",
-            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST).instabreak()), ModCreativeModeTab.MODDED);
     //endregion
-    //region Alloys
-    public static final RegistryObject<Block> ALUMINUM_BLOCK = registerBlock("aluminum_block",
+    //region Ores
+    //region Pyrite
+    public static final RegistryObject<Block> PYRITE_ORE = registerBlock("pyrite_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(3f,3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> DEEPSLATE_PYRITE_ORE = registerBlock("deepslate_pyrite_ore",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_ORE).color(MaterialColor.DEEPSLATE).sound(SoundType.DEEPSLATE)
+                    .strength(4.5f,3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> RAW_PYRITE_BLOCK = registerBlock("raw_pyrite_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.GOLD)
+                    .strength(5f, 6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> PYRITE_BLOCK = registerBlock("pyrite_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.GOLD).sound(SoundType.METAL)
+                    .strength(3f, 6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+    //endregion
+    //region Zinc
+    public static final RegistryObject<Block> ZINC_ORE = registerBlock("zinc_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(3f, 3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> DEEPSLATE_ZINC_ORE = registerBlock("deepslate_zinc_ore",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).color(MaterialColor.DEEPSLATE).sound(SoundType.DEEPSLATE)
+                    .strength(4.5f,3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> ZINC_BLOCK = registerBlock("zinc_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).color(MaterialColor.METAL).sound(SoundType.METAL)
+                    .strength(5f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> RAW_ZINC_BLOCK = registerBlock("raw_zinc_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).color(MaterialColor.RAW_IRON)
+                    .strength(5f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+    //endregion
+    //region Magnesium
+    public static final RegistryObject<Block> MAGNESIUM_ORE = registerBlock("magnesium_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(3f, 3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> DEEPSLATE_MAGNESIUM_ORE = registerBlock("deepslate_magnesium_ore",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).color(MaterialColor.DEEPSLATE).sound(SoundType.DEEPSLATE)
+                    .strength(4.5f,3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> MAGNESIUM_BLOCK = registerBlock("magnesium_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).color(MaterialColor.METAL).sound(SoundType.METAL)
+                    .strength(5f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> RAW_MAGNESIUM_BLOCK = registerBlock("raw_magnesium_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).color(MaterialColor.RAW_IRON)
+                    .strength(5f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+    //endregion
+    //region Silver
+    public static final RegistryObject<Block> SILVER_ORE = registerBlock("silver_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(3f, 3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> DEEPSLATE_SILVER_ORE = registerBlock("deepslate_silver_ore",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).color(MaterialColor.DEEPSLATE).sound(SoundType.DEEPSLATE)
+                    .strength(4.5f, 3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> SILVER_BLOCK = registerBlock("silver_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.METAL).sound(SoundType.METAL)
+                    .strength(5f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> RAW_SILVER_BLOCK = registerBlock("raw_silver_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.RAW_IRON)
+                    .strength(5f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+    //endregion
+    //region Tin
+    public static final RegistryObject<Block> TIN_ORE = registerBlock("tin_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(3f, 3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> DEEPSLATE_TIN_ORE = registerBlock("deepslate_tin_ore",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).color(MaterialColor.DEEPSLATE).sound(SoundType.DEEPSLATE)
+                    .strength(4.5f,3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> TIN_BLOCK = registerBlock("tin_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).color(MaterialColor.METAL).sound(SoundType.METAL)
+                    .strength(5f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> RAW_TIN_BLOCK = registerBlock("raw_tin_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).color(MaterialColor.RAW_IRON)
+                    .strength(5f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+    //endregion
+    //region Lead
+    public static final RegistryObject<Block> LEAD_ORE = registerBlock("lead_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(3f, 3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> DEEPSLATE_LEAD_ORE = registerBlock("deepslate_lead_ore",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).color(MaterialColor.DEEPSLATE).sound(SoundType.DEEPSLATE)
+                    .strength(4.5f,3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> LEAD_BLOCK = registerBlock("lead_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).color(MaterialColor.METAL).sound(SoundType.METAL)
+                    .strength(5f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> RAW_LEAD_BLOCK = registerBlock("raw_lead_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).color(MaterialColor.RAW_IRON)
+                    .strength(5f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+    //endregion
+    //region Silicon
+    public static final RegistryObject<SandBlock> SILICON_ORE = registerBlock("silicon_ore",
+            () -> new SandBlock(14406560, BlockBehaviour.Properties.of(Material.SAND, MaterialColor.SAND).sound(SoundType.SAND)
+                    .strength(0.5f)), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<SandBlock> RED_SILICON_ORE = registerBlock("red_silicon_ore",
+            () -> new SandBlock(11098145, BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_ORANGE).sound(SoundType.SAND)
+                    .strength(0.5f)), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> SILICON_BLOCK = registerBlock("silicon_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-    public static final RegistryObject<Block> BRASS_BLOCK = registerBlock("brass_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-    public static final RegistryObject<Block> BRONZE_BLOCK = registerBlock("bronze_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-    public static final RegistryObject<Block> ELECTRUM_BLOCK = registerBlock("electrum_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-    public static final RegistryObject<Block> STEEL_BLOCK = registerBlock("steel_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-    public static final RegistryObject<Block> CRYSTALLINE_BLOCK = registerBlock("crystalline_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTab.MODDED);
-    public static final RegistryObject<Block> DRACONIUM_BLOCK = registerBlock("draconium_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+                    .strength(3f, 6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+    //endregion
+    //region Titanium
+    public static final RegistryObject<Block> TITANIUM_ORE = registerBlock("titanium_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(10f, 80f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> DEEPSLATE_TITANIUM_ORE = registerBlock("deepslate_titanium_ore",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).color(MaterialColor.DEEPSLATE).sound(SoundType.DEEPSLATE)
+                    .strength(12.5f, 80f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> TITANIUM_BLOCK = registerBlock("titanium_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.METAL).sound(SoundType.METAL)
+                    .strength(20f,600f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> RAW_TITANIUM_BLOCK = registerBlock("raw_titanium_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.RAW_IRON)
+                    .strength(20f,600f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+    //endregion
+    //region Ruby
+    public static final RegistryObject<Block> RUBY_ORE = registerBlock("ruby_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(3f,3f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> DEEPSLATE_RUBY_ORE = registerBlock("deepslate_ruby_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE)
+                    .strength(4.5f, 3f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> RUBY_BLOCK = registerBlock("ruby_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_RED).sound(SoundType.METAL)
+                    .strength(5f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+    //endregion
+    //region Sapphire
+    public static final RegistryObject<Block> SAPPHIRE_ORE = registerBlock("sapphire_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(3f, 3f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> DEEPSLATE_SAPPHIRE_ORE = registerBlock("deepslate_sapphire_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE)
+                    .strength(4.5f, 3f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> SAPPHIRE_BLOCK = registerBlock("sapphire_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BLUE).sound(SoundType.METAL)
+                    .strength(5f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
     //endregion
     //region Rosalite
-    public static final RegistryObject<Block> ROSALITE_BLOCK = registerBlock("rosalite_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
-
     public static final RegistryObject<Block> BASALT_ROSALITE_ORE = registerBlock("basalt_rosalite_ore",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+            () -> new BasaltRosaliteOreBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BLACK).sound(SoundType.BASALT)
+                    .strength(1.5f, 3f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> ROSALITE_BLOCK = registerBlock("rosalite_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_MAGENTA).sound(SoundType.METAL)
+                    .strength(5f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
     //endregion
     //region Bismuth
     public static final RegistryObject<Block> BISMUTH_BLOCK = registerBlock("bismuth_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+                    .strength(5f, 6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
 
     public static final RegistryObject<Block> BISMUTH_ORE= registerBlock("bismuth_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)
+                    .strength(3f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
 
     public static final RegistryObject<Block> DEEPSLATE_BISMUTH_ORE= registerBlock("deepslate_bismuth_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE)
+                    .strength(4.5f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
 
     public static final RegistryObject<Block> TUFF_BISMUTH_ORE= registerBlock("tuff_bismuth_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_GRAY).sound(SoundType.TUFF)
+                    .strength(3f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
 
     public static final RegistryObject<Block> ANDESITE_BISMUTH_ORE= registerBlock("andesite_bismuth_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)
+                    .strength(3f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
 
     public static final RegistryObject<Block> GRANITE_BISMUTH_ORE= registerBlock("granite_bismuth_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DIRT)
+                    .strength(3f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
 
     public static final RegistryObject<Block> DIORITE_BISMUTH_ORE= registerBlock("diorite_bismuth_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.QUARTZ)
+                    .strength(3f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
     //endregion
     //region Smoky Quartz
-    //TODO: drops, recipes, tags
     public static final RegistryObject<Block> SMOKY_QUARTZ_ORE = registerBlock("smoky_quartz_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.NETHER).sound(SoundType.NETHER_ORE)
+                    .strength(3f, 3f).requiresCorrectToolForDrops(), UniformInt.of(2, 5)), ModCreativeModeTab.MINERALS);
 
     public static final RegistryObject<Block> BLOCK_OF_SMOKY_QUARTZ = registerBlock("block_of_smoky_quartz",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.QUARTZ)
+                    .strength(0.8f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
 
     public static final RegistryObject<Block> SMOKY_QUARTZ_BRICKS = registerBlock("smoky_quartz_bricks",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.QUARTZ)
+                    .strength(0.8f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
 
     public static final RegistryObject<Block> SMOOTH_SMOKY_QUARTZ_BLOCK = registerBlock("smooth_smoky_quartz_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.QUARTZ)
+                    .strength(0.8f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
 
     public static final RegistryObject<Block> CHISELED_SMOKY_QUARTZ_BLOCK = registerBlock("chiseled_smoky_quartz_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.QUARTZ)
+                    .strength(0.8f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
 
     public static final RegistryObject<Block> SMOKY_QUARTZ_PILLAR = registerBlock("smoky_quartz_pillar",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.QUARTZ)
+                    .strength(0.8f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
 
     public static final RegistryObject<Block> SMOKY_QUARTZ_STAIRS = registerBlock("smoky_quartz_stairs",
-            () -> new StairBlock(Blocks.QUARTZ_STAIRS::defaultBlockState, BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+            () -> new StairBlock(Blocks.QUARTZ_STAIRS::defaultBlockState, BlockBehaviour.Properties.of(Material.STONE, MaterialColor.QUARTZ)
+                    .strength(0.8f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
 
     public static final RegistryObject<Block> SMOOTH_SMOKY_QUARTZ_STAIRS = registerBlock("smooth_smoky_quartz_stairs",
-            () -> new StairBlock(Blocks.SMOOTH_QUARTZ_STAIRS::defaultBlockState, BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+            () -> new StairBlock(Blocks.SMOOTH_QUARTZ_STAIRS::defaultBlockState, BlockBehaviour.Properties.of(Material.STONE, MaterialColor.QUARTZ)
+                    .strength(0.8f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
 
     public static final RegistryObject<Block> SMOKY_QUARTZ_SLAB = registerBlock("smoky_quartz_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+            () -> new SlabBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.QUARTZ)
+                    .strength(0.8f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
 
     public static final RegistryObject<Block> SMOOTH_SMOKY_QUARTZ_SLAB = registerBlock("smooth_smoky_quartz_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL)
-                    .strength(3f).requiresCorrectToolForDrops()), ModCreativeModeTab.MODDED);
+            () -> new SlabBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.QUARTZ)
+                    .strength(0.8f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
     //endregion
+    //region Crystals
+    public static final RegistryObject<CrystalBlock> CELESTITE = registerBlock("celestite",
+            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.TERRACOTTA_WHITE)
+                    .instabreak().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
 
+    public static final RegistryObject<CrystalBlock> TANZANITE = registerBlock("tanzanite",
+            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_PURPLE)
+                    .instabreak().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<CrystalBlock> MOLDAVITE = registerBlock("moldavite",
+            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_GREEN)
+                    .instabreak().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<CrystalBlock> CITRINE = registerBlock("citrine",
+            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_ORANGE)
+                    .instabreak().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<CrystalBlock> RHODOCHROSITE = registerBlock("rhodochrosite",
+            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_RED)
+                    .instabreak().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<CrystalBlock> AQUAMARINE = registerBlock("aquamarine",
+            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_CYAN)
+                    .instabreak().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
+    //endregion
+    //endregion
+    //region Alloys
+    public static final RegistryObject<Block> ALUMINUM_BLOCK = registerBlock("aluminum_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_LIGHT_GRAY).sound(SoundType.METAL)
+                    .strength(5f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> BRASS_BLOCK = registerBlock("brass_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.GOLD).sound(SoundType.METAL)
+                    .strength(5f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> BRONZE_BLOCK = registerBlock("bronze_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.GOLD).sound(SoundType.METAL)
+                    .strength(5f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> ELECTRUM_BLOCK = registerBlock("electrum_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_YELLOW).sound(SoundType.METAL)
+                    .strength(5f,6f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> STEEL_BLOCK = registerBlock("steel_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).sound(SoundType.METAL)
+                    .strength(10f,12f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> CRYSTALLINE_BLOCK = registerBlock("crystalline_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_LIGHT_BLUE).sound(SoundType.GLASS)
+                    .strength(25f,600f).requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Block> DRACONIUM_BLOCK = registerBlock("draconium_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_PURPLE).sound(SoundType.NETHERITE_BLOCK)
+                    .strength(50f,1200f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+    //endregion
 
     private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {
         return BLOCKS.register(name, block);
     }
 
     public static void register(IEventBus eventBus) {
-
         BLOCKS.register(eventBus);
     }
 }

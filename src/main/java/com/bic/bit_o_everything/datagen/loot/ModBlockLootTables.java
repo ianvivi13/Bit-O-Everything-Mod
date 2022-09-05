@@ -68,23 +68,6 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.CHERRY_WALL_SIGN.get());
         //this.dropSelf(ModBlocks.CHERRY_SAPLING.get());
 
-        this.dropSelf(ModBlocks.WHITE_CONCRETE_STAIRS.get());
-        this.dropSelf(ModBlocks.ORANGE_CONCRETE_STAIRS.get());
-        this.dropSelf(ModBlocks.MAGENTA_CONCRETE_STAIRS.get());
-        this.dropSelf(ModBlocks.LIGHT_BLUE_CONCRETE_STAIRS.get());
-        this.dropSelf(ModBlocks.YELLOW_CONCRETE_STAIRS.get());
-        this.dropSelf(ModBlocks.LIME_CONCRETE_STAIRS.get());
-        this.dropSelf(ModBlocks.PINK_CONCRETE_STAIRS.get());
-        this.dropSelf(ModBlocks.GRAY_CONCRETE_STAIRS.get());
-        this.dropSelf(ModBlocks.LIGHT_GRAY_CONCRETE_STAIRS.get());
-        this.dropSelf(ModBlocks.CYAN_CONCRETE_STAIRS.get());
-        this.dropSelf(ModBlocks.PURPLE_CONCRETE_STAIRS.get());
-        this.dropSelf(ModBlocks.BLUE_CONCRETE_STAIRS.get());
-        this.dropSelf(ModBlocks.BROWN_CONCRETE_STAIRS.get());
-        this.dropSelf(ModBlocks.GREEN_CONCRETE_STAIRS.get());
-        this.dropSelf(ModBlocks.RED_CONCRETE_STAIRS.get());
-        this.dropSelf(ModBlocks.BLACK_CONCRETE_STAIRS.get());
-
         this.dropSelf(ModBlocks.ALUMINUM_BLOCK.get());
         this.dropSelf(ModBlocks.BRASS_BLOCK.get());
         this.dropSelf(ModBlocks.BRONZE_BLOCK.get());
@@ -95,23 +78,6 @@ public class ModBlockLootTables extends BlockLoot {
 
         this.dropSelf(ModBlocks.ROSALITE_BLOCK.get());
         this.add(ModBlocks.BASALT_ROSALITE_ORE.get(), (block) -> createOreDrop(ModBlocks.BASALT_ROSALITE_ORE.get(), ModItems.ROSALITE.get()));
-
-        this.add(ModBlocks.WHITE_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.ORANGE_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.MAGENTA_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.LIGHT_BLUE_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.YELLOW_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.LIME_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.PINK_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.GRAY_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.LIGHT_GRAY_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.CYAN_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.PURPLE_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.BLUE_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.BROWN_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.GREEN_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.RED_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.BLACK_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
 
         this.add(ModBlocks.RAINBOW_BRICK_SLAB.get(), BlockLoot::createSlabItemTable);
         this.add(ModBlocks.WHITE_BRICK_SLAB.get(), BlockLoot::createSlabItemTable);
@@ -124,12 +90,13 @@ public class ModBlockLootTables extends BlockLoot {
 
         this.add(ModBlocks.SILICON_ORE.get(), (block) -> createModifiedOreDrops(ModBlocks.SILICON_ORE.get(), ModItems.UNREFINED_SILICON.get(), 1.0F, 3.0F));
         this.add(ModBlocks.RED_SILICON_ORE.get(), (block) -> createModifiedOreDrops(ModBlocks.RED_SILICON_ORE.get(), ModItems.RED_UNREFINED_SILICON.get(), 1.0F, 3.0F));
-        this.add(ModBlocks.CELESTITE.get(), (block) -> createOreDrop(ModBlocks.CELESTITE.get(), ModItems.CELESTITE_SHARD.get()));
-        this.add(ModBlocks.CITRINE.get(), (block) -> createOreDrop(ModBlocks.CITRINE.get(), ModItems.CITRINE_SHARD.get()));
-        this.add(ModBlocks.AQUAMARINE.get(), (block) -> createOreDrop(ModBlocks.AQUAMARINE.get(), ModItems.AQUAMARINE_SHARD.get()));
-        this.add(ModBlocks.RHODOCHROSITE.get(), (block) -> createOreDrop(ModBlocks.RHODOCHROSITE.get(), ModItems.RHODOCHROSITE_SHARD.get()));
-        this.add(ModBlocks.MOLDAVITE.get(), (block) -> createOreDrop(ModBlocks.MOLDAVITE.get(), ModItems.MOLDAVITE_SHARD.get()));
-        this.add(ModBlocks.TANZANITE.get(), (block) -> createOreDrop(ModBlocks.TANZANITE.get(), ModItems.TANZANITE_SHARD.get()));
+
+        this.add(ModBlocks.CELESTITE.get(), (block) -> createModifiedOreDrops(ModBlocks.CELESTITE.get(), ModItems.CELESTITE_SHARD.get(), 1f, 3f));
+        this.add(ModBlocks.CITRINE.get(), (block) -> createModifiedOreDrops(ModBlocks.CITRINE.get(), ModItems.CITRINE_SHARD.get(), 1f, 3f));
+        this.add(ModBlocks.AQUAMARINE.get(), (block) -> createModifiedOreDrops(ModBlocks.AQUAMARINE.get(), ModItems.AQUAMARINE_SHARD.get(), 1f, 3f));
+        this.add(ModBlocks.RHODOCHROSITE.get(), (block) -> createModifiedOreDrops(ModBlocks.RHODOCHROSITE.get(), ModItems.RHODOCHROSITE_SHARD.get(), 1f, 3f));
+        this.add(ModBlocks.MOLDAVITE.get(), (block) -> createModifiedOreDrops(ModBlocks.MOLDAVITE.get(), ModItems.MOLDAVITE_SHARD.get(), 1f, 3f));
+        this.add(ModBlocks.TANZANITE.get(), (block) -> createModifiedOreDrops(ModBlocks.TANZANITE.get(), ModItems.TANZANITE_SHARD.get(), 1f, 3f));
 
         //Smoky Quartz
         this.dropSelf(ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get());
@@ -174,24 +141,64 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.CONCRETE_POTTER.get());
         this.dropSelf(ModBlocks.INDICATOR_LEVER.get());
 
-        this.add(ModBlocks.TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.WHITE_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.ORANGE_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.MAGENTA_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.LIGHT_BLUE_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.YELLOW_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.LIME_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.PINK_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.GRAY_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.LIGHT_GRAY_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.CYAN_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.PURPLE_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.BLUE_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.BROWN_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.GREEN_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.RED_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.BLACK_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
-
+        //region Concrete
+        //region Concrete Stairs
+        this.dropSelf(ModBlocks.WHITE_CONCRETE_STAIRS.get());
+        this.dropSelf(ModBlocks.ORANGE_CONCRETE_STAIRS.get());
+        this.dropSelf(ModBlocks.MAGENTA_CONCRETE_STAIRS.get());
+        this.dropSelf(ModBlocks.LIGHT_BLUE_CONCRETE_STAIRS.get());
+        this.dropSelf(ModBlocks.YELLOW_CONCRETE_STAIRS.get());
+        this.dropSelf(ModBlocks.LIME_CONCRETE_STAIRS.get());
+        this.dropSelf(ModBlocks.PINK_CONCRETE_STAIRS.get());
+        this.dropSelf(ModBlocks.GRAY_CONCRETE_STAIRS.get());
+        this.dropSelf(ModBlocks.LIGHT_GRAY_CONCRETE_STAIRS.get());
+        this.dropSelf(ModBlocks.CYAN_CONCRETE_STAIRS.get());
+        this.dropSelf(ModBlocks.PURPLE_CONCRETE_STAIRS.get());
+        this.dropSelf(ModBlocks.BLUE_CONCRETE_STAIRS.get());
+        this.dropSelf(ModBlocks.BROWN_CONCRETE_STAIRS.get());
+        this.dropSelf(ModBlocks.GREEN_CONCRETE_STAIRS.get());
+        this.dropSelf(ModBlocks.RED_CONCRETE_STAIRS.get());
+        this.dropSelf(ModBlocks.BLACK_CONCRETE_STAIRS.get());
+        //endregion
+        //region Concrete Slabs
+        this.add(ModBlocks.WHITE_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.ORANGE_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.MAGENTA_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.LIGHT_BLUE_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.YELLOW_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.LIME_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.PINK_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.GRAY_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.LIGHT_GRAY_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.CYAN_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.PURPLE_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.BLUE_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.BROWN_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.GREEN_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.RED_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.BLACK_CONCRETE_SLAB.get(), BlockLoot::createSlabItemTable);
+        //endregion
+        //region Concrete Walls
+        this.dropSelf(ModBlocks.WHITE_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.ORANGE_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.MAGENTA_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.LIGHT_BLUE_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.YELLOW_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.LIME_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.PINK_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.GRAY_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.LIGHT_GRAY_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.CYAN_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.PURPLE_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.BLUE_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.BROWN_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.GREEN_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.RED_CONCRETE_WALL.get());
+        this.dropSelf(ModBlocks.BLACK_CONCRETE_WALL.get());
+        //endregion
+        //endregion
+        //region Terracotta
+        //region Terracotta Stairs
         this.dropSelf(ModBlocks.TERRACOTTA_STAIRS.get());
         this.dropSelf(ModBlocks.WHITE_TERRACOTTA_STAIRS.get());
         this.dropSelf(ModBlocks.ORANGE_TERRACOTTA_STAIRS.get());
@@ -209,40 +216,46 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.GREEN_TERRACOTTA_STAIRS.get());
         this.dropSelf(ModBlocks.RED_TERRACOTTA_STAIRS.get());
         this.dropSelf(ModBlocks.BLACK_TERRACOTTA_STAIRS.get());
-
+        //endregion
+        //region Terracotta Slabs
+        this.add(ModBlocks.TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.WHITE_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.ORANGE_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.MAGENTA_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.LIGHT_BLUE_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.YELLOW_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.LIME_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.PINK_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.GRAY_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.LIGHT_GRAY_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.CYAN_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.PURPLE_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.BLUE_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.BROWN_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.GREEN_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.RED_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.BLACK_TERRACOTTA_SLAB.get(), BlockLoot::createSlabItemTable);
+        //endregion
+        //region Terracotta Walls
         this.dropSelf(ModBlocks.TERRACOTTA_WALL.get());
-        this.dropSelf(ModBlocks.WHITE_CONCRETE_WALL.get());
         this.dropSelf(ModBlocks.WHITE_TERRACOTTA_WALL.get());
-        this.dropSelf(ModBlocks.ORANGE_CONCRETE_WALL.get());
         this.dropSelf(ModBlocks.ORANGE_TERRACOTTA_WALL.get());
-        this.dropSelf(ModBlocks.MAGENTA_CONCRETE_WALL.get());
         this.dropSelf(ModBlocks.MAGENTA_TERRACOTTA_WALL.get());
-        this.dropSelf(ModBlocks.LIGHT_BLUE_CONCRETE_WALL.get());
         this.dropSelf(ModBlocks.LIGHT_BLUE_TERRACOTTA_WALL.get());
-        this.dropSelf(ModBlocks.YELLOW_CONCRETE_WALL.get());
         this.dropSelf(ModBlocks.YELLOW_TERRACOTTA_WALL.get());
-        this.dropSelf(ModBlocks.LIME_CONCRETE_WALL.get());
         this.dropSelf(ModBlocks.LIME_TERRACOTTA_WALL.get());
-        this.dropSelf(ModBlocks.PINK_CONCRETE_WALL.get());
         this.dropSelf(ModBlocks.PINK_TERRACOTTA_WALL.get());
-        this.dropSelf(ModBlocks.GRAY_CONCRETE_WALL.get());
         this.dropSelf(ModBlocks.GRAY_TERRACOTTA_WALL.get());
-        this.dropSelf(ModBlocks.LIGHT_GRAY_CONCRETE_WALL.get());
         this.dropSelf(ModBlocks.LIGHT_GRAY_TERRACOTTA_WALL.get());
-        this.dropSelf(ModBlocks.CYAN_CONCRETE_WALL.get());
         this.dropSelf(ModBlocks.CYAN_TERRACOTTA_WALL.get());
-        this.dropSelf(ModBlocks.PURPLE_CONCRETE_WALL.get());
         this.dropSelf(ModBlocks.PURPLE_TERRACOTTA_WALL.get());
-        this.dropSelf(ModBlocks.BLUE_CONCRETE_WALL.get());
         this.dropSelf(ModBlocks.BLUE_TERRACOTTA_WALL.get());
-        this.dropSelf(ModBlocks.BROWN_CONCRETE_WALL.get());
         this.dropSelf(ModBlocks.BROWN_TERRACOTTA_WALL.get());
-        this.dropSelf(ModBlocks.GREEN_CONCRETE_WALL.get());
         this.dropSelf(ModBlocks.GREEN_TERRACOTTA_WALL.get());
-        this.dropSelf(ModBlocks.RED_CONCRETE_WALL.get());
         this.dropSelf(ModBlocks.RED_TERRACOTTA_WALL.get());
-        this.dropSelf(ModBlocks.BLACK_CONCRETE_WALL.get());
         this.dropSelf(ModBlocks.BLACK_TERRACOTTA_WALL.get());
+        //endregion
+        //endregion
 
         //this.dropPottedContents(ModBlocks.POTTED_CHERRY_SAPLING.get());
     }
