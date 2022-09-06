@@ -107,6 +107,10 @@ public class ModPlacedFeatures {
     //endregion
 
 
+    public static final RegistryObject<PlacedFeature> CRYSTALS_PLACED = PLACED_FEATURES.register("crystals_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.CRYSTAL_GROWTH.getHolder().get(),
+                    commonOrePlacement(40,
+                            HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(128)))));
 
     public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
         return List.of(p_195347_, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());

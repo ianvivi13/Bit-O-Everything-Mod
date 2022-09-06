@@ -6,6 +6,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RodBlock;
@@ -95,4 +96,7 @@ public class CrystalBlock extends RodBlock implements SimpleWaterloggedBlock{
         return PushReaction.DESTROY;
     }
 
+    public BlockState getStateForPlacement(WorldGenLevel worldGenLevel, BlockPos blockPos, Direction direction) {
+        return this.defaultBlockState().setValue(WATERLOGGED, worldGenLevel.getFluidState(blockPos).getType() == Fluids.WATER).setValue(FACING, direction.getOpposite());
+    }
 }

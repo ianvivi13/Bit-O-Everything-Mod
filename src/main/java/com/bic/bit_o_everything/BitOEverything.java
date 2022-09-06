@@ -13,6 +13,7 @@ import com.bic.bit_o_everything.spells.AbstractSpell;
 import com.bic.bit_o_everything.spells.FireballSpell;
 import com.bic.bit_o_everything.util.BetterBrewingRecipe;
 import com.bic.bit_o_everything.world.feature.ModConfiguredFeatures;
+import com.bic.bit_o_everything.world.feature.ModFeatures;
 import com.bic.bit_o_everything.world.feature.ModPlacedFeatures;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.color.item.ItemColor;
@@ -59,6 +60,7 @@ public class BitOEverything  {
 
         ModParticles.register(eventBus);
 
+        ModFeatures.register(eventBus);
         ModConfiguredFeatures.register(eventBus);
         ModPlacedFeatures.register(eventBus);
 
