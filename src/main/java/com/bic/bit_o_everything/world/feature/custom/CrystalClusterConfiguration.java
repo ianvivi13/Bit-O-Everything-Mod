@@ -104,7 +104,7 @@ public class CrystalClusterConfiguration implements FeatureConfiguration {
     //Default canBePlacedOn & Default extraRadius & Default attempts
     public CrystalClusterConfiguration(Supplier<BlockStateProvider> crystals, List<Double> extraChances) {
         this.crystals = crystals.get();
-        this.extraRadius = 5;
+        this.extraRadius = 3;
         this.attempts = 30;
         this.canBePlacedOn = DEFAULT_CRYSTALS_PLACED_ON;
         this.extraChances = extraChances;

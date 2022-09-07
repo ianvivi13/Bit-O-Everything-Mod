@@ -31,13 +31,30 @@ public class CrystalClusterFeature extends Feature<CrystalClusterConfiguration> 
         Iterator<BlockPos> blocks = BlockPos.randomInCube(randomSource, attemptsLeft, origin, crystalClusterConfiguration.extraRadius).iterator();
 
         while (blocks.hasNext() && quantityLeft > 0) {
-            if (attemptSingleCrystalPlacement(worldGenLevel, randomSource, crystalClusterConfiguration, blocks.next())) {
-                quantityLeft --;
-                didPlace = true;
+            if (didPlace) {
+                if (attemptSingleCrystalPlacement(worldGenLevel, randomSource, crystalClusterConfiguration, chooseClosest(blocks.next(), blocks.next(), origin))) {
+                    quantityLeft--;
+
+                }
+            } else {
+                BlockPos placing = blocks.next();
+                if (attemptSingleCrystalPlacement(worldGenLevel, randomSource, crystalClusterConfiguration, placing)) {
+                    quantityLeft--;
+                    didPlace = true;
+                    origin = placing;
+                    blocks = BlockPos.randomInCube(randomSource, attemptsLeft * 2, origin, crystalClusterConfiguration.extraRadius).iterator();
+                }
             }
         }
 
         return didPlace;
+    }
+
+    private static BlockPos chooseClosest(BlockPos a, BlockPos b, BlockPos origin) {
+        if (a.distSqr(origin) <= b.distSqr(origin)) {
+            return a;
+        }
+        return b;
     }
 
     //returns if crystal was placed at this block, attempts are made for each direction
