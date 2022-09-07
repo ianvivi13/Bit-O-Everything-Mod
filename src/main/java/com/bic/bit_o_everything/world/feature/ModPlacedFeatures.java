@@ -106,12 +106,40 @@ public class ModPlacedFeatures {
                             PlacementUtils.RANGE_10_10)));
     //endregion
 
+    //region Crystals - overworld
+    public static final int CRYSTAL_LOW = -64;
+    public static final int CRYSTAL_HIGH = 32;
 
-    public static final RegistryObject<PlacedFeature> CRYSTALS_PLACED = PLACED_FEATURES.register("crystals_placed",
-            () -> new PlacedFeature(ModConfiguredFeatures.CRYSTAL_GROWTH.getHolder().get(),
-                    commonOrePlacement(40,
-                            HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(128)))));
+    public static final RegistryObject<PlacedFeature> MOLDAVITE_PLACED = PLACED_FEATURES.register("moldavite_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.MOLDAVITE_GROWTH.getHolder().get(),
+                    rareOrePlacement(10,
+                            HeightRangePlacement.uniform(VerticalAnchor.absolute(CRYSTAL_LOW), VerticalAnchor.absolute(CRYSTAL_HIGH)))));
 
+    public static final RegistryObject<PlacedFeature> RHODOCHROSITE_PLACED = PLACED_FEATURES.register("rhodochrosite_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.RHODOCHROSITE_GROWTH.getHolder().get(),
+                    rareOrePlacement(10,
+                            HeightRangePlacement.uniform(VerticalAnchor.absolute(CRYSTAL_LOW), VerticalAnchor.absolute(CRYSTAL_HIGH)))));
+
+    public static final RegistryObject<PlacedFeature> TANZANITE_PLACED = PLACED_FEATURES.register("tanzanite_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.TANZANITE_GROWTH.getHolder().get(),
+                    rareOrePlacement(10,
+                            HeightRangePlacement.uniform(VerticalAnchor.absolute(CRYSTAL_LOW), VerticalAnchor.absolute(CRYSTAL_HIGH)))));
+
+    public static final RegistryObject<PlacedFeature> CITRINE_PLACED = PLACED_FEATURES.register("citrine_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.CITRINE_GROWTH.getHolder().get(),
+                    rareOrePlacement(10,
+                            HeightRangePlacement.uniform(VerticalAnchor.absolute(CRYSTAL_LOW), VerticalAnchor.absolute(CRYSTAL_HIGH)))));
+
+    public static final RegistryObject<PlacedFeature> AQUAMARINE_PLACED = PLACED_FEATURES.register("aquamarine_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.AQUAMARINE_GROWTH.getHolder().get(),
+                    rareOrePlacement(10,
+                            HeightRangePlacement.uniform(VerticalAnchor.absolute(CRYSTAL_LOW), VerticalAnchor.absolute(CRYSTAL_HIGH)))));
+
+    public static final RegistryObject<PlacedFeature> CELESTITE_PLACED = PLACED_FEATURES.register("celestite_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.CELESTITE_GROWTH.getHolder().get(),
+                    rareOrePlacement(10,
+                            HeightRangePlacement.uniform(VerticalAnchor.absolute(CRYSTAL_LOW), VerticalAnchor.absolute(CRYSTAL_HIGH)))));
+    //endregion
     public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
         return List.of(p_195347_, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());
     }

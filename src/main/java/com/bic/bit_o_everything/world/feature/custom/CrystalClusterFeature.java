@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class CrystalClusterFeature extends Feature<CrystalClusterConfiguration> {
@@ -17,89 +18,30 @@ public class CrystalClusterFeature extends Feature<CrystalClusterConfiguration> 
         super(pCodec);
     }
 
-    /*
-    // called once by placed feature
-    @Override
-    public boolean place(FeaturePlaceContext<CrystalClusterConfiguration> pContext) {
-        WorldGenLevel worldGenLevel = pContext.level();
-        BlockPos blockpos = pContext.origin();
-        RandomSource randomSource = pContext.random();
-        CrystalClusterConfiguration crystalClusterConfiguration = pContext.config();
-        int quantityToPlace = crystalClusterConfiguration.quantityToPlace(randomSource);
-
-        if (!isAirOrWater(worldGenLevel.getBlockState(blockpos))) {
-            return false;
-        }
-        boolean markPlaced = false;
-        for (int i = 0; i < quantityToPlace; i++) {
-            List<Direction> allDirections = getDirections(randomSource);
-            if (placeGrowthIfPossible(worldGenLevel, blockpos, worldGenLevel.getBlockState(blockpos), crystalClusterConfiguration, randomSource, allDirections)) {
-                markPlaced = true;
-                continue;
-            }
-
-            BlockPos.MutableBlockPos blockpos$mutableblockpos = blockpos.mutable();
-
-            center:
-            for(Direction direction : allDirections) {
-                blockpos$mutableblockpos.set(blockpos);
-
-                List<Direction> list1 = getDirectionsWithout(randomSource, direction.getOpposite());
-
-                for (int j = 0; j < crystalClusterConfiguration.attempts; ++j) {
-                    blockpos$mutableblockpos.setWithOffset(blockpos, direction);
-                    BlockState blockstate = worldGenLevel.getBlockState(blockpos$mutableblockpos);
-                    if (!isAirOrWater(blockstate)) {
-                        break;
-                    }
-
-                    if (placeGrowthIfPossible(worldGenLevel, blockpos$mutableblockpos, blockstate, crystalClusterConfiguration, randomSource, list1)) {
-                        markPlaced = true;
-                        break center;
-                    }
-                }
-            }
-        }
-
-        return markPlaced;
-    }
-    */
-
-    /*
-    public static boolean placeGrowthIfPossible(WorldGenLevel worldGenLevel, BlockPos blockPos, BlockState blockState, CrystalClusterConfiguration crystalClusterConfiguration, RandomSource randomSource, List<Direction> directions) {
-        BlockPos.MutableBlockPos blockpos$mutableblockpos = blockPos.mutable();
-
-        for(Direction direction : directions) {
-            BlockState selectedBlock = worldGenLevel.getBlockState(blockpos$mutableblockpos.setWithOffset(blockPos, direction));
-            if (canSupportCrystal(selectedBlock, crystalClusterConfiguration)) {
-                BlockState crystalPlaceState = crystalClusterConfiguration.getCrystal(randomSource).getStateForPlacement(worldGenLevel, blockPos, direction);
-                if (crystalPlaceState == null) {
-                    return false;
-                }
-                placeCrystal(worldGenLevel, blockPos, crystalPlaceState);
-                return true;
-            }
-        }
-
-        return false;
-    }
-    */
-
     @Override
     public boolean place(FeaturePlaceContext<CrystalClusterConfiguration> pContext) {
         WorldGenLevel worldGenLevel = pContext.level();
         BlockPos origin = pContext.origin();
         RandomSource randomSource = pContext.random();
         CrystalClusterConfiguration crystalClusterConfiguration = pContext.config();
-        int quantityToPlace = crystalClusterConfiguration.quantityToPlace(randomSource);
 
-        return attemptCrystalPlacement(worldGenLevel, randomSource, crystalClusterConfiguration, origin);
+        int quantityLeft = crystalClusterConfiguration.quantityToPlace(randomSource);
+        int attemptsLeft = crystalClusterConfiguration.attempts * quantityLeft; // consider #attempts, quantityLeft, len(#extraChances), radius
+        boolean didPlace = false;
+        Iterator<BlockPos> blocks = BlockPos.randomInCube(randomSource, attemptsLeft, origin, crystalClusterConfiguration.extraRadius).iterator();
 
-        //return false;
+        while (blocks.hasNext() && quantityLeft > 0) {
+            if (attemptSingleCrystalPlacement(worldGenLevel, randomSource, crystalClusterConfiguration, blocks.next())) {
+                quantityLeft --;
+                didPlace = true;
+            }
+        }
+
+        return didPlace;
     }
 
     //returns if crystal was placed at this block, attempts are made for each direction
-    private static boolean attemptCrystalPlacement(WorldGenLevel worldGenLevel, RandomSource randomSource, CrystalClusterConfiguration crystalClusterConfiguration, BlockPos crystalPos) {
+    private static boolean attemptSingleCrystalPlacement(WorldGenLevel worldGenLevel, RandomSource randomSource, CrystalClusterConfiguration crystalClusterConfiguration, BlockPos crystalPos) {
         BlockState crystalPosState = worldGenLevel.getBlockState(crystalPos);
         if (isAirOrWater(crystalPosState)) { // if spot is air or water
             List<Direction> allDirections = getDirections(randomSource);

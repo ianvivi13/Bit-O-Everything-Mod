@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
   "biomes": "#minecraft:is_overworld",
-  "features": "bit_o_everything:crystals_placed",
+  "features": ["bit_o_everything:moldavite_placed", "bit_o_everything:rhodochrosite_placed", "bit_o_everything:tanzanite_placed", "bit_o_everything:citrine_placed", "bit_o_everything:aquamarine_placed", "bit_o_everything:celestite_placed"],
   "step": "top_layer_modification"
 }

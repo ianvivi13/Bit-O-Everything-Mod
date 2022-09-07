@@ -67,6 +67,8 @@ public class BitOEverything  {
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
 
+
+
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }

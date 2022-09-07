@@ -1,18 +1,24 @@
 package com.bic.bit_o_everything.world.feature;
 
 import com.bic.bit_o_everything.BitOEverything;
+import com.bic.bit_o_everything.ModUtils;
 import com.bic.bit_o_everything.block.ModBlocks;
+import com.bic.bit_o_everything.block.custom.CrystalBlock;
 import com.bic.bit_o_everything.datagen.ModTags;
 import com.bic.bit_o_everything.world.feature.custom.CrystalClusterConfiguration;
 import com.google.common.base.Suppliers;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
+import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -31,10 +37,6 @@ public class ModConfiguredFeatures {
     public static final RuleTest DIORITE_ORE_REPLACEABLES = new TagMatchTest(ModTags.Blocks.DIORITE_ORE_REPLACEABLES);
     public static final RuleTest TUFF_ORE_REPLACEABLES = new TagMatchTest(ModTags.Blocks.TUFF_ORE_REPLACEABLES);
     public static final RuleTest BASALT_ORE_REPLACEABLES = new TagMatchTest(ModTags.Blocks.BASALT_ORE_REPLACEABLES);
-
-    public static final HolderSet<Block> CRYSTALS_PLACED_ON = HolderSet.direct(Block::builtInRegistryHolder,
-            Blocks.STONE, Blocks.DEEPSLATE, Blocks.ANDESITE, Blocks.GRANITE, Blocks.DIORITE,
-            Blocks.SMOOTH_BASALT, Blocks.CALCITE, Blocks.TUFF, Blocks.OBSIDIAN, Blocks.DRIPSTONE_BLOCK);
 
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES =
             DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, BitOEverything.MOD_ID);
@@ -160,11 +162,81 @@ public class ModConfiguredFeatures {
 
     //endregion
     //endregion
+    //region Crystals - Overworld
+    public static List<Double> EXTRA_CRYSTAL_CHANCES = List.of(0.95d, 0.90d, 0.85d, 0.8d, 0.75d, 0.7d, 0.65d, 0.6d, 0.55d, 0.5d, 0.45d, 0.4d, 0.35, 0.3d);
 
-    public static List<Double> EXTRA_CHANCES = List.of(1.0d, 1.0d, 0.4d);
-    public static final RegistryObject<ConfiguredFeature<?, ?>> CRYSTAL_GROWTH = CONFIGURED_FEATURES.register("crystal_growth",
-            () -> new ConfiguredFeature<>(ModFeatures.CRYSTAL_CLUSTER.get(), new CrystalClusterConfiguration(ModBlocks.AQUAMARINE.get(), 15, EXTRA_CHANCES, 10)));
+    public static final Supplier<BlockStateProvider> MOLDAVITE_LIST = Suppliers.memoize(() -> new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+            .add(ModBlocks.MOLDAVITE.get().defaultBlockState(), 95)
+            .add(ModBlocks.RHODOCHROSITE.get().defaultBlockState(), 1)
+            .add(ModBlocks.AQUAMARINE.get().defaultBlockState(), 1)
+            .add(ModBlocks.TANZANITE.get().defaultBlockState(), 10)
+            .add(ModBlocks.CITRINE.get().defaultBlockState(), 1)
+            .add(ModBlocks.CELESTITE.get().defaultBlockState(), 1)
+    ));
 
+    public static final Supplier<BlockStateProvider> RHODOCHROSITE_LIST = Suppliers.memoize(() -> new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+            .add(ModBlocks.MOLDAVITE.get().defaultBlockState(), 1)
+            .add(ModBlocks.RHODOCHROSITE.get().defaultBlockState(), 95)
+            .add(ModBlocks.AQUAMARINE.get().defaultBlockState(), 1)
+            .add(ModBlocks.TANZANITE.get().defaultBlockState(), 1)
+            .add(ModBlocks.CITRINE.get().defaultBlockState(), 10)
+            .add(ModBlocks.CELESTITE.get().defaultBlockState(), 1)
+    ));
+
+    public static final Supplier<BlockStateProvider> TANZANITE_LIST = Suppliers.memoize(() -> new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+            .add(ModBlocks.MOLDAVITE.get().defaultBlockState(), 10)
+            .add(ModBlocks.RHODOCHROSITE.get().defaultBlockState(), 1)
+            .add(ModBlocks.AQUAMARINE.get().defaultBlockState(), 1)
+            .add(ModBlocks.TANZANITE.get().defaultBlockState(), 95)
+            .add(ModBlocks.CITRINE.get().defaultBlockState(), 1)
+            .add(ModBlocks.CELESTITE.get().defaultBlockState(), 1)
+    ));
+
+    public static final Supplier<BlockStateProvider> CITRINE_LIST = Suppliers.memoize(() -> new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+            .add(ModBlocks.MOLDAVITE.get().defaultBlockState(), 1)
+            .add(ModBlocks.RHODOCHROSITE.get().defaultBlockState(), 10)
+            .add(ModBlocks.AQUAMARINE.get().defaultBlockState(), 1)
+            .add(ModBlocks.TANZANITE.get().defaultBlockState(), 1)
+            .add(ModBlocks.CITRINE.get().defaultBlockState(), 95)
+            .add(ModBlocks.CELESTITE.get().defaultBlockState(), 1)
+    ));
+
+    public static final Supplier<BlockStateProvider> AQUAMARINE_LIST = Suppliers.memoize(() -> new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+            .add(ModBlocks.MOLDAVITE.get().defaultBlockState(), 1)
+            .add(ModBlocks.RHODOCHROSITE.get().defaultBlockState(), 1)
+            .add(ModBlocks.AQUAMARINE.get().defaultBlockState(), 95)
+            .add(ModBlocks.TANZANITE.get().defaultBlockState(), 1)
+            .add(ModBlocks.CITRINE.get().defaultBlockState(), 1)
+            .add(ModBlocks.CELESTITE.get().defaultBlockState(), 10)
+    ));
+
+    public static final Supplier<BlockStateProvider> CELESTITE_LIST = Suppliers.memoize(() -> new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+            .add(ModBlocks.MOLDAVITE.get().defaultBlockState(), 1)
+            .add(ModBlocks.RHODOCHROSITE.get().defaultBlockState(), 1)
+            .add(ModBlocks.AQUAMARINE.get().defaultBlockState(), 10)
+            .add(ModBlocks.TANZANITE.get().defaultBlockState(), 1)
+            .add(ModBlocks.CITRINE.get().defaultBlockState(), 1)
+            .add(ModBlocks.CELESTITE.get().defaultBlockState(), 95)
+    ));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> MOLDAVITE_GROWTH = CONFIGURED_FEATURES.register("moldavite_growth",
+            () -> new ConfiguredFeature<>(ModFeatures.CRYSTAL_CLUSTER.get(), new CrystalClusterConfiguration(MOLDAVITE_LIST, EXTRA_CRYSTAL_CHANCES)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> RHODOCHROSITE_GROWTH = CONFIGURED_FEATURES.register("rhodochrosite_growth",
+            () -> new ConfiguredFeature<>(ModFeatures.CRYSTAL_CLUSTER.get(), new CrystalClusterConfiguration(RHODOCHROSITE_LIST, EXTRA_CRYSTAL_CHANCES)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> TANZANITE_GROWTH = CONFIGURED_FEATURES.register("tanzanite_growth",
+            () -> new ConfiguredFeature<>(ModFeatures.CRYSTAL_CLUSTER.get(), new CrystalClusterConfiguration(TANZANITE_LIST, EXTRA_CRYSTAL_CHANCES)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CITRINE_GROWTH = CONFIGURED_FEATURES.register("citrine_growth",
+            () -> new ConfiguredFeature<>(ModFeatures.CRYSTAL_CLUSTER.get(), new CrystalClusterConfiguration(CITRINE_LIST, EXTRA_CRYSTAL_CHANCES)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> AQUAMARINE_GROWTH = CONFIGURED_FEATURES.register("aguamarine_growth",
+            () -> new ConfiguredFeature<>(ModFeatures.CRYSTAL_CLUSTER.get(), new CrystalClusterConfiguration(AQUAMARINE_LIST, EXTRA_CRYSTAL_CHANCES)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CELESTITE_GROWTH = CONFIGURED_FEATURES.register("celestite_growth",
+            () -> new ConfiguredFeature<>(ModFeatures.CRYSTAL_CLUSTER.get(), new CrystalClusterConfiguration(CELESTITE_LIST, EXTRA_CRYSTAL_CHANCES)));
+    //endregion
 
 
     public static void register(IEventBus eventBus) {
