@@ -217,6 +217,12 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.SMOOTH_SMOKY_QUARTZ_STAIRS.get())
                 .add(ModBlocks.SMOKY_QUARTZ_SLAB.get())
                 .add(ModBlocks.SMOOTH_SMOKY_QUARTZ_SLAB.get())
+                .add(ModBlocks.CELESTITE_BLOCK.get())
+                .add(ModBlocks.CITRINE_BLOCK.get())
+                .add(ModBlocks.RHODOCHROSITE_BLOCK.get())
+                .add(ModBlocks.MOLDAVITE_BLOCK.get())
+                .add(ModBlocks.AQUAMARINE_BLOCK.get())
+                .add(ModBlocks.TANZANITE_BLOCK.get())
         ;
         //endregion
         //region Needs <Level>

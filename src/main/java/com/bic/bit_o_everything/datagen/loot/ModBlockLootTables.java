@@ -68,6 +68,13 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.CHERRY_WALL_SIGN.get());
         //this.dropSelf(ModBlocks.CHERRY_SAPLING.get());
 
+        this.dropSelf(ModBlocks.CELESTITE_BLOCK.get());
+        this.dropSelf(ModBlocks.CITRINE_BLOCK.get());
+        this.dropSelf(ModBlocks.RHODOCHROSITE_BLOCK.get());
+        this.dropSelf(ModBlocks.MOLDAVITE_BLOCK.get());
+        this.dropSelf(ModBlocks.AQUAMARINE_BLOCK.get());
+        this.dropSelf(ModBlocks.TANZANITE_BLOCK.get());
+
         this.dropSelf(ModBlocks.ALUMINUM_BLOCK.get());
         this.dropSelf(ModBlocks.BRASS_BLOCK.get());
         this.dropSelf(ModBlocks.BRONZE_BLOCK.get());

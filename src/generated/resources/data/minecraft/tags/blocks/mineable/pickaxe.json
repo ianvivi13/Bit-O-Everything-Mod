@@ -170,6 +170,12 @@
     "bit_o_everything:smoky_quartz_stairs",
     "bit_o_everything:smooth_smoky_quartz_stairs",
     "bit_o_everything:smoky_quartz_slab",
-    "bit_o_everything:smooth_smoky_quartz_slab"
+    "bit_o_everything:smooth_smoky_quartz_slab",
+    "bit_o_everything:celestite_block",
+    "bit_o_everything:citrine_block",
+    "bit_o_everything:rhodochrosite_block",
+    "bit_o_everything:moldavite_block",
+    "bit_o_everything:aquamarine_block",
+    "bit_o_everything:tanzanite_block"
   ]
 }

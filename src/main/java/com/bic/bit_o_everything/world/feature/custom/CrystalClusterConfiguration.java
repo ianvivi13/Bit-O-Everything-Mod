@@ -1,10 +1,8 @@
 package com.bic.bit_o_everything.world.feature.custom;
 
-import com.bic.bit_o_everything.ModUtils;
 import com.bic.bit_o_everything.block.ModBlocks;
-import com.bic.bit_o_everything.block.custom.CrystalBlock;
+import com.bic.bit_o_everything.block.custom.Crystal;
 import com.mojang.serialization.Codec;
-import com.mojang.serialization.DataResult;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.RegistryCodecs;
@@ -60,8 +58,8 @@ public class CrystalClusterConfiguration implements FeatureConfiguration {
     public final List<Double> extraChances; // chances to place each next crystal
     public final BlockStateProvider crystals; // weighted list of crystals to be placed
 
-    public CrystalBlock getCrystal(RandomSource randomSource) {
-        return (CrystalBlock) this.crystals.getState(randomSource, null).getBlock();
+    public Crystal getCrystal(RandomSource randomSource) {
+        return (Crystal) this.crystals.getState(randomSource, null).getBlock();
     }
 
     public int quantityToPlace(RandomSource randomSource) {
@@ -84,7 +82,7 @@ public class CrystalClusterConfiguration implements FeatureConfiguration {
     }
 
     //CrystalBlock
-    public CrystalClusterConfiguration(CrystalBlock crystal, HolderSet<Block> canBePlacedOn, int attempts, List<Double> extraChances, int extraRadius) {
+    public CrystalClusterConfiguration(Crystal crystal, HolderSet<Block> canBePlacedOn, int attempts, List<Double> extraChances, int extraRadius) {
         this.crystals = new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(crystal.defaultBlockState(), 1));
         this.extraRadius = extraRadius;
         this.attempts = attempts;
@@ -111,7 +109,7 @@ public class CrystalClusterConfiguration implements FeatureConfiguration {
     }
 
     //CrystalBlock & Default canBePlacedOn
-    public CrystalClusterConfiguration(CrystalBlock crystal, int attempts, List<Double> extraChances, int extraRadius) {
+    public CrystalClusterConfiguration(Crystal crystal, int attempts, List<Double> extraChances, int extraRadius) {
         this.crystals = new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(crystal.defaultBlockState(), 1));
         this.extraRadius = extraRadius;
         this.attempts = attempts;

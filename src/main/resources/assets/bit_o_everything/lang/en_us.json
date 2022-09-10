@@ -33,6 +33,13 @@
   "item.bit_o_everything.sticky_grenade": "Sticky Grenade",
   "item.bit_o_everything.sticky_detonator": "Detonator",
 
+  "block.bit_o_everything.celestite_block": "Celestite Block",
+  "block.bit_o_everything.citrine_block": "Citrine Block",
+  "block.bit_o_everything.rhodochrosite_block": "Rhodochrosite Block",
+  "block.bit_o_everything.moldavite_block": "Moldavite Block",
+  "block.bit_o_everything.aquamarine_block": "Aquamarine Block",
+  "block.bit_o_everything.tanzanite_block": "Tanzanite Block",
+
   "block.bit_o_everything.pyrite_ore": "Pyrite Ore",
   "block.bit_o_everything.deepslate_pyrite_ore": "Deepslate Pyrite Ore",
   "block.bit_o_everything.pyrite_block": "Pyrite Block",

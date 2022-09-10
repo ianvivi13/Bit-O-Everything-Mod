@@ -1,18 +1,13 @@
 package com.bic.bit_o_everything.world.feature;
 
 import com.bic.bit_o_everything.BitOEverything;
-import com.bic.bit_o_everything.ModUtils;
 import com.bic.bit_o_everything.block.ModBlocks;
-import com.bic.bit_o_everything.block.custom.CrystalBlock;
 import com.bic.bit_o_everything.datagen.ModTags;
 import com.bic.bit_o_everything.world.feature.custom.CrystalClusterConfiguration;
 import com.google.common.base.Suppliers;
-import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.util.random.SimpleWeightedRandomList;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;

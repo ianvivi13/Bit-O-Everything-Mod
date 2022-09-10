@@ -606,29 +606,53 @@ public class ModBlocks {
                     .strength(0.8f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
     //endregion
     //region Crystals
-    public static final RegistryObject<CrystalBlock> CELESTITE = registerBlock("celestite",
+    public static final RegistryObject<Crystal> CELESTITE = registerBlock("celestite",
+            () -> new Crystal(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.TERRACOTTA_WHITE)
+                    .instabreak().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Crystal> TANZANITE = registerBlock("tanzanite",
+            () -> new Crystal(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_PURPLE)
+                    .instabreak().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Crystal> MOLDAVITE = registerBlock("moldavite",
+            () -> new Crystal(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_GREEN)
+                    .instabreak().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Crystal> CITRINE = registerBlock("citrine",
+            () -> new Crystal(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_ORANGE)
+                    .instabreak().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Crystal> RHODOCHROSITE = registerBlock("rhodochrosite",
+            () -> new Crystal(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_RED)
+                    .instabreak().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<Crystal> AQUAMARINE = registerBlock("aquamarine",
+            () -> new Crystal(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_CYAN)
+                    .instabreak().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<CrystalBlock> CELESTITE_BLOCK = registerBlock("celestite_block",
             () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.TERRACOTTA_WHITE)
-                    .instabreak().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
+                    .strength(1.5F).requiresCorrectToolForDrops().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
 
-    public static final RegistryObject<CrystalBlock> TANZANITE = registerBlock("tanzanite",
-            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_PURPLE)
-                    .instabreak().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
-
-    public static final RegistryObject<CrystalBlock> MOLDAVITE = registerBlock("moldavite",
-            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_GREEN)
-                    .instabreak().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
-
-    public static final RegistryObject<CrystalBlock> CITRINE = registerBlock("citrine",
+    public static final RegistryObject<CrystalBlock> CITRINE_BLOCK = registerBlock("citrine_block",
             () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_ORANGE)
-                    .instabreak().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
+                    .strength(1.5F).requiresCorrectToolForDrops().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
 
-    public static final RegistryObject<CrystalBlock> RHODOCHROSITE = registerBlock("rhodochrosite",
+    public static final RegistryObject<CrystalBlock> RHODOCHROSITE_BLOCK = registerBlock("rhodochrosite_block",
             () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_RED)
-                    .instabreak().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
+                    .strength(1.5F).requiresCorrectToolForDrops().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
 
-    public static final RegistryObject<CrystalBlock> AQUAMARINE = registerBlock("aquamarine",
+    public static final RegistryObject<CrystalBlock> MOLDAVITE_BLOCK = registerBlock("moldavite_block",
+            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_GREEN)
+                    .strength(1.5F).requiresCorrectToolForDrops().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<CrystalBlock> AQUAMARINE_BLOCK = registerBlock("aquamarine_block",
             () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_CYAN)
-                    .instabreak().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
+                    .strength(1.5F).requiresCorrectToolForDrops().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
+
+    public static final RegistryObject<CrystalBlock> TANZANITE_BLOCK = registerBlock("tanzanite_block",
+            () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_PURPLE)
+                    .strength(1.5F).requiresCorrectToolForDrops().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
     //endregion
     //endregion
     //region Alloys

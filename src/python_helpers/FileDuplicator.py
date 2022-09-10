@@ -68,67 +68,26 @@ class dup:
     def Undo():
         dup._Undo(dup.LoadFromPickle("meta/prev.pckl"))
 
-
-colors = (
-    "white_terracotta",
-    "orange_terracotta",
-    "magenta_terracotta",
-    "light_blue_terracotta",
-    "yellow_terracotta",
-    "lime_terracotta",
-    "pink_terracotta",
-    "gray_terracotta",
-    "light_gray_terracotta",
-    "cyan_terracotta",
-    "purple_terracotta",
-    "blue_terracotta",
-    "brown_terracotta",
-    "green_terracotta",
-    "red_terracotta",
-    "black_terracotta",
-    "white_concrete",
-    "orange_concrete",
-    "magenta_concrete",
-    "light_blue_concrete",
-    "yellow_concrete",
-    "lime_concrete",
-    "pink_concrete",
-    "gray_concrete",
-    "light_gray_concrete",
-    "cyan_concrete",
-    "purple_concrete",
-    "blue_concrete",
-    "brown_concrete",
-    "green_concrete",
-    "red_concrete",
-    "black_concrete"
-)
-
-bismuth = (
-    "deepslate_bismuth_ore",
-    "granite_bismuth_ore",
-    "andesite_bismuth_ore",
-    "diorite_bismuth_ore",
-    "tuff_bismuth_ore"
-)
-
 Dir = "../main/resources/assets/bit_o_everything/"
 Blockstates = Dir + "blockstates/"
 BlockModels = Dir + "models/block/"
 ItemModels = Dir + "models/item/"
 
-files = (
-    "duplicate/white.txt",
-    "duplicate/lol/other_white.txt"
+crystals = (
+    "citrine_block",
+    "rhodochrosite_block",
+    "moldavite_block",
+    "aquamarine_block",
+    "tanzanite_block"
 )
 
 f = (
-    Blockstates + "bismuth_block.json",
-    BlockModels + "bismuth_block.json",
-    ItemModels + "bismuth_block.json"
+    Blockstates + "celestite_block.json",
+    BlockModels + "celestite_block.json",
+    ItemModels + "celestite_block.json"
 )
 
-dup.DuplicateFile(f, "bismuth_block", bismuth)
+dup.DuplicateFile(f, "celestite_block", crystals)
 
 #dup.DuplicateFile(files, "white", colors)
 #dup.Undo()

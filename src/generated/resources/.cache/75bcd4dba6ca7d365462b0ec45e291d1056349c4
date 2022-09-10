@@ -1,4 +1,4 @@
-// 1.19	2022-09-04T18:37:41.3918023	Tags for minecraft:block
+// 1.19	2022-09-09T20:44:51.6259115	Tags for minecraft:block
 411f6180b37eea00f0069105f932d6024ebc8cfd data/bit_o_everything/tags/blocks/andesite_ore_replaceables.json
 c5a8e9863f73bdad2a131270da9a2c9f09c840e0 data/bit_o_everything/tags/blocks/basalt_ore_replaceables.json
 b7af7a48840696dd4f915f7204177d03be42fff2 data/bit_o_everything/tags/blocks/cherry_logs.json
@@ -13,7 +13,7 @@ a89e0fdcaba781e611ac3eb2af9f1d51551f5966 data/minecraft/tags/blocks/fence_gates.
 773385419d9d4ec0f65c2970d6a1e7034cba3e2e data/minecraft/tags/blocks/logs_that_burn.json
 d09b3b461b0645d51c917368ce61d484ccb8a7a4 data/minecraft/tags/blocks/mineable/axe.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/mineable/hoe.json
-6e5ad0cb3b94dd2396b472a9ba50c12655325a45 data/minecraft/tags/blocks/mineable/pickaxe.json
+9ec73a340270f0212989f96ad9868d5fed5691fd data/minecraft/tags/blocks/mineable/pickaxe.json
 e60a6928ac0f68ef9c5ff2e5ecd52790806f2f88 data/minecraft/tags/blocks/mineable/shovel.json
 bfdf062e0f1a1e1c943dc3ba2f754ddf28fb147d data/minecraft/tags/blocks/needs_diamond_tool.json
 04a9cb31e687503f1fea5e2cb23730cd224fc0ed data/minecraft/tags/blocks/needs_iron_tool.json
