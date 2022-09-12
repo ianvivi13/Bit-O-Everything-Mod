@@ -654,6 +654,10 @@ public class ModBlocks {
             () -> new CrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_PURPLE)
                     .strength(1.5F).requiresCorrectToolForDrops().sound(SoundType.AMETHYST_CLUSTER)), ModCreativeModeTab.MINERALS);
     //endregion
+    //region Unobtainium
+    public static final RegistryObject<Block> UNOBTAINIUM_ORE = registerBlock("unobtainium_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BLACK).strength(100F, 3600000.0F).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+    //endregion
     //endregion
     //region Alloys
     public static final RegistryObject<Block> ALUMINUM_BLOCK = registerBlock("aluminum_block",

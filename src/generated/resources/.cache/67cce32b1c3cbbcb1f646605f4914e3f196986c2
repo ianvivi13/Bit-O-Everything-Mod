@@ -1,4 +1,4 @@
-// 1.19	2022-09-09T20:44:51.6102895	LootTables
+// 1.19	2022-09-12T13:21:20.1237615	LootTables
 49aafd2c87d5a7ca3a4740cbb6066a7b2783b77a data/bit_o_everything/loot_tables/blocks/aluminum_block.json
 b7cbeb2b53a8dcc9143c061b2cb8e35f7fa7860b data/bit_o_everything/loot_tables/blocks/andesite_bismuth_ore.json
 78caf6c70a31e83ee97bfe0d7794abe827374724 data/bit_o_everything/loot_tables/blocks/aquamarine.json
@@ -188,6 +188,7 @@ c530bd49d9846b4bcf41d3d265cbfa640e4d6ef8 data/bit_o_everything/loot_tables/block
 c6a1eaaf1d9baa01b5730b6b4135a316e8c93eff data/bit_o_everything/loot_tables/blocks/titanium_block.json
 dee9ac72e1aa92b76d657079c465be72c78983c7 data/bit_o_everything/loot_tables/blocks/titanium_ore.json
 96e41c09369804c733fa36a97c5ae6d4f8970446 data/bit_o_everything/loot_tables/blocks/tuff_bismuth_ore.json
+95adb1b45cfec71844f648c44f20b3ca3d15da56 data/bit_o_everything/loot_tables/blocks/unobtainium_ore.json
 eba56232b3755b19ef7c7d645939809eaf23a94a data/bit_o_everything/loot_tables/blocks/white_bricks.json
 08c770778b2119f9349de7d37fec93af4095607d data/bit_o_everything/loot_tables/blocks/white_brick_slab.json
 c01c09cf3ce5aa784d12e0dd015b8693423efe85 data/bit_o_everything/loot_tables/blocks/white_brick_stairs.json

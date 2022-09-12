@@ -53,6 +53,8 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.WHITE_BRICK_WALL.get());
         this.dropSelf(ModBlocks.BLACK_BRICK_WALL.get());
 
+        this.add(ModBlocks.UNOBTAINIUM_ORE.get(), (block) -> createSingleItemTableWithSilkTouch(block, ModItems.UNOBTAINIUM_DUST.get()));
+
         this.dropSelf(ModBlocks.CHERRY_PLANKS.get());
         this.dropSelf(ModBlocks.STRIPPED_CHERRY_LOG.get());
         this.dropSelf(ModBlocks.CHERRY_LOG.get());

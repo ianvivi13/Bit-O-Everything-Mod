@@ -93,6 +93,11 @@ public class ModPlacedFeatures {
             () -> new PlacedFeature(ModConfiguredFeatures.BISMUTH_ORE.getHolder().get(),
                     commonOrePlacement(7,
                             HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(48)))));
+
+    public static final RegistryObject<PlacedFeature> UNOBTAINIUM_ORE_PLACED = PLACED_FEATURES.register("unobtainium_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.UNOBTAINIUM_ORE.getHolder().get(),
+                    commonOrePlacement(10,
+                            HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(-58)))));
     //endregion
     //region nether
     public static final RegistryObject<PlacedFeature> ROSALITE_ORE_PLACED = PLACED_FEATURES.register("rosalite_ore_placed",

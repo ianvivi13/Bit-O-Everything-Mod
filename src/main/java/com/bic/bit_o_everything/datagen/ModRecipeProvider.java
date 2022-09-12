@@ -517,6 +517,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         stonecutterResultFromBase(pFinishedRecipeConsumer, ModBlocks.SMOOTH_SMOKY_QUARTZ_SLAB.get(), ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get(), 2);
         stonecutterResultFromBase(pFinishedRecipeConsumer, ModBlocks.SMOOTH_SMOKY_QUARTZ_STAIRS.get(), ModBlocks.BLOCK_OF_SMOKY_QUARTZ.get());
         //endregion
+        //region Unobtainium
+        FurnaceBlast(pFinishedRecipeConsumer, ModItems.UNOBTAINIUM_DUST.get(),1.2f, ModBlocks.UNOBTAINIUM_ORE.get());
+        //endregion
 
         FurnaceCampSmoke(pFinishedRecipeConsumer, ModItems.FRIED_EGG.get(), 0.35f, Items.EGG);
 

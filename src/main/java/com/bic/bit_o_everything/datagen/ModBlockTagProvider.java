@@ -223,6 +223,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.MOLDAVITE_BLOCK.get())
                 .add(ModBlocks.AQUAMARINE_BLOCK.get())
                 .add(ModBlocks.TANZANITE_BLOCK.get())
+                .add(ModBlocks.UNOBTAINIUM_ORE.get())
         ;
         //endregion
         //region Needs <Level>
@@ -284,6 +285,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.GRANITE_BISMUTH_ORE.get())
                 .add(ModBlocks.ANDESITE_BISMUTH_ORE.get())
                 .add(ModBlocks.DIORITE_BISMUTH_ORE.get())
+                .add(ModBlocks.UNOBTAINIUM_ORE.get())
         ;
         //endregion
         //region Beacon
@@ -385,6 +387,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         this.tag(BlockTags.WALL_SIGNS)
                 .add(ModBlocks.CHERRY_WALL_SIGN.get())
+        ;
+
+        this.tag(ModTags.Blocks.UNOBTAINIUM_ORE_REPLACEABLES)
+                .add(Blocks.BEDROCK)
         ;
         //endregion
         this.tag(BlockTags.SLABS)

@@ -229,6 +229,10 @@ public class ModItems {
     public static final RegistryObject<Item> AQUAMARINE_SHARD = ITEMS.register("aquamarine_shard",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MINERALS)));
     //endregion
+    //region Unobtainium
+    public static final RegistryObject<Item> UNOBTAINIUM_DUST = ITEMS.register("unobtainium_dust",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MINERALS)));
+    //endregion
     //endregion
     //region Alloys
     //region Aluminum
