@@ -6,6 +6,7 @@ import com.bic.bit_o_everything.block.entity.ModWoodTypes;
 import com.bic.bit_o_everything.item.ModCreativeModeTab;
 import com.bic.bit_o_everything.item.ModItems;
 //import com.bic.bit_o_everything.world.feature.tree.CherryTreeGrower;
+import com.bic.bit_o_everything.world.feature.tree.CherryTreeGrower;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -54,8 +55,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> CONCRETE_POTTER = registerBlock("concrete_potter",
             () -> new ConcretePotterBlock(BlockBehaviour.Properties.of(Material.STONE).noOcclusion().dynamicShape().instabreak()), ModCreativeModeTab.MODDED);
 
-    /*public static final RegistryObject<Block> POTTED_CHERRY_SAPLING = registerBlockWithoutBlockItem("potted_cherry_sapling",
-            () -> new FlowerPotBlock(ModBlocks.CHERRY_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));*/
+    public static final RegistryObject<Block> POTTED_CHERRY_SAPLING = registerBlockWithoutBlockItem("potted_cherry_sapling",
+            () -> new FlowerPotBlock(ModBlocks.CHERRY_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
 
     //region Bricks
     public static final RegistryObject<Block> RAINBOW_BRICKS = registerBlock("rainbow_bricks",
@@ -101,7 +102,7 @@ public class ModBlocks {
     //region Wood
     //region Cherry Woods
     public static final RegistryObject<Block> CHERRY_LOG = registerBlock("cherry_log",
-            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.MODDED);
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.MODDED);
 
     public static final RegistryObject<Block> CHERRY_WOOD = registerBlock("cherry_wood",
             () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.MODDED);
@@ -148,8 +149,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> CHERRY_LEAVES = registerBlock("cherry_leaves",
             () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.MODDED);
 
-    /*public static final RegistryObject<Block> CHERRY_SAPLING = registerBlock("cherry_sapling",
-            () -> new SaplingBlock(new CherryTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.MODDED);*/
+    public static final RegistryObject<Block> CHERRY_SAPLING = registerBlock("cherry_sapling",
+            () -> new SaplingBlock(new CherryTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.MODDED);
 
     //endregion
     //endregion

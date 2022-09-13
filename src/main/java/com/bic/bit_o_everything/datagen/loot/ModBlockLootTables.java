@@ -66,7 +66,7 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.CHERRY_PRESSURE_PLATE.get());
         this.dropSelf(ModBlocks.CHERRY_SIGN.get());
         this.dropSelf(ModBlocks.CHERRY_WALL_SIGN.get());
-        //this.dropSelf(ModBlocks.CHERRY_SAPLING.get());
+        this.dropSelf(ModBlocks.CHERRY_SAPLING.get());
 
         this.dropSelf(ModBlocks.ALUMINUM_BLOCK.get());
         this.dropSelf(ModBlocks.BRASS_BLOCK.get());
@@ -85,7 +85,7 @@ public class ModBlockLootTables extends BlockLoot {
 
         this.add(ModBlocks.CHERRY_DOOR.get(), BlockLoot::createDoorTable);
         this.add(ModBlocks.CHERRY_SLAB.get(), BlockLoot::createSlabItemTable);
-        //this.add(ModBlocks.CHERRY_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.CHERRY_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(ModBlocks.CHERRY_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.CHERRY_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(ModBlocks.CHERRY_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.CHERRY_LEAVES.get())); //TEMPORARY
 
         this.add(ModBlocks.SILICON_ORE.get(), (block) -> createModifiedOreDrops(ModBlocks.SILICON_ORE.get(), ModItems.UNREFINED_SILICON.get(), 1.0F, 3.0F));
@@ -257,7 +257,7 @@ public class ModBlockLootTables extends BlockLoot {
         //endregion
         //endregion
 
-        //this.dropPottedContents(ModBlocks.POTTED_CHERRY_SAPLING.get());
+        this.dropPottedContents(ModBlocks.POTTED_CHERRY_SAPLING.get());
     }
 
     @Override
