@@ -345,8 +345,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.CHERRY_LEAVES.get())
         ;
 
-        /*this.tag(BlockTags.SAPLINGS)
-                .add(ModBlocks.CHERRY_SAPLING.get())*/
+        this.tag(BlockTags.SAPLINGS)
+                .add(ModBlocks.CHERRY_SAPLING.get())
         ;
 
         this.tag(BlockTags.WOODEN_STAIRS)
@@ -414,8 +414,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.WHITE_BRICK_SLAB.get())
                 .add(ModBlocks.BLACK_BRICK_SLAB.get())
         ;
-        /*this.tag(BlockTags.FLOWER_POTS)
-                .add(ModBlocks.POTTED_CHERRY_SAPLING.get())*/
+        this.tag(BlockTags.FLOWER_POTS)
+                .add(ModBlocks.POTTED_CHERRY_SAPLING.get())
         ;
 
         this.tag(BlockTags.STAIRS)
