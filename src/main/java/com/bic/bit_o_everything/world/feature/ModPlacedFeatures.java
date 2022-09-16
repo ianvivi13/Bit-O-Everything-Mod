@@ -18,6 +18,12 @@ import java.util.function.Supplier;
 public class ModPlacedFeatures {
     public static final DeferredRegister<PlacedFeature> PLACED_FEATURES =
             DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, BitOEverything.MOD_ID);
+
+    public static final RegistryObject<PlacedFeature> UNOBTAINIUM_ORE_PLACED = PLACED_FEATURES.register("unobtainium_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.UNOBTAINIUM_ORE.getHolder().get(),
+                    commonOrePlacement(10,
+                            HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(-58)))));
+
     public static final RegistryObject<PlacedFeature> PYRITE_ORE_PLACED = register("pyrite_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.PYRITE_ORE.getHolder().get(),
                     commonOrePlacement(2,
