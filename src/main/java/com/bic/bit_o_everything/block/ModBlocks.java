@@ -6,7 +6,7 @@ import com.bic.bit_o_everything.block.entity.ModWoodTypes;
 import com.bic.bit_o_everything.item.ModCreativeModeTab;
 import com.bic.bit_o_everything.item.ModItems;
 //import com.bic.bit_o_everything.world.feature.tree.CherryTreeGrower;
-import com.bic.bit_o_everything.world.feature.tree.CherryTreeGrower;
+import com.bic.bit_o_everything.world.feature.tree_growers.CherryTreeGrower;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -20,6 +20,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.ArrayList;
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -54,9 +55,6 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> CONCRETE_POTTER = registerBlock("concrete_potter",
             () -> new ConcretePotterBlock(BlockBehaviour.Properties.of(Material.STONE).noOcclusion().dynamicShape().instabreak()), ModCreativeModeTab.MODDED);
-
-    public static final RegistryObject<Block> POTTED_CHERRY_SAPLING = registerBlockWithoutBlockItem("potted_cherry_sapling",
-            () -> new FlowerPotBlock(ModBlocks.CHERRY_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion()));
 
     //region Bricks
     public static final RegistryObject<Block> RAINBOW_BRICKS = registerBlock("rainbow_bricks",
@@ -102,8 +100,8 @@ public class ModBlocks {
     //region Wood
     //region Cherry Woods
     public static final RegistryObject<Block> CHERRY_LOG = registerBlock("cherry_log",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.MODDED);
-
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.MODDED);
+    
     public static final RegistryObject<Block> CHERRY_WOOD = registerBlock("cherry_wood",
             () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.MODDED);
 
@@ -151,6 +149,8 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> CHERRY_SAPLING = registerBlock("cherry_sapling",
             () -> new SaplingBlock(new CherryTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> POTTED_CHERRY_SAPLING = registerPottedPlant("potted_cherry_sapling", ModBlocks.CHERRY_SAPLING);
 
     //endregion
     //endregion
@@ -661,6 +661,14 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_PURPLE).sound(SoundType.NETHERITE_BLOCK)
                     .strength(50f,1200f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
     //endregion
+
+    private static RegistryObject<Block> registerPottedPlant(String name, RegistryObject<Block> contents) {
+        RegistryObject<Block> ret = registerBlockWithoutBlockItem(name,
+                () -> new FlowerPotBlock(() -> (FlowerPotBlock) net.minecraftforge.registries.ForgeRegistries.BLOCKS.getDelegateOrThrow(Blocks.FLOWER_POT).get(),
+                        contents, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion().instabreak()));
+        BitOEverything.addPottedPlant(contents, ret);
+        return ret;
+    }
 
     private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {
         return BLOCKS.register(name, block);

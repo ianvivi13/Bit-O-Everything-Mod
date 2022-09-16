@@ -9,15 +9,12 @@ import com.bic.bit_o_everything.network.ModPacketHandler;
 import com.bic.bit_o_everything.particle.ModParticles;
 import com.bic.bit_o_everything.potion.ModPotions;
 import com.bic.bit_o_everything.sound.ModSounds;
-import com.bic.bit_o_everything.spells.AbstractSpell;
-import com.bic.bit_o_everything.spells.FireballSpell;
 import com.bic.bit_o_everything.util.BetterBrewingRecipe;
 import com.bic.bit_o_everything.world.feature.ModConfiguredFeatures;
 import com.bic.bit_o_everything.world.feature.ModFeatures;
 import com.bic.bit_o_everything.world.feature.ModPlacedFeatures;
+import com.google.common.collect.Maps;
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.color.item.ItemColor;
-import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
@@ -25,17 +22,21 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
+
+import java.util.Map;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(BitOEverything.MOD_ID)
@@ -45,7 +46,14 @@ public class BitOEverything  {
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
+    public static final Map<RegistryObject<Block>, RegistryObject<Block>> POTTED_PLANTS = Maps.newHashMap();
+
+    public static void addPottedPlant(RegistryObject<Block> plant, RegistryObject<Block> flowerPot) {
+        POTTED_PLANTS.put(plant, flowerPot);
+    }
+
     public BitOEverything() {
+
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         // Register shit here
@@ -89,8 +97,12 @@ public class BitOEverything  {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_CHERRY_SAPLING.get(), RenderType.cutout());
         WoodType.register(ModWoodTypes.CHERRY);
         BlockEntityRenderers.register(ModBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
-
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTER.get(), RenderType.cutout());
+
+        for (Map.Entry<RegistryObject<Block>, RegistryObject<Block>> entry : POTTED_PLANTS.entrySet()) {
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(entry.getKey().getId(), entry.getValue());
+        }
+
 
     }
 
