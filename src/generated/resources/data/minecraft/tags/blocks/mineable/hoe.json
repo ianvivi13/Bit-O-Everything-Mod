@@ -1,3 +1,10 @@
 {
-  "values": []
+  "values": [
+    "bit_o_everything:cherry_leaves",
+    "bit_o_everything:wildberry_bush",
+    "bit_o_everything:gooseberry_bush",
+    "bit_o_everything:blueberry_bush",
+    "bit_o_everything:raspberry_bush",
+    "bit_o_everything:blackberry_bush"
+  ]
 }

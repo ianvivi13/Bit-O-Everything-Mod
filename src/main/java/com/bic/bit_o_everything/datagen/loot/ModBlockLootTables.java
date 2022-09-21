@@ -2,6 +2,9 @@ package com.bic.bit_o_everything.datagen.loot;
 
 import com.bic.bit_o_everything.block.ModBlocks;
 import com.bic.bit_o_everything.item.ModItems;
+import net.minecraft.advancements.critereon.EnchantmentPredicate;
+import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Item;
@@ -9,21 +12,49 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
+import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.ApplyExplosionDecay;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.MatchTool;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModBlockLootTables extends BlockLoot {
     private static final float[] NORMAL_LEAVES_SAPLING_CHANCES = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
+    private static final LootItemCondition.Builder HAS_SILK_TOUCH = MatchTool.toolMatches(ItemPredicate.Builder.item().hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.atLeast(1))));
+    private static final LootItemCondition.Builder HAS_NO_SILK_TOUCH = HAS_SILK_TOUCH.invert();
+    private static final LootItemCondition.Builder HAS_SHEARS = MatchTool.toolMatches(ItemPredicate.Builder.item().of(Items.SHEARS));
+    private static final LootItemCondition.Builder HAS_SHEARS_OR_SILK_TOUCH = HAS_SHEARS.or(HAS_SILK_TOUCH);
+    private static final LootItemCondition.Builder HAS_NO_SHEARS_OR_SILK_TOUCH = HAS_SHEARS_OR_SILK_TOUCH.invert();
+
     protected static LootTable.Builder createModifiedOreDrops(Block p_176051_, Item pItem, float min, float max) {
         return createSilkTouchDispatchTable(p_176051_, applyExplosionDecay(p_176051_, LootItem.lootTableItem(pItem).apply(SetItemCountFunction.setCount(UniformGenerator.between(min, max))).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE))));
     }
 
+    protected LootTable.Builder createSilkOrShearsOnly(Block block) {
+        return LootTable.lootTable().withPool(LootPool.lootPool().when(HAS_SHEARS_OR_SILK_TOUCH).setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(block)));
+    }
+
+    protected void dropWhenSilkOrShearsOnly(Block block) {
+        this.add(block, this.createSilkOrShearsOnly(block));
+    }
+
     @Override
     protected void addTables() {
+        this.dropWhenSilkOrShearsOnly(ModBlocks.WILDBERRY_BUSH.get());
+        this.dropWhenSilkOrShearsOnly(ModBlocks.BLUEBERRY_BUSH.get());
+        this.dropWhenSilkOrShearsOnly(ModBlocks.GOOSEBERRY_BUSH.get());
+        this.dropWhenSilkOrShearsOnly(ModBlocks.RASPBERRY_BUSH.get());
+        this.dropWhenSilkOrShearsOnly(ModBlocks.BLACKBERRY_BUSH.get());
+
         this.dropSelf(ModBlocks.PYRITE_BLOCK.get());
         this.dropSelf(ModBlocks.RAW_PYRITE_BLOCK.get());
         this.dropSelf(ModBlocks.ZINC_BLOCK.get());

@@ -18,7 +18,12 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     protected void addTags() {
         //region Needs Tool
         this.tag(BlockTags.MINEABLE_WITH_HOE)
-
+                .add(ModBlocks.CHERRY_LEAVES.get())
+                .add(ModBlocks.WILDBERRY_BUSH.get())
+                .add(ModBlocks.GOOSEBERRY_BUSH.get())
+                .add(ModBlocks.BLUEBERRY_BUSH.get())
+                .add(ModBlocks.RASPBERRY_BUSH.get())
+                .add(ModBlocks.BLACKBERRY_BUSH.get())
         ;
 
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL)

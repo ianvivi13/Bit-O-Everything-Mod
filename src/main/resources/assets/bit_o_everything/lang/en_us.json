@@ -43,6 +43,17 @@
   "block.bit_o_everything.unobtainium_ore": "Unobtainium Ore",
   "item.bit_o_everything.unobtainium_dust": "Unobtainium Dust",
 
+  "item.bit_o_everything.wildberries": "Wildberries",
+  "item.bit_o_everything.blueberries": "Blueberries",
+  "item.bit_o_everything.gooseberries": "Gooseberries",
+  "item.bit_o_everything.raspberries": "Raspberries",
+  "item.bit_o_everything.blackberries": "Blackberries",
+  "block.bit_o_everything.wildberry_bush": "Wildberry Bush",
+  "block.bit_o_everything.blueberry_bush": "Blueberry Bush",
+  "block.bit_o_everything.gooseberry_bush": "Gooseberry Bush",
+  "block.bit_o_everything.raspberry_bush": "Raspberry Bush",
+  "block.bit_o_everything.blackberry_bush": "Blackberry Bush",
+
   "block.bit_o_everything.pyrite_ore": "Pyrite Ore",
   "block.bit_o_everything.deepslate_pyrite_ore": "Deepslate Pyrite Ore",
   "block.bit_o_everything.pyrite_block": "Pyrite Block",

@@ -73,21 +73,24 @@ Blockstates = Dir + "blockstates/"
 BlockModels = Dir + "models/block/"
 ItemModels = Dir + "models/item/"
 
-crystals = (
-    "citrine_block",
-    "rhodochrosite_block",
-    "moldavite_block",
-    "aquamarine_block",
-    "tanzanite_block"
+berries = (
+    "blueberry",
+    "gooseberry",
+    "raspberry",
+    "blackberry"
 )
 
 f = (
-    Blockstates + "celestite_block.json",
-    BlockModels + "celestite_block.json",
-    ItemModels + "celestite_block.json"
+    Blockstates + "wildberry_bush.json",
+    BlockModels + "wildberry_bush.json",
+    BlockModels + "wildberry_bush_blooming.json",
+    BlockModels + "wildberry_bush_ripe.json",
+    BlockModels + "wildberry_bush_overripe.json",
+    BlockModels + "wildberry_bush_rotten.json",
+    ItemModels + "wildberry_bush.json"
 )
 
-dup.DuplicateFile(f, "celestite_block", crystals)
+dup.DuplicateFile(f, "wildberry", berries)
 
 #dup.DuplicateFile(files, "white", colors)
 #dup.Undo()

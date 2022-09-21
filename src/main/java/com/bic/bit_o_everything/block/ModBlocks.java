@@ -7,12 +7,17 @@ import com.bic.bit_o_everything.item.ModCreativeModeTab;
 import com.bic.bit_o_everything.item.ModItems;
 //import com.bic.bit_o_everything.world.feature.tree.CherryTreeGrower;
 import com.bic.bit_o_everything.world.feature.tree_growers.CherryTreeGrower;
+import net.minecraft.core.BlockPos;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -690,12 +695,32 @@ public class ModBlocks {
                     .strength(50f,1200f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
     //endregion
 
+    public static final RegistryObject<Block> WILDBERRY_BUSH =registerBerryBush("wildberry_bush", ModItems.WILDBERRIES::get);
+    public static final RegistryObject<Block> BLUEBERRY_BUSH =registerBerryBush("blueberry_bush", ModItems.BLUEBERRIES::get);
+    public static final RegistryObject<Block> GOOSEBERRY_BUSH =registerBerryBush("gooseberry_bush", ModItems.GOOSEBERRIES::get);
+    public static final RegistryObject<Block> RASPBERRY_BUSH =registerBerryBush("raspberry_bush", ModItems.RASPBERRIES::get);
+    public static final RegistryObject<Block> BLACKBERRY_BUSH =registerBerryBush("blackberry_bush", ModItems.BLACKBERRIES::get);
+
+    private static RegistryObject<Block> registerBerryBush(String name, Supplier<ItemLike> drop) {
+        return registerBlock(name, () -> new BerryBushBlock(BlockBehaviour.Properties.of(Material.DECORATION, MaterialColor.COLOR_GREEN)
+                .sound(SoundType.SWEET_BERRY_BUSH).randomTicks().isSuffocating(ModBlocks::never)
+                .isViewBlocking(ModBlocks::never).noOcclusion(), drop), ModCreativeModeTab.MODDED);
+    }
+
     private static RegistryObject<Block> registerPottedPlant(String name, RegistryObject<Block> contents) {
         RegistryObject<Block> ret = registerBlockWithoutBlockItem(name,
                 () -> new FlowerPotBlock(() -> (FlowerPotBlock) net.minecraftforge.registries.ForgeRegistries.BLOCKS.getDelegateOrThrow(Blocks.FLOWER_POT).get(),
                         contents, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion().instabreak()));
         BitOEverything.addPottedPlant(contents, ret);
         return ret;
+    }
+
+    private static boolean always(BlockState p_50775_, BlockGetter p_50776_, BlockPos p_50777_) {
+        return true;
+    }
+    
+    private static boolean never(BlockState p_50806_, BlockGetter p_50807_, BlockPos p_50808_) {
+        return false;
     }
 
     private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {

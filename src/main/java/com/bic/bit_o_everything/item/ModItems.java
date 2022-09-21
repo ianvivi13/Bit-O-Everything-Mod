@@ -6,6 +6,7 @@ import com.bic.bit_o_everything.entity.custom.ModBoatEntity;
 import com.bic.bit_o_everything.entity.custom.ModChestBoatEntity;
 import com.bic.bit_o_everything.item.custom.*;
 import com.bic.bit_o_everything.spells.*;
+import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -295,6 +296,21 @@ public class ModItems {
     public static final RegistryObject<Item> COPPER_NUGGET = ITEMS.register("copper_nugget",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MINERALS)));
     //endregion
+
+    public static final RegistryObject<Item> WILDBERRIES = ITEMS.register("wildberries",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED).food(Foods.SWEET_BERRIES)));
+
+    public static final RegistryObject<Item> BLUEBERRIES = ITEMS.register("blueberries",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED).food(Foods.SWEET_BERRIES)));
+
+    public static final RegistryObject<Item> GOOSEBERRIES = ITEMS.register("gooseberries",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED).food(Foods.SWEET_BERRIES)));
+
+    public static final RegistryObject<Item> RASPBERRIES = ITEMS.register("raspberries",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED).food(Foods.SWEET_BERRIES)));
+
+    public static final RegistryObject<Item> BLACKBERRIES = ITEMS.register("blackberries",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED).food(Foods.SWEET_BERRIES)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

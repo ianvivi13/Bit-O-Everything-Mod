@@ -1,10 +1,11 @@
-// 1.19	2022-09-15T13:11:55.3861995	Tags for minecraft:item
+// 1.19	2022-09-17T03:30:49.6655761	Tags for minecraft:item
 b7af7a48840696dd4f915f7204177d03be42fff2 data/bit_o_everything/tags/items/cherry_logs.json
 c882f1fc924c7ace24f2ece6ec48f727ede793e9 data/bit_o_everything/tags/items/concretes.json
 ca183ade0f639247c7e7cde4b927a91e50233cdd data/minecraft/tags/items/arrows.json
 7b536bc2eece76886026ca2fe84c6dbdbef033ca data/minecraft/tags/items/beacon_payment_items.json
 1420f1e2ac69b79efe9bb387a592884b5c3ae5f3 data/minecraft/tags/items/boats.json
 e24c2a54ff80a82e8b3a097141d6f3b8e75f2b3c data/minecraft/tags/items/chest_boats.json
+7ede00db8dbd81c332c39f1ae7b3d0a05979f54f data/minecraft/tags/items/fox_food.json
 9317cbed5a827d7208602ff24834f46ba0eb098f data/minecraft/tags/items/leaves.json
 773385419d9d4ec0f65c2970d6a1e7034cba3e2e data/minecraft/tags/items/logs_that_burn.json
 a1f1fafebe88c5aea44fa5a92ab5121ec897bc91 data/minecraft/tags/items/planks.json

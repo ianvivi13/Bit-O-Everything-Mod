@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "bit_o_everything:block/wildberry_bush"
+    },
+    "age=1": {
+      "model": "bit_o_everything:block/wildberry_bush_blooming"
+    },
+    "age=2": {
+      "model": "bit_o_everything:block/wildberry_bush_ripe"
+    },
+    "age=3": {
+      "model": "bit_o_everything:block/wildberry_bush_overripe"
+    },
+    "age=4": {
+      "model": "bit_o_everything:block/wildberry_bush_rotten"
+    }
+  }
+}

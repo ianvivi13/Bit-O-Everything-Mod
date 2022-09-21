@@ -48,10 +48,19 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.SILVER_INGOT.get())
         ;
         //endregion
+        this.tag(ItemTags.FOX_FOOD)
+                .add(ModItems.WILDBERRIES.get())
+                .add(ModItems.BLUEBERRIES.get())
+                .add(ModItems.GOOSEBERRIES.get())
+                .add(ModItems.RASPBERRIES.get())
+                .add(ModItems.BLACKBERRIES.get())
+        ;
         //region Boats
         this.tag(ItemTags.BOATS)
                 .add(ModItems.CHERRY_BOAT.get())
         ;
+
+
 
         this.tag(ItemTags.CHEST_BOATS)
                 .add(ModItems.CHERRY_CHEST_BOAT.get())
