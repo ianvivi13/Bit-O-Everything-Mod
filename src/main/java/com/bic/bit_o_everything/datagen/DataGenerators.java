@@ -21,5 +21,6 @@ public class DataGenerators {
         generator.addProvider(true, new ModLootTableProvider(generator));
         generator.addProvider(true, bp = new ModBlockTagProvider(generator, BitOEverything.MOD_ID, existingFileHelper));
         generator.addProvider(true, new ModItemTagProvider(generator, bp,BitOEverything.MOD_ID, existingFileHelper));
+        generator.addProvider(true, new ModLanguageProvider(generator, BitOEverything.MOD_ID, "en_us"));
     }
 }
