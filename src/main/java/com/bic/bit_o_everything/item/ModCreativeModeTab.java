@@ -25,5 +25,11 @@ public class ModCreativeModeTab {
             return new ItemStack(ModItems.STAFF.get());
         }
     };
-
+    
+    public static final CreativeModeTab WOOD = new CreativeModeTab("wood") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(ModBlocks.CHERRY_LOG.get());
+        }
+    };
 }

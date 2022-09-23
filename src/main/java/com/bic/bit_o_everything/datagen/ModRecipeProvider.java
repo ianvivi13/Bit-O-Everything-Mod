@@ -519,16 +519,119 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         FurnaceCampSmoke(pFinishedRecipeConsumer, ModItems.FRIED_EGG.get(), 0.35f, Items.EGG);
 
-        // cherry wood recipes
+        //region Woods
         AllWoodRecipes(pFinishedRecipeConsumer, ModBlocks.CHERRY_LOG.get(), ModBlocks.STRIPPED_CHERRY_LOG.get(),
                 ModBlocks.CHERRY_WOOD.get(), ModBlocks.STRIPPED_CHERRY_WOOD.get(), ModBlocks.CHERRY_PLANKS.get(),
                 ModBlocks.CHERRY_STAIRS.get(), ModBlocks.CHERRY_SLAB.get(), ModBlocks.CHERRY_FENCE.get(),
                 ModBlocks.CHERRY_FENCE_GATE.get(), ModBlocks.CHERRY_DOOR.get(), ModBlocks.CHERRY_TRAPDOOR.get(),
                 ModItems.CHERRY_SIGN.get(), ModBlocks.CHERRY_BUTTON.get(), ModBlocks.CHERRY_PRESSURE_PLATE.get(),
                 ModItems.CHERRY_BOAT.get(), ModItems.CHERRY_CHEST_BOAT.get());
-
-
-
+        
+        AllWoodRecipes(pFinishedRecipeConsumer, ModBlocks.MAPLE_LOG.get(), ModBlocks.STRIPPED_MAPLE_LOG.get(),
+                ModBlocks.MAPLE_WOOD.get(), ModBlocks.STRIPPED_MAPLE_WOOD.get(), ModBlocks.MAPLE_PLANKS.get(),
+                ModBlocks.MAPLE_STAIRS.get(), ModBlocks.MAPLE_SLAB.get(), ModBlocks.MAPLE_FENCE.get(),
+                ModBlocks.MAPLE_FENCE_GATE.get(), ModBlocks.MAPLE_DOOR.get(), ModBlocks.MAPLE_TRAPDOOR.get(),
+                ModItems.MAPLE_SIGN.get(), ModBlocks.MAPLE_BUTTON.get(), ModBlocks.MAPLE_PRESSURE_PLATE.get(),
+                ModItems.MAPLE_BOAT.get(), ModItems.MAPLE_CHEST_BOAT.get());
+        
+        AllWoodRecipes(pFinishedRecipeConsumer, ModBlocks.DOGWOOD_LOG.get(), ModBlocks.STRIPPED_DOGWOOD_LOG.get(),
+                ModBlocks.DOGWOOD_WOOD.get(), ModBlocks.STRIPPED_DOGWOOD_WOOD.get(), ModBlocks.DOGWOOD_PLANKS.get(),
+                ModBlocks.DOGWOOD_STAIRS.get(), ModBlocks.DOGWOOD_SLAB.get(), ModBlocks.DOGWOOD_FENCE.get(),
+                ModBlocks.DOGWOOD_FENCE_GATE.get(), ModBlocks.DOGWOOD_DOOR.get(), ModBlocks.DOGWOOD_TRAPDOOR.get(),
+                ModItems.DOGWOOD_SIGN.get(), ModBlocks.DOGWOOD_BUTTON.get(), ModBlocks.DOGWOOD_PRESSURE_PLATE.get(),
+                ModItems.DOGWOOD_BOAT.get(), ModItems.DOGWOOD_CHEST_BOAT.get());
+        
+        AllWoodRecipes(pFinishedRecipeConsumer, ModBlocks.REDWOOD_LOG.get(), ModBlocks.STRIPPED_REDWOOD_LOG.get(),
+                ModBlocks.REDWOOD_WOOD.get(), ModBlocks.STRIPPED_REDWOOD_WOOD.get(), ModBlocks.REDWOOD_PLANKS.get(),
+                ModBlocks.REDWOOD_STAIRS.get(), ModBlocks.REDWOOD_SLAB.get(), ModBlocks.REDWOOD_FENCE.get(),
+                ModBlocks.REDWOOD_FENCE_GATE.get(), ModBlocks.REDWOOD_DOOR.get(), ModBlocks.REDWOOD_TRAPDOOR.get(),
+                ModItems.REDWOOD_SIGN.get(), ModBlocks.REDWOOD_BUTTON.get(), ModBlocks.REDWOOD_PRESSURE_PLATE.get(),
+                ModItems.REDWOOD_BOAT.get(), ModItems.REDWOOD_CHEST_BOAT.get());
+        
+        AllWoodRecipes(pFinishedRecipeConsumer, ModBlocks.OLIVE_LOG.get(), ModBlocks.STRIPPED_OLIVE_LOG.get(),
+                ModBlocks.OLIVE_WOOD.get(), ModBlocks.STRIPPED_OLIVE_WOOD.get(), ModBlocks.OLIVE_PLANKS.get(),
+                ModBlocks.OLIVE_STAIRS.get(), ModBlocks.OLIVE_SLAB.get(), ModBlocks.OLIVE_FENCE.get(),
+                ModBlocks.OLIVE_FENCE_GATE.get(), ModBlocks.OLIVE_DOOR.get(), ModBlocks.OLIVE_TRAPDOOR.get(),
+                ModItems.OLIVE_SIGN.get(), ModBlocks.OLIVE_BUTTON.get(), ModBlocks.OLIVE_PRESSURE_PLATE.get(),
+                ModItems.OLIVE_BOAT.get(), ModItems.OLIVE_CHEST_BOAT.get());
+        
+        AllWoodRecipes(pFinishedRecipeConsumer, ModBlocks.PEACH_LOG.get(), ModBlocks.STRIPPED_PEACH_LOG.get(),
+                ModBlocks.PEACH_WOOD.get(), ModBlocks.STRIPPED_PEACH_WOOD.get(), ModBlocks.PEACH_PLANKS.get(),
+                ModBlocks.PEACH_STAIRS.get(), ModBlocks.PEACH_SLAB.get(), ModBlocks.PEACH_FENCE.get(),
+                ModBlocks.PEACH_FENCE_GATE.get(), ModBlocks.PEACH_DOOR.get(), ModBlocks.PEACH_TRAPDOOR.get(),
+                ModItems.PEACH_SIGN.get(), ModBlocks.PEACH_BUTTON.get(), ModBlocks.PEACH_PRESSURE_PLATE.get(),
+                ModItems.PEACH_BOAT.get(), ModItems.PEACH_CHEST_BOAT.get());
+        
+        AllWoodRecipes(pFinishedRecipeConsumer, ModBlocks.EBONY_LOG.get(), ModBlocks.STRIPPED_EBONY_LOG.get(),
+                ModBlocks.EBONY_WOOD.get(), ModBlocks.STRIPPED_EBONY_WOOD.get(), ModBlocks.EBONY_PLANKS.get(),
+                ModBlocks.EBONY_STAIRS.get(), ModBlocks.EBONY_SLAB.get(), ModBlocks.EBONY_FENCE.get(),
+                ModBlocks.EBONY_FENCE_GATE.get(), ModBlocks.EBONY_DOOR.get(), ModBlocks.EBONY_TRAPDOOR.get(),
+                ModItems.EBONY_SIGN.get(), ModBlocks.EBONY_BUTTON.get(), ModBlocks.EBONY_PRESSURE_PLATE.get(),
+                ModItems.EBONY_BOAT.get(), ModItems.EBONY_CHEST_BOAT.get());
+        
+        AllWoodRecipes(pFinishedRecipeConsumer, ModBlocks.PLUM_LOG.get(), ModBlocks.STRIPPED_PLUM_LOG.get(),
+                ModBlocks.PLUM_WOOD.get(), ModBlocks.STRIPPED_PLUM_WOOD.get(), ModBlocks.PLUM_PLANKS.get(),
+                ModBlocks.PLUM_STAIRS.get(), ModBlocks.PLUM_SLAB.get(), ModBlocks.PLUM_FENCE.get(),
+                ModBlocks.PLUM_FENCE_GATE.get(), ModBlocks.PLUM_DOOR.get(), ModBlocks.PLUM_TRAPDOOR.get(),
+                ModItems.PLUM_SIGN.get(), ModBlocks.PLUM_BUTTON.get(), ModBlocks.PLUM_PRESSURE_PLATE.get(),
+                ModItems.PLUM_BOAT.get(), ModItems.PLUM_CHEST_BOAT.get());
+        
+        AllWoodRecipes(pFinishedRecipeConsumer, ModBlocks.ORANGE_LOG.get(), ModBlocks.STRIPPED_ORANGE_LOG.get(),
+                ModBlocks.ORANGE_WOOD.get(), ModBlocks.STRIPPED_ORANGE_WOOD.get(), ModBlocks.ORANGE_PLANKS.get(),
+                ModBlocks.ORANGE_STAIRS.get(), ModBlocks.ORANGE_SLAB.get(), ModBlocks.ORANGE_FENCE.get(),
+                ModBlocks.ORANGE_FENCE_GATE.get(), ModBlocks.ORANGE_DOOR.get(), ModBlocks.ORANGE_TRAPDOOR.get(),
+                ModItems.ORANGE_SIGN.get(), ModBlocks.ORANGE_BUTTON.get(), ModBlocks.ORANGE_PRESSURE_PLATE.get(),
+                ModItems.ORANGE_BOAT.get(), ModItems.ORANGE_CHEST_BOAT.get());
+        
+        AllWoodRecipes(pFinishedRecipeConsumer, ModBlocks.INFECTED_LOG.get(), ModBlocks.STRIPPED_INFECTED_LOG.get(),
+                ModBlocks.INFECTED_WOOD.get(), ModBlocks.STRIPPED_INFECTED_WOOD.get(), ModBlocks.INFECTED_PLANKS.get(),
+                ModBlocks.INFECTED_STAIRS.get(), ModBlocks.INFECTED_SLAB.get(), ModBlocks.INFECTED_FENCE.get(),
+                ModBlocks.INFECTED_FENCE_GATE.get(), ModBlocks.INFECTED_DOOR.get(), ModBlocks.INFECTED_TRAPDOOR.get(),
+                ModItems.INFECTED_SIGN.get(), ModBlocks.INFECTED_BUTTON.get(), ModBlocks.INFECTED_PRESSURE_PLATE.get(),
+                ModItems.INFECTED_BOAT.get(), ModItems.INFECTED_CHEST_BOAT.get());
+        
+        AllWoodRecipes(pFinishedRecipeConsumer, ModBlocks.CORRUPT_LOG.get(), ModBlocks.STRIPPED_CORRUPT_LOG.get(),
+                ModBlocks.CORRUPT_WOOD.get(), ModBlocks.STRIPPED_CORRUPT_WOOD.get(), ModBlocks.CORRUPT_PLANKS.get(),
+                ModBlocks.CORRUPT_STAIRS.get(), ModBlocks.CORRUPT_SLAB.get(), ModBlocks.CORRUPT_FENCE.get(),
+                ModBlocks.CORRUPT_FENCE_GATE.get(), ModBlocks.CORRUPT_DOOR.get(), ModBlocks.CORRUPT_TRAPDOOR.get(),
+                ModItems.CORRUPT_SIGN.get(), ModBlocks.CORRUPT_BUTTON.get(), ModBlocks.CORRUPT_PRESSURE_PLATE.get(),
+                ModItems.CORRUPT_BOAT.get(), ModItems.CORRUPT_CHEST_BOAT.get());
+        
+        AllWoodRecipes(pFinishedRecipeConsumer, ModBlocks.PEAR_LOG.get(), ModBlocks.STRIPPED_PEAR_LOG.get(),
+                ModBlocks.PEAR_WOOD.get(), ModBlocks.STRIPPED_PEAR_WOOD.get(), ModBlocks.PEAR_PLANKS.get(),
+                ModBlocks.PEAR_STAIRS.get(), ModBlocks.PEAR_SLAB.get(), ModBlocks.PEAR_FENCE.get(),
+                ModBlocks.PEAR_FENCE_GATE.get(), ModBlocks.PEAR_DOOR.get(), ModBlocks.PEAR_TRAPDOOR.get(),
+                ModItems.PEAR_SIGN.get(), ModBlocks.PEAR_BUTTON.get(), ModBlocks.PEAR_PRESSURE_PLATE.get(),
+                ModItems.PEAR_BOAT.get(), ModItems.PEAR_CHEST_BOAT.get());
+        
+        AllWoodRecipes(pFinishedRecipeConsumer, ModBlocks.WISTERIA_LOG.get(), ModBlocks.STRIPPED_WISTERIA_LOG.get(),
+                ModBlocks.WISTERIA_WOOD.get(), ModBlocks.STRIPPED_WISTERIA_WOOD.get(), ModBlocks.WISTERIA_PLANKS.get(),
+                ModBlocks.WISTERIA_STAIRS.get(), ModBlocks.WISTERIA_SLAB.get(), ModBlocks.WISTERIA_FENCE.get(),
+                ModBlocks.WISTERIA_FENCE_GATE.get(), ModBlocks.WISTERIA_DOOR.get(), ModBlocks.WISTERIA_TRAPDOOR.get(),
+                ModItems.WISTERIA_SIGN.get(), ModBlocks.WISTERIA_BUTTON.get(), ModBlocks.WISTERIA_PRESSURE_PLATE.get(),
+                ModItems.WISTERIA_BOAT.get(), ModItems.WISTERIA_CHEST_BOAT.get());
+        
+        AllWoodRecipes(pFinishedRecipeConsumer, ModBlocks.CHARRED_LOG.get(), ModBlocks.STRIPPED_CHARRED_LOG.get(),
+                ModBlocks.CHARRED_WOOD.get(), ModBlocks.STRIPPED_CHARRED_WOOD.get(), ModBlocks.CHARRED_PLANKS.get(),
+                ModBlocks.CHARRED_STAIRS.get(), ModBlocks.CHARRED_SLAB.get(), ModBlocks.CHARRED_FENCE.get(),
+                ModBlocks.CHARRED_FENCE_GATE.get(), ModBlocks.CHARRED_DOOR.get(), ModBlocks.CHARRED_TRAPDOOR.get(),
+                ModItems.CHARRED_SIGN.get(), ModBlocks.CHARRED_BUTTON.get(), ModBlocks.CHARRED_PRESSURE_PLATE.get(),
+                ModItems.CHARRED_BOAT.get(), ModItems.CHARRED_CHEST_BOAT.get());
+        
+        AllWoodRecipes(pFinishedRecipeConsumer, ModBlocks.ICE_LOG.get(), ModBlocks.STRIPPED_ICE_LOG.get(),
+                ModBlocks.ICE_WOOD.get(), ModBlocks.STRIPPED_ICE_WOOD.get(), ModBlocks.ICE_PLANKS.get(),
+                ModBlocks.ICE_STAIRS.get(), ModBlocks.ICE_SLAB.get(), ModBlocks.ICE_FENCE.get(),
+                ModBlocks.ICE_FENCE_GATE.get(), ModBlocks.ICE_DOOR.get(), ModBlocks.ICE_TRAPDOOR.get(),
+                ModItems.ICE_SIGN.get(), ModBlocks.ICE_BUTTON.get(), ModBlocks.ICE_PRESSURE_PLATE.get(),
+                ModItems.ICE_BOAT.get(), ModItems.ICE_CHEST_BOAT.get());
+        
+        AllWoodRecipes(pFinishedRecipeConsumer, ModBlocks.DEAD_LOG.get(), ModBlocks.STRIPPED_DEAD_LOG.get(),
+                ModBlocks.DEAD_WOOD.get(), ModBlocks.STRIPPED_DEAD_WOOD.get(), ModBlocks.DEAD_PLANKS.get(),
+                ModBlocks.DEAD_STAIRS.get(), ModBlocks.DEAD_SLAB.get(), ModBlocks.DEAD_FENCE.get(),
+                ModBlocks.DEAD_FENCE_GATE.get(), ModBlocks.DEAD_DOOR.get(), ModBlocks.DEAD_TRAPDOOR.get(),
+                ModItems.DEAD_SIGN.get(), ModBlocks.DEAD_BUTTON.get(), ModBlocks.DEAD_PRESSURE_PLATE.get(),
+                ModItems.DEAD_BOAT.get(), ModItems.DEAD_CHEST_BOAT.get());
+        //endregion
 
 
         ShapedRecipeBuilder.shaped(ModBlocks.TREE_TAP.get(), 1)
@@ -538,10 +641,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("B")
                 .unlockedBy("has_bucket", inventoryTrigger(ItemPredicate.Builder.item().of(Items.BUCKET).build()))
                 .save(pFinishedRecipeConsumer);
-
-
-
-
 
         Surround(pFinishedRecipeConsumer, ModItems.EXPLOSIVE_ARROW.get(), Blocks.TNT, Items.ARROW, 8);
         Surround(pFinishedRecipeConsumer, ModItems.TIMED_ARROW_ONE.get(), Items.STRING, ModItems.EXPLOSIVE_ARROW.get(), 8);

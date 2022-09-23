@@ -5,7 +5,7 @@ import com.bic.bit_o_everything.block.custom.*;
 import com.bic.bit_o_everything.block.entity.ModWoodTypes;
 import com.bic.bit_o_everything.item.ModCreativeModeTab;
 import com.bic.bit_o_everything.item.ModItems;
-import com.bic.bit_o_everything.world.feature.tree_growers.CherryTreeGrower;
+import com.bic.bit_o_everything.world.feature.tree_growers.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -102,58 +102,873 @@ public class ModBlocks {
     //region Wood
     //region Cherry Woods
     public static final RegistryObject<Block> CHERRY_LOG = registerBlock("cherry_log",
-            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.MODDED);
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.WOOD);
     
     public static final RegistryObject<Block> CHERRY_WOOD = registerBlock("cherry_wood",
-            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.MODDED);
-
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
     public static final RegistryObject<Block> STRIPPED_CHERRY_LOG = registerBlock("stripped_cherry_log",
-            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), ModCreativeModeTab.MODDED);
-
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), ModCreativeModeTab.WOOD);
+    
     public static final RegistryObject<Block> STRIPPED_CHERRY_WOOD = registerBlock("stripped_cherry_wood",
-            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), ModCreativeModeTab.MODDED);
-
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
     public static final RegistryObject<Block> CHERRY_PLANKS = registerBlock("cherry_planks",
-            () -> new Plank(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.MODDED);
-
+            () -> new Plank(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD);
+    
     public static final RegistryObject<Block> CHERRY_STAIRS = registerBlock("cherry_stairs",
-            () -> new BurnableStair(() -> ModBlocks.CHERRY_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.MODDED);
-
+            () -> new BurnableStair(() -> ModBlocks.CHERRY_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.WOOD);
+    
     public static final RegistryObject<Block> CHERRY_SLAB = registerBlock("cherry_slab",
-            () -> new BurnableSlab(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), ModCreativeModeTab.MODDED);
-
+            () -> new BurnableSlab(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), ModCreativeModeTab.WOOD);
+    
     public static final RegistryObject<Block> CHERRY_FENCE = registerBlock("cherry_fence",
-            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.MODDED);
-
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD);
+    
     public static final RegistryObject<Block> CHERRY_FENCE_GATE = registerBlock("cherry_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.MODDED);
-
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.WOOD);
+    
     public static final RegistryObject<Block> CHERRY_BUTTON = registerBlock("cherry_button",
-            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission()), ModCreativeModeTab.MODDED);
-
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission()), ModCreativeModeTab.WOOD);
+    
     public static final RegistryObject<Block> CHERRY_PRESSURE_PLATE = registerBlock("cherry_pressure_plate",
-            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)), ModCreativeModeTab.MODDED);
-
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)), ModCreativeModeTab.WOOD);
+    
     public static final RegistryObject<Block> CHERRY_DOOR = registerBlock("cherry_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion()), ModCreativeModeTab.MODDED);
-
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
     public static final RegistryObject<Block> CHERRY_TRAPDOOR = registerBlock("cherry_trapdoor",
-            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion()), ModCreativeModeTab.MODDED);
-
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
     public static final RegistryObject<Block> CHERRY_WALL_SIGN = registerBlockWithoutBlockItem("cherry_wall_sign",
             () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.CHERRY));
-
+    
     public static final RegistryObject<Block> CHERRY_SIGN = registerBlockWithoutBlockItem("cherry_sign",
             () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.CHERRY));
-
+    
     public static final RegistryObject<Block> CHERRY_LEAVES = registerBlock("cherry_leaves",
-            () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.MODDED);
-
+            () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.WOOD);
+    
     public static final RegistryObject<Block> CHERRY_SAPLING = registerBlock("cherry_sapling",
-            () -> new SaplingBlock(new CherryTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.MODDED);
-
+            () -> new SaplingBlock(new CherryTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.WOOD);
+    
     public static final RegistryObject<Block> POTTED_CHERRY_SAPLING = registerPottedPlant("potted_cherry_sapling", ModBlocks.CHERRY_SAPLING);
-
+    //endregion
+    //region Maple Woods
+    public static final RegistryObject<Block> MAPLE_LOG = registerBlock("maple_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> MAPLE_WOOD = registerBlock("maple_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_MAPLE_LOG = registerBlock("stripped_maple_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_MAPLE_WOOD = registerBlock("stripped_maple_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> MAPLE_PLANKS = registerBlock("maple_planks",
+            () -> new Plank(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> MAPLE_STAIRS = registerBlock("maple_stairs",
+            () -> new BurnableStair(() -> ModBlocks.MAPLE_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> MAPLE_SLAB = registerBlock("maple_slab",
+            () -> new BurnableSlab(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> MAPLE_FENCE = registerBlock("maple_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> MAPLE_FENCE_GATE = registerBlock("maple_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> MAPLE_BUTTON = registerBlock("maple_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> MAPLE_PRESSURE_PLATE = registerBlock("maple_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> MAPLE_DOOR = registerBlock("maple_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> MAPLE_TRAPDOOR = registerBlock("maple_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> MAPLE_WALL_SIGN = registerBlockWithoutBlockItem("maple_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.MAPLE));
+    
+    public static final RegistryObject<Block> MAPLE_SIGN = registerBlockWithoutBlockItem("maple_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.MAPLE));
+    
+    public static final RegistryObject<Block> MAPLE_LEAVES_RED = registerBlock("maple_leaves_red",
+            () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> MAPLE_LEAVES_ORANGE = registerBlock("maple_leaves_orange",
+            () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> MAPLE_SAPLING = registerBlock("maple_sapling",
+            () -> new SaplingBlock(new MapleTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> POTTED_MAPLE_SAPLING = registerPottedPlant("potted_maple_sapling", ModBlocks.MAPLE_SAPLING);
+    //endregion
+    //region Dogwood Woods
+    public static final RegistryObject<Block> DOGWOOD_LOG = registerBlock("dogwood_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DOGWOOD_WOOD = registerBlock("dogwood_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_DOGWOOD_LOG = registerBlock("stripped_dogwood_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_DOGWOOD_WOOD = registerBlock("stripped_dogwood_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DOGWOOD_PLANKS = registerBlock("dogwood_planks",
+            () -> new Plank(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DOGWOOD_STAIRS = registerBlock("dogwood_stairs",
+            () -> new BurnableStair(() -> ModBlocks.DOGWOOD_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DOGWOOD_SLAB = registerBlock("dogwood_slab",
+            () -> new BurnableSlab(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DOGWOOD_FENCE = registerBlock("dogwood_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DOGWOOD_FENCE_GATE = registerBlock("dogwood_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DOGWOOD_BUTTON = registerBlock("dogwood_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DOGWOOD_PRESSURE_PLATE = registerBlock("dogwood_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DOGWOOD_DOOR = registerBlock("dogwood_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DOGWOOD_TRAPDOOR = registerBlock("dogwood_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DOGWOOD_WALL_SIGN = registerBlockWithoutBlockItem("dogwood_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.DOGWOOD));
+    
+    public static final RegistryObject<Block> DOGWOOD_SIGN = registerBlockWithoutBlockItem("dogwood_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.DOGWOOD));
+    
+    public static final RegistryObject<Block> DOGWOOD_LEAVES = registerBlock("dogwood_leaves",
+            () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DOGWOOD_SAPLING = registerBlock("dogwood_sapling",
+            () -> new SaplingBlock(new DogwoodTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> POTTED_DOGWOOD_SAPLING = registerPottedPlant("potted_dogwood_sapling", ModBlocks.DOGWOOD_SAPLING);
+    //endregion
+    //region Redwood Woods
+    public static final RegistryObject<Block> REDWOOD_LOG = registerBlock("redwood_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> REDWOOD_WOOD = registerBlock("redwood_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_REDWOOD_LOG = registerBlock("stripped_redwood_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_REDWOOD_WOOD = registerBlock("stripped_redwood_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> REDWOOD_PLANKS = registerBlock("redwood_planks",
+            () -> new Plank(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> REDWOOD_STAIRS = registerBlock("redwood_stairs",
+            () -> new BurnableStair(() -> ModBlocks.REDWOOD_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> REDWOOD_SLAB = registerBlock("redwood_slab",
+            () -> new BurnableSlab(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> REDWOOD_FENCE = registerBlock("redwood_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> REDWOOD_FENCE_GATE = registerBlock("redwood_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> REDWOOD_BUTTON = registerBlock("redwood_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> REDWOOD_PRESSURE_PLATE = registerBlock("redwood_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> REDWOOD_DOOR = registerBlock("redwood_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> REDWOOD_TRAPDOOR = registerBlock("redwood_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> REDWOOD_WALL_SIGN = registerBlockWithoutBlockItem("redwood_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.REDWOOD));
+    
+    public static final RegistryObject<Block> REDWOOD_SIGN = registerBlockWithoutBlockItem("redwood_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.REDWOOD));
+    
+    public static final RegistryObject<Block> REDWOOD_LEAVES = registerBlock("redwood_leaves",
+            () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> REDWOOD_SAPLING = registerBlock("redwood_sapling",
+            () -> new SaplingBlock(new RedwoodTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> POTTED_REDWOOD_SAPLING = registerPottedPlant("potted_redwood_sapling", ModBlocks.REDWOOD_SAPLING);
+    //endregion
+    //region Olive Woods
+    public static final RegistryObject<Block> OLIVE_LOG = registerBlock("olive_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> OLIVE_WOOD = registerBlock("olive_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_OLIVE_LOG = registerBlock("stripped_olive_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_OLIVE_WOOD = registerBlock("stripped_olive_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> OLIVE_PLANKS = registerBlock("olive_planks",
+            () -> new Plank(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> OLIVE_STAIRS = registerBlock("olive_stairs",
+            () -> new BurnableStair(() -> ModBlocks.OLIVE_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> OLIVE_SLAB = registerBlock("olive_slab",
+            () -> new BurnableSlab(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> OLIVE_FENCE = registerBlock("olive_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> OLIVE_FENCE_GATE = registerBlock("olive_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> OLIVE_BUTTON = registerBlock("olive_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> OLIVE_PRESSURE_PLATE = registerBlock("olive_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> OLIVE_DOOR = registerBlock("olive_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> OLIVE_TRAPDOOR = registerBlock("olive_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> OLIVE_WALL_SIGN = registerBlockWithoutBlockItem("olive_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.OLIVE));
+    
+    public static final RegistryObject<Block> OLIVE_SIGN = registerBlockWithoutBlockItem("olive_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.OLIVE));
+    
+    public static final RegistryObject<Block> OLIVE_LEAVES = registerBlock("olive_leaves",
+            () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> OLIVE_SAPLING = registerBlock("olive_sapling",
+            () -> new SaplingBlock(new OliveTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> POTTED_OLIVE_SAPLING = registerPottedPlant("potted_olive_sapling", ModBlocks.OLIVE_SAPLING);
+    //endregion
+    //region Peach Woods
+    public static final RegistryObject<Block> PEACH_LOG = registerBlock("peach_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEACH_WOOD = registerBlock("peach_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_PEACH_LOG = registerBlock("stripped_peach_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_PEACH_WOOD = registerBlock("stripped_peach_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEACH_PLANKS = registerBlock("peach_planks",
+            () -> new Plank(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEACH_STAIRS = registerBlock("peach_stairs",
+            () -> new BurnableStair(() -> ModBlocks.PEACH_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEACH_SLAB = registerBlock("peach_slab",
+            () -> new BurnableSlab(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEACH_FENCE = registerBlock("peach_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEACH_FENCE_GATE = registerBlock("peach_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEACH_BUTTON = registerBlock("peach_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEACH_PRESSURE_PLATE = registerBlock("peach_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEACH_DOOR = registerBlock("peach_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEACH_TRAPDOOR = registerBlock("peach_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEACH_WALL_SIGN = registerBlockWithoutBlockItem("peach_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.PEACH));
+    
+    public static final RegistryObject<Block> PEACH_SIGN = registerBlockWithoutBlockItem("peach_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.PEACH));
+    
+    public static final RegistryObject<Block> PEACH_LEAVES = registerBlock("peach_leaves",
+            () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEACH_SAPLING = registerBlock("peach_sapling",
+            () -> new SaplingBlock(new PeachTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> POTTED_PEACH_SAPLING = registerPottedPlant("potted_peach_sapling", ModBlocks.PEACH_SAPLING);
+    //endregion
+    //region Ebony Woods
+    public static final RegistryObject<Block> EBONY_LOG = registerBlock("ebony_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> EBONY_WOOD = registerBlock("ebony_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_EBONY_LOG = registerBlock("stripped_ebony_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_EBONY_WOOD = registerBlock("stripped_ebony_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> EBONY_PLANKS = registerBlock("ebony_planks",
+            () -> new Plank(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> EBONY_STAIRS = registerBlock("ebony_stairs",
+            () -> new BurnableStair(() -> ModBlocks.EBONY_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> EBONY_SLAB = registerBlock("ebony_slab",
+            () -> new BurnableSlab(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> EBONY_FENCE = registerBlock("ebony_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> EBONY_FENCE_GATE = registerBlock("ebony_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> EBONY_BUTTON = registerBlock("ebony_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> EBONY_PRESSURE_PLATE = registerBlock("ebony_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> EBONY_DOOR = registerBlock("ebony_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> EBONY_TRAPDOOR = registerBlock("ebony_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> EBONY_WALL_SIGN = registerBlockWithoutBlockItem("ebony_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.EBONY));
+    
+    public static final RegistryObject<Block> EBONY_SIGN = registerBlockWithoutBlockItem("ebony_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.EBONY));
+    
+    public static final RegistryObject<Block> EBONY_LEAVES = registerBlock("ebony_leaves",
+            () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> EBONY_SAPLING = registerBlock("ebony_sapling",
+            () -> new SaplingBlock(new EbonyTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> POTTED_EBONY_SAPLING = registerPottedPlant("potted_ebony_sapling", ModBlocks.EBONY_SAPLING);
+    //endregion
+    //region Plum Woods
+    public static final RegistryObject<Block> PLUM_LOG = registerBlock("plum_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PLUM_WOOD = registerBlock("plum_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_PLUM_LOG = registerBlock("stripped_plum_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_PLUM_WOOD = registerBlock("stripped_plum_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PLUM_PLANKS = registerBlock("plum_planks",
+            () -> new Plank(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PLUM_STAIRS = registerBlock("plum_stairs",
+            () -> new BurnableStair(() -> ModBlocks.PLUM_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PLUM_SLAB = registerBlock("plum_slab",
+            () -> new BurnableSlab(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PLUM_FENCE = registerBlock("plum_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PLUM_FENCE_GATE = registerBlock("plum_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PLUM_BUTTON = registerBlock("plum_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PLUM_PRESSURE_PLATE = registerBlock("plum_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PLUM_DOOR = registerBlock("plum_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PLUM_TRAPDOOR = registerBlock("plum_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PLUM_WALL_SIGN = registerBlockWithoutBlockItem("plum_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.PLUM));
+    
+    public static final RegistryObject<Block> PLUM_SIGN = registerBlockWithoutBlockItem("plum_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.PLUM));
+    
+    public static final RegistryObject<Block> PLUM_LEAVES = registerBlock("plum_leaves",
+            () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PLUM_SAPLING = registerBlock("plum_sapling",
+            () -> new SaplingBlock(new PlumTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> POTTED_PLUM_SAPLING = registerPottedPlant("potted_plum_sapling", ModBlocks.PLUM_SAPLING);
+    //endregion
+    //region Orange Woods
+    public static final RegistryObject<Block> ORANGE_LOG = registerBlock("orange_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ORANGE_WOOD = registerBlock("orange_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_ORANGE_LOG = registerBlock("stripped_orange_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_ORANGE_WOOD = registerBlock("stripped_orange_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ORANGE_PLANKS = registerBlock("orange_planks",
+            () -> new Plank(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ORANGE_STAIRS = registerBlock("orange_stairs",
+            () -> new BurnableStair(() -> ModBlocks.ORANGE_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ORANGE_SLAB = registerBlock("orange_slab",
+            () -> new BurnableSlab(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ORANGE_FENCE = registerBlock("orange_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ORANGE_FENCE_GATE = registerBlock("orange_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ORANGE_BUTTON = registerBlock("orange_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ORANGE_PRESSURE_PLATE = registerBlock("orange_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ORANGE_DOOR = registerBlock("orange_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ORANGE_TRAPDOOR = registerBlock("orange_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ORANGE_WALL_SIGN = registerBlockWithoutBlockItem("orange_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.ORANGE));
+    
+    public static final RegistryObject<Block> ORANGE_SIGN = registerBlockWithoutBlockItem("orange_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.ORANGE));
+    
+    public static final RegistryObject<Block> ORANGE_LEAVES = registerBlock("orange_leaves",
+            () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ORANGE_SAPLING = registerBlock("orange_sapling",
+            () -> new SaplingBlock(new OrangeTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> POTTED_ORANGE_SAPLING = registerPottedPlant("potted_orange_sapling", ModBlocks.ORANGE_SAPLING);
+    //endregion
+    //region Infected Woods
+    public static final RegistryObject<Block> INFECTED_LOG = registerBlock("infected_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> INFECTED_WOOD = registerBlock("infected_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_INFECTED_LOG = registerBlock("stripped_infected_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_INFECTED_WOOD = registerBlock("stripped_infected_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> INFECTED_PLANKS = registerBlock("infected_planks",
+            () -> new Plank(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> INFECTED_STAIRS = registerBlock("infected_stairs",
+            () -> new BurnableStair(() -> ModBlocks.INFECTED_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> INFECTED_SLAB = registerBlock("infected_slab",
+            () -> new BurnableSlab(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> INFECTED_FENCE = registerBlock("infected_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> INFECTED_FENCE_GATE = registerBlock("infected_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> INFECTED_BUTTON = registerBlock("infected_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> INFECTED_PRESSURE_PLATE = registerBlock("infected_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> INFECTED_DOOR = registerBlock("infected_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> INFECTED_TRAPDOOR = registerBlock("infected_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> INFECTED_WALL_SIGN = registerBlockWithoutBlockItem("infected_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.INFECTED));
+    
+    public static final RegistryObject<Block> INFECTED_SIGN = registerBlockWithoutBlockItem("infected_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.INFECTED));
+    
+    public static final RegistryObject<Block> INFECTED_LEAVES = registerBlock("infected_leaves",
+            () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> INFECTED_SAPLING = registerBlock("infected_sapling",
+            () -> new SaplingBlock(new InfectedTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> POTTED_INFECTED_SAPLING = registerPottedPlant("potted_infected_sapling", ModBlocks.INFECTED_SAPLING);
+    //endregion
+    //region Corrupt Woods
+    public static final RegistryObject<Block> CORRUPT_LOG = registerBlock("corrupt_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CORRUPT_WOOD = registerBlock("corrupt_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_CORRUPT_LOG = registerBlock("stripped_corrupt_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_CORRUPT_WOOD = registerBlock("stripped_corrupt_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CORRUPT_PLANKS = registerBlock("corrupt_planks",
+            () -> new Plank(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CORRUPT_STAIRS = registerBlock("corrupt_stairs",
+            () -> new BurnableStair(() -> ModBlocks.CORRUPT_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CORRUPT_SLAB = registerBlock("corrupt_slab",
+            () -> new BurnableSlab(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CORRUPT_FENCE = registerBlock("corrupt_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CORRUPT_FENCE_GATE = registerBlock("corrupt_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CORRUPT_BUTTON = registerBlock("corrupt_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CORRUPT_PRESSURE_PLATE = registerBlock("corrupt_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CORRUPT_DOOR = registerBlock("corrupt_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CORRUPT_TRAPDOOR = registerBlock("corrupt_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CORRUPT_WALL_SIGN = registerBlockWithoutBlockItem("corrupt_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.CORRUPT));
+    
+    public static final RegistryObject<Block> CORRUPT_SIGN = registerBlockWithoutBlockItem("corrupt_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.CORRUPT));
+    
+    public static final RegistryObject<Block> CORRUPT_LEAVES = registerBlock("corrupt_leaves",
+            () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CORRUPT_SAPLING = registerBlock("corrupt_sapling",
+            () -> new SaplingBlock(new CorruptTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> POTTED_CORRUPT_SAPLING = registerPottedPlant("potted_corrupt_sapling", ModBlocks.CORRUPT_SAPLING);
+    //endregion
+    //region Pear Woods
+    public static final RegistryObject<Block> PEAR_LOG = registerBlock("pear_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEAR_WOOD = registerBlock("pear_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_PEAR_LOG = registerBlock("stripped_pear_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_PEAR_WOOD = registerBlock("stripped_pear_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEAR_PLANKS = registerBlock("pear_planks",
+            () -> new Plank(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEAR_STAIRS = registerBlock("pear_stairs",
+            () -> new BurnableStair(() -> ModBlocks.PEAR_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEAR_SLAB = registerBlock("pear_slab",
+            () -> new BurnableSlab(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEAR_FENCE = registerBlock("pear_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEAR_FENCE_GATE = registerBlock("pear_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEAR_BUTTON = registerBlock("pear_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEAR_PRESSURE_PLATE = registerBlock("pear_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEAR_DOOR = registerBlock("pear_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEAR_TRAPDOOR = registerBlock("pear_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEAR_WALL_SIGN = registerBlockWithoutBlockItem("pear_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.PEAR));
+    
+    public static final RegistryObject<Block> PEAR_SIGN = registerBlockWithoutBlockItem("pear_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.PEAR));
+    
+    public static final RegistryObject<Block> PEAR_LEAVES = registerBlock("pear_leaves",
+            () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PEAR_SAPLING = registerBlock("pear_sapling",
+            () -> new SaplingBlock(new PearTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> POTTED_PEAR_SAPLING = registerPottedPlant("potted_pear_sapling", ModBlocks.PEAR_SAPLING);
+    //endregion
+    //region Wisteria Woods
+    public static final RegistryObject<Block> WISTERIA_LOG = registerBlock("wisteria_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> WISTERIA_WOOD = registerBlock("wisteria_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_WISTERIA_LOG = registerBlock("stripped_wisteria_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_WISTERIA_WOOD = registerBlock("stripped_wisteria_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> WISTERIA_PLANKS = registerBlock("wisteria_planks",
+            () -> new Plank(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> WISTERIA_STAIRS = registerBlock("wisteria_stairs",
+            () -> new BurnableStair(() -> ModBlocks.WISTERIA_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> WISTERIA_SLAB = registerBlock("wisteria_slab",
+            () -> new BurnableSlab(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> WISTERIA_FENCE = registerBlock("wisteria_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> WISTERIA_FENCE_GATE = registerBlock("wisteria_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> WISTERIA_BUTTON = registerBlock("wisteria_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> WISTERIA_PRESSURE_PLATE = registerBlock("wisteria_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> WISTERIA_DOOR = registerBlock("wisteria_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> WISTERIA_TRAPDOOR = registerBlock("wisteria_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> WISTERIA_WALL_SIGN = registerBlockWithoutBlockItem("wisteria_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.WISTERIA));
+    
+    public static final RegistryObject<Block> WISTERIA_SIGN = registerBlockWithoutBlockItem("wisteria_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.WISTERIA));
+    
+    public static final RegistryObject<Block> WISTERIA_LEAVES_BLUE = registerBlock("wisteria_leaves_blue",
+            () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> WISTERIA_LEAVES_PURPLE = registerBlock("wisteria_leaves_purple",
+            () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> WISTERIA_SAPLING = registerBlock("wisteria_sapling",
+            () -> new SaplingBlock(new WisteriaTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> POTTED_WISTERIA_SAPLING = registerPottedPlant("potted_wisteria_sapling", ModBlocks.WISTERIA_SAPLING);
+    //endregion
+    //region Charred Woods
+    public static final RegistryObject<Block> CHARRED_LOG = registerBlock("charred_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CHARRED_WOOD = registerBlock("charred_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_CHARRED_LOG = registerBlock("stripped_charred_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_CHARRED_WOOD = registerBlock("stripped_charred_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CHARRED_PLANKS = registerBlock("charred_planks",
+            () -> new Plank(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CHARRED_STAIRS = registerBlock("charred_stairs",
+            () -> new BurnableStair(() -> ModBlocks.CHARRED_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CHARRED_SLAB = registerBlock("charred_slab",
+            () -> new BurnableSlab(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CHARRED_FENCE = registerBlock("charred_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CHARRED_FENCE_GATE = registerBlock("charred_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CHARRED_BUTTON = registerBlock("charred_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CHARRED_PRESSURE_PLATE = registerBlock("charred_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CHARRED_DOOR = registerBlock("charred_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CHARRED_TRAPDOOR = registerBlock("charred_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CHARRED_WALL_SIGN = registerBlockWithoutBlockItem("charred_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.CHARRED));
+    
+    public static final RegistryObject<Block> CHARRED_SIGN = registerBlockWithoutBlockItem("charred_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.CHARRED));
+    
+    public static final RegistryObject<Block> CHARRED_LEAVES = registerBlock("charred_leaves",
+            () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> CHARRED_SAPLING = registerBlock("charred_sapling",
+            () -> new SaplingBlock(new CharredTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> POTTED_CHARRED_SAPLING = registerPottedPlant("potted_charred_sapling", ModBlocks.CHARRED_SAPLING);
+    //endregion
+    //region Ice Woods
+    public static final RegistryObject<Block> ICE_LOG = registerBlock("ice_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ICE_WOOD = registerBlock("ice_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_ICE_LOG = registerBlock("stripped_ice_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_ICE_WOOD = registerBlock("stripped_ice_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ICE_PLANKS = registerBlock("ice_planks",
+            () -> new Plank(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ICE_STAIRS = registerBlock("ice_stairs",
+            () -> new BurnableStair(() -> ModBlocks.ICE_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ICE_SLAB = registerBlock("ice_slab",
+            () -> new BurnableSlab(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ICE_FENCE = registerBlock("ice_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ICE_FENCE_GATE = registerBlock("ice_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ICE_BUTTON = registerBlock("ice_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ICE_PRESSURE_PLATE = registerBlock("ice_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ICE_DOOR = registerBlock("ice_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ICE_TRAPDOOR = registerBlock("ice_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ICE_WALL_SIGN = registerBlockWithoutBlockItem("ice_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.ICE));
+    
+    public static final RegistryObject<Block> ICE_SIGN = registerBlockWithoutBlockItem("ice_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.ICE));
+    
+    public static final RegistryObject<Block> ICE_LEAVES = registerBlock("ice_leaves",
+            () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> ICE_SAPLING = registerBlock("ice_sapling",
+            () -> new SaplingBlock(new IceTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> POTTED_ICE_SAPLING = registerPottedPlant("potted_ice_sapling", ModBlocks.ICE_SAPLING);
+    //endregion
+    //region Dead Woods
+    public static final RegistryObject<Block> DEAD_LOG = registerBlock("dead_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DEAD_WOOD = registerBlock("dead_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_DEAD_LOG = registerBlock("stripped_dead_log",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> STRIPPED_DEAD_WOOD = registerBlock("stripped_dead_wood",
+            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DEAD_PLANKS = registerBlock("dead_planks",
+            () -> new Plank(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DEAD_STAIRS = registerBlock("dead_stairs",
+            () -> new BurnableStair(() -> ModBlocks.DEAD_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DEAD_SLAB = registerBlock("dead_slab",
+            () -> new BurnableSlab(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DEAD_FENCE = registerBlock("dead_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DEAD_FENCE_GATE = registerBlock("dead_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DEAD_BUTTON = registerBlock("dead_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DEAD_PRESSURE_PLATE = registerBlock("dead_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DEAD_DOOR = registerBlock("dead_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DEAD_TRAPDOOR = registerBlock("dead_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DEAD_WALL_SIGN = registerBlockWithoutBlockItem("dead_wall_sign",
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.DEAD));
+    
+    public static final RegistryObject<Block> DEAD_SIGN = registerBlockWithoutBlockItem("dead_sign",
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.DEAD));
+    
+    public static final RegistryObject<Block> DEAD_LEAVES = registerBlock("dead_leaves",
+            () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> DEAD_SAPLING = registerBlock("dead_sapling",
+            () -> new SaplingBlock(new DeadTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> POTTED_DEAD_SAPLING = registerPottedPlant("potted_dead_sapling", ModBlocks.DEAD_SAPLING);
     //endregion
     //endregion
     //region Concrete
@@ -699,13 +1514,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> BLACKBERRY_BUSH =registerBerryBush("blackberry_bush", ModItems.BLACKBERRIES::get);
     //endregion
     
+    
     public static final RegistryObject<Block> TREE_TAP = registerBlock("tree_tap",
             () -> new TreeTapBlock(BlockBehaviour.Properties.of(Material.STONE).noOcclusion().dynamicShape()), ModCreativeModeTab.MODDED);
-    
-
-
-
-
 
 
     private static RegistryObject<Block> registerBerryBush(String name, Supplier<ItemLike> drop) {

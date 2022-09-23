@@ -41,19 +41,215 @@ public class ModItems {
 
     public static final RegistryObject<Item> RAINBOW_DYE = ITEMS.register("rainbow_dye",
             () -> new RainbowDyeItem(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
-
+    //region Wood Types
     //region Cherry Wood
     public static final RegistryObject<Item> CHERRY_SIGN = ITEMS.register("cherry_sign",
-            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.MODDED).stacksTo(16),
+            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.WOOD).stacksTo(16),
                     ModBlocks.CHERRY_SIGN.get(), ModBlocks.CHERRY_WALL_SIGN.get()));
-
+    
     public static final RegistryObject<Item> CHERRY_BOAT = ITEMS.register("cherry_boat",
             () -> new ModBoatItem(ModBoatEntity.Type.CHERRY,
-                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.MODDED)));
-
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    
     public static final RegistryObject<Item> CHERRY_CHEST_BOAT = ITEMS.register("cherry_chest_boat",
             () -> new ModChestBoatItem(ModChestBoatEntity.Type.CHERRY,
-                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.MODDED)));
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    //endregion
+    //region Maple Wood
+    public static final RegistryObject<Item> MAPLE_SIGN = ITEMS.register("maple_sign",
+            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.WOOD).stacksTo(16),
+                    ModBlocks.MAPLE_SIGN.get(), ModBlocks.MAPLE_WALL_SIGN.get()));
+    
+    public static final RegistryObject<Item> MAPLE_BOAT = ITEMS.register("maple_boat",
+            () -> new ModBoatItem(ModBoatEntity.Type.MAPLE,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    
+    public static final RegistryObject<Item> MAPLE_CHEST_BOAT = ITEMS.register("maple_chest_boat",
+            () -> new ModChestBoatItem(ModChestBoatEntity.Type.MAPLE,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    //endregion
+    //region Dogwood Wood
+    public static final RegistryObject<Item> DOGWOOD_SIGN = ITEMS.register("dogwood_sign",
+            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.WOOD).stacksTo(16),
+                    ModBlocks.DOGWOOD_SIGN.get(), ModBlocks.DOGWOOD_WALL_SIGN.get()));
+    
+    public static final RegistryObject<Item> DOGWOOD_BOAT = ITEMS.register("dogwood_boat",
+            () -> new ModBoatItem(ModBoatEntity.Type.DOGWOOD,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    
+    public static final RegistryObject<Item> DOGWOOD_CHEST_BOAT = ITEMS.register("dogwood_chest_boat",
+            () -> new ModChestBoatItem(ModChestBoatEntity.Type.DOGWOOD,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    //endregion
+    //region Redwood Wood
+    public static final RegistryObject<Item> REDWOOD_SIGN = ITEMS.register("redwood_sign",
+            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.WOOD).stacksTo(16),
+                    ModBlocks.REDWOOD_SIGN.get(), ModBlocks.REDWOOD_WALL_SIGN.get()));
+    
+    public static final RegistryObject<Item> REDWOOD_BOAT = ITEMS.register("redwood_boat",
+            () -> new ModBoatItem(ModBoatEntity.Type.REDWOOD,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    
+    public static final RegistryObject<Item> REDWOOD_CHEST_BOAT = ITEMS.register("redwood_chest_boat",
+            () -> new ModChestBoatItem(ModChestBoatEntity.Type.REDWOOD,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    //endregion
+    //region Olive Wood
+    public static final RegistryObject<Item> OLIVE_SIGN = ITEMS.register("olive_sign",
+            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.WOOD).stacksTo(16),
+                    ModBlocks.OLIVE_SIGN.get(), ModBlocks.OLIVE_WALL_SIGN.get()));
+    
+    public static final RegistryObject<Item> OLIVE_BOAT = ITEMS.register("olive_boat",
+            () -> new ModBoatItem(ModBoatEntity.Type.OLIVE,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    
+    public static final RegistryObject<Item> OLIVE_CHEST_BOAT = ITEMS.register("olive_chest_boat",
+            () -> new ModChestBoatItem(ModChestBoatEntity.Type.OLIVE,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    //endregion
+    //region Peach Wood
+    public static final RegistryObject<Item> PEACH_SIGN = ITEMS.register("peach_sign",
+            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.WOOD).stacksTo(16),
+                    ModBlocks.PEACH_SIGN.get(), ModBlocks.PEACH_WALL_SIGN.get()));
+    
+    public static final RegistryObject<Item> PEACH_BOAT = ITEMS.register("peach_boat",
+            () -> new ModBoatItem(ModBoatEntity.Type.PEACH,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    
+    public static final RegistryObject<Item> PEACH_CHEST_BOAT = ITEMS.register("peach_chest_boat",
+            () -> new ModChestBoatItem(ModChestBoatEntity.Type.PEACH,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    //endregion
+    //region Ebony Wood
+    public static final RegistryObject<Item> EBONY_SIGN = ITEMS.register("ebony_sign",
+            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.WOOD).stacksTo(16),
+                    ModBlocks.EBONY_SIGN.get(), ModBlocks.EBONY_WALL_SIGN.get()));
+    
+    public static final RegistryObject<Item> EBONY_BOAT = ITEMS.register("ebony_boat",
+            () -> new ModBoatItem(ModBoatEntity.Type.EBONY,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    
+    public static final RegistryObject<Item> EBONY_CHEST_BOAT = ITEMS.register("ebony_chest_boat",
+            () -> new ModChestBoatItem(ModChestBoatEntity.Type.EBONY,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    //endregion
+    //region Plum Wood
+    public static final RegistryObject<Item> PLUM_SIGN = ITEMS.register("plum_sign",
+            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.WOOD).stacksTo(16),
+                    ModBlocks.PLUM_SIGN.get(), ModBlocks.PLUM_WALL_SIGN.get()));
+    
+    public static final RegistryObject<Item> PLUM_BOAT = ITEMS.register("plum_boat",
+            () -> new ModBoatItem(ModBoatEntity.Type.PLUM,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    
+    public static final RegistryObject<Item> PLUM_CHEST_BOAT = ITEMS.register("plum_chest_boat",
+            () -> new ModChestBoatItem(ModChestBoatEntity.Type.PLUM,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    //endregion
+    //region Orange Wood
+    public static final RegistryObject<Item> ORANGE_SIGN = ITEMS.register("orange_sign",
+            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.WOOD).stacksTo(16),
+                    ModBlocks.ORANGE_SIGN.get(), ModBlocks.ORANGE_WALL_SIGN.get()));
+    
+    public static final RegistryObject<Item> ORANGE_BOAT = ITEMS.register("orange_boat",
+            () -> new ModBoatItem(ModBoatEntity.Type.ORANGE,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    
+    public static final RegistryObject<Item> ORANGE_CHEST_BOAT = ITEMS.register("orange_chest_boat",
+            () -> new ModChestBoatItem(ModChestBoatEntity.Type.ORANGE,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    //endregion
+    //region Infected Wood
+    public static final RegistryObject<Item> INFECTED_SIGN = ITEMS.register("infected_sign",
+            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.WOOD).stacksTo(16),
+                    ModBlocks.INFECTED_SIGN.get(), ModBlocks.INFECTED_WALL_SIGN.get()));
+    
+    public static final RegistryObject<Item> INFECTED_BOAT = ITEMS.register("infected_boat",
+            () -> new ModBoatItem(ModBoatEntity.Type.INFECTED,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    
+    public static final RegistryObject<Item> INFECTED_CHEST_BOAT = ITEMS.register("infected_chest_boat",
+            () -> new ModChestBoatItem(ModChestBoatEntity.Type.INFECTED,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    //endregion
+    //region Corrupt Wood
+    public static final RegistryObject<Item> CORRUPT_SIGN = ITEMS.register("corrupt_sign",
+            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.WOOD).stacksTo(16),
+                    ModBlocks.CORRUPT_SIGN.get(), ModBlocks.CORRUPT_WALL_SIGN.get()));
+    
+    public static final RegistryObject<Item> CORRUPT_BOAT = ITEMS.register("corrupt_boat",
+            () -> new ModBoatItem(ModBoatEntity.Type.CORRUPT,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    
+    public static final RegistryObject<Item> CORRUPT_CHEST_BOAT = ITEMS.register("corrupt_chest_boat",
+            () -> new ModChestBoatItem(ModChestBoatEntity.Type.CORRUPT,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    //endregion
+    //region Pear Wood
+    public static final RegistryObject<Item> PEAR_SIGN = ITEMS.register("pear_sign",
+            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.WOOD).stacksTo(16),
+                    ModBlocks.PEAR_SIGN.get(), ModBlocks.PEAR_WALL_SIGN.get()));
+    
+    public static final RegistryObject<Item> PEAR_BOAT = ITEMS.register("pear_boat",
+            () -> new ModBoatItem(ModBoatEntity.Type.PEAR,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    
+    public static final RegistryObject<Item> PEAR_CHEST_BOAT = ITEMS.register("pear_chest_boat",
+            () -> new ModChestBoatItem(ModChestBoatEntity.Type.PEAR,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    //endregion
+    //region Wisteria Wood
+    public static final RegistryObject<Item> WISTERIA_SIGN = ITEMS.register("wisteria_sign",
+            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.WOOD).stacksTo(16),
+                    ModBlocks.WISTERIA_SIGN.get(), ModBlocks.WISTERIA_WALL_SIGN.get()));
+    
+    public static final RegistryObject<Item> WISTERIA_BOAT = ITEMS.register("wisteria_boat",
+            () -> new ModBoatItem(ModBoatEntity.Type.WISTERIA,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    
+    public static final RegistryObject<Item> WISTERIA_CHEST_BOAT = ITEMS.register("wisteria_chest_boat",
+            () -> new ModChestBoatItem(ModChestBoatEntity.Type.WISTERIA,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    //endregion
+    //region Charred Wood
+    public static final RegistryObject<Item> CHARRED_SIGN = ITEMS.register("charred_sign",
+            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.WOOD).stacksTo(16),
+                    ModBlocks.CHARRED_SIGN.get(), ModBlocks.CHARRED_WALL_SIGN.get()));
+    
+    public static final RegistryObject<Item> CHARRED_BOAT = ITEMS.register("charred_boat",
+            () -> new ModBoatItem(ModBoatEntity.Type.CHARRED,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    
+    public static final RegistryObject<Item> CHARRED_CHEST_BOAT = ITEMS.register("charred_chest_boat",
+            () -> new ModChestBoatItem(ModChestBoatEntity.Type.CHARRED,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    //endregion
+    //region Ice Wood
+    public static final RegistryObject<Item> ICE_SIGN = ITEMS.register("ice_sign",
+            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.WOOD).stacksTo(16),
+                    ModBlocks.ICE_SIGN.get(), ModBlocks.ICE_WALL_SIGN.get()));
+    
+    public static final RegistryObject<Item> ICE_BOAT = ITEMS.register("ice_boat",
+            () -> new ModBoatItem(ModBoatEntity.Type.ICE,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    
+    public static final RegistryObject<Item> ICE_CHEST_BOAT = ITEMS.register("ice_chest_boat",
+            () -> new ModChestBoatItem(ModChestBoatEntity.Type.ICE,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    //endregion
+    //region Dead Wood
+    public static final RegistryObject<Item> DEAD_SIGN = ITEMS.register("dead_sign",
+            () -> new SignItem(new Item.Properties().tab(ModCreativeModeTab.WOOD).stacksTo(16),
+                    ModBlocks.DEAD_SIGN.get(), ModBlocks.DEAD_WALL_SIGN.get()));
+    
+    public static final RegistryObject<Item> DEAD_BOAT = ITEMS.register("dead_boat",
+            () -> new ModBoatItem(ModBoatEntity.Type.DEAD,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    
+    public static final RegistryObject<Item> DEAD_CHEST_BOAT = ITEMS.register("dead_chest_boat",
+            () -> new ModChestBoatItem(ModChestBoatEntity.Type.DEAD,
+                    (new Item.Properties()).stacksTo(1).tab(ModCreativeModeTab.WOOD)));
+    //endregion
     //endregion
     //region Explosives
     public static final RegistryObject<Item> GRENADE = ITEMS.register("grenade",

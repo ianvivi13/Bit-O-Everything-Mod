@@ -1,6 +1,5 @@
 package com.bic.bit_o_everything.datagen;
 
-import com.bic.bit_o_everything.block.ModBlocks;
 import com.bic.bit_o_everything.item.ModItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -8,7 +7,6 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -22,6 +20,21 @@ public class ModItemTagProvider extends ItemTagsProvider {
         //region Copy Block Tags
         // mod tags
         this.copy(ModTags.Blocks.CHERRY_LOGS, ModTags.Items.CHERRY_LOGS);
+        this.copy(ModTags.Blocks.MAPLE_LOGS, ModTags.Items.MAPLE_LOGS);
+        this.copy(ModTags.Blocks.DOGWOOD_LOGS, ModTags.Items.DOGWOOD_LOGS);
+        this.copy(ModTags.Blocks.REDWOOD_LOGS, ModTags.Items.REDWOOD_LOGS);
+        this.copy(ModTags.Blocks.OLIVE_LOGS, ModTags.Items.OLIVE_LOGS);
+        this.copy(ModTags.Blocks.PEACH_LOGS, ModTags.Items.PEACH_LOGS);
+        this.copy(ModTags.Blocks.EBONY_LOGS, ModTags.Items.EBONY_LOGS);
+        this.copy(ModTags.Blocks.PLUM_LOGS, ModTags.Items.PLUM_LOGS);
+        this.copy(ModTags.Blocks.ORANGE_LOGS, ModTags.Items.ORANGE_LOGS);
+        this.copy(ModTags.Blocks.INFECTED_LOGS, ModTags.Items.INFECTED_LOGS);
+        this.copy(ModTags.Blocks.CORRUPT_LOGS, ModTags.Items.CORRUPT_LOGS);
+        this.copy(ModTags.Blocks.PEAR_LOGS, ModTags.Items.PEAR_LOGS);
+        this.copy(ModTags.Blocks.WISTERIA_LOGS, ModTags.Items.WISTERIA_LOGS);
+        this.copy(ModTags.Blocks.CHARRED_LOGS, ModTags.Items.CHARRED_LOGS);
+        this.copy(ModTags.Blocks.ICE_LOGS, ModTags.Items.ICE_LOGS);
+        this.copy(ModTags.Blocks.DEAD_LOGS, ModTags.Items.DEAD_LOGS);
 
         // minecraft tags
         this.copy(BlockTags.LOGS_THAT_BURN, ItemTags.LOGS_THAT_BURN);
@@ -58,12 +71,42 @@ public class ModItemTagProvider extends ItemTagsProvider {
         //region Boats
         this.tag(ItemTags.BOATS)
                 .add(ModItems.CHERRY_BOAT.get())
+                .add(ModItems.MAPLE_BOAT.get())
+                .add(ModItems.DOGWOOD_BOAT.get())
+                .add(ModItems.REDWOOD_BOAT.get())
+                .add(ModItems.OLIVE_BOAT.get())
+                .add(ModItems.PEACH_BOAT.get())
+                .add(ModItems.EBONY_BOAT.get())
+                .add(ModItems.PLUM_BOAT.get())
+                .add(ModItems.ORANGE_BOAT.get())
+                .add(ModItems.INFECTED_BOAT.get())
+                .add(ModItems.CORRUPT_BOAT.get())
+                .add(ModItems.PEAR_BOAT.get())
+                .add(ModItems.WISTERIA_BOAT.get())
+                .add(ModItems.CHARRED_BOAT.get())
+                .add(ModItems.ICE_BOAT.get())
+                .add(ModItems.DEAD_BOAT.get())
         ;
 
 
 
         this.tag(ItemTags.CHEST_BOATS)
                 .add(ModItems.CHERRY_CHEST_BOAT.get())
+                .add(ModItems.MAPLE_CHEST_BOAT.get())
+                .add(ModItems.DOGWOOD_CHEST_BOAT.get())
+                .add(ModItems.REDWOOD_CHEST_BOAT.get())
+                .add(ModItems.OLIVE_CHEST_BOAT.get())
+                .add(ModItems.PEACH_CHEST_BOAT.get())
+                .add(ModItems.EBONY_CHEST_BOAT.get())
+                .add(ModItems.PLUM_CHEST_BOAT.get())
+                .add(ModItems.ORANGE_CHEST_BOAT.get())
+                .add(ModItems.INFECTED_CHEST_BOAT.get())
+                .add(ModItems.CORRUPT_CHEST_BOAT.get())
+                .add(ModItems.PEAR_CHEST_BOAT.get())
+                .add(ModItems.WISTERIA_CHEST_BOAT.get())
+                .add(ModItems.CHARRED_CHEST_BOAT.get())
+                .add(ModItems.ICE_CHEST_BOAT.get())
+                .add(ModItems.DEAD_CHEST_BOAT.get())
         ;
 
         this.tag(ItemTags.ARROWS)

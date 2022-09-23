@@ -81,7 +81,8 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.BLACK_BRICK_WALL.get());
 
         this.add(ModBlocks.UNOBTAINIUM_ORE.get(), (block) -> createSingleItemTableWithSilkTouch(block, ModItems.UNOBTAINIUM_DUST.get()));
-
+        
+        //region Cherry Woods
         this.dropSelf(ModBlocks.CHERRY_PLANKS.get());
         this.dropSelf(ModBlocks.STRIPPED_CHERRY_LOG.get());
         this.dropSelf(ModBlocks.CHERRY_LOG.get());
@@ -96,7 +97,314 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.CHERRY_SIGN.get());
         this.dropSelf(ModBlocks.CHERRY_WALL_SIGN.get());
         this.dropSelf(ModBlocks.CHERRY_SAPLING.get());
-
+        this.add(ModBlocks.CHERRY_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(ModBlocks.CHERRY_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.CHERRY_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.CHERRY_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropPottedContents(ModBlocks.POTTED_CHERRY_SAPLING.get());
+        //endregion
+        //region Maple Woods
+        this.dropSelf(ModBlocks.MAPLE_PLANKS.get());
+        this.dropSelf(ModBlocks.STRIPPED_MAPLE_LOG.get());
+        this.dropSelf(ModBlocks.MAPLE_LOG.get());
+        this.dropSelf(ModBlocks.MAPLE_STAIRS.get());
+        this.dropSelf(ModBlocks.MAPLE_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_MAPLE_WOOD.get());
+        this.dropSelf(ModBlocks.MAPLE_FENCE.get());
+        this.dropSelf(ModBlocks.MAPLE_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.MAPLE_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.MAPLE_BUTTON.get());
+        this.dropSelf(ModBlocks.MAPLE_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.MAPLE_SIGN.get());
+        this.dropSelf(ModBlocks.MAPLE_WALL_SIGN.get());
+        this.dropSelf(ModBlocks.MAPLE_SAPLING.get());
+        this.add(ModBlocks.MAPLE_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(ModBlocks.MAPLE_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.MAPLE_LEAVES_RED.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.MAPLE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(ModBlocks.MAPLE_LEAVES_ORANGE.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.MAPLE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropPottedContents(ModBlocks.POTTED_MAPLE_SAPLING.get());
+        //endregion
+        //region Dogwood Woods
+        this.dropSelf(ModBlocks.DOGWOOD_PLANKS.get());
+        this.dropSelf(ModBlocks.STRIPPED_DOGWOOD_LOG.get());
+        this.dropSelf(ModBlocks.DOGWOOD_LOG.get());
+        this.dropSelf(ModBlocks.DOGWOOD_STAIRS.get());
+        this.dropSelf(ModBlocks.DOGWOOD_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_DOGWOOD_WOOD.get());
+        this.dropSelf(ModBlocks.DOGWOOD_FENCE.get());
+        this.dropSelf(ModBlocks.DOGWOOD_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.DOGWOOD_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.DOGWOOD_BUTTON.get());
+        this.dropSelf(ModBlocks.DOGWOOD_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.DOGWOOD_SIGN.get());
+        this.dropSelf(ModBlocks.DOGWOOD_WALL_SIGN.get());
+        this.dropSelf(ModBlocks.DOGWOOD_SAPLING.get());
+        this.add(ModBlocks.DOGWOOD_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(ModBlocks.DOGWOOD_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.DOGWOOD_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.DOGWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropPottedContents(ModBlocks.POTTED_DOGWOOD_SAPLING.get());
+        //endregion
+        //region Redwood Woods
+        this.dropSelf(ModBlocks.REDWOOD_PLANKS.get());
+        this.dropSelf(ModBlocks.STRIPPED_REDWOOD_LOG.get());
+        this.dropSelf(ModBlocks.REDWOOD_LOG.get());
+        this.dropSelf(ModBlocks.REDWOOD_STAIRS.get());
+        this.dropSelf(ModBlocks.REDWOOD_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_REDWOOD_WOOD.get());
+        this.dropSelf(ModBlocks.REDWOOD_FENCE.get());
+        this.dropSelf(ModBlocks.REDWOOD_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.REDWOOD_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.REDWOOD_BUTTON.get());
+        this.dropSelf(ModBlocks.REDWOOD_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.REDWOOD_SIGN.get());
+        this.dropSelf(ModBlocks.REDWOOD_WALL_SIGN.get());
+        this.dropSelf(ModBlocks.REDWOOD_SAPLING.get());
+        this.add(ModBlocks.REDWOOD_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(ModBlocks.REDWOOD_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.REDWOOD_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.REDWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropPottedContents(ModBlocks.POTTED_REDWOOD_SAPLING.get());
+        //endregion
+        //region Olive Woods
+        this.dropSelf(ModBlocks.OLIVE_PLANKS.get());
+        this.dropSelf(ModBlocks.STRIPPED_OLIVE_LOG.get());
+        this.dropSelf(ModBlocks.OLIVE_LOG.get());
+        this.dropSelf(ModBlocks.OLIVE_STAIRS.get());
+        this.dropSelf(ModBlocks.OLIVE_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_OLIVE_WOOD.get());
+        this.dropSelf(ModBlocks.OLIVE_FENCE.get());
+        this.dropSelf(ModBlocks.OLIVE_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.OLIVE_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.OLIVE_BUTTON.get());
+        this.dropSelf(ModBlocks.OLIVE_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.OLIVE_SIGN.get());
+        this.dropSelf(ModBlocks.OLIVE_WALL_SIGN.get());
+        this.dropSelf(ModBlocks.OLIVE_SAPLING.get());
+        this.add(ModBlocks.OLIVE_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(ModBlocks.OLIVE_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.OLIVE_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.OLIVE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropPottedContents(ModBlocks.POTTED_OLIVE_SAPLING.get());
+        //endregion
+        //region Peach Woods
+        this.dropSelf(ModBlocks.PEACH_PLANKS.get());
+        this.dropSelf(ModBlocks.STRIPPED_PEACH_LOG.get());
+        this.dropSelf(ModBlocks.PEACH_LOG.get());
+        this.dropSelf(ModBlocks.PEACH_STAIRS.get());
+        this.dropSelf(ModBlocks.PEACH_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_PEACH_WOOD.get());
+        this.dropSelf(ModBlocks.PEACH_FENCE.get());
+        this.dropSelf(ModBlocks.PEACH_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.PEACH_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.PEACH_BUTTON.get());
+        this.dropSelf(ModBlocks.PEACH_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.PEACH_SIGN.get());
+        this.dropSelf(ModBlocks.PEACH_WALL_SIGN.get());
+        this.dropSelf(ModBlocks.PEACH_SAPLING.get());
+        this.add(ModBlocks.PEACH_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(ModBlocks.PEACH_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.PEACH_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.PEACH_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropPottedContents(ModBlocks.POTTED_PEACH_SAPLING.get());
+        //endregion
+        //region Ebony Woods
+        this.dropSelf(ModBlocks.EBONY_PLANKS.get());
+        this.dropSelf(ModBlocks.STRIPPED_EBONY_LOG.get());
+        this.dropSelf(ModBlocks.EBONY_LOG.get());
+        this.dropSelf(ModBlocks.EBONY_STAIRS.get());
+        this.dropSelf(ModBlocks.EBONY_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_EBONY_WOOD.get());
+        this.dropSelf(ModBlocks.EBONY_FENCE.get());
+        this.dropSelf(ModBlocks.EBONY_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.EBONY_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.EBONY_BUTTON.get());
+        this.dropSelf(ModBlocks.EBONY_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.EBONY_SIGN.get());
+        this.dropSelf(ModBlocks.EBONY_WALL_SIGN.get());
+        this.dropSelf(ModBlocks.EBONY_SAPLING.get());
+        this.add(ModBlocks.EBONY_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(ModBlocks.EBONY_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.EBONY_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.EBONY_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropPottedContents(ModBlocks.POTTED_EBONY_SAPLING.get());
+        //endregion
+        //region Plum Woods
+        this.dropSelf(ModBlocks.PLUM_PLANKS.get());
+        this.dropSelf(ModBlocks.STRIPPED_PLUM_LOG.get());
+        this.dropSelf(ModBlocks.PLUM_LOG.get());
+        this.dropSelf(ModBlocks.PLUM_STAIRS.get());
+        this.dropSelf(ModBlocks.PLUM_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_PLUM_WOOD.get());
+        this.dropSelf(ModBlocks.PLUM_FENCE.get());
+        this.dropSelf(ModBlocks.PLUM_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.PLUM_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.PLUM_BUTTON.get());
+        this.dropSelf(ModBlocks.PLUM_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.PLUM_SIGN.get());
+        this.dropSelf(ModBlocks.PLUM_WALL_SIGN.get());
+        this.dropSelf(ModBlocks.PLUM_SAPLING.get());
+        this.add(ModBlocks.PLUM_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(ModBlocks.PLUM_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.PLUM_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.PLUM_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropPottedContents(ModBlocks.POTTED_PLUM_SAPLING.get());
+        //endregion
+        //region Orange Woods
+        this.dropSelf(ModBlocks.ORANGE_PLANKS.get());
+        this.dropSelf(ModBlocks.STRIPPED_ORANGE_LOG.get());
+        this.dropSelf(ModBlocks.ORANGE_LOG.get());
+        this.dropSelf(ModBlocks.ORANGE_STAIRS.get());
+        this.dropSelf(ModBlocks.ORANGE_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_ORANGE_WOOD.get());
+        this.dropSelf(ModBlocks.ORANGE_FENCE.get());
+        this.dropSelf(ModBlocks.ORANGE_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.ORANGE_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.ORANGE_BUTTON.get());
+        this.dropSelf(ModBlocks.ORANGE_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.ORANGE_SIGN.get());
+        this.dropSelf(ModBlocks.ORANGE_WALL_SIGN.get());
+        this.dropSelf(ModBlocks.ORANGE_SAPLING.get());
+        this.add(ModBlocks.ORANGE_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(ModBlocks.ORANGE_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.ORANGE_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.ORANGE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropPottedContents(ModBlocks.POTTED_ORANGE_SAPLING.get());
+        //endregion
+        //region Infected Woods
+        this.dropSelf(ModBlocks.INFECTED_PLANKS.get());
+        this.dropSelf(ModBlocks.STRIPPED_INFECTED_LOG.get());
+        this.dropSelf(ModBlocks.INFECTED_LOG.get());
+        this.dropSelf(ModBlocks.INFECTED_STAIRS.get());
+        this.dropSelf(ModBlocks.INFECTED_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_INFECTED_WOOD.get());
+        this.dropSelf(ModBlocks.INFECTED_FENCE.get());
+        this.dropSelf(ModBlocks.INFECTED_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.INFECTED_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.INFECTED_BUTTON.get());
+        this.dropSelf(ModBlocks.INFECTED_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.INFECTED_SIGN.get());
+        this.dropSelf(ModBlocks.INFECTED_WALL_SIGN.get());
+        this.dropSelf(ModBlocks.INFECTED_SAPLING.get());
+        this.add(ModBlocks.INFECTED_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(ModBlocks.INFECTED_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.INFECTED_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.INFECTED_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropPottedContents(ModBlocks.POTTED_INFECTED_SAPLING.get());
+        //endregion
+        //region Corrupt Woods
+        this.dropSelf(ModBlocks.CORRUPT_PLANKS.get());
+        this.dropSelf(ModBlocks.STRIPPED_CORRUPT_LOG.get());
+        this.dropSelf(ModBlocks.CORRUPT_LOG.get());
+        this.dropSelf(ModBlocks.CORRUPT_STAIRS.get());
+        this.dropSelf(ModBlocks.CORRUPT_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_CORRUPT_WOOD.get());
+        this.dropSelf(ModBlocks.CORRUPT_FENCE.get());
+        this.dropSelf(ModBlocks.CORRUPT_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.CORRUPT_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.CORRUPT_BUTTON.get());
+        this.dropSelf(ModBlocks.CORRUPT_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.CORRUPT_SIGN.get());
+        this.dropSelf(ModBlocks.CORRUPT_WALL_SIGN.get());
+        this.dropSelf(ModBlocks.CORRUPT_SAPLING.get());
+        this.add(ModBlocks.CORRUPT_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(ModBlocks.CORRUPT_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.CORRUPT_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.CORRUPT_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropPottedContents(ModBlocks.POTTED_CORRUPT_SAPLING.get());
+        //endregion
+        //region Pear Woods
+        this.dropSelf(ModBlocks.PEAR_PLANKS.get());
+        this.dropSelf(ModBlocks.STRIPPED_PEAR_LOG.get());
+        this.dropSelf(ModBlocks.PEAR_LOG.get());
+        this.dropSelf(ModBlocks.PEAR_STAIRS.get());
+        this.dropSelf(ModBlocks.PEAR_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_PEAR_WOOD.get());
+        this.dropSelf(ModBlocks.PEAR_FENCE.get());
+        this.dropSelf(ModBlocks.PEAR_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.PEAR_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.PEAR_BUTTON.get());
+        this.dropSelf(ModBlocks.PEAR_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.PEAR_SIGN.get());
+        this.dropSelf(ModBlocks.PEAR_WALL_SIGN.get());
+        this.dropSelf(ModBlocks.PEAR_SAPLING.get());
+        this.add(ModBlocks.PEAR_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(ModBlocks.PEAR_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.PEAR_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.PEAR_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropPottedContents(ModBlocks.POTTED_PEAR_SAPLING.get());
+        //endregion
+        //region Wisteria Woods
+        this.dropSelf(ModBlocks.WISTERIA_PLANKS.get());
+        this.dropSelf(ModBlocks.STRIPPED_WISTERIA_LOG.get());
+        this.dropSelf(ModBlocks.WISTERIA_LOG.get());
+        this.dropSelf(ModBlocks.WISTERIA_STAIRS.get());
+        this.dropSelf(ModBlocks.WISTERIA_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_WISTERIA_WOOD.get());
+        this.dropSelf(ModBlocks.WISTERIA_FENCE.get());
+        this.dropSelf(ModBlocks.WISTERIA_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.WISTERIA_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.WISTERIA_BUTTON.get());
+        this.dropSelf(ModBlocks.WISTERIA_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.WISTERIA_SIGN.get());
+        this.dropSelf(ModBlocks.WISTERIA_WALL_SIGN.get());
+        this.dropSelf(ModBlocks.WISTERIA_SAPLING.get());
+        this.add(ModBlocks.WISTERIA_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(ModBlocks.WISTERIA_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.WISTERIA_LEAVES_BLUE.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.WISTERIA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(ModBlocks.WISTERIA_LEAVES_PURPLE.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.WISTERIA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropPottedContents(ModBlocks.POTTED_WISTERIA_SAPLING.get());
+        //endregion
+        //region Charred Woods
+        this.dropSelf(ModBlocks.CHARRED_PLANKS.get());
+        this.dropSelf(ModBlocks.STRIPPED_CHARRED_LOG.get());
+        this.dropSelf(ModBlocks.CHARRED_LOG.get());
+        this.dropSelf(ModBlocks.CHARRED_STAIRS.get());
+        this.dropSelf(ModBlocks.CHARRED_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_CHARRED_WOOD.get());
+        this.dropSelf(ModBlocks.CHARRED_FENCE.get());
+        this.dropSelf(ModBlocks.CHARRED_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.CHARRED_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.CHARRED_BUTTON.get());
+        this.dropSelf(ModBlocks.CHARRED_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.CHARRED_SIGN.get());
+        this.dropSelf(ModBlocks.CHARRED_WALL_SIGN.get());
+        this.dropSelf(ModBlocks.CHARRED_SAPLING.get());
+        this.add(ModBlocks.CHARRED_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(ModBlocks.CHARRED_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.CHARRED_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.CHARRED_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropPottedContents(ModBlocks.POTTED_CHARRED_SAPLING.get());
+        //endregion
+        //region Ice Woods
+        this.dropSelf(ModBlocks.ICE_PLANKS.get());
+        this.dropSelf(ModBlocks.STRIPPED_ICE_LOG.get());
+        this.dropSelf(ModBlocks.ICE_LOG.get());
+        this.dropSelf(ModBlocks.ICE_STAIRS.get());
+        this.dropSelf(ModBlocks.ICE_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_ICE_WOOD.get());
+        this.dropSelf(ModBlocks.ICE_FENCE.get());
+        this.dropSelf(ModBlocks.ICE_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.ICE_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.ICE_BUTTON.get());
+        this.dropSelf(ModBlocks.ICE_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.ICE_SIGN.get());
+        this.dropSelf(ModBlocks.ICE_WALL_SIGN.get());
+        this.dropSelf(ModBlocks.ICE_SAPLING.get());
+        this.add(ModBlocks.ICE_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(ModBlocks.ICE_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.ICE_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.ICE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropPottedContents(ModBlocks.POTTED_ICE_SAPLING.get());
+        //endregion
+        //region Dead Woods
+        this.dropSelf(ModBlocks.DEAD_PLANKS.get());
+        this.dropSelf(ModBlocks.STRIPPED_DEAD_LOG.get());
+        this.dropSelf(ModBlocks.DEAD_LOG.get());
+        this.dropSelf(ModBlocks.DEAD_STAIRS.get());
+        this.dropSelf(ModBlocks.DEAD_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_DEAD_WOOD.get());
+        this.dropSelf(ModBlocks.DEAD_FENCE.get());
+        this.dropSelf(ModBlocks.DEAD_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.DEAD_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.DEAD_BUTTON.get());
+        this.dropSelf(ModBlocks.DEAD_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.DEAD_SIGN.get());
+        this.dropSelf(ModBlocks.DEAD_WALL_SIGN.get());
+        this.dropSelf(ModBlocks.DEAD_SAPLING.get());
+        this.add(ModBlocks.DEAD_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(ModBlocks.DEAD_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(ModBlocks.DEAD_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.DEAD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropPottedContents(ModBlocks.POTTED_DEAD_SAPLING.get());
+        //endregion
+        
         this.dropSelf(ModBlocks.CELESTITE_BLOCK.get());
         this.dropSelf(ModBlocks.CITRINE_BLOCK.get());
         this.dropSelf(ModBlocks.RHODOCHROSITE_BLOCK.get());
@@ -118,11 +426,7 @@ public class ModBlockLootTables extends BlockLoot {
         this.add(ModBlocks.RAINBOW_BRICK_SLAB.get(), BlockLoot::createSlabItemTable);
         this.add(ModBlocks.WHITE_BRICK_SLAB.get(), BlockLoot::createSlabItemTable);
         this.add(ModBlocks.BLACK_BRICK_SLAB.get(), BlockLoot::createSlabItemTable);
-
-        this.add(ModBlocks.CHERRY_DOOR.get(), BlockLoot::createDoorTable);
-        this.add(ModBlocks.CHERRY_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.CHERRY_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.CHERRY_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-
+        
         this.add(ModBlocks.SILICON_ORE.get(), (block) -> createModifiedOreDrops(ModBlocks.SILICON_ORE.get(), ModItems.UNREFINED_SILICON.get(), 1.0F, 3.0F));
         this.add(ModBlocks.RED_SILICON_ORE.get(), (block) -> createModifiedOreDrops(ModBlocks.RED_SILICON_ORE.get(), ModItems.RED_UNREFINED_SILICON.get(), 1.0F, 3.0F));
 
@@ -292,7 +596,7 @@ public class ModBlockLootTables extends BlockLoot {
         //endregion
         //endregion
 
-        this.dropPottedContents(ModBlocks.POTTED_CHERRY_SAPLING.get());
+        
     }
 
     @Override

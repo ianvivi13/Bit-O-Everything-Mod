@@ -8,7 +8,6 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -120,7 +119,7 @@ public class TreeTapBlock extends HorizontalDirectionalBlock {
         Direction direction = blockState.getValue(FACING);
         BlockPos blockpos = blockPos.relative(direction.getOpposite());
         Block blockOn = level.getBlockState(blockpos).getBlock();
-        return (blockOn == ModBlocks.CHERRY_LOG.get() || blockOn == ModBlocks.STRIPPED_CHERRY_LOG.get());
+        return (blockOn == ModBlocks.MAPLE_LOG.get() || blockOn == ModBlocks.STRIPPED_MAPLE_LOG.get());
     }
     
     @Override

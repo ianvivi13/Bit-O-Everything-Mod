@@ -9,15 +9,12 @@ import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.Boat;
-import net.minecraft.world.entity.vehicle.ChestBoat;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.network.NetworkHooks;
 
 public class ModBoatEntity extends Boat {
 
@@ -44,11 +41,24 @@ public class ModBoatEntity extends Boat {
 
     @Override
     public Item getDropItem() {
-        switch(this.getModBoatEntityType()) {
-            default:
-            case CHERRY:
-                return ModItems.CHERRY_BOAT.get();
-        }
+        return switch (this.getModBoatEntityType()) {
+            case CHERRY -> ModItems.CHERRY_BOAT.get();
+            case MAPLE -> ModItems.MAPLE_BOAT.get();
+            case DOGWOOD -> ModItems.DOGWOOD_BOAT.get();
+            case REDWOOD -> ModItems.REDWOOD_BOAT.get();
+            case OLIVE -> ModItems.OLIVE_BOAT.get();
+            case PEACH -> ModItems.PEACH_BOAT.get();
+            case EBONY -> ModItems.EBONY_BOAT.get();
+            case PLUM -> ModItems.PLUM_BOAT.get();
+            case ORANGE -> ModItems.ORANGE_BOAT.get();
+            case INFECTED -> ModItems.INFECTED_BOAT.get();
+            case CORRUPT -> ModItems.CORRUPT_BOAT.get();
+            case PEAR -> ModItems.PEAR_BOAT.get();
+            case WISTERIA -> ModItems.WISTERIA_BOAT.get();
+            case CHARRED -> ModItems.CHARRED_BOAT.get();
+            case ICE -> ModItems.ICE_BOAT.get();
+            case DEAD -> ModItems.DEAD_BOAT.get();
+        };
     }
 
     public void setBoatType(ModBoatEntity.Type boatType) {
@@ -59,6 +69,23 @@ public class ModBoatEntity extends Boat {
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(BOAT_TYPE, Type.CHERRY.ordinal());
+        /*
+        this.entityData.define(BOAT_TYPE, Type.MAPLE.ordinal());
+        this.entityData.define(BOAT_TYPE, Type.DOGWOOD.ordinal());
+        this.entityData.define(BOAT_TYPE, Type.REDWOOD.ordinal());
+        this.entityData.define(BOAT_TYPE, Type.OLIVE.ordinal());
+        this.entityData.define(BOAT_TYPE, Type.PEACH.ordinal());
+        this.entityData.define(BOAT_TYPE, Type.EBONY.ordinal());
+        this.entityData.define(BOAT_TYPE, Type.PLUM.ordinal());
+        this.entityData.define(BOAT_TYPE, Type.ORANGE.ordinal());
+        this.entityData.define(BOAT_TYPE, Type.INFECTED.ordinal());
+        this.entityData.define(BOAT_TYPE, Type.CORRUPT.ordinal());
+        this.entityData.define(BOAT_TYPE, Type.PEAR.ordinal());
+        this.entityData.define(BOAT_TYPE, Type.WISTERIA.ordinal());
+        this.entityData.define(BOAT_TYPE, Type.CHARRED.ordinal());
+        this.entityData.define(BOAT_TYPE, Type.ICE.ordinal());
+        this.entityData.define(BOAT_TYPE, Type.DEAD.ordinal());
+        */
     }
 
     @Override
@@ -79,7 +106,22 @@ public class ModBoatEntity extends Boat {
     }
 
     public enum Type {
-        CHERRY(ModBlocks.CHERRY_PLANKS.get(), "cherry")
+        CHERRY(ModBlocks.CHERRY_PLANKS.get(), "cherry"),
+        MAPLE(ModBlocks.MAPLE_PLANKS.get(), "maple"),
+        DOGWOOD(ModBlocks.DOGWOOD_PLANKS.get(), "dogwood"),
+        REDWOOD(ModBlocks.REDWOOD_PLANKS.get(), "redwood"),
+        OLIVE(ModBlocks.OLIVE_PLANKS.get(), "olive"),
+        PEACH(ModBlocks.PEACH_PLANKS.get(), "peach"),
+        EBONY(ModBlocks.EBONY_PLANKS.get(), "ebony"),
+        PLUM(ModBlocks.PLUM_PLANKS.get(), "plum"),
+        ORANGE(ModBlocks.ORANGE_PLANKS.get(), "orange"),
+        INFECTED(ModBlocks.INFECTED_PLANKS.get(), "infected"),
+        CORRUPT(ModBlocks.CORRUPT_PLANKS.get(), "corrupt"),
+        PEAR(ModBlocks.PEAR_PLANKS.get(), "pear"),
+        WISTERIA(ModBlocks.WISTERIA_PLANKS.get(), "wisteria"),
+        CHARRED(ModBlocks.CHARRED_PLANKS.get(), "charred"),
+        ICE(ModBlocks.ICE_PLANKS.get(), "ice"),
+        DEAD(ModBlocks.DEAD_PLANKS.get(), "dead")
         ;
 
         private final String name;
