@@ -5,14 +5,12 @@ import com.bic.bit_o_everything.block.custom.*;
 import com.bic.bit_o_everything.block.entity.ModWoodTypes;
 import com.bic.bit_o_everything.item.ModCreativeModeTab;
 import com.bic.bit_o_everything.item.ModItems;
-//import com.bic.bit_o_everything.world.feature.tree.CherryTreeGrower;
 import com.bic.bit_o_everything.world.feature.tree_growers.CherryTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
@@ -25,7 +23,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.ArrayList;
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -54,13 +51,13 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> INDICATOR_LEVER = registerBlock("indicator_lever",
             () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)), ModCreativeModeTab.MODDED);
-
+    //region Potter
     public static final RegistryObject<Block> POTTER = registerBlock("potter",
             () -> new PotterBlock(BlockBehaviour.Properties.of(Material.STONE).noOcclusion().dynamicShape().instabreak()), ModCreativeModeTab.MODDED);
 
     public static final RegistryObject<Block> CONCRETE_POTTER = registerBlock("concrete_potter",
             () -> new ConcretePotterBlock(BlockBehaviour.Properties.of(Material.STONE).noOcclusion().dynamicShape().instabreak()), ModCreativeModeTab.MODDED);
-
+    //endregion
     //region Bricks
     public static final RegistryObject<Block> RAINBOW_BRICKS = registerBlock("rainbow_bricks",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE_BRICKS)
@@ -694,12 +691,22 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_PURPLE).sound(SoundType.NETHERITE_BLOCK)
                     .strength(50f,1200f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
     //endregion
-
+    //region Berry Bushes
     public static final RegistryObject<Block> WILDBERRY_BUSH =registerBerryBush("wildberry_bush", ModItems.WILDBERRIES::get);
     public static final RegistryObject<Block> BLUEBERRY_BUSH =registerBerryBush("blueberry_bush", ModItems.BLUEBERRIES::get);
     public static final RegistryObject<Block> GOOSEBERRY_BUSH =registerBerryBush("gooseberry_bush", ModItems.GOOSEBERRIES::get);
     public static final RegistryObject<Block> RASPBERRY_BUSH =registerBerryBush("raspberry_bush", ModItems.RASPBERRIES::get);
     public static final RegistryObject<Block> BLACKBERRY_BUSH =registerBerryBush("blackberry_bush", ModItems.BLACKBERRIES::get);
+    //endregion
+    
+    public static final RegistryObject<Block> TREE_TAP = registerBlock("tree_tap",
+            () -> new TreeTapBlock(BlockBehaviour.Properties.of(Material.STONE).noOcclusion().dynamicShape()), ModCreativeModeTab.MODDED);
+    
+
+
+
+
+
 
     private static RegistryObject<Block> registerBerryBush(String name, Supplier<ItemLike> drop) {
         return registerBlock(name, () -> new BerryBushBlock(BlockBehaviour.Properties.of(Material.DECORATION, MaterialColor.COLOR_GREEN)

@@ -95,7 +95,9 @@ public class BitOEverything  {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_SAPLING.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_CHERRY_SAPLING.get(), RenderType.cutout());
-
+        
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TREE_TAP.get(), RenderType.cutout());
+        
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.WILDBERRY_BUSH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLUEBERRY_BUSH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GOOSEBERRY_BUSH.get(), RenderType.cutout());

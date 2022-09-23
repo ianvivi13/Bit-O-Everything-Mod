@@ -6,21 +6,15 @@ import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.data.loot.BlockLoot;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
-import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
-import net.minecraft.world.level.storage.loot.functions.ApplyExplosionDecay;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
@@ -54,6 +48,8 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropWhenSilkOrShearsOnly(ModBlocks.GOOSEBERRY_BUSH.get());
         this.dropWhenSilkOrShearsOnly(ModBlocks.RASPBERRY_BUSH.get());
         this.dropWhenSilkOrShearsOnly(ModBlocks.BLACKBERRY_BUSH.get());
+        
+        this.dropSelf(ModBlocks.TREE_TAP.get());
 
         this.dropSelf(ModBlocks.PYRITE_BLOCK.get());
         this.dropSelf(ModBlocks.RAW_PYRITE_BLOCK.get());
@@ -126,7 +122,6 @@ public class ModBlockLootTables extends BlockLoot {
         this.add(ModBlocks.CHERRY_DOOR.get(), BlockLoot::createDoorTable);
         this.add(ModBlocks.CHERRY_SLAB.get(), BlockLoot::createSlabItemTable);
         this.add(ModBlocks.CHERRY_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.CHERRY_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        this.add(ModBlocks.CHERRY_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.CHERRY_LEAVES.get())); //TEMPORARY
 
         this.add(ModBlocks.SILICON_ORE.get(), (block) -> createModifiedOreDrops(ModBlocks.SILICON_ORE.get(), ModItems.UNREFINED_SILICON.get(), 1.0F, 3.0F));
         this.add(ModBlocks.RED_SILICON_ORE.get(), (block) -> createModifiedOreDrops(ModBlocks.RED_SILICON_ORE.get(), ModItems.RED_UNREFINED_SILICON.get(), 1.0F, 3.0F));

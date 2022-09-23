@@ -1,4 +1,4 @@
-// 1.19	2022-09-17T03:30:49.6655761	LootTables
+// 1.19	2022-09-22T19:06:04.5025929	LootTables
 49aafd2c87d5a7ca3a4740cbb6066a7b2783b77a data/bit_o_everything/loot_tables/blocks/aluminum_block.json
 b7cbeb2b53a8dcc9143c061b2cb8e35f7fa7860b data/bit_o_everything/loot_tables/blocks/andesite_bismuth_ore.json
 78caf6c70a31e83ee97bfe0d7794abe827374724 data/bit_o_everything/loot_tables/blocks/aquamarine.json
@@ -40,7 +40,7 @@ eb50162c1294724d47e80d65ebd2df2883021abf data/bit_o_everything/loot_tables/block
 f52200573ff8fc81404b255a60fa07e514ffde55 data/bit_o_everything/loot_tables/blocks/cherry_door.json
 23eac2c91a25034fc4a06c9e778cebfbaf0bf011 data/bit_o_everything/loot_tables/blocks/cherry_fence.json
 d9a45ab4a2c604a12796956b036e060c93a53725 data/bit_o_everything/loot_tables/blocks/cherry_fence_gate.json
-0c0226af72b2837e7ba80a2adac4702a8d1098b4 data/bit_o_everything/loot_tables/blocks/cherry_leaves.json
+d64e625597be7574ec7ab32b8a8ae077da9d83a9 data/bit_o_everything/loot_tables/blocks/cherry_leaves.json
 f44fa95907141f079377ae203f25f6bf3d4870c2 data/bit_o_everything/loot_tables/blocks/cherry_log.json
 92597fbd0bd61f342d274c240af309b00e274a0e data/bit_o_everything/loot_tables/blocks/cherry_planks.json
 2caf74b064f310a6acb8fd06760df652435a9829 data/bit_o_everything/loot_tables/blocks/cherry_pressure_plate.json
@@ -193,6 +193,7 @@ c530bd49d9846b4bcf41d3d265cbfa640e4d6ef8 data/bit_o_everything/loot_tables/block
 8d736a2d5015474bd50ad3821910fc814049bb67 data/bit_o_everything/loot_tables/blocks/tin_ore.json
 c6a1eaaf1d9baa01b5730b6b4135a316e8c93eff data/bit_o_everything/loot_tables/blocks/titanium_block.json
 dee9ac72e1aa92b76d657079c465be72c78983c7 data/bit_o_everything/loot_tables/blocks/titanium_ore.json
+22c4e440bc3c36e38dfa5b564759c7e5b5b15363 data/bit_o_everything/loot_tables/blocks/tree_tap.json
 96e41c09369804c733fa36a97c5ae6d4f8970446 data/bit_o_everything/loot_tables/blocks/tuff_bismuth_ore.json
 95adb1b45cfec71844f648c44f20b3ca3d15da56 data/bit_o_everything/loot_tables/blocks/unobtainium_ore.json
 eba56232b3755b19ef7c7d645939809eaf23a94a data/bit_o_everything/loot_tables/blocks/white_bricks.json

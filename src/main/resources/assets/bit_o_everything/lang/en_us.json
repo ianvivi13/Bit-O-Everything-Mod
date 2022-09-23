@@ -54,6 +54,9 @@
   "block.bit_o_everything.raspberry_bush": "Raspberry Bush",
   "block.bit_o_everything.blackberry_bush": "Blackberry Bush",
 
+  "item.bit_o_everything.sap_bottle": "Sap Bottle",
+  "block.bit_o_everything.tree_tap": "Tree Tap",
+
   "block.bit_o_everything.pyrite_ore": "Pyrite Ore",
   "block.bit_o_everything.deepslate_pyrite_ore": "Deepslate Pyrite Ore",
   "block.bit_o_everything.pyrite_block": "Pyrite Block",

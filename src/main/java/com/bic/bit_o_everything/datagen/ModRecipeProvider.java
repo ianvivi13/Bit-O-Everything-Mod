@@ -535,8 +535,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
 
 
-
-
+        ShapedRecipeBuilder.shaped(ModBlocks.TREE_TAP.get(), 1)
+                .define('S', Items.IRON_SWORD)
+                .define('B', Items.BUCKET)
+                .pattern("S")
+                .pattern("B")
+                .unlockedBy("has_bucket", inventoryTrigger(ItemPredicate.Builder.item().of(Items.BUCKET).build()))
+                .save(pFinishedRecipeConsumer);
 
 
 

@@ -3,7 +3,6 @@ package com.bic.bit_o_everything.block.custom;
 import com.bic.bit_o_everything.particle.ModParticles;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.*;
@@ -23,12 +22,12 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class Crystal extends RodBlock implements SimpleWaterloggedBlock{
-    private static final VoxelShape NORTH_AABB = Block.box(5,5,4,11,11,16); // fixed
-    private static final VoxelShape EAST_AABB = Block.box(0,5,5,12,11,11); // switch //
-    private static final VoxelShape SOUTH_AABB = Block.box(5,5,0,11,11,12); // correct
-    private static final VoxelShape WEST_AABB = Block.box(4,5,5,16,11,11); // switch //
-    private static final VoxelShape UP_AABB = Block.box(5,0,5,11,12,11); // //
-    private static final VoxelShape DOWN_AABB = Block.box(5,4,5,11,16,11); // //
+    private static final VoxelShape NORTH_AABB = Block.box(5,5,4,11,11,16);
+    private static final VoxelShape EAST_AABB = Block.box(0,5,5,12,11,11);
+    private static final VoxelShape SOUTH_AABB = Block.box(5,5,0,11,11,12);
+    private static final VoxelShape WEST_AABB = Block.box(4,5,5,16,11,11);
+    private static final VoxelShape UP_AABB = Block.box(5,0,5,11,12,11);
+    private static final VoxelShape DOWN_AABB = Block.box(5,4,5,11,16,11);
 
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
