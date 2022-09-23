@@ -47,7 +47,7 @@ public abstract class AbstractThrowableExplosive extends ThrowableItemProjectile
         if(!this.level.isClientSide) {
             Vec3 vec3 = location.subtract(this.getX(), this.getY(), this.getZ());
             this.setDeltaMovement(vec3);
-            Vec3 vec31 = vec3.normalize().scale((double)0.05F);
+            Vec3 vec31 = vec3.normalize().scale(0.05F);
             double x = this.getX() - vec31.x;
             double y = this.getY() - vec31.y;
             double z = this.getZ() - vec31.z;

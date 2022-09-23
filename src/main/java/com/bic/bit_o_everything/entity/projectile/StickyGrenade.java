@@ -35,7 +35,7 @@ public class StickyGrenade extends AbstractThrowableExplosive {
             blockstate.onProjectileHit(this.level, blockstate, blockHitResult, this);
             Vec3 vec3 = blockHitResult.getLocation().subtract(this.getX(), this.getY(), this.getZ());
             this.setDeltaMovement(vec3);
-            Vec3 vec31 = vec3.normalize().scale((double) 0.05F);
+            Vec3 vec31 = vec3.normalize().scale(0.05F);
             this.setPosRaw(this.getX() - vec31.x, this.getY() - vec31.y, this.getZ() - vec31.z);
         } else {
             super.onHitBlock(blockHitResult);

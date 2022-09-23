@@ -58,8 +58,8 @@ public class ModBoatEntityRenderer extends EntityRenderer<ModBoatEntity> {
         }
 
         Pair<ResourceLocation, BoatModel> pair = this.boatResources.get(pEntity.getModBoatEntityType());
-        ResourceLocation resourcelocation = (ResourceLocation)pair.getFirst();
-        BoatModel boatmodel = (BoatModel)pair.getSecond();
+        ResourceLocation resourcelocation = pair.getFirst();
+        BoatModel boatmodel = pair.getSecond();
         pMatrixStack.scale(-1.0F, -1.0F, 1.0F);
         pMatrixStack.mulPose(Vector3f.YP.rotationDegrees(90.0F));
         boatmodel.setupAnim(pEntity, pPartialTicks, 0.0F, -0.1F, 0.0F, 0.0F);

@@ -47,7 +47,7 @@ public class Crystal extends RodBlock implements SimpleWaterloggedBlock{
         double d0 = (double)p_221109_.getX() + 0.55D - (double)(p_221110_.nextFloat() * 0.1F);
         double d1 = (double)p_221109_.getY() + 0.55D - (double)(p_221110_.nextFloat() * 0.1F);
         double d2 = (double)p_221109_.getZ() + 0.55D - (double)(p_221110_.nextFloat() * 0.1F);
-        double d3 = (double)(0.45F - (p_221110_.nextFloat() + p_221110_.nextFloat()) * 0.4F);
+        double d3 = 0.45F - (p_221110_.nextFloat() + p_221110_.nextFloat()) * 0.4F;
         if (p_221110_.nextInt(10) == 0) {
             p_221108_.addParticle(ModParticles.CRYSTAL_PARTICLES.get(), d0 + (double)direction.getStepX() * d3, d1 + (double)direction.getStepY() * d3, d2 + (double)direction.getStepZ() * d3, p_221110_.nextGaussian() * 0.005D, p_221110_.nextGaussian() * 0.005D, p_221110_.nextGaussian() * 0.005D);
         }
