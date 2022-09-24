@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "bit_o_everything:block/plum_slab"
+    },
+    "type=double": {
+      "model": "bit_o_everything:block/plum_planks"
+    },
+    "type=top": {
+      "model": "bit_o_everything:block/plum_slab_top"
+    }
+  }
+}

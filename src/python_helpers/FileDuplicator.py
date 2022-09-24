@@ -65,6 +65,15 @@ class dup:
             print(e)
             print("duplication failed: automagically undoing file creation")
 
+    def assertFilesExist(fileName):
+        if isinstance(fileName, tuple):
+                for f in fileName:
+                    if not os.path.isfile(f):
+                        print("File not found: " + f)
+        else:
+            if not os.path.isfile(fileName):
+                        print("File not found: " + f)
+
     def Undo():
         dup._Undo(dup.LoadFromPickle("meta/prev.pckl"))
 
@@ -171,7 +180,6 @@ files = (
 
 replace = "cherry"
 
+#dup.assertFilesExist(files)
 dup.DuplicateFile(files, replace, woodTypes)
-
-#dup.DuplicateFile(files, "white", colors)
 #dup.Undo()

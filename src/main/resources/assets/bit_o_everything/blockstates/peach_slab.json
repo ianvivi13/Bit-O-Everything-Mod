@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "bit_o_everything:block/peach_slab"
+    },
+    "type=double": {
+      "model": "bit_o_everything:block/peach_planks"
+    },
+    "type=top": {
+      "model": "bit_o_everything:block/peach_slab_top"
+    }
+  }
+}

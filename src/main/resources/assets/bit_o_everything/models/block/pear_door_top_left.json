@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_left",
+  "textures": {
+    "bottom": "bit_o_everything:block/pear_door_bottom",
+    "top": "bit_o_everything:block/pear_door_top"
+  }
+}

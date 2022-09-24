@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "bit_o_everything:block/ice_planks",
+    "side": "bit_o_everything:block/ice_planks",
+    "top": "bit_o_everything:block/ice_planks"
+  }
+}

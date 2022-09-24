@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "bit_o_everything:block/olive_leaves"
+  }
+}

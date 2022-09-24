@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_trapdoor_open",
+  "textures": {
+    "texture": "bit_o_everything:block/dogwood_trapdoor"
+  }
+}

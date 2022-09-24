@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "bit_o_everything:item/peach_chest_boat"
+  }
+}

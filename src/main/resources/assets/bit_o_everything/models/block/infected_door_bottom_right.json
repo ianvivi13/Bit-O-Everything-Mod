@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "textures": {
+    "bottom": "bit_o_everything:block/infected_door_bottom",
+    "top": "bit_o_everything:block/infected_door_top"
+  }
+}

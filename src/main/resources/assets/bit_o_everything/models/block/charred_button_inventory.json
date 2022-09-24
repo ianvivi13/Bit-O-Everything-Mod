@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "bit_o_everything:block/charred_planks"
+  }
+}

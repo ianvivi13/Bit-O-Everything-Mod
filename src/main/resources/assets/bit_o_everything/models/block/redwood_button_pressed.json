@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "bit_o_everything:block/redwood_planks"
+  }
+}

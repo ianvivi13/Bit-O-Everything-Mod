@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right_open",
+  "textures": {
+    "bottom": "bit_o_everything:block/wisteria_door_bottom",
+    "top": "bit_o_everything:block/wisteria_door_top"
+  }
+}

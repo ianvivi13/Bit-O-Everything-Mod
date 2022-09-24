@@ -196,6 +196,21 @@ public class BitOEverything  {
     private void setup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             Sheets.addWoodType(ModWoodTypes.CHERRY);
+            Sheets.addWoodType(ModWoodTypes.MAPLE);
+            Sheets.addWoodType(ModWoodTypes.DOGWOOD);
+            Sheets.addWoodType(ModWoodTypes.REDWOOD);
+            Sheets.addWoodType(ModWoodTypes.OLIVE);
+            Sheets.addWoodType(ModWoodTypes.PEACH);
+            Sheets.addWoodType(ModWoodTypes.EBONY);
+            Sheets.addWoodType(ModWoodTypes.PLUM);
+            Sheets.addWoodType(ModWoodTypes.ORANGE);
+            Sheets.addWoodType(ModWoodTypes.INFECTED);
+            Sheets.addWoodType(ModWoodTypes.CORRUPT);
+            Sheets.addWoodType(ModWoodTypes.PEAR);
+            Sheets.addWoodType(ModWoodTypes.WISTERIA);
+            Sheets.addWoodType(ModWoodTypes.CHARRED);
+            Sheets.addWoodType(ModWoodTypes.ICE);
+            Sheets.addWoodType(ModWoodTypes.DEAD);
 
             //Add potion recipes here
 

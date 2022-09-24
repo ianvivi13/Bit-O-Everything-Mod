@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "bit_o_everything:block/olive_planks"
+  }
+}

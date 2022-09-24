@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "bit_o_everything:block/infected_slab"
+    },
+    "type=double": {
+      "model": "bit_o_everything:block/infected_planks"
+    },
+    "type=top": {
+      "model": "bit_o_everything:block/infected_slab_top"
+    }
+  }
+}
