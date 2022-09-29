@@ -1,7 +1,7 @@
 package com.bic.bit_o_everything.client.render.entity;
 
 import com.bic.bit_o_everything.BitOEverything;
-import com.bic.bit_o_everything.entity.custom.ModChestBoatEntity;
+import com.bic.bit_o_everything.entity.custom.ModBoatEntity;
 import com.google.common.collect.ImmutableMap;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -17,7 +17,6 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import com.bic.bit_o_everything.entity.custom.ModBoatEntity;
 
 import java.util.Map;
 import java.util.stream.Stream;
@@ -28,6 +27,7 @@ public class ModBoatEntityRenderer extends EntityRenderer<ModBoatEntity> {
     public ModBoatEntityRenderer(EntityRendererProvider.Context renderContext) {
         super(renderContext);
         this.shadowRadius = 0.8F;
+        
         this.boatResources = Stream.of(ModBoatEntity.Type.values()).collect(ImmutableMap.toImmutableMap((boatType) -> boatType,
                 (boatType) -> Pair.of(new ResourceLocation(BitOEverything.MOD_ID, "textures/entity/boat/" + boatType.getName() + ".png"),
                         new BoatModel(renderContext.bakeLayer(boatLayer(boatType)), false)))); // the false is for boat, if true, render chest also

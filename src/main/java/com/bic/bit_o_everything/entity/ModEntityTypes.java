@@ -20,7 +20,7 @@ public class ModEntityTypes {
                     () -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new, MobCategory.MISC)
                             .sized(1.375F, 0.5625F).clientTrackingRange(10)
                             .build("boat"));
-
+    
     public static final RegistryObject<EntityType<ModChestBoatEntity>> MOD_CHEST_BOAT =
             ENTITY_TYPES.register("chest_boat",
                     () -> EntityType.Builder.<ModChestBoatEntity>of(ModChestBoatEntity::new, MobCategory.MISC)

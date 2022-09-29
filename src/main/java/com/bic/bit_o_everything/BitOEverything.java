@@ -82,6 +82,7 @@ public class BitOEverything  {
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
+        
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_DOOR.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_TRAPDOOR.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.OLIVE_DOOR.get(), RenderType.cutout());
@@ -98,6 +99,30 @@ public class BitOEverything  {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CORRUPT_TRAPDOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.EBONY_DOOR.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.EBONY_TRAPDOOR.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHARRED_DOOR.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHARRED_TRAPDOOR.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEAR_DOOR.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEAR_TRAPDOOR.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WISTERIA_DOOR.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WISTERIA_TRAPDOOR.get(), RenderType.cutout());
+        
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.DEAD_TRAPDOOR.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.DEAD_DOOR.get(), RenderType.translucent());
+        
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_TRAPDOOR.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_DOOR.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_FENCE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_FENCE_GATE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_LOG.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_WOOD.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_PLANKS.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.STRIPPED_ICE_LOG.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.STRIPPED_ICE_WOOD.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_STAIRS.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_SLAB.get(), RenderType.translucent());
+        
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_BUTTON.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_PRESSURE_PLATE.get(), RenderType.translucent());
         
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_SAPLING.get(), RenderType.cutout());
@@ -143,9 +168,9 @@ public class BitOEverything  {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHARRED_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHARRED_SAPLING.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_CHARRED_SAPLING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_LEAVES.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_SAPLING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_ICE_SAPLING.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_LEAVES.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_SAPLING.get(), RenderType.cutout()); // ICE
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_ICE_SAPLING.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DEAD_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DEAD_SAPLING.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_DEAD_SAPLING.get(), RenderType.cutout());

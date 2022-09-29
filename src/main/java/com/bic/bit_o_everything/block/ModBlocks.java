@@ -864,55 +864,55 @@ public class ModBlocks {
     //endregion
     //region Ice Woods
     public static final RegistryObject<Block> ICE_LOG = registerBlock("ice_log",
-            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.WOOD);
+            () -> new TransparentWood(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).sound(SoundType.GLASS).noOcclusion().friction(0.98F)), ModCreativeModeTab.WOOD);
     
     public static final RegistryObject<Block> ICE_WOOD = registerBlock("ice_wood",
-            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.WOOD);
+            () -> new TransparentWood(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).sound(SoundType.GLASS).noOcclusion().friction(0.98F)), ModCreativeModeTab.WOOD);
     
     public static final RegistryObject<Block> STRIPPED_ICE_LOG = registerBlock("stripped_ice_log",
-            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), ModCreativeModeTab.WOOD);
+            () -> new TransparentWood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).sound(SoundType.GLASS).noOcclusion().friction(0.98F)), ModCreativeModeTab.WOOD);
     
     public static final RegistryObject<Block> STRIPPED_ICE_WOOD = registerBlock("stripped_ice_wood",
-            () -> new Wood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), ModCreativeModeTab.WOOD);
+            () -> new TransparentWood(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).sound(SoundType.GLASS).noOcclusion().friction(0.98F)), ModCreativeModeTab.WOOD);
     
     public static final RegistryObject<Block> ICE_PLANKS = registerBlock("ice_planks",
-            () -> new Plank(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD);
+            () -> new TransparentPlank(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.GLASS).noOcclusion().friction(0.98F)), ModCreativeModeTab.WOOD);
     
     public static final RegistryObject<Block> ICE_STAIRS = registerBlock("ice_stairs",
-            () -> new BurnableStair(() -> ModBlocks.ICE_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), ModCreativeModeTab.WOOD);
+            () -> new TransparentBurnableStair(() -> ModBlocks.ICE_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS).friction(0.98F).sound(SoundType.GLASS).noOcclusion()), ModCreativeModeTab.WOOD);
     
     public static final RegistryObject<Block> ICE_SLAB = registerBlock("ice_slab",
-            () -> new BurnableSlab(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), ModCreativeModeTab.WOOD);
+            () -> new TransparentBurnableSlab(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB).sound(SoundType.GLASS).noOcclusion().friction(0.98F)), ModCreativeModeTab.WOOD);
     
     public static final RegistryObject<Block> ICE_FENCE = registerBlock("ice_fence",
-            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD);
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE).sound(SoundType.GLASS).friction(0.98F)), ModCreativeModeTab.WOOD);
     
     public static final RegistryObject<Block> ICE_FENCE_GATE = registerBlock("ice_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.WOOD);
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE).sound(SoundType.GLASS).friction(0.98F)), ModCreativeModeTab.WOOD);
     
     public static final RegistryObject<Block> ICE_BUTTON = registerBlock("ice_button",
-            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission()), ModCreativeModeTab.WOOD);
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission().sound(SoundType.GLASS)), ModCreativeModeTab.WOOD);
     
     public static final RegistryObject<Block> ICE_PRESSURE_PLATE = registerBlock("ice_pressure_plate",
-            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)), ModCreativeModeTab.WOOD);
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE).sound(SoundType.GLASS)), ModCreativeModeTab.WOOD);
     
     public static final RegistryObject<Block> ICE_DOOR = registerBlock("ice_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion().sound(SoundType.GLASS).friction(0.98F)), ModCreativeModeTab.WOOD);
     
     public static final RegistryObject<Block> ICE_TRAPDOOR = registerBlock("ice_trapdoor",
-            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion()), ModCreativeModeTab.WOOD);
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion().sound(SoundType.GLASS).friction(0.98F)), ModCreativeModeTab.WOOD);
     
     public static final RegistryObject<Block> ICE_WALL_SIGN = registerBlockWithoutBlockItem("ice_wall_sign",
-            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.ICE));
+            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN).sound(SoundType.GLASS), ModWoodTypes.ICE));
     
     public static final RegistryObject<Block> ICE_SIGN = registerBlockWithoutBlockItem("ice_sign",
-            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.ICE));
+            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN).sound(SoundType.GLASS), ModWoodTypes.ICE));
     
     public static final RegistryObject<Block> ICE_LEAVES = registerBlock("ice_leaves",
             () -> new Leaves(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), ModCreativeModeTab.WOOD);
     
     public static final RegistryObject<Block> ICE_SAPLING = registerBlock("ice_sapling",
-            () -> new SaplingBlock(new IceTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.WOOD);
+            () -> new SaplingBlock(new IceTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).sound(SoundType.GLASS)), ModCreativeModeTab.WOOD);
     
     public static final RegistryObject<Block> POTTED_ICE_SAPLING = registerPottedPlant("potted_ice_sapling", ModBlocks.ICE_SAPLING);
     //endregion
