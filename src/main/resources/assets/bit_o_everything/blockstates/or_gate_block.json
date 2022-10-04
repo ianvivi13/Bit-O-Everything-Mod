@@ -1,0 +1,124 @@
+{
+  "variants": {
+    "facing=east,left=false,right=false,powered=false": {
+      "model": "bit_o_everything:block/or_gate_block",
+      "y": 270
+    },
+    "facing=east,left=false,right=false,powered=true": {
+      "model": "bit_o_everything:block/or_gate_block_on",
+      "y": 270
+    },
+    "facing=east,left=false,right=true,powered=false": {
+      "model": "bit_o_everything:block/or_gate_block_right_on",
+      "y": 270
+    },
+    "facing=east,left=false,right=true,powered=true": {
+      "model": "bit_o_everything:block/or_gate_block_right_on",
+      "y": 270
+    },
+    "facing=east,left=true,right=false,powered=false": {
+      "model": "bit_o_everything:block/or_gate_block_left_on",
+      "y": 270
+    },
+    "facing=east,left=true,right=false,powered=true": {
+      "model": "bit_o_everything:block/or_gate_block_left_on",
+      "y": 270
+    },
+    "facing=east,left=true,right=true,powered=false": {
+      "model": "bit_o_everything:block/or_gate_block_on",
+      "y": 270
+    },
+    "facing=east,left=true,right=true,powered=true": {
+      "model": "bit_o_everything:block/or_gate_block_on",
+      "y": 270
+    },
+    "facing=north,left=false,right=false,powered=false": {
+      "model": "bit_o_everything:block/or_gate_block",
+      "y": 180
+    },
+    "facing=north,left=false,right=false,powered=true": {
+      "model": "bit_o_everything:block/or_gate_block_on",
+      "y": 180
+    },
+    "facing=north,left=false,right=true,powered=false": {
+      "model": "bit_o_everything:block/or_gate_block_right_on",
+      "y": 180
+    },
+    "facing=north,left=false,right=true,powered=true": {
+      "model": "bit_o_everything:block/or_gate_block_right_on",
+      "y": 180
+    },
+    "facing=north,left=true,right=false,powered=false": {
+      "model": "bit_o_everything:block/or_gate_block_left_on",
+      "y": 180
+    },
+    "facing=north,left=true,right=false,powered=true": {
+      "model": "bit_o_everything:block/or_gate_block_left_on",
+      "y": 180
+    },
+    "facing=north,left=true,right=true,powered=false": {
+      "model": "bit_o_everything:block/or_gate_block_on",
+      "y": 180
+    },
+    "facing=north,left=true,right=true,powered=true": {
+      "model": "bit_o_everything:block/or_gate_block_on",
+      "y": 180
+    },
+    "facing=south,left=false,right=false,powered=false": {
+      "model": "bit_o_everything:block/or_gate_block"
+    },
+    "facing=south,left=false,right=false,powered=true": {
+      "model": "bit_o_everything:block/or_gate_block_on"
+    },
+    "facing=south,left=false,right=true,powered=false": {
+      "model": "bit_o_everything:block/or_gate_block_right_on"
+    },
+    "facing=south,left=false,right=true,powered=true": {
+      "model": "bit_o_everything:block/or_gate_block_right_on"
+    },
+    "facing=south,left=true,right=false,powered=false": {
+      "model": "bit_o_everything:block/or_gate_block_left_on"
+    },
+    "facing=south,left=true,right=false,powered=true": {
+      "model": "bit_o_everything:block/or_gate_block_left_on"
+    },
+    "facing=south,left=true,right=true,powered=false": {
+      "model": "bit_o_everything:block/or_gate_block_on"
+    },
+    "facing=south,left=true,right=true,powered=true": {
+      "model": "bit_o_everything:block/or_gate_block_on"
+    },
+    "facing=west,left=false,right=false,powered=false": {
+      "model": "bit_o_everything:block/or_gate_block",
+      "y": 90
+    },
+    "facing=west,left=false,right=false,powered=true": {
+      "model": "bit_o_everything:block/or_gate_block_on",
+      "y": 90
+    },
+    "facing=west,left=false,right=true,powered=false": {
+      "model": "bit_o_everything:block/or_gate_block_right_on",
+      "y": 90
+    },
+    "facing=west,left=false,right=true,powered=true": {
+      "model": "bit_o_everything:block/or_gate_block_right_on",
+      "y": 90
+    },
+    "facing=west,left=true,right=false,powered=false": {
+      "model": "bit_o_everything:block/or_gate_block_left_on",
+      "y": 90
+    },
+    "facing=west,left=true,right=false,powered=true": {
+      "model": "bit_o_everything:block/or_gate_block_left_on",
+      "y": 90
+    },
+    "facing=west,left=true,right=true,powered=false": {
+      "model": "bit_o_everything:block/or_gate_block_on",
+      "y": 90
+    },
+    "facing=west,left=true,right=true,powered=true": {
+      "model": "bit_o_everything:block/or_gate_block_on",
+      "y": 90
+    }
+  }
+}

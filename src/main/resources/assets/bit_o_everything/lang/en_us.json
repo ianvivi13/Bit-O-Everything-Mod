@@ -33,6 +33,11 @@
   "item.bit_o_everything.sticky_grenade": "Sticky Grenade",
   "item.bit_o_everything.sticky_detonator": "Detonator",
 
+  "block.bit_o_everything.and_gate_block": "AND Gate Block",
+  "block.bit_o_everything.nand_gate_block": "NAND Gate Block",
+  "block.bit_o_everything.or_gate_block": "OR Gate Block",
+  "block.bit_o_everything.nor_gate_block": "NOR Gate Block",
+
   "block.bit_o_everything.celestite_block": "Celestite Block",
   "block.bit_o_everything.citrine_block": "Citrine Block",
   "block.bit_o_everything.rhodochrosite_block": "Rhodochrosite Block",

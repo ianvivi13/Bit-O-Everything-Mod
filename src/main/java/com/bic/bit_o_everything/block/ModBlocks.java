@@ -2,10 +2,10 @@ package com.bic.bit_o_everything.block;
 
 import com.bic.bit_o_everything.BitOEverything;
 import com.bic.bit_o_everything.block.custom.*;
+import com.bic.bit_o_everything.block.custom.gates.*;
 import com.bic.bit_o_everything.block.entity.ModWoodTypes;
 import com.bic.bit_o_everything.item.ModCreativeModeTab;
 import com.bic.bit_o_everything.item.ModItems;
-//import com.bic.bit_o_everything.world.feature.tree.CherryTreeGrower;
 import com.bic.bit_o_everything.world.feature.tree_growers.CherryTreeGrower;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -20,7 +20,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.ArrayList;
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -688,6 +687,23 @@ public class ModBlocks {
     public static final RegistryObject<Block> DRACONIUM_BLOCK = registerBlock("draconium_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_PURPLE).sound(SoundType.NETHERITE_BLOCK)
                     .strength(50f,1200f).requiresCorrectToolForDrops()), ModCreativeModeTab.MINERALS);
+    //endregion
+    //region Redstone
+    public static final RegistryObject<Block> AND_GATE_BLOCK = registerBlock("and_gate_block",
+        () -> new TwoInputGateBlock(BlockBehaviour.Properties.copy(Blocks.REPEATER).sound(SoundType.WOOD)
+                    .instabreak(), TwoInputGateBlock.AND), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> NAND_GATE_BLOCK = registerBlock("nand_gate_block",
+            () -> new TwoInputGateBlock(BlockBehaviour.Properties.copy(Blocks.REPEATER).sound(SoundType.WOOD)
+                    .instabreak(), TwoInputGateBlock.NAND), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> OR_GATE_BLOCK = registerBlock("or_gate_block",
+            () -> new TwoInputGateBlock(BlockBehaviour.Properties.copy(Blocks.REPEATER).sound(SoundType.WOOD)
+                    .instabreak(), TwoInputGateBlock.OR), ModCreativeModeTab.MODDED);
+
+    public static final RegistryObject<Block> NOR_GATE_BLOCK = registerBlock("nor_gate_block",
+            () -> new TwoInputGateBlock(BlockBehaviour.Properties.copy(Blocks.REPEATER).sound(SoundType.WOOD)
+                    .instabreak(), TwoInputGateBlock.NOR), ModCreativeModeTab.MODDED);
     //endregion
 
     private static RegistryObject<Block> registerPottedPlant(String name, RegistryObject<Block> contents) {
