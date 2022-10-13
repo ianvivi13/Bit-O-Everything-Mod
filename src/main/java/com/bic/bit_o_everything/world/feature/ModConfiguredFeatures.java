@@ -9,6 +9,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -18,8 +19,11 @@ import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureCo
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
+import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
@@ -28,13 +32,14 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
+import java.util.OptionalInt;
 import java.util.function.Supplier;
 
 public class ModConfiguredFeatures {
 
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES =
             DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, BitOEverything.MOD_ID);
-
+    //region ORES
 
     public static final RuleTest UNOBTAINIUM_ORE_REPLACEABLES = new TagMatchTest(ModTags.Blocks.UNOBTAINIUM_ORE_REPLACEABLES);
     public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_UNOBTAINIUM_ORES = Suppliers.memoize(() -> List.of(
@@ -180,21 +185,95 @@ public class ModConfiguredFeatures {
     ));
     public static final RegistryObject<ConfiguredFeature<?, ?>> CELESTITE_GROWTH = register("celestite_growth",
             () -> new ConfiguredFeature<>(ModFeatures.CRYSTAL_CLUSTER.get(), new CrystalClusterConfiguration(CELESTITE_LIST, EXTRA_CRYSTAL_CHANCES)));
-    // acting as grower thing - TreeFeatures
-    public static final RegistryObject<ConfiguredFeature<?, ?>> CHERRY_TREE = register("cherry_tree",
-            () -> new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                    BlockStateProvider.simple(ModBlocks.CHERRY_LOG.get()),
-                    new StraightTrunkPlacer(3, 4, 2),
-                    BlockStateProvider.simple(ModBlocks.CHERRY_LEAVES.get()),
-                    new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 4),
-                    new TwoLayersFeatureSize(1, 0, 2)).build()));
-    // synonymous with Vegetation Features
-    public static final RegistryObject<ConfiguredFeature<?, ?>> CHERRY_SPAWN = register("cherry_spawn",
+    //endregion
+    //region Decorators
+    private static final BeehiveDecorator BEEHIVE_0002 = new BeehiveDecorator(0.002F); // 0.2%
+    private static final BeehiveDecorator BEEHIVE_002 = new BeehiveDecorator(0.02F); // 2%
+    private static final BeehiveDecorator BEEHIVE_005 = new BeehiveDecorator(0.05F); // 5%
+    private static final BeehiveDecorator BEEHIVE = new BeehiveDecorator(1.0F); // 100%
+    //endregion
+    //region Trees
+    //region Cherry
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHERRY_TREE_STANDARD = register("cherry_tree_standard",
+            () -> new ConfiguredFeature<>(Feature.TREE, createCherry().build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHERRY_TREE_STANDARD_BEES_0002 = register("cherry_tree_standard_bees_0002",
+            () -> new ConfiguredFeature<>(Feature.TREE, createCherry().decorators(List.of(BEEHIVE_0002)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHERRY_TREE_STANDARD_BEES_002 = register("cherry_tree_standard_bees_002",
+            () -> new ConfiguredFeature<>(Feature.TREE, createCherry().decorators(List.of(BEEHIVE_002)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHERRY_TREE_STANDARD_BEES_005 = register("cherry_tree_standard_bees_005",
+            () -> new ConfiguredFeature<>(Feature.TREE, createCherry().decorators(List.of(BEEHIVE_005)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHERRY_TREE_FANCY = register("cherry_tree_fancy",
+            () -> new ConfiguredFeature<>(Feature.TREE, createFancyCherry().build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHERRY_TREE_FANCY_BEES_0002 = register("cherry_tree_fancy_bees_0002",
+            () -> new ConfiguredFeature<>(Feature.TREE, createCherry().decorators(List.of(BEEHIVE_0002)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHERRY_TREE_FANCY_BEES_002 = register("cherry_tree_fancy_bees_002",
+            () -> new ConfiguredFeature<>(Feature.TREE, createCherry().decorators(List.of(BEEHIVE_002)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHERRY_TREE_FANCY_BEES_005 = register("cherry_tree_fancy_bees_005",
+            () -> new ConfiguredFeature<>(Feature.TREE, createCherry().decorators(List.of(BEEHIVE_005)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHERRY_TREE_FANCY_BEES = register("cherry_tree_fancy_bees",
+            () -> new ConfiguredFeature<>(Feature.TREE, createCherry().decorators(List.of(BEEHIVE)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHERRY_TREE_SPAWN = register("cherry_tree_spawn",
             () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(
-                    new WeightedPlacedFeature(ModPlacedFeatures.CHERRY_CHECKED.getHolder().get(),
-                            0.8F)), ModPlacedFeatures.CHERRY_CHECKED.getHolder().get())));
-
-
+                    new WeightedPlacedFeature(ModPlacedFeatures.CHERRY_TREE_STANDARD_BEES_0002_CHECKED.getHolder().get(), 0.16F),
+                    new WeightedPlacedFeature(ModPlacedFeatures.CHERRY_TREE_STANDARD_BEES_002_CHECKED.getHolder().get(), 0.24F),
+                    new WeightedPlacedFeature(ModPlacedFeatures.CHERRY_TREE_FANCY_CHECKED.getHolder().get(), 0.1F),
+                    new WeightedPlacedFeature(ModPlacedFeatures.CHERRY_TREE_FANCY_BEES_0002_CHECKED.getHolder().get(), 0.06F),
+                    new WeightedPlacedFeature(ModPlacedFeatures.CHERRY_TREE_FANCY_BEES_002_CHECKED.getHolder().get(), 0.04F)
+            ), ModPlacedFeatures.CHERRY_TREE_STANDARD_CHECKED.getHolder().get())));
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHERRY_TREE_EXTRA_BEES_SPAWN = register("cherry_tree_extra_bees_spawn",
+            () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(
+                    new WeightedPlacedFeature(ModPlacedFeatures.CHERRY_TREE_FANCY_BEES_005_CHECKED.getHolder().get(), 0.2F),
+                    new WeightedPlacedFeature(ModPlacedFeatures.CHERRY_TREE_FANCY_BEES_CHECKED.getHolder().get(), 0.025F)
+            ), ModPlacedFeatures.CHERRY_TREE_STANDARD_BEES_005_CHECKED.getHolder().get())));
+    
+    
+    private static TreeConfiguration.TreeConfigurationBuilder createCherry() {
+        return createOakStyle(ModBlocks.CHERRY_LOG.get(), ModBlocks.CHERRY_LEAVES.get());
+    }
+    
+    private static TreeConfiguration.TreeConfigurationBuilder createFancyCherry() {
+        return createFancyOakStyle(ModBlocks.CHERRY_LOG.get(), ModBlocks.CHERRY_LEAVES.get());
+    }
+    //endregion
+    
+    // Regular Oak Style Tree
+    private static TreeConfiguration.TreeConfigurationBuilder createOakStyle(Block logBlock, Block leafBlock) {
+        return createStraightBlobTree(logBlock, leafBlock, 4, 2, 0, 2).ignoreVines();
+    }
+    
+    // Regular Large Oak Style Tree
+    private static TreeConfiguration.TreeConfigurationBuilder createFancyOakStyle(Block logBlock, Block leafBlock) {
+        return (new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(logBlock), new FancyTrunkPlacer(3, 11, 0), BlockStateProvider.simple(leafBlock), new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))).ignoreVines();
+    }
+    
+    private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(Block logBlock, Block leafBlock, int baseHeight, int addHeightA, int addHeightB, int leafRadius) {
+        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(logBlock),
+                new StraightTrunkPlacer(baseHeight, addHeightA, addHeightB), BlockStateProvider.simple(leafBlock),
+                new BlobFoliagePlacer(ConstantInt.of(leafRadius), ConstantInt.of(0), 3),
+                new TwoLayersFeatureSize(1, 0, 1));
+    }
+    //endregion
+    
+    
     public static RegistryObject<ConfiguredFeature<?, ?>> register(final String name, final Supplier<? extends ConfiguredFeature<?, ?>> sup) {
         return CONFIGURED_FEATURES.register(name, sup);
     }

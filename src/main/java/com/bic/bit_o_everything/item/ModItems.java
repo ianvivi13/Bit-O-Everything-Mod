@@ -494,10 +494,10 @@ public class ModItems {
     public static final RegistryObject<Item> COPPER_NUGGET = ITEMS.register("copper_nugget",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MINERALS)));
     //endregion
-
+    
     public static final RegistryObject<Item> WILDBERRIES = ITEMS.register("wildberries",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED).food(Foods.SWEET_BERRIES)));
-
+    
     public static final RegistryObject<Item> BLUEBERRIES = ITEMS.register("blueberries",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED).food(Foods.SWEET_BERRIES)));
 

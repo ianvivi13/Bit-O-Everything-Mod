@@ -8,10 +8,13 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 
 public class InfectedTreeGrower extends AbstractTreeGrower {
     @Override
-    protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource p_222910_, boolean p_222911_) {
-        return ModConfiguredFeatures.CHERRY_TREE.getHolder().get();
+    protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource randomSource, boolean withBees) {
+        if (randomSource.nextInt(10) == 0) {
+            return withBees ? ModConfiguredFeatures.CHERRY_TREE_FANCY_BEES_005.getHolder().get() : ModConfiguredFeatures.CHERRY_TREE_STANDARD.getHolder().get();
+        } else {
+            return withBees ? ModConfiguredFeatures.CHERRY_TREE_STANDARD_BEES_005.getHolder().get() : ModConfiguredFeatures.CHERRY_TREE_FANCY.getHolder().get();
+        }
     }
-
 
 
 

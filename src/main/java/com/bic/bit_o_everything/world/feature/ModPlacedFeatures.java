@@ -1,12 +1,14 @@
 package com.bic.bit_o_everything.world.feature;
 
 import com.bic.bit_o_everything.BitOEverything;
+import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -18,7 +20,7 @@ import java.util.function.Supplier;
 public class ModPlacedFeatures {
     public static final DeferredRegister<PlacedFeature> PLACED_FEATURES =
             DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, BitOEverything.MOD_ID);
-
+    //region Ores
     public static final RegistryObject<PlacedFeature> UNOBTAINIUM_ORE_PLACED = PLACED_FEATURES.register("unobtainium_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.UNOBTAINIUM_ORE.getHolder().get(),
                     commonOrePlacement(10,
@@ -119,19 +121,60 @@ public class ModPlacedFeatures {
             () -> new PlacedFeature(ModConfiguredFeatures.CELESTITE_GROWTH.getHolder().get(),
                     rareOrePlacement(CHUNKS_PER_CRYSTAL_CLUSTERS,
                             HeightRangePlacement.uniform(VerticalAnchor.absolute(CRYSTAL_LOW), VerticalAnchor.absolute(CRYSTAL_HIGH)))));
-    // answer to TreePlacements
-    public static final RegistryObject<PlacedFeature> CHERRY_CHECKED = register("cherry_checked",
-            () -> new PlacedFeature(ModConfiguredFeatures.CHERRY_TREE.getHolder().get(),
-                    List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING))));
-    // vegetation placement
+    //endregion
+    
+    //region Trees
+    //region Cherry
+    public static final RegistryObject<PlacedFeature> CHERRY_TREE_STANDARD_CHECKED =
+            resisterOakSurvivalPlacedTree("cherry_tree_standard_checked", ModConfiguredFeatures.CHERRY_TREE_STANDARD.getHolder().get());
+    
+    public static final RegistryObject<PlacedFeature> CHERRY_TREE_STANDARD_BEES_0002_CHECKED =
+            resisterOakSurvivalPlacedTree("cherry_tree_standard_bees_0002_checked", ModConfiguredFeatures.CHERRY_TREE_STANDARD_BEES_0002.getHolder().get());
+    
+    public static final RegistryObject<PlacedFeature> CHERRY_TREE_STANDARD_BEES_002_CHECKED =
+            resisterOakSurvivalPlacedTree("cherry_tree_standard_bees_002_checked", ModConfiguredFeatures.CHERRY_TREE_STANDARD_BEES_002.getHolder().get());
+    
+    public static final RegistryObject<PlacedFeature> CHERRY_TREE_STANDARD_BEES_005_CHECKED =
+            resisterOakSurvivalPlacedTree("cherry_tree_standard_bees_005_checked", ModConfiguredFeatures.CHERRY_TREE_STANDARD_BEES_005.getHolder().get());
+    
+    public static final RegistryObject<PlacedFeature> CHERRY_TREE_FANCY_CHECKED =
+            resisterOakSurvivalPlacedTree("cherry_tree_fancy_checked", ModConfiguredFeatures.CHERRY_TREE_FANCY.getHolder().get());
+    
+    public static final RegistryObject<PlacedFeature> CHERRY_TREE_FANCY_BEES_0002_CHECKED =
+            resisterOakSurvivalPlacedTree("cherry_tree_fancy_bees_0002_checked", ModConfiguredFeatures.CHERRY_TREE_FANCY_BEES_0002.getHolder().get());
+    
+    public static final RegistryObject<PlacedFeature> CHERRY_TREE_FANCY_BEES_002_CHECKED =
+            resisterOakSurvivalPlacedTree("cherry_tree_fancy_bees_002_checked", ModConfiguredFeatures.CHERRY_TREE_FANCY_BEES_002.getHolder().get());
+    
+    public static final RegistryObject<PlacedFeature> CHERRY_TREE_FANCY_BEES_005_CHECKED =
+            resisterOakSurvivalPlacedTree("cherry_tree_fancy_bees_005_checked", ModConfiguredFeatures.CHERRY_TREE_FANCY_BEES_005.getHolder().get());
+    
+    public static final RegistryObject<PlacedFeature> CHERRY_TREE_FANCY_BEES_CHECKED =
+            resisterOakSurvivalPlacedTree("cherry_tree_fancy_bees_checked", ModConfiguredFeatures.CHERRY_TREE_FANCY_BEES.getHolder().get());
+    
     public static final RegistryObject<PlacedFeature> CHERRY_COMMON_PLACED = register("cherry_common_placed",
-            () -> new PlacedFeature(ModConfiguredFeatures.CHERRY_SPAWN.getHolder().get(),
+            () -> new PlacedFeature(ModConfiguredFeatures.CHERRY_TREE_SPAWN.getHolder().get(),
                     VegetationPlacements.treePlacement(PlacementUtils.countExtra(0,0.3333333333333F, 1))));
-
+    
+    public static final RegistryObject<PlacedFeature> CHERRY_COMMON_EXTRA_BEES_PLACED = register("cherry_common_extra_bees_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.CHERRY_TREE_EXTRA_BEES_SPAWN.getHolder().get(),
+                    VegetationPlacements.treePlacement(PlacementUtils.countExtra(0,0.3333333333333F, 1))));
+    
     public static final RegistryObject<PlacedFeature> CHERRY_RARE_PLACED = register("cherry_rare_placed",
-            () -> new PlacedFeature(ModConfiguredFeatures.CHERRY_SPAWN.getHolder().get(),
+            () -> new PlacedFeature(ModConfiguredFeatures.CHERRY_TREE_SPAWN.getHolder().get(),
                     VegetationPlacements.treePlacement(PlacementUtils.countExtra(0,0.01F, 1))));
-
+    
+    //endregion
+    
+    public static RegistryObject<PlacedFeature> resisterOakSurvivalPlacedTree(String name, Holder<ConfiguredFeature<?, ?>> configuredTree) {
+        return resisterSurvivalPlacedTree(name, configuredTree, List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
+    }
+    
+    public static RegistryObject<PlacedFeature> resisterSurvivalPlacedTree(String name, Holder<ConfiguredFeature<?, ?>> configuredTree, List<PlacementModifier> survivalPacement) {
+        return PLACED_FEATURES.register(name, () -> new PlacedFeature(configuredTree, survivalPacement));
+    }
+    //endregion
+    
 
     public static RegistryObject<PlacedFeature> register(final String name, final Supplier<? extends PlacedFeature> sup) {
         return PLACED_FEATURES.register(name, sup);

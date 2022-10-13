@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:flower_forest",
+  "features": "bit_o_everything:cherry_common_extra_bees_placed",
+  "step": "vegetal_decoration"
+}

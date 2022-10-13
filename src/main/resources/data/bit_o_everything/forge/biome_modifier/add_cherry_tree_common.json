@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": ["minecraft:forest", "minecraft:flower_forest"],
+  "biomes": "minecraft:forest",
   "features": "bit_o_everything:cherry_common_placed",
   "step": "vegetal_decoration"
 }
