@@ -3,12 +3,17 @@ package com.bic.bit_o_everything.world.feature;
 import com.bic.bit_o_everything.BitOEverything;
 import com.bic.bit_o_everything.block.ModBlocks;
 import com.bic.bit_o_everything.datagen.ModTags;
+import com.bic.bit_o_everything.world.feature.custom.BranchingTrunkPlacer;
 import com.bic.bit_o_everything.world.feature.custom.CrystalClusterConfiguration;
+import com.bic.bit_o_everything.world.feature.custom.MetaballFoliagePlacer;
+import com.bic.bit_o_everything.world.feature.custom.TreeTapDecorator;
 import com.google.common.base.Suppliers;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.util.random.SimpleWeightedRandomList;
+import net.minecraft.util.valueproviders.ConstantFloat;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -18,12 +23,12 @@ import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguratio
 import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
@@ -36,7 +41,7 @@ import java.util.OptionalInt;
 import java.util.function.Supplier;
 
 public class ModConfiguredFeatures {
-
+    
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES =
             DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, BitOEverything.MOD_ID);
     //region ORES
@@ -186,13 +191,15 @@ public class ModConfiguredFeatures {
     public static final RegistryObject<ConfiguredFeature<?, ?>> CELESTITE_GROWTH = register("celestite_growth",
             () -> new ConfiguredFeature<>(ModFeatures.CRYSTAL_CLUSTER.get(), new CrystalClusterConfiguration(CELESTITE_LIST, EXTRA_CRYSTAL_CHANCES)));
     //endregion
-    //region Decorators
+    //region Trees
+    //region Tree Decorators
     private static final BeehiveDecorator BEEHIVE_0002 = new BeehiveDecorator(0.002F); // 0.2%
     private static final BeehiveDecorator BEEHIVE_002 = new BeehiveDecorator(0.02F); // 2%
     private static final BeehiveDecorator BEEHIVE_005 = new BeehiveDecorator(0.05F); // 5%
     private static final BeehiveDecorator BEEHIVE = new BeehiveDecorator(1.0F); // 100%
+    
+    private static final TreeTapDecorator TREE_TAP_025 = new TreeTapDecorator(0.25F); // 25%
     //endregion
-    //region Trees
     //region Cherry
     public static final RegistryObject<ConfiguredFeature<?, ?>> CHERRY_TREE_STANDARD = register("cherry_tree_standard",
             () -> new ConfiguredFeature<>(Feature.TREE, createCherry().build())
@@ -254,22 +261,325 @@ public class ModConfiguredFeatures {
         return createFancyOakStyle(ModBlocks.CHERRY_LOG.get(), ModBlocks.CHERRY_LEAVES.get());
     }
     //endregion
+    //region Maple
+    public static final RegistryObject<ConfiguredFeature<?, ?>> MAPLE_TREE_SPRUCE_ORANGE = register("maple_tree_spruce_orange",
+            () -> new ConfiguredFeature<>(Feature.TREE, orangeSpruceMaple().build())
+    );
     
-    // Regular Oak Style Tree
+    public static final RegistryObject<ConfiguredFeature<?, ?>> MAPLE_TREE_SPRUCE_ORANGE_TREE_TAP = register("maple_tree_spruce_orange_tree_tap",
+            () -> new ConfiguredFeature<>(Feature.TREE, orangeSpruceMaple().decorators(List.of(TREE_TAP_025)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> MAPLE_TREE_PINE_ORANGE = register("maple_tree_pine_orange",
+            () -> new ConfiguredFeature<>(Feature.TREE, orangePineMaple().build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> MAPLE_TREE_PINE_ORANGE_TREE_TAP = register("maple_tree_pine_orange_tree_tap",
+            () -> new ConfiguredFeature<>(Feature.TREE, orangePineMaple().decorators(List.of(TREE_TAP_025)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> MAPLE_TREE_SPRUCE_RED = register("maple_tree_spruce_red",
+            () -> new ConfiguredFeature<>(Feature.TREE, redSpruceMaple().build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> MAPLE_TREE_SPRUCE_RED_TREE_TAP = register("maple_tree_spruce_red_tree_tap",
+            () -> new ConfiguredFeature<>(Feature.TREE, redSpruceMaple().decorators(List.of(TREE_TAP_025)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> MAPLE_TREE_PINE_RED = register("maple_tree_pine_red",
+            () -> new ConfiguredFeature<>(Feature.TREE, redPineMaple().build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> MAPLE_TREE_PINE_RED_TREE_TAP = register("maple_tree_pine_red_tree_tap",
+            () -> new ConfiguredFeature<>(Feature.TREE, redPineMaple().decorators(List.of(TREE_TAP_025)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> MAPLE_TREE_SPAWN = register("maple_tree_spawn",
+            () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(
+                    new WeightedPlacedFeature(ModPlacedFeatures.MAPLE_TREE_SPRUCE_ORANGE_TREE_TAP_CHECKED.getHolder().get(), 0.009F),
+                    new WeightedPlacedFeature(ModPlacedFeatures.MAPLE_TREE_PINE_ORANGE_CHECKED.getHolder().get(), 0.441F),
+                    new WeightedPlacedFeature(ModPlacedFeatures.MAPLE_TREE_PINE_ORANGE_TREE_TAP_CHECKED.getHolder().get(), 0.009F),
+                    new WeightedPlacedFeature(ModPlacedFeatures.MAPLE_TREE_SPRUCE_RED_CHECKED.getHolder().get(), 0.049F),
+                    new WeightedPlacedFeature(ModPlacedFeatures.MAPLE_TREE_SPRUCE_RED_TREE_TAP_CHECKED.getHolder().get(), 0.001F),
+                    new WeightedPlacedFeature(ModPlacedFeatures.MAPLE_TREE_PINE_RED_CHECKED.getHolder().get(), 0.049F),
+                    new WeightedPlacedFeature(ModPlacedFeatures.MAPLE_TREE_PINE_RED_TREE_TAP_CHECKED.getHolder().get(), 0.0010F)
+            ), ModPlacedFeatures.MAPLE_TREE_SPRUCE_ORANGE_CHECKED.getHolder().get())));
+    
+    private static TreeConfiguration.TreeConfigurationBuilder orangeSpruceMaple() {return createSpruceStyle(ModBlocks.MAPLE_LOG.get(), ModBlocks.MAPLE_LEAVES_ORANGE.get());}
+    
+    private static TreeConfiguration.TreeConfigurationBuilder orangePineMaple() {return createPineStyle(ModBlocks.MAPLE_LOG.get(), ModBlocks.MAPLE_LEAVES_ORANGE.get());}
+    
+    private static TreeConfiguration.TreeConfigurationBuilder redSpruceMaple() {return createSpruceStyle(ModBlocks.MAPLE_LOG.get(), ModBlocks.MAPLE_LEAVES_RED.get());}
+    
+    private static TreeConfiguration.TreeConfigurationBuilder redPineMaple() {return createPineStyle(ModBlocks.MAPLE_LOG.get(), ModBlocks.MAPLE_LEAVES_RED.get());}
+    //endregion
+    //region Orange
+    public static final RegistryObject<ConfiguredFeature<?, ?>> ORANGE_TREE = register("orange_tree",
+            () -> new ConfiguredFeature<>(Feature.TREE, createOakStyle(ModBlocks.ORANGE_LOG.get(), ModBlocks.ORANGE_LEAVES.get()).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> ORANGE_TREE_FANCY = register("orange_tree_fancy",
+            () -> new ConfiguredFeature<>(Feature.TREE, createFancyOakStyle(ModBlocks.ORANGE_LOG.get(), ModBlocks.ORANGE_LEAVES.get()).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> ORANGE_TREE_BEES_002 = register("orange_tree_bees_002",
+            () -> new ConfiguredFeature<>(Feature.TREE, createOakStyle(ModBlocks.ORANGE_LOG.get(), ModBlocks.ORANGE_LEAVES.get()).decorators(List.of(BEEHIVE_002)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> ORANGE_TREE_FANCY_BEES_002 = register("orange_tree_fancy_bees_002",
+            () -> new ConfiguredFeature<>(Feature.TREE, createFancyOakStyle(ModBlocks.ORANGE_LOG.get(), ModBlocks.ORANGE_LEAVES.get()).decorators(List.of(BEEHIVE_002)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> ORANGE_TREE_BEES_005 = register("orange_tree_bees_005",
+            () -> new ConfiguredFeature<>(Feature.TREE, createOakStyle(ModBlocks.ORANGE_LOG.get(), ModBlocks.ORANGE_LEAVES.get()).decorators(List.of(BEEHIVE_005)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> ORANGE_TREE_FANCY_BEES_005 = register("orange_tree_fancy_bees_005",
+            () -> new ConfiguredFeature<>(Feature.TREE, createFancyOakStyle(ModBlocks.ORANGE_LOG.get(), ModBlocks.ORANGE_LEAVES.get()).decorators(List.of(BEEHIVE_005)).build())
+    );
+    
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> ORANGE_TREE_SPAWN = register("orange_tree_spawn",
+            () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(
+                    new WeightedPlacedFeature(ModPlacedFeatures.ORANGE_TREE_FANCY_BEES_002_CHECKED.getHolder().get(), 0.1F)
+            ), ModPlacedFeatures.ORANGE_TREE_BEES_002_CHECKED.getHolder().get())));
+    //endregion
+    //region Peach
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PEACH_TREE = register("peach_tree",
+            () -> new ConfiguredFeature<>(Feature.TREE, createOakStyle(ModBlocks.PEACH_LOG.get(), ModBlocks.PEACH_LEAVES.get()).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PEACH_TREE_FANCY = register("peach_tree_fancy",
+            () -> new ConfiguredFeature<>(Feature.TREE, createFancyOakStyle(ModBlocks.PEACH_LOG.get(), ModBlocks.PEACH_LEAVES.get()).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PEACH_TREE_BEES_002 = register("peach_tree_bees_002",
+            () -> new ConfiguredFeature<>(Feature.TREE, createOakStyle(ModBlocks.PEACH_LOG.get(), ModBlocks.PEACH_LEAVES.get()).decorators(List.of(BEEHIVE_002)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PEACH_TREE_FANCY_BEES_002 = register("peach_tree_fancy_bees_002",
+            () -> new ConfiguredFeature<>(Feature.TREE, createFancyOakStyle(ModBlocks.PEACH_LOG.get(), ModBlocks.PEACH_LEAVES.get()).decorators(List.of(BEEHIVE_002)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PEACH_TREE_BEES_005 = register("peach_tree_bees_005",
+            () -> new ConfiguredFeature<>(Feature.TREE, createOakStyle(ModBlocks.PEACH_LOG.get(), ModBlocks.PEACH_LEAVES.get()).decorators(List.of(BEEHIVE_005)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PEACH_TREE_FANCY_BEES_005 = register("peach_tree_fancy_bees_005",
+            () -> new ConfiguredFeature<>(Feature.TREE, createFancyOakStyle(ModBlocks.PEACH_LOG.get(), ModBlocks.PEACH_LEAVES.get()).decorators(List.of(BEEHIVE_005)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PEACH_TREE_SPAWN = register("peach_tree_spawn",
+            () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(
+                    new WeightedPlacedFeature(ModPlacedFeatures.PEACH_TREE_FANCY_BEES_002_CHECKED.getHolder().get(), 0.1F)
+            ), ModPlacedFeatures.PEACH_TREE_BEES_002_CHECKED.getHolder().get())));
+    //endregion
+    //region Pear
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PEAR_TREE = register("pear_tree",
+            () -> new ConfiguredFeature<>(Feature.TREE, createOakStyle(ModBlocks.PEAR_LOG.get(), ModBlocks.PEAR_LEAVES.get()).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PEAR_TREE_FANCY = register("pear_tree_fancy",
+            () -> new ConfiguredFeature<>(Feature.TREE, createFancyOakStyle(ModBlocks.PEAR_LOG.get(), ModBlocks.PEAR_LEAVES.get()).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PEAR_TREE_BEES_002 = register("pear_tree_bees_002",
+            () -> new ConfiguredFeature<>(Feature.TREE, createOakStyle(ModBlocks.PEAR_LOG.get(), ModBlocks.PEAR_LEAVES.get()).decorators(List.of(BEEHIVE_002)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PEAR_TREE_FANCY_BEES_002 = register("pear_tree_fancy_bees_002",
+            () -> new ConfiguredFeature<>(Feature.TREE, createFancyOakStyle(ModBlocks.PEAR_LOG.get(), ModBlocks.PEAR_LEAVES.get()).decorators(List.of(BEEHIVE_002)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PEAR_TREE_BEES_005 = register("pear_tree_bees_005",
+            () -> new ConfiguredFeature<>(Feature.TREE, createOakStyle(ModBlocks.PEAR_LOG.get(), ModBlocks.PEAR_LEAVES.get()).decorators(List.of(BEEHIVE_005)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PEAR_TREE_FANCY_BEES_005 = register("pear_tree_fancy_bees_005",
+            () -> new ConfiguredFeature<>(Feature.TREE, createFancyOakStyle(ModBlocks.PEAR_LOG.get(), ModBlocks.PEAR_LEAVES.get()).decorators(List.of(BEEHIVE_005)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PEAR_TREE_SPAWN = register("pear_tree_spawn",
+            () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(
+                    new WeightedPlacedFeature(ModPlacedFeatures.PEAR_TREE_FANCY_BEES_002_CHECKED.getHolder().get(), 0.1F)
+            ), ModPlacedFeatures.PEAR_TREE_BEES_002_CHECKED.getHolder().get())));
+    //endregion
+    //region Plum
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PLUM_TREE = register("plum_tree",
+            () -> new ConfiguredFeature<>(Feature.TREE, createOakStyle(ModBlocks.PLUM_LOG.get(), ModBlocks.PLUM_LEAVES.get()).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PLUM_TREE_FANCY = register("plum_tree_fancy",
+            () -> new ConfiguredFeature<>(Feature.TREE, createFancyOakStyle(ModBlocks.PLUM_LOG.get(), ModBlocks.PLUM_LEAVES.get()).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PLUM_TREE_BEES_002 = register("plum_tree_bees_002",
+            () -> new ConfiguredFeature<>(Feature.TREE, createOakStyle(ModBlocks.PLUM_LOG.get(), ModBlocks.PLUM_LEAVES.get()).decorators(List.of(BEEHIVE_002)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PLUM_TREE_FANCY_BEES_002 = register("plum_tree_fancy_bees_002",
+            () -> new ConfiguredFeature<>(Feature.TREE, createFancyOakStyle(ModBlocks.PLUM_LOG.get(), ModBlocks.PLUM_LEAVES.get()).decorators(List.of(BEEHIVE_002)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PLUM_TREE_BEES_005 = register("plum_tree_bees_005",
+            () -> new ConfiguredFeature<>(Feature.TREE, createOakStyle(ModBlocks.PLUM_LOG.get(), ModBlocks.PLUM_LEAVES.get()).decorators(List.of(BEEHIVE_005)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PLUM_TREE_FANCY_BEES_005 = register("plum_tree_fancy_bees_005",
+            () -> new ConfiguredFeature<>(Feature.TREE, createFancyOakStyle(ModBlocks.PLUM_LOG.get(), ModBlocks.PLUM_LEAVES.get()).decorators(List.of(BEEHIVE_005)).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PLUM_TREE_SPAWN = register("plum_tree_spawn",
+            () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(
+                    new WeightedPlacedFeature(ModPlacedFeatures.PLUM_TREE_FANCY_BEES_002_CHECKED.getHolder().get(), 0.1F)
+            ), ModPlacedFeatures.PLUM_TREE_BEES_002_CHECKED.getHolder().get())));
+    //endregion
+    //region Charred
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHARRED_TREE = register("charred_tree",
+            () -> new ConfiguredFeature<>(Feature.TREE, createOakStyle(ModBlocks.CHARRED_LOG.get(), ModBlocks.CHARRED_LEAVES.get()).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHARRED_TREE_FANCY = register("charred_tree_fancy",
+            () -> new ConfiguredFeature<>(Feature.TREE, createFancyOakStyle(ModBlocks.CHARRED_LOG.get(), ModBlocks.CHARRED_LEAVES.get()).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHARRED_TREE_SPAWN = register("charred_tree_spawn",
+            () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(
+                    new WeightedPlacedFeature(ModPlacedFeatures.CHARRED_TREE_FANCY_CHECKED.getHolder().get(), 0.1F)
+            ), ModPlacedFeatures.CHARRED_TREE_CHECKED.getHolder().get())));
+    //endregion
+    //region Corrupt
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CORRUPT_TREE = register("corrupt_tree",
+            () -> new ConfiguredFeature<>(Feature.TREE, createOakStyle(ModBlocks.CORRUPT_LOG.get(), ModBlocks.CORRUPT_LEAVES.get()).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CORRUPT_TREE_FANCY = register("corrupt_tree_fancy",
+            () -> new ConfiguredFeature<>(Feature.TREE, createFancyOakStyle(ModBlocks.CORRUPT_LOG.get(), ModBlocks.CORRUPT_LEAVES.get()).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CORRUPT_TREE_SPAWN = register("corrupt_tree_spawn",
+            () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(
+                    new WeightedPlacedFeature(ModPlacedFeatures.CORRUPT_TREE_FANCY_CHECKED.getHolder().get(), 0.1F)
+            ), ModPlacedFeatures.CORRUPT_TREE_CHECKED.getHolder().get())));
+    //endregion
+    //region Dead
+    public static final RegistryObject<ConfiguredFeature<?, ?>> DEAD_TREE = register("dead_tree",
+            () -> new ConfiguredFeature<>(Feature.TREE, createOakStyle(ModBlocks.DEAD_LOG.get(), ModBlocks.DEAD_LEAVES.get()).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> DEAD_TREE_FANCY = register("dead_tree_fancy",
+            () -> new ConfiguredFeature<>(Feature.TREE, createFancyOakStyle(ModBlocks.DEAD_LOG.get(), ModBlocks.DEAD_LEAVES.get()).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> DEAD_TREE_SPAWN = register("dead_tree_spawn",
+            () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(
+                    new WeightedPlacedFeature(ModPlacedFeatures.DEAD_TREE_FANCY_CHECKED.getHolder().get(), 0.1F)
+            ), ModPlacedFeatures.DEAD_TREE_CHECKED.getHolder().get())));
+    //endregion
+    //region Infected
+    public static final RegistryObject<ConfiguredFeature<?, ?>> INFECTED_TREE = register("infected_tree",
+            () -> new ConfiguredFeature<>(Feature.TREE, createOakStyle(ModBlocks.INFECTED_LOG.get(), ModBlocks.INFECTED_LEAVES.get()).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> INFECTED_TREE_FANCY = register("infected_tree_fancy",
+            () -> new ConfiguredFeature<>(Feature.TREE, createFancyOakStyle(ModBlocks.INFECTED_LOG.get(), ModBlocks.INFECTED_LEAVES.get()).build())
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> INFECTED_TREE_SPAWN = register("infected_tree_spawn",
+            () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(
+                    new WeightedPlacedFeature(ModPlacedFeatures.INFECTED_TREE_FANCY_CHECKED.getHolder().get(), 0.1F)
+            ), ModPlacedFeatures.INFECTED_TREE_CHECKED.getHolder().get())));
+    //endregion
+    //region Ebony
+    public static final RegistryObject<ConfiguredFeature<?, ?>> EBONY_TREE = register("ebony_tree",
+            () -> new ConfiguredFeature<>(Feature.TREE, createStraightSphereBlobTree(ModBlocks.EBONY_LOG.get(), ModBlocks.EBONY_LEAVES.get(), 7, 3, 2, 4).build())
+    );
+    //endregion
+    //region Olive
+    public static final RegistryObject<ConfiguredFeature<?, ?>> OLIVE_TREE = register("olive_tree",
+            () -> new ConfiguredFeature<>(Feature.TREE, (new TreeConfiguration.TreeConfigurationBuilder(
+                    BlockStateProvider.simple(ModBlocks.OLIVE_LOG.get()),
+                    new ForkingTrunkPlacer(3,3,3),
+                    BlockStateProvider.simple(ModBlocks.OLIVE_LEAVES.get()),
+                    new AcaciaFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0)),
+                    new TwoLayersFeatureSize(1, 0, 2))
+            ).ignoreVines().build()));
+    
+    //endregion
+    //region Wisteria
+    public static final RegistryObject<ConfiguredFeature<?, ?>> WISTERIA_TREE_BLUE = register("wisteria_tree_blue",
+            () -> new ConfiguredFeature<>(ModFeatures.ADVANCED_TREE_FEATURE.get(), createWisteriaStyle(ModBlocks.WISTERIA_LOG.get(), ModBlocks.WISTERIA_LEAVES_BLUE.get().defaultBlockState(), ModBlocks.BLUE_LUNALIGHT.get().defaultBlockState(), ModBlocks.WISTERIA_WOOD.get().defaultBlockState()))
+    );
+    
+    public static final RegistryObject<ConfiguredFeature<?, ?>> WISTERIA_TREE_PURPLE = register("wisteria_tree_purple",
+            () -> new ConfiguredFeature<>(ModFeatures.ADVANCED_TREE_FEATURE.get(), createWisteriaStyle(ModBlocks.WISTERIA_LOG.get(), ModBlocks.WISTERIA_LEAVES_PURPLE.get().defaultBlockState(), ModBlocks.PURPLE_LUNALIGHT.get().defaultBlockState(), ModBlocks.WISTERIA_WOOD.get().defaultBlockState()))
+    );
+    //endregion
+    
+    private static TreeConfiguration createWisteriaStyle(Block logBlock, BlockState leafBlockState, BlockState randomBlockState, BlockState branchBlockState) {
+        return (new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(logBlock),
+                new BranchingTrunkPlacer(
+                        6,
+                        3,
+                        1,
+                        BranchingTrunkPlacer.BranchMovementWeightsProvider.createDefault(),
+                        ConstantInt.of(3),
+                        BranchingTrunkPlacer.BranchRangeProvider.createDefault(),
+                        BlockStateProvider.simple(branchBlockState),
+                        0.4d),
+                new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(leafBlockState, 85).add(randomBlockState, 1)),
+                new MetaballFoliagePlacer(
+                        UniformInt.of(2,3),
+                        ConstantInt.of(0),
+                        ConstantInt.of(0),
+                        ConstantInt.of(0),
+                        ConstantFloat.of(1F),
+                        ConstantFloat.of(0.25F),
+                        ConstantFloat.of(1F),
+                        ConstantFloat.of(0.5F)),
+                new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build();
+    }
     private static TreeConfiguration.TreeConfigurationBuilder createOakStyle(Block logBlock, Block leafBlock) {
         return createStraightBlobTree(logBlock, leafBlock, 4, 2, 0, 2).ignoreVines();
     }
-    
-    // Regular Large Oak Style Tree
     private static TreeConfiguration.TreeConfigurationBuilder createFancyOakStyle(Block logBlock, Block leafBlock) {
         return (new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(logBlock), new FancyTrunkPlacer(3, 11, 0), BlockStateProvider.simple(leafBlock), new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))).ignoreVines();
     }
-    
+    private static TreeConfiguration.TreeConfigurationBuilder createSpruceStyle(Block logBlock, Block leafBlock) {
+        return (new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(logBlock),
+                new StraightTrunkPlacer(5, 2, 1),
+                BlockStateProvider.simple(leafBlock),
+                new SpruceFoliagePlacer(UniformInt.of(2, 3), UniformInt.of(0, 2), UniformInt.of(1, 2)),
+                new TwoLayersFeatureSize(2, 0, 2))
+        ).ignoreVines();
+    }
+    private static TreeConfiguration.TreeConfigurationBuilder createPineStyle(Block logBlock, Block leafBlock) {
+        return (new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(logBlock),
+                new StraightTrunkPlacer(6, 4, 0),
+                BlockStateProvider.simple(leafBlock),
+                new PineFoliagePlacer(ConstantInt.of(1), ConstantInt.of(1), UniformInt.of(3, 4)),
+                new TwoLayersFeatureSize(2, 0, 2))
+        ).ignoreVines();
+    }
     private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(Block logBlock, Block leafBlock, int baseHeight, int addHeightA, int addHeightB, int leafRadius) {
-        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(logBlock),
-                new StraightTrunkPlacer(baseHeight, addHeightA, addHeightB), BlockStateProvider.simple(leafBlock),
+        return new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(logBlock),
+                new StraightTrunkPlacer(baseHeight, addHeightA, addHeightB),
+                BlockStateProvider.simple(leafBlock),
                 new BlobFoliagePlacer(ConstantInt.of(leafRadius), ConstantInt.of(0), 3),
                 new TwoLayersFeatureSize(1, 0, 1));
+    }
+    private static TreeConfiguration.TreeConfigurationBuilder createStraightSphereBlobTree(Block logBlock, Block leafBlock, int baseHeight, int addHeightA, int addHeightB, int leafRadius) {
+        return new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(logBlock),
+                new StraightTrunkPlacer(baseHeight, addHeightA, addHeightB),
+                BlockStateProvider.simple(leafBlock),
+                // radius / offset / height
+                new FancyFoliagePlacer(ConstantInt.of(leafRadius), ConstantInt.of(1), leafRadius),
+                new TwoLayersFeatureSize(2, 0, 2));
     }
     //endregion
     

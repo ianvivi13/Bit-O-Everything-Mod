@@ -1,6 +1,6 @@
 package com.bic.bit_o_everything.spells;
 
-import com.bic.bit_o_everything.ModUtils.advancedPlayerView;
+import com.bic.bit_o_everything.util.ModUtils.advancedPlayerView;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.sounds.SoundEvent;

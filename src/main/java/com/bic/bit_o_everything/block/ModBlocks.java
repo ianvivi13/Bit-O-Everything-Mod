@@ -807,6 +807,12 @@ public class ModBlocks {
             () -> new SaplingBlock(new WisteriaTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.WOOD);
     
     public static final RegistryObject<Block> POTTED_WISTERIA_SAPLING = registerPottedPlant("potted_wisteria_sapling", ModBlocks.WISTERIA_SAPLING);
+    
+    public static final RegistryObject<Block> BLUE_LUNALIGHT = registerBlock("blue_lunalight",
+            () -> new Block(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.COLOR_BLUE).strength(1.0F).sound(SoundType.SHROOMLIGHT).lightLevel((p_152663_) -> 15)), ModCreativeModeTab.WOOD);
+    
+    public static final RegistryObject<Block> PURPLE_LUNALIGHT = registerBlock("purple_lunalight",
+            () -> new Block(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.COLOR_PURPLE).strength(1.0F).sound(SoundType.SHROOMLIGHT).lightLevel((p_152663_) -> 15)), ModCreativeModeTab.WOOD);
     //endregion
     //region Charred Woods
     public static final RegistryObject<Block> CHARRED_LOG = registerBlock("charred_log",

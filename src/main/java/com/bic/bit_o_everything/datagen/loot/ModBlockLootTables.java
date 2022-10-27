@@ -9,12 +9,14 @@ import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
@@ -22,7 +24,21 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModBlockLootTables extends BlockLoot {
+    private static float[] multiplyFloatArr(float multiple, float... array) {
+        float[] newFloatArray = new float[array.length];
+        int i = 0;
+        for (float f : array) {
+            newFloatArray[i] = array[i] * multiple;
+            i ++;
+        }
+        return newFloatArray;
+    }
+    
     private static final float[] NORMAL_LEAVES_SAPLING_CHANCES = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
+    private static final float[] NORMAL_LEAVES_APPLE_CHANCES = new float[]{0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F};
+    private static final float[] NORMAL_LEAVES_FRUIT_CHANCES = multiplyFloatArr(6F, NORMAL_LEAVES_APPLE_CHANCES);
+    private static final float[] EXTRA_LEAVES_FRUIT_CHANCES = multiplyFloatArr(2F, NORMAL_LEAVES_FRUIT_CHANCES);
+    
     private static final LootItemCondition.Builder HAS_SILK_TOUCH = MatchTool.toolMatches(ItemPredicate.Builder.item().hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.atLeast(1))));
     private static final LootItemCondition.Builder HAS_NO_SILK_TOUCH = HAS_SILK_TOUCH.invert();
     private static final LootItemCondition.Builder HAS_SHEARS = MatchTool.toolMatches(ItemPredicate.Builder.item().of(Items.SHEARS));
@@ -40,7 +56,16 @@ public class ModBlockLootTables extends BlockLoot {
     protected void dropWhenSilkOrShearsOnly(Block block) {
         this.add(block, this.createSilkOrShearsOnly(block));
     }
-
+    
+    protected static LootTable.Builder createFruitLeavesDrops(Block leaves, Block sapling, ItemLike fruit, float... fruitChances) {
+        return createLeavesDrops(leaves, sapling, NORMAL_LEAVES_SAPLING_CHANCES).withPool(
+                LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .when(HAS_NO_SHEARS_OR_SILK_TOUCH).add(applyExplosionCondition(
+                                leaves, LootItem.lootTableItem(fruit))
+                                .when(BonusLevelTableCondition.bonusLevelFlatChance(
+                                        Enchantments.BLOCK_FORTUNE, fruitChances))));
+    }
+    
     @Override
     protected void addTables() {
         this.dropWhenSilkOrShearsOnly(ModBlocks.WILDBERRY_BUSH.get());
@@ -50,7 +75,10 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropWhenSilkOrShearsOnly(ModBlocks.BLACKBERRY_BUSH.get());
         
         this.dropSelf(ModBlocks.TREE_TAP.get());
-
+        
+        this.dropSelf(ModBlocks.BLUE_LUNALIGHT.get());
+        this.dropSelf(ModBlocks.PURPLE_LUNALIGHT.get());
+        
         this.dropSelf(ModBlocks.PYRITE_BLOCK.get());
         this.dropSelf(ModBlocks.RAW_PYRITE_BLOCK.get());
         this.dropSelf(ModBlocks.ZINC_BLOCK.get());
@@ -180,7 +208,7 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.OLIVE_SAPLING.get());
         this.add(ModBlocks.OLIVE_DOOR.get(), BlockLoot::createDoorTable);
         this.add(ModBlocks.OLIVE_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.OLIVE_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.OLIVE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(ModBlocks.OLIVE_LEAVES.get(), (p_124096_) -> createFruitLeavesDrops(p_124096_, ModBlocks.OLIVE_SAPLING.get(), ModItems.OLIVES.get(), EXTRA_LEAVES_FRUIT_CHANCES));
         this.dropPottedContents(ModBlocks.POTTED_OLIVE_SAPLING.get());
         //endregion
         //region Peach Woods
@@ -200,7 +228,7 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.PEACH_SAPLING.get());
         this.add(ModBlocks.PEACH_DOOR.get(), BlockLoot::createDoorTable);
         this.add(ModBlocks.PEACH_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.PEACH_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.PEACH_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(ModBlocks.PEACH_LEAVES.get(), (p_124096_) -> createFruitLeavesDrops(p_124096_, ModBlocks.PEACH_SAPLING.get(), ModItems.PEACH.get(), NORMAL_LEAVES_FRUIT_CHANCES));
         this.dropPottedContents(ModBlocks.POTTED_PEACH_SAPLING.get());
         //endregion
         //region Ebony Woods
@@ -240,7 +268,7 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.PLUM_SAPLING.get());
         this.add(ModBlocks.PLUM_DOOR.get(), BlockLoot::createDoorTable);
         this.add(ModBlocks.PLUM_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.PLUM_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.PLUM_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(ModBlocks.PLUM_LEAVES.get(), (p_124096_) -> createFruitLeavesDrops(p_124096_, ModBlocks.PLUM_SAPLING.get(), ModItems.PLUM.get(), NORMAL_LEAVES_FRUIT_CHANCES));
         this.dropPottedContents(ModBlocks.POTTED_PLUM_SAPLING.get());
         //endregion
         //region Orange Woods
@@ -260,7 +288,7 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.ORANGE_SAPLING.get());
         this.add(ModBlocks.ORANGE_DOOR.get(), BlockLoot::createDoorTable);
         this.add(ModBlocks.ORANGE_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.ORANGE_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.ORANGE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(ModBlocks.ORANGE_LEAVES.get(), (p_124096_) -> createFruitLeavesDrops(p_124096_, ModBlocks.ORANGE_SAPLING.get(), ModItems.ORANGE.get(), NORMAL_LEAVES_FRUIT_CHANCES));
         this.dropPottedContents(ModBlocks.POTTED_ORANGE_SAPLING.get());
         //endregion
         //region Infected Woods
@@ -320,7 +348,7 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.PEAR_SAPLING.get());
         this.add(ModBlocks.PEAR_DOOR.get(), BlockLoot::createDoorTable);
         this.add(ModBlocks.PEAR_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(ModBlocks.PEAR_LEAVES.get(), (p_124096_) -> createLeavesDrops(p_124096_, ModBlocks.PEAR_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(ModBlocks.PEAR_LEAVES.get(), (p_124096_) -> createFruitLeavesDrops(p_124096_, ModBlocks.PEAR_SAPLING.get(), ModItems.PEAR.get(), NORMAL_LEAVES_FRUIT_CHANCES));
         this.dropPottedContents(ModBlocks.POTTED_PEAR_SAPLING.get());
         //endregion
         //region Wisteria Woods

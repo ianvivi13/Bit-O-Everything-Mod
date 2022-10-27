@@ -1,8 +1,7 @@
 package com.bic.bit_o_everything.block.custom;
 
-import com.bic.bit_o_everything.ModUtils;
-import com.bic.bit_o_everything.block.ModBlocks;
 import com.bic.bit_o_everything.block.entity.custom.PotterBlockEntity;
+import com.bic.bit_o_everything.util.ModUtils;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundSource;
@@ -28,8 +27,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.function.Supplier;
-
-import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 
 public class PotterBlock extends BaseEntityBlock{
     protected static final VoxelShape TALL = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D);

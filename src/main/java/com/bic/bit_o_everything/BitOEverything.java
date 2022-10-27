@@ -10,9 +10,7 @@ import com.bic.bit_o_everything.particle.ModParticles;
 import com.bic.bit_o_everything.potion.ModPotions;
 import com.bic.bit_o_everything.sound.ModSounds;
 import com.bic.bit_o_everything.util.BetterBrewingRecipe;
-import com.bic.bit_o_everything.world.feature.ModConfiguredFeatures;
-import com.bic.bit_o_everything.world.feature.ModFeatures;
-import com.bic.bit_o_everything.world.feature.ModPlacedFeatures;
+import com.bic.bit_o_everything.world.feature.*;
 import com.google.common.collect.Maps;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -67,7 +65,10 @@ public class BitOEverything  {
         ModSounds.register(eventBus);
 
         ModParticles.register(eventBus);
-
+        
+        ModTrunkPlacerType.register(eventBus);
+        ModFoliagePlacerType.register(eventBus);
+        ModTreeDecoratorType.register(eventBus);
         ModFeatures.register(eventBus);
         ModConfiguredFeatures.register(eventBus);
         ModPlacedFeatures.register(eventBus);

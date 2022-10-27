@@ -1,23 +1,11 @@
 
 seperator = "\n"
-search = 'cherry'
+search = 'orange'
 
 woodTypes = (
-    "maple",
-    "dogwood",
-    "redwood",
-    "olive",
     "peach",
-    "ebony",
     "plum",
-    "orange",
-    "infected",
-    "corrupt",
     "pear",
-    "wisteria",
-    "charred",
-    "ice",
-    "dead"
 )
 
 with open('duplicate.txt','r') as file:

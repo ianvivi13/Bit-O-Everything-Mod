@@ -516,6 +516,20 @@ public class ModItems {
             () -> new HoneyBottleItem(new Item.Properties().tab(ModCreativeModeTab.MODDED).food(Foods.HONEY_BOTTLE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
     
     
+    public static final RegistryObject<Item> OLIVES = ITEMS.register("olives",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED).food(Foods.SWEET_BERRIES)));
+    
+    public static final RegistryObject<Item> ORANGE = ITEMS.register("orange",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED).food(Foods.APPLE)));
+    
+    public static final RegistryObject<Item> PEAR = ITEMS.register("pear",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED).food(Foods.APPLE)));
+    
+    public static final RegistryObject<Item> PEACH = ITEMS.register("peach",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED).food(Foods.APPLE)));
+    
+    public static final RegistryObject<Item> PLUM = ITEMS.register("plum",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MODDED).food(Foods.APPLE)));
     
     
     public static void register(IEventBus eventBus) {

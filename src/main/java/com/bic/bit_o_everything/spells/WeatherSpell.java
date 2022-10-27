@@ -1,7 +1,7 @@
 package com.bic.bit_o_everything.spells;
 
-import com.bic.bit_o_everything.ModUtils;
 import com.bic.bit_o_everything.sound.ModSounds;
+import com.bic.bit_o_everything.util.ModUtils;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.server.level.ServerLevel;

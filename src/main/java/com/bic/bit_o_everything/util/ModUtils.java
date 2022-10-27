@@ -1,25 +1,21 @@
-package com.bic.bit_o_everything;
+package com.bic.bit_o_everything.util;
 
 import com.ibm.icu.impl.Pair;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.*;
-import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.HexFormat;
-import static java.util.Map.entry;
-
 import java.util.List;
 import java.util.Map;
+
+import static java.util.Map.entry;
 
 public final class ModUtils {
 

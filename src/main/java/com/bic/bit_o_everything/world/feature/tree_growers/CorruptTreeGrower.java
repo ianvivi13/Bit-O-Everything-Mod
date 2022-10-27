@@ -10,9 +10,9 @@ public class CorruptTreeGrower extends AbstractTreeGrower {
     @Override
     protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource randomSource, boolean withBees) {
         if (randomSource.nextInt(10) == 0) {
-            return withBees ? ModConfiguredFeatures.CHERRY_TREE_FANCY_BEES_005.getHolder().get() : ModConfiguredFeatures.CHERRY_TREE_STANDARD.getHolder().get();
+            return ModConfiguredFeatures.CORRUPT_TREE_FANCY.getHolder().get();
         } else {
-            return withBees ? ModConfiguredFeatures.CHERRY_TREE_STANDARD_BEES_005.getHolder().get() : ModConfiguredFeatures.CHERRY_TREE_FANCY.getHolder().get();
+            return ModConfiguredFeatures.CORRUPT_TREE.getHolder().get();
         }
     }
 

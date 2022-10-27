@@ -366,6 +366,15 @@ public class ModLanguageProvider extends LanguageProvider {
         //endregion
         //endregion
         
+        this.addItem(ModItems.OLIVES);
+        this.addItem(ModItems.PEACH);
+        this.addItem(ModItems.PEAR);
+        this.addItem(ModItems.PLUM);
+        this.addItem(ModItems.ORANGE);
+        
+        this.addBlock(ModBlocks.BLUE_LUNALIGHT);
+        this.addBlock(ModBlocks.PURPLE_LUNALIGHT);
+        
         this.addItem(ModItems.RAW_PYRITE);
         this.addItem(ModItems.PYRITE, "Pyrite Ingot");
         this.addItem(ModItems.MOD_BOOK);

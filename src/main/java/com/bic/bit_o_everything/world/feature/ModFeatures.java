@@ -1,23 +1,13 @@
 package com.bic.bit_o_everything.world.feature;
 
 import com.bic.bit_o_everything.BitOEverything;
-import com.bic.bit_o_everything.block.ModBlocks;
+import com.bic.bit_o_everything.world.feature.custom.AdvancedTreeFeature;
 import com.bic.bit_o_everything.world.feature.custom.CrystalClusterConfiguration;
 import com.bic.bit_o_everything.world.feature.custom.CrystalClusterFeature;
-import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
-import net.minecraft.data.worldgen.features.FeatureUtils;
-import net.minecraft.data.worldgen.features.TreeFeatures;
-import net.minecraft.util.valueproviders.ConstantInt;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
-import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -28,10 +18,16 @@ public class ModFeatures<FC extends FeatureConfiguration> {
     public static final DeferredRegister<Feature<?>> FEATURES =
             DeferredRegister.create(Registry.FEATURE_REGISTRY, BitOEverything.MOD_ID);
 
-    public static final RegistryObject<CrystalClusterFeature> CRYSTAL_CLUSTER = register("crystal_cluster", () -> new CrystalClusterFeature(CrystalClusterConfiguration.CODEC));
-
-    private static <C extends FeatureConfiguration, F extends Feature<C>> RegistryObject<F> register(String pKey, Supplier<F> pValue) {
-        return FEATURES.register(pKey, pValue);
+    
+    public static final RegistryObject<CrystalClusterFeature> CRYSTAL_CLUSTER = register("crystal_cluster",
+            () -> new CrystalClusterFeature(CrystalClusterConfiguration.CODEC));
+    
+    public static final RegistryObject<AdvancedTreeFeature> ADVANCED_TREE_FEATURE = register("advanced_tree",
+            () -> new AdvancedTreeFeature(TreeConfiguration.CODEC));
+    
+    
+    private static <C extends FeatureConfiguration, F extends Feature<C>> RegistryObject<F> register(String name, Supplier<F> pValue) {
+        return FEATURES.register(name, pValue);
     }
 
     public static void register(IEventBus eventBus) {

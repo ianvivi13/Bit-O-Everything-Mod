@@ -165,13 +165,70 @@ public class ModPlacedFeatures {
                     VegetationPlacements.treePlacement(PlacementUtils.countExtra(0,0.01F, 1))));
     
     //endregion
+    //region Maple
+    public static final RegistryObject<PlacedFeature> MAPLE_TREE_SPRUCE_ORANGE_CHECKED =
+            resisterOakSurvivalPlacedTree("maple_tree_spruce_orange_checked", ModConfiguredFeatures.MAPLE_TREE_SPRUCE_ORANGE.getHolder().get());
+    
+    public static final RegistryObject<PlacedFeature> MAPLE_TREE_SPRUCE_ORANGE_TREE_TAP_CHECKED =
+            resisterOakSurvivalPlacedTree("maple_tree_spruce_orange_tree_tap_checked", ModConfiguredFeatures.MAPLE_TREE_SPRUCE_ORANGE_TREE_TAP.getHolder().get());
+    
+    public static final RegistryObject<PlacedFeature> MAPLE_TREE_PINE_ORANGE_CHECKED =
+            resisterOakSurvivalPlacedTree("maple_tree_pine_orange_checked", ModConfiguredFeatures.MAPLE_TREE_PINE_ORANGE.getHolder().get());
+    
+    public static final RegistryObject<PlacedFeature> MAPLE_TREE_PINE_ORANGE_TREE_TAP_CHECKED =
+            resisterOakSurvivalPlacedTree("maple_tree_pine_orange_tree_tap_checked", ModConfiguredFeatures.MAPLE_TREE_PINE_ORANGE_TREE_TAP.getHolder().get());
+    
+    public static final RegistryObject<PlacedFeature> MAPLE_TREE_SPRUCE_RED_CHECKED =
+            resisterOakSurvivalPlacedTree("maple_tree_spruce_red_checked", ModConfiguredFeatures.MAPLE_TREE_SPRUCE_RED.getHolder().get());
+    
+    public static final RegistryObject<PlacedFeature> MAPLE_TREE_SPRUCE_RED_TREE_TAP_CHECKED =
+            resisterOakSurvivalPlacedTree("maple_tree_spruce_red_tree_tap_checked", ModConfiguredFeatures.MAPLE_TREE_SPRUCE_RED_TREE_TAP.getHolder().get());
+    
+    public static final RegistryObject<PlacedFeature> MAPLE_TREE_PINE_RED_CHECKED =
+            resisterOakSurvivalPlacedTree("maple_tree_pine_red_checked", ModConfiguredFeatures.MAPLE_TREE_PINE_RED.getHolder().get());
+    
+    public static final RegistryObject<PlacedFeature> MAPLE_TREE_PINE_RED_TREE_TAP_CHECKED =
+            resisterOakSurvivalPlacedTree("maple_tree_pine_red_tree_tap_checked", ModConfiguredFeatures.MAPLE_TREE_PINE_RED_TREE_TAP.getHolder().get());
+    //endregion
+    //region Orange
+    public static final RegistryObject<PlacedFeature> ORANGE_TREE_BEES_002_CHECKED = resisterOakSurvivalPlacedTree("orange_tree_bees_002", ModConfiguredFeatures.ORANGE_TREE_BEES_002.getHolder().get());
+    public static final RegistryObject<PlacedFeature> ORANGE_TREE_FANCY_BEES_002_CHECKED = resisterOakSurvivalPlacedTree("orange_tree_fancy_bees_002", ModConfiguredFeatures.ORANGE_TREE_FANCY_BEES_002.getHolder().get());
+    //endregion
+    //region Peach
+    public static final RegistryObject<PlacedFeature> PEACH_TREE_BEES_002_CHECKED = resisterOakSurvivalPlacedTree("peach_tree_bees_002", ModConfiguredFeatures.PEACH_TREE_BEES_002.getHolder().get());
+    public static final RegistryObject<PlacedFeature> PEACH_TREE_FANCY_BEES_002_CHECKED = resisterOakSurvivalPlacedTree("peach_tree_fancy_bees_002", ModConfiguredFeatures.PEACH_TREE_FANCY_BEES_002.getHolder().get());
+    //endregion
+    //region Pear
+    public static final RegistryObject<PlacedFeature> PEAR_TREE_BEES_002_CHECKED = resisterOakSurvivalPlacedTree("pear_tree_bees_002", ModConfiguredFeatures.PEAR_TREE_BEES_002.getHolder().get());
+    public static final RegistryObject<PlacedFeature> PEAR_TREE_FANCY_BEES_002_CHECKED = resisterOakSurvivalPlacedTree("pear_tree_fancy_bees_002", ModConfiguredFeatures.PEAR_TREE_FANCY_BEES_002.getHolder().get());
+    //endregion
+    //region Plum
+    public static final RegistryObject<PlacedFeature> PLUM_TREE_BEES_002_CHECKED = resisterOakSurvivalPlacedTree("plum_tree_bees_002", ModConfiguredFeatures.PLUM_TREE_BEES_002.getHolder().get());
+    public static final RegistryObject<PlacedFeature> PLUM_TREE_FANCY_BEES_002_CHECKED = resisterOakSurvivalPlacedTree("plum_tree_fancy_bees_002", ModConfiguredFeatures.PLUM_TREE_FANCY_BEES_002.getHolder().get());
+    //endregion
+    //region Charred
+    public static final RegistryObject<PlacedFeature> CHARRED_TREE_CHECKED = resisterOakSurvivalPlacedTree("charred_tree", ModConfiguredFeatures.CHARRED_TREE.getHolder().get());
+    public static final RegistryObject<PlacedFeature> CHARRED_TREE_FANCY_CHECKED = resisterOakSurvivalPlacedTree("charred_tree_fancy", ModConfiguredFeatures.CHARRED_TREE_FANCY.getHolder().get());
+    //endregion
+    //region Corrupt
+    public static final RegistryObject<PlacedFeature> CORRUPT_TREE_CHECKED = resisterOakSurvivalPlacedTree("corrupt_tree", ModConfiguredFeatures.CORRUPT_TREE.getHolder().get());
+    public static final RegistryObject<PlacedFeature> CORRUPT_TREE_FANCY_CHECKED = resisterOakSurvivalPlacedTree("corrupt_tree_fancy", ModConfiguredFeatures.CORRUPT_TREE_FANCY.getHolder().get());
+    //endregion
+    //region Dead
+    public static final RegistryObject<PlacedFeature> DEAD_TREE_CHECKED = resisterOakSurvivalPlacedTree("dead_tree", ModConfiguredFeatures.DEAD_TREE.getHolder().get());
+    public static final RegistryObject<PlacedFeature> DEAD_TREE_FANCY_CHECKED = resisterOakSurvivalPlacedTree("dead_tree_fancy", ModConfiguredFeatures.DEAD_TREE_FANCY.getHolder().get());
+    //endregion
+    //region Infected
+    public static final RegistryObject<PlacedFeature> INFECTED_TREE_CHECKED = resisterOakSurvivalPlacedTree("infected_tree", ModConfiguredFeatures.INFECTED_TREE.getHolder().get());
+    public static final RegistryObject<PlacedFeature> INFECTED_TREE_FANCY_CHECKED = resisterOakSurvivalPlacedTree("infected_tree_fancy", ModConfiguredFeatures.INFECTED_TREE_FANCY.getHolder().get());
+    //endregion
     
     public static RegistryObject<PlacedFeature> resisterOakSurvivalPlacedTree(String name, Holder<ConfiguredFeature<?, ?>> configuredTree) {
         return resisterSurvivalPlacedTree(name, configuredTree, List.of(PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
     }
     
-    public static RegistryObject<PlacedFeature> resisterSurvivalPlacedTree(String name, Holder<ConfiguredFeature<?, ?>> configuredTree, List<PlacementModifier> survivalPacement) {
-        return PLACED_FEATURES.register(name, () -> new PlacedFeature(configuredTree, survivalPacement));
+    public static RegistryObject<PlacedFeature> resisterSurvivalPlacedTree(String name, Holder<ConfiguredFeature<?, ?>> configuredTree, List<PlacementModifier> survivalPlacement) {
+        return PLACED_FEATURES.register(name, () -> new PlacedFeature(configuredTree, survivalPlacement));
     }
     //endregion
     
