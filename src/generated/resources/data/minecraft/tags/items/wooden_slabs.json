@@ -1,5 +1,20 @@
 {
   "values": [
-    "bit_o_everything:cherry_slab"
+    "bit_o_everything:cherry_slab",
+    "bit_o_everything:maple_slab",
+    "bit_o_everything:dogwood_slab",
+    "bit_o_everything:redwood_slab",
+    "bit_o_everything:olive_slab",
+    "bit_o_everything:peach_slab",
+    "bit_o_everything:ebony_slab",
+    "bit_o_everything:plum_slab",
+    "bit_o_everything:orange_slab",
+    "bit_o_everything:infected_slab",
+    "bit_o_everything:corrupt_slab",
+    "bit_o_everything:pear_slab",
+    "bit_o_everything:wisteria_slab",
+    "bit_o_everything:charred_slab",
+    "bit_o_everything:ice_slab",
+    "bit_o_everything:dead_slab"
   ]
 }

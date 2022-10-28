@@ -1,5 +1,20 @@
 {
   "values": [
-    "bit_o_everything:cherry_trapdoor"
+    "bit_o_everything:cherry_trapdoor",
+    "bit_o_everything:maple_trapdoor",
+    "bit_o_everything:dogwood_trapdoor",
+    "bit_o_everything:redwood_trapdoor",
+    "bit_o_everything:olive_trapdoor",
+    "bit_o_everything:peach_trapdoor",
+    "bit_o_everything:ebony_trapdoor",
+    "bit_o_everything:plum_trapdoor",
+    "bit_o_everything:orange_trapdoor",
+    "bit_o_everything:infected_trapdoor",
+    "bit_o_everything:corrupt_trapdoor",
+    "bit_o_everything:pear_trapdoor",
+    "bit_o_everything:wisteria_trapdoor",
+    "bit_o_everything:charred_trapdoor",
+    "bit_o_everything:ice_trapdoor",
+    "bit_o_everything:dead_trapdoor"
   ]
 }

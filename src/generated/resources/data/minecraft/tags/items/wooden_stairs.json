@@ -1,5 +1,20 @@
 {
   "values": [
-    "bit_o_everything:cherry_stairs"
+    "bit_o_everything:cherry_stairs",
+    "bit_o_everything:maple_stairs",
+    "bit_o_everything:dogwood_stairs",
+    "bit_o_everything:redwood_stairs",
+    "bit_o_everything:olive_stairs",
+    "bit_o_everything:peach_stairs",
+    "bit_o_everything:ebony_stairs",
+    "bit_o_everything:plum_stairs",
+    "bit_o_everything:orange_stairs",
+    "bit_o_everything:infected_stairs",
+    "bit_o_everything:corrupt_stairs",
+    "bit_o_everything:pear_stairs",
+    "bit_o_everything:wisteria_stairs",
+    "bit_o_everything:charred_stairs",
+    "bit_o_everything:ice_stairs",
+    "bit_o_everything:dead_stairs"
   ]
 }

@@ -1,5 +1,20 @@
 {
   "values": [
-    "#bit_o_everything:cherry_logs"
+    "#bit_o_everything:cherry_logs",
+    "#bit_o_everything:maple_logs",
+    "#bit_o_everything:dogwood_logs",
+    "#bit_o_everything:redwood_logs",
+    "#bit_o_everything:olive_logs",
+    "#bit_o_everything:peach_logs",
+    "#bit_o_everything:ebony_logs",
+    "#bit_o_everything:plum_logs",
+    "#bit_o_everything:orange_logs",
+    "#bit_o_everything:infected_logs",
+    "#bit_o_everything:corrupt_logs",
+    "#bit_o_everything:pear_logs",
+    "#bit_o_everything:wisteria_logs",
+    "#bit_o_everything:charred_logs",
+    "#bit_o_everything:ice_logs",
+    "#bit_o_everything:dead_logs"
   ]
 }

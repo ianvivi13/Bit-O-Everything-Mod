@@ -1,5 +1,20 @@
 {
   "values": [
-    "bit_o_everything:cherry_door"
+    "bit_o_everything:cherry_door",
+    "bit_o_everything:maple_door",
+    "bit_o_everything:dogwood_door",
+    "bit_o_everything:redwood_door",
+    "bit_o_everything:olive_door",
+    "bit_o_everything:peach_door",
+    "bit_o_everything:ebony_door",
+    "bit_o_everything:plum_door",
+    "bit_o_everything:orange_door",
+    "bit_o_everything:infected_door",
+    "bit_o_everything:corrupt_door",
+    "bit_o_everything:pear_door",
+    "bit_o_everything:wisteria_door",
+    "bit_o_everything:charred_door",
+    "bit_o_everything:ice_door",
+    "bit_o_everything:dead_door"
   ]
 }

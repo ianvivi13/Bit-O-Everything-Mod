@@ -1,5 +1,20 @@
 {
   "values": [
-    "bit_o_everything:cherry_boat"
+    "bit_o_everything:cherry_boat",
+    "bit_o_everything:maple_boat",
+    "bit_o_everything:dogwood_boat",
+    "bit_o_everything:redwood_boat",
+    "bit_o_everything:olive_boat",
+    "bit_o_everything:peach_boat",
+    "bit_o_everything:ebony_boat",
+    "bit_o_everything:plum_boat",
+    "bit_o_everything:orange_boat",
+    "bit_o_everything:infected_boat",
+    "bit_o_everything:corrupt_boat",
+    "bit_o_everything:pear_boat",
+    "bit_o_everything:wisteria_boat",
+    "bit_o_everything:charred_boat",
+    "bit_o_everything:ice_boat",
+    "bit_o_everything:dead_boat"
   ]
 }

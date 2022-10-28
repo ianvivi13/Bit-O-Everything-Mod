@@ -1,5 +1,20 @@
 {
   "values": [
-    "bit_o_everything:cherry_fence_gate"
+    "bit_o_everything:cherry_fence_gate",
+    "bit_o_everything:maple_fence_gate",
+    "bit_o_everything:dogwood_fence_gate",
+    "bit_o_everything:redwood_fence_gate",
+    "bit_o_everything:olive_fence_gate",
+    "bit_o_everything:peach_fence_gate",
+    "bit_o_everything:ebony_fence_gate",
+    "bit_o_everything:plum_fence_gate",
+    "bit_o_everything:orange_fence_gate",
+    "bit_o_everything:infected_fence_gate",
+    "bit_o_everything:corrupt_fence_gate",
+    "bit_o_everything:pear_fence_gate",
+    "bit_o_everything:wisteria_fence_gate",
+    "bit_o_everything:charred_fence_gate",
+    "bit_o_everything:ice_fence_gate",
+    "bit_o_everything:dead_fence_gate"
   ]
 }

@@ -1,5 +1,20 @@
 {
   "values": [
-    "bit_o_everything:potted_cherry_sapling"
+    "bit_o_everything:potted_cherry_sapling",
+    "bit_o_everything:potted_maple_sapling",
+    "bit_o_everything:potted_dogwood_sapling",
+    "bit_o_everything:potted_redwood_sapling",
+    "bit_o_everything:potted_olive_sapling",
+    "bit_o_everything:potted_peach_sapling",
+    "bit_o_everything:potted_ebony_sapling",
+    "bit_o_everything:potted_plum_sapling",
+    "bit_o_everything:potted_orange_sapling",
+    "bit_o_everything:potted_infected_sapling",
+    "bit_o_everything:potted_corrupt_sapling",
+    "bit_o_everything:potted_pear_sapling",
+    "bit_o_everything:potted_wisteria_sapling",
+    "bit_o_everything:potted_charred_sapling",
+    "bit_o_everything:potted_ice_sapling",
+    "bit_o_everything:potted_dead_sapling"
   ]
 }

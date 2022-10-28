@@ -1,5 +1,20 @@
 {
   "values": [
-    "bit_o_everything:cherry_planks"
+    "bit_o_everything:cherry_planks",
+    "bit_o_everything:maple_planks",
+    "bit_o_everything:dogwood_planks",
+    "bit_o_everything:redwood_planks",
+    "bit_o_everything:olive_planks",
+    "bit_o_everything:peach_planks",
+    "bit_o_everything:ebony_planks",
+    "bit_o_everything:plum_planks",
+    "bit_o_everything:orange_planks",
+    "bit_o_everything:infected_planks",
+    "bit_o_everything:corrupt_planks",
+    "bit_o_everything:pear_planks",
+    "bit_o_everything:wisteria_planks",
+    "bit_o_everything:charred_planks",
+    "bit_o_everything:ice_planks",
+    "bit_o_everything:dead_planks"
   ]
 }

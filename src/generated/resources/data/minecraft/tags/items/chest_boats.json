@@ -1,5 +1,20 @@
 {
   "values": [
-    "bit_o_everything:cherry_chest_boat"
+    "bit_o_everything:cherry_chest_boat",
+    "bit_o_everything:maple_chest_boat",
+    "bit_o_everything:dogwood_chest_boat",
+    "bit_o_everything:redwood_chest_boat",
+    "bit_o_everything:olive_chest_boat",
+    "bit_o_everything:peach_chest_boat",
+    "bit_o_everything:ebony_chest_boat",
+    "bit_o_everything:plum_chest_boat",
+    "bit_o_everything:orange_chest_boat",
+    "bit_o_everything:infected_chest_boat",
+    "bit_o_everything:corrupt_chest_boat",
+    "bit_o_everything:pear_chest_boat",
+    "bit_o_everything:wisteria_chest_boat",
+    "bit_o_everything:charred_chest_boat",
+    "bit_o_everything:ice_chest_boat",
+    "bit_o_everything:dead_chest_boat"
   ]
 }

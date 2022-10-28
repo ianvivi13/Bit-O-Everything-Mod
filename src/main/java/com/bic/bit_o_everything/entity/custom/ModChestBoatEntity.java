@@ -15,6 +15,7 @@ import net.minecraft.world.entity.vehicle.ChestBoat;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.Vec3;
 
 public class ModChestBoatEntity extends ChestBoat {
@@ -38,6 +39,20 @@ public class ModChestBoatEntity extends ChestBoat {
 
     public ModChestBoatEntity.Type getModChestBoatEntityType() {
         return ModChestBoatEntity.Type.byId(this.entityData.get(BOAT_TYPE));
+    }
+
+    @Override
+    public float getGroundFriction() {
+        if(getModChestBoatEntityType() == ModChestBoatEntity.Type.ICE) {
+            if(getBlockStateOn().getMaterial() == Material.WOOL) {
+                return 0.1f;
+            } else if(getBlockSpeedFactor() != 1) {
+                return 0.81f;
+            } else if(getBlockSpeedFactor() == 1) {
+                return 0.98f;
+            }
+        }
+        return super.getGroundFriction();
     }
 
     @Override
