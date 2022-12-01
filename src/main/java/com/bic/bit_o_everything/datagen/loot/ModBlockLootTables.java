@@ -68,6 +68,7 @@ public class ModBlockLootTables extends BlockLoot {
     
     @Override
     protected void addTables() {
+
         this.dropWhenSilkOrShearsOnly(ModBlocks.WILDBERRY_BUSH.get());
         this.dropWhenSilkOrShearsOnly(ModBlocks.BLUEBERRY_BUSH.get());
         this.dropWhenSilkOrShearsOnly(ModBlocks.GOOSEBERRY_BUSH.get());
