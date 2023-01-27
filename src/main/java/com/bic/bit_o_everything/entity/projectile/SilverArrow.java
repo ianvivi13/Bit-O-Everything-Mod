@@ -16,6 +16,11 @@ public class SilverArrow extends AbstractArrow {
         this.referenceItem = ModItems.SILVER_ARROW.get();
     }
 
+    public SilverArrow(EntityType<? extends AbstractArrow> type, double x, double y, double z, Level level) {
+        super(type, x, y, z, level);
+        this.referenceItem = ModItems.SILVER_ARROW.get();
+    }
+
     public SilverArrow(LivingEntity shooter, Level level, Item referenceItem) {
         super(ModEntityTypes.SILVER_ARROW.get(), shooter, level);
         this.referenceItem = referenceItem;

@@ -4,6 +4,7 @@ import com.bic.bit_o_everything.block.ModBlocks;
 import com.bic.bit_o_everything.block.entity.ModBlockEntities;
 import com.bic.bit_o_everything.block.entity.ModWoodTypes;
 import com.bic.bit_o_everything.entity.ModEntityTypes;
+import com.bic.bit_o_everything.entity.projectile.*;
 import com.bic.bit_o_everything.item.ModItems;
 import com.bic.bit_o_everything.network.ModPacketHandler;
 import com.bic.bit_o_everything.particle.ModParticles;
@@ -13,15 +14,25 @@ import com.bic.bit_o_everything.util.BetterBrewingRecipe;
 import com.bic.bit_o_everything.world.feature.*;
 import com.google.common.collect.Maps;
 import com.mojang.logging.LogUtils;
+import net.minecraft.Util;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.core.Position;
+import net.minecraft.core.dispenser.AbstractProjectileDispenseBehavior;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.projectile.Arrow;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.projectile.Snowball;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.common.MinecraftForge;
@@ -221,6 +232,9 @@ public class BitOEverything  {
 
     private void setup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
+
+            //region Add Wood Types
+
             Sheets.addWoodType(ModWoodTypes.CHERRY);
             Sheets.addWoodType(ModWoodTypes.MAPLE);
             Sheets.addWoodType(ModWoodTypes.DOGWOOD);
@@ -238,10 +252,74 @@ public class BitOEverything  {
             Sheets.addWoodType(ModWoodTypes.ICE);
             Sheets.addWoodType(ModWoodTypes.DEAD);
 
-            //Add potion recipes here
+            //endregion
+
+            //region Potion Recipes
 
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.AWKWARD,
                     Items.POISONOUS_POTATO, Potions.LUCK));
+
+            //endregion
+
+            //region Dispenser Behavior
+
+            DispenserBlock.registerBehavior(ModItems.EXPLOSIVE_ARROW.get(), new AbstractProjectileDispenseBehavior() {
+                protected Projectile getProjectile(Level level, Position pos, ItemStack item) {
+                    ExplosiveArrow arrow = new ExplosiveArrow(ModEntityTypes.EXPLOSIVE_ARROW.get(), pos.x(), pos.y(), pos.z(), level);
+                    arrow.pickup = AbstractArrow.Pickup.DISALLOWED;
+                    return arrow;
+                }
+            });
+
+            DispenserBlock.registerBehavior(ModItems.TIMED_ARROW_ONE.get(), new AbstractProjectileDispenseBehavior() {
+                protected Projectile getProjectile(Level level, Position pos, ItemStack item) {
+                    TimedArrow arrow = new TimedArrow(ModEntityTypes.TIMED_ARROW.get(), pos.x(), pos.y(), pos.z(), level, 0.5);
+                    arrow.pickup = AbstractArrow.Pickup.DISALLOWED;
+                    return arrow;
+                }
+            });
+
+            DispenserBlock.registerBehavior(ModItems.TIMED_ARROW_TWO.get(), new AbstractProjectileDispenseBehavior() {
+                protected Projectile getProjectile(Level level, Position pos, ItemStack item) {
+                    TimedArrow arrow = new TimedArrow(ModEntityTypes.TIMED_ARROW.get(), pos.x(), pos.y(), pos.z(), level, 1);
+                    arrow.pickup = AbstractArrow.Pickup.DISALLOWED;
+                    return arrow;
+                }
+            });
+
+            DispenserBlock.registerBehavior(ModItems.TIMED_ARROW_THREE.get(), new AbstractProjectileDispenseBehavior() {
+                protected Projectile getProjectile(Level level, Position pos, ItemStack item) {
+                    TimedArrow arrow = new TimedArrow(ModEntityTypes.TIMED_ARROW.get(), pos.x(), pos.y(), pos.z(), level, 1.5);
+                    arrow.pickup = AbstractArrow.Pickup.DISALLOWED;
+                    return arrow;
+                }
+            });
+
+            DispenserBlock.registerBehavior(ModItems.SILVER_ARROW.get(), new AbstractProjectileDispenseBehavior() {
+                protected Projectile getProjectile(Level level, Position pos, ItemStack item) {
+                    SilverArrow arrow = new SilverArrow(ModEntityTypes.SILVER_ARROW.get(), pos.x(), pos.y(), pos.z(), level);
+                    arrow.pickup = AbstractArrow.Pickup.ALLOWED;
+                    return arrow;
+                }
+            });
+
+            DispenserBlock.registerBehavior(ModItems.GRENADE.get(), new AbstractProjectileDispenseBehavior() {
+                protected Projectile getProjectile(Level level, Position pos, ItemStack item) {
+                    return Util.make(new Grenade(ModEntityTypes.GRENADE.get(), pos.x(), pos.y(), pos.z(), level), (grenade) -> {
+                        grenade.setItem(item);
+                    });
+                }
+            });
+
+            DispenserBlock.registerBehavior(ModItems.STICKY_GRENADE.get(), new AbstractProjectileDispenseBehavior() {
+                protected Projectile getProjectile(Level level, Position pos, ItemStack item) {
+                    return Util.make(new StickyGrenade(ModEntityTypes.STICKY_GRENADE.get(), pos.x(), pos.y(), pos.z(), level), (stickyGrenade) -> {
+                        stickyGrenade.setItem(item);
+                    });
+                }
+            });
+
+            //endregion
         });
         event.enqueueWork(ModPacketHandler::init);
 

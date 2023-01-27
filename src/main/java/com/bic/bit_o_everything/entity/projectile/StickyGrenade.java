@@ -18,6 +18,10 @@ public class StickyGrenade extends AbstractThrowableExplosive {
         super(entityType, level);
     }
 
+    public StickyGrenade(EntityType<? extends ThrowableItemProjectile> entityType, double x, double y, double z, Level level) {
+        super(entityType, x, y, z, level);
+    }
+
     public StickyGrenade(Level pLevel, Player pPlayer, Boolean hasDetonator) {
         super(ModEntityTypes.STICKY_GRENADE.get(), pPlayer, pLevel);
         explodeByDetonator = hasDetonator;

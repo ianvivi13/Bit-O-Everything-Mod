@@ -20,8 +20,13 @@ public class ExplosiveArrow extends AbstractArrow {
         this.referenceItem = ModItems.EXPLOSIVE_ARROW.get();
     }
 
-    public ExplosiveArrow(LivingEntity shooter, Level level, Item referenceItem) {
-        super(ModEntityTypes.EXPLOSIVE_ARROW.get(), shooter, level);
+    public ExplosiveArrow(EntityType<? extends AbstractArrow> type, double x, double y, double z, Level level) {
+        super(type, x, y, z, level);
+        this.referenceItem = ModItems.EXPLOSIVE_ARROW.get();
+    }
+
+    public ExplosiveArrow(EntityType<? extends AbstractArrow> type, LivingEntity shooter, Level level, Item referenceItem) {
+        super(type, shooter, level);
         this.referenceItem = referenceItem;
     }
 

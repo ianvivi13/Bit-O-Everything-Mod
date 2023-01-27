@@ -7,10 +7,7 @@ import com.bic.bit_o_everything.entity.custom.ModChestBoatEntity;
 import com.bic.bit_o_everything.item.custom.*;
 import com.bic.bit_o_everything.spells.*;
 import net.minecraft.world.food.Foods;
-import net.minecraft.world.item.HoneyBottleItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.SignItem;
+import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -40,7 +37,7 @@ public class ModItems {
             () -> new SilverArrowItem(new Item.Properties().tab(ModCreativeModeTab.MODDED), 1.5F));
 
     public static final RegistryObject<Item> RAINBOW_DYE = ITEMS.register("rainbow_dye",
-            () -> new RainbowDyeItem(new Item.Properties().tab(ModCreativeModeTab.MODDED)));
+            () -> new RainbowDyeItem(DyeColor.WHITE, new Item.Properties().tab(ModCreativeModeTab.MODDED)));
     //region Wood Types
     //region Cherry Wood
     public static final RegistryObject<Item> CHERRY_SIGN = ITEMS.register("cherry_sign",

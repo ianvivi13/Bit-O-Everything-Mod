@@ -19,6 +19,10 @@ public class Grenade extends AbstractThrowableExplosive {
         super(entityType, level);
     }
 
+    public Grenade(EntityType<? extends ThrowableItemProjectile> entityType, double x, double y, double z, Level level) {
+        super(entityType, x, y, z, level);
+    }
+
     public Grenade(Level pLevel, Player pPlayer) {
         super(ModEntityTypes.GRENADE.get(), pPlayer, pLevel);
     }

@@ -18,6 +18,11 @@ public abstract class AbstractThrowableExplosive extends ThrowableItemProjectile
         this.maxTicks = 2400;
     }
 
+    public AbstractThrowableExplosive(EntityType<? extends ThrowableItemProjectile> entityType, double x, double y, double z, Level level) {
+        super(entityType, x, y, z, level);
+        this.maxTicks = 2400;
+    }
+
     public AbstractThrowableExplosive(EntityType<? extends ThrowableItemProjectile> entityType, LivingEntity livingEntity, Level level) {
         super(entityType, livingEntity, level);
         this.maxTicks = 2400;
