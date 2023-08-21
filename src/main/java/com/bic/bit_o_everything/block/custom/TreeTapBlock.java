@@ -48,7 +48,7 @@ public class TreeTapBlock extends HorizontalDirectionalBlock {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(SYRUP_LEVEL, 0).setValue(FACING, Direction.NORTH));
     }
-
+    
     @Override
     public boolean propagatesSkylightDown(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
         return true;
